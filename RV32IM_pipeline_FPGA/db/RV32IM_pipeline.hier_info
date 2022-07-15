@@ -1,9 +1,78 @@
 |system
-restled <= reset.DB_MAX_OUTPUT_PORT_TYPE
-reset => restled.DATAIN
-reset => cpu:inst.RESET
-reset => data_memory:inst2.reset
+reset_led <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+reset => inst4.IN0
+clock_led <= freq_divider:inst3.clk_out
 pin_name1 => freq_divider:inst3.clk_in
+pc[0] <= cpu:inst.PC[0]
+pc[1] <= cpu:inst.PC[1]
+pc[2] <= cpu:inst.PC[2]
+pc[3] <= cpu:inst.PC[3]
+pc[4] <= cpu:inst.PC[4]
+pc[5] <= cpu:inst.PC[5]
+pc[6] <= cpu:inst.PC[6]
+pc[7] <= cpu:inst.PC[7]
+pc[8] <= cpu:inst.PC[8]
+pc[9] <= cpu:inst.PC[9]
+pc[10] <= cpu:inst.PC[10]
+pc[11] <= cpu:inst.PC[11]
+pc[12] <= cpu:inst.PC[12]
+pc[13] <= cpu:inst.PC[13]
+pc[14] <= cpu:inst.PC[14]
+pc[15] <= cpu:inst.PC[15]
+pc[16] <= cpu:inst.PC[16]
+pc[17] <= cpu:inst.PC[17]
+pc[18] <= cpu:inst.PC[18]
+pc[19] <= cpu:inst.PC[19]
+pc[20] <= cpu:inst.PC[20]
+pc[21] <= cpu:inst.PC[21]
+pc[22] <= cpu:inst.PC[22]
+pc[23] <= cpu:inst.PC[23]
+pc[24] <= cpu:inst.PC[24]
+pc[25] <= cpu:inst.PC[25]
+pc[26] <= cpu:inst.PC[26]
+pc[27] <= cpu:inst.PC[27]
+pc[28] <= cpu:inst.PC[28]
+pc[29] <= cpu:inst.PC[29]
+pc[30] <= cpu:inst.PC[30]
+pc[31] <= cpu:inst.PC[31]
+
+
+|system|freq_divider:inst3
+clk_in => clk_out~reg0.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_in => count[15].CLK
+clk_in => count[16].CLK
+clk_in => count[17].CLK
+clk_in => count[18].CLK
+clk_in => count[19].CLK
+clk_in => count[20].CLK
+clk_in => count[21].CLK
+clk_in => count[22].CLK
+clk_in => count[23].CLK
+clk_in => count[24].CLK
+clk_in => count[25].CLK
+clk_in => count[26].CLK
+clk_in => count[27].CLK
+clk_in => count[28].CLK
+clk_in => count[29].CLK
+clk_in => count[30].CLK
+clk_in => count[31].CLK
+clk_in => count[32].CLK
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|cpu:inst
@@ -7700,44 +7769,6 @@ SELECT[0] => Equal2.IN1
 SELECT[1] => Equal0.IN0
 SELECT[1] => Equal1.IN1
 SELECT[1] => Equal2.IN0
-
-
-|system|freq_divider:inst3
-clk_in => clk_out~reg0.CLK
-clk_in => count[0].CLK
-clk_in => count[1].CLK
-clk_in => count[2].CLK
-clk_in => count[3].CLK
-clk_in => count[4].CLK
-clk_in => count[5].CLK
-clk_in => count[6].CLK
-clk_in => count[7].CLK
-clk_in => count[8].CLK
-clk_in => count[9].CLK
-clk_in => count[10].CLK
-clk_in => count[11].CLK
-clk_in => count[12].CLK
-clk_in => count[13].CLK
-clk_in => count[14].CLK
-clk_in => count[15].CLK
-clk_in => count[16].CLK
-clk_in => count[17].CLK
-clk_in => count[18].CLK
-clk_in => count[19].CLK
-clk_in => count[20].CLK
-clk_in => count[21].CLK
-clk_in => count[22].CLK
-clk_in => count[23].CLK
-clk_in => count[24].CLK
-clk_in => count[25].CLK
-clk_in => count[26].CLK
-clk_in => count[27].CLK
-clk_in => count[28].CLK
-clk_in => count[29].CLK
-clk_in => count[30].CLK
-clk_in => count[31].CLK
-clk_in => count[32].CLK
-clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|data_memory:inst2

@@ -2,4 +2,76 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'pin_name1'
+Slack : -5.306
+TNS   : -86.702
+
+Type  : Slow 1200mV 85C Model Setup 'freq_divider:inst3|clk_out'
+Slack : -2.374
+TNS   : -47.249
+
+Type  : Slow 1200mV 85C Model Hold 'pin_name1'
+Slack : 0.073
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'freq_divider:inst3|clk_out'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pin_name1'
+Slack : -3.000
+TNS   : -46.690
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
+Slack : -1.285
+TNS   : -39.835
+
+Type  : Slow 1200mV 0C Model Setup 'pin_name1'
+Slack : -4.695
+TNS   : -74.374
+
+Type  : Slow 1200mV 0C Model Setup 'freq_divider:inst3|clk_out'
+Slack : -2.013
+TNS   : -39.091
+
+Type  : Slow 1200mV 0C Model Hold 'pin_name1'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'freq_divider:inst3|clk_out'
+Slack : 0.366
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pin_name1'
+Slack : -3.000
+TNS   : -46.690
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
+Slack : -1.285
+TNS   : -39.835
+
+Type  : Fast 1200mV 0C Model Setup 'pin_name1'
+Slack : -2.102
+TNS   : -26.487
+
+Type  : Fast 1200mV 0C Model Setup 'freq_divider:inst3|clk_out'
+Slack : -0.661
+TNS   : -8.340
+
+Type  : Fast 1200mV 0C Model Hold 'pin_name1'
+Slack : -0.143
+TNS   : -0.143
+
+Type  : Fast 1200mV 0C Model Hold 'freq_divider:inst3|clk_out'
+Slack : 0.189
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pin_name1'
+Slack : -3.000
+TNS   : -39.118
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
+Slack : -1.000
+TNS   : -31.000
+
 ------------------------------------------------------------
