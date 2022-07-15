@@ -21,11 +21,11 @@ module data_memory(
 );
 input				clock;
 input           	reset;
-input           	read;
-input           	write;
-input[32:0]      	address;
-input[32:0]     	writedata;
-output reg [32:0]	readdata;
+input[3:0]      	read;
+input[2:0]        write;
+input[31:0]      	address;
+input[31:0]     	writedata;
+output reg [31:0]	readdata;
 output reg      	busywait;
 
 //TODO: can increase memory size because we have 32 bit vyte addressing space
@@ -36,9 +36,10 @@ reg [7:0] memory_array [255:0];
 reg readaccess, writeaccess;
 always @(read, write)
 begin
-	busywait = (read || write)? 1 : 0;
-	readaccess = (read && !write)? 1 : 0;
-	writeaccess = (!read && write)? 1 : 0;
+	//busywait = (read[3] || write[2])? 1 : 0;
+	busywait = 1'b0;
+	readaccess = (read[3] && !write[2])? 1 : 0;
+	writeaccess = (!read[3] && write[2])? 1 : 0;
 end
 
 integer i;

@@ -28,8 +28,8 @@
 
 (DELAYFILE
   (SDFVERSION "2.1")
-  (DESIGN "ins_memory")
-  (DATE "07/15/2022 14:05:13")
+  (DESIGN "system")
+  (DATE "07/15/2022 14:56:32")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 32-bit")
   (VERSION "Version 12.1 Build 177 11/07/2012 SJ Full Version")
@@ -38,20 +38,20 @@
 
   (CELL
     (CELLTYPE "cycloneive_io_obuf")
-    (INSTANCE \\busywait\~output\\)
+    (INSTANCE \\restled\~output\\)
     (DELAY
       (ABSOLUTE
-        (PORT i (1441:1441:1441) (1593:1593:1593))
-        (IOPATH i o (1649:1649:1649) (1674:1674:1674))
+        (PORT i (2080:2080:2080) (2328:2328:2328))
+        (IOPATH i o (1582:1582:1582) (1585:1585:1585))
       )
     )
   )
   (CELL
     (CELLTYPE "cycloneive_io_ibuf")
-    (INSTANCE \\read\~input\\)
+    (INSTANCE \\reset\~input\\)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (328:328:328) (708:708:708))
+        (IOPATH i o (288:288:288) (668:668:668))
       )
     )
   )
