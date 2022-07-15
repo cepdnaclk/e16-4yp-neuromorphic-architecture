@@ -1,5 +1,5 @@
 Flow report for RV32IM_pipeline
-Fri Jul 15 15:34:56 2022
+Fri Jul 15 22:44:52 2022
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Jul 15 15:34:56 2022     ;
+; Flow Status                        ; Successful - Fri Jul 15 22:44:52 2022     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; RV32IM_pipeline                           ;
 ; Top-level Entity Name              ; system                                    ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE115F29C7                             ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 84 / 114,480 ( < 1 % )                    ;
-;     Total combinational functions  ; 83 / 114,480 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 65 / 114,480 ( < 1 % )                    ;
-; Total registers                    ; 65                                        ;
-; Total pins                         ; 36 / 529 ( 7 % )                          ;
+; Total logic elements               ; 816 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 708 / 114,480 ( < 1 % )                   ;
+;     Dedicated logic registers      ; 388 / 114,480 ( < 1 % )                   ;
+; Total registers                    ; 388                                       ;
+; Total pins                         ; 43 / 529 ( 8 % )                          ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                           ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/15/2022 15:34:12 ;
+; Start date & time ; 07/15/2022 22:44:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RV32IM_pipeline     ;
 +-------------------+---------------------+
@@ -73,12 +73,11 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+-----------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value   ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+-----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27332937327006.165787945109980        ; --              ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 66325069289732.165790524311016        ; --              ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --              ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>          ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --              ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --              ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --              ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                              ; --              ; system      ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --              ; system      ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --              ; system      ; Top            ;
@@ -94,12 +93,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 363 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:24     ; 1.5                     ; 654 MB              ; 00:00:30                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 375 MB              ; 00:00:07                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 426 MB              ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 342 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:45                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 391 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:25     ; 1.5                     ; 669 MB              ; 00:00:30                           ;
+; Assembler                 ; 00:00:07     ; 1.0                     ; 363 MB              ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 415 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 330 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:47     ; --                      ; --                  ; 00:00:47                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,11 +107,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-T64TVAP  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-T64TVAP  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-T64TVAP  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-T64TVAP  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-T64TVAP  ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

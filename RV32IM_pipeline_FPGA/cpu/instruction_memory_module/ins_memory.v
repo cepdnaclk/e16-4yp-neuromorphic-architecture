@@ -17,9 +17,9 @@ reg readaccess;
 reg [7:0] memory_array [0:1023];
 
 // //Initialize instruction memory
-// initial
-// begin
-//     $readmemb("../../build/test_prog.bin", memory_array); 
+initial
+begin
+     $readmemb("test_prog.bin", memory_array); 
 
 //     busywait = 0;
 //     readaccess = 0;
@@ -35,8 +35,8 @@ reg [7:0] memory_array [0:1023];
 
 //     //TODO: try to read the instruction from file
 
-//     // // loadi 0 0xFA
-//     // {memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}    = 32'b00000100_000000000000000011111010;
+    // loadi 0 0xFA
+    // {memory_array[10'd3],  memory_array[10'd2],  memory_array[10'd1],  memory_array[10'd0]}    = 32'b00000100_000000000000000011111010;
 //     // // sll 1 0 0x02
 //     // {memory_array[10'd7],  memory_array[10'd6],  memory_array[10'd5],  memory_array[10'd4]}      = 32'b00001001_000000010000000000000010;
 //     // // srl 1 0 0x02
@@ -65,12 +65,13 @@ reg [7:0] memory_array [0:1023];
 //     // {memory_array[10'd55],  memory_array[10'd54],  memory_array[10'd53],  memory_array[10'd52]}  = 32'b00010000_00000000_00000011_00000010;
 //     // // lwd 4 2
 //     // {memory_array[10'd59],  memory_array[10'd58],  memory_array[10'd57],  memory_array[10'd56]}  = 32'b00001110_00000100_00000000_00000010;
-// end
+end
 
 //Detecting an incoming memory access
 always @(read)
 begin
-    busywait = (read)? 1 : 0;
+    // busywait = (read)? 1 : 0;
+    busywait = 0;
     readaccess = (read)? 1 : 0;
 end
 
@@ -79,7 +80,10 @@ always @(posedge clock)
 begin
     if(readaccess)
     begin
-        readdata[31:0]    = memory_array[address];
+        readdata[7:0]      = memory_array[{address[31:2],2'b00}];
+        readdata[15:8]     = memory_array[{address[31:2],2'b01}];
+        readdata[23:16]    = memory_array[{address[31:2],2'b10}];
+        readdata[31:24]    = memory_array[{address[31:2],2'b11}];
         // readaccess = 0;
     end
 end
