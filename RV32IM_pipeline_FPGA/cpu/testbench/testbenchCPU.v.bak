@@ -3,11 +3,12 @@ Author - W M D U Thilakarathna
 Reg No - E/16/366
 */
 
-//`include "../cpu_module/cpu.v"
-//`include "../data_memory_module/data_memory.v"
-//`include "../data_memory_module/data_cache_memory.v"
-//`include "../instruction_memory_module/ins_memory.v"
-//`include "../instruction_memory_module/ins_cache_memory.v"
+`include "../cpu_module/cpu.v"
+`include "../data_memory_module/data_memory.v"
+`include "../data_memory_module/data_cache_memory.v"
+`include "../instruction_memory_module/ins_memory.v"
+`include "../instruction_memory_module/ins_cache_memory.v"
+`timescale 1ns/100ps
 
 module testbenchCPU;
     
@@ -66,17 +67,17 @@ module testbenchCPU;
     ins_memory myInsMem (CLK, INS_MEM_READ, INS_MEM_ADDRESS,
             INS_MEM_READ_DATA, INS_MEM_BUSY_WAIT);
 
-//    initial // instruction array
-//    begin
-//      //monitor command to check the content od the register file
-//      $monitor($time, " REG0: %b  REG1: %b  REG2: %b  REG3: %b  REG4: %b  REG5: %b  REG6: %b  REG7: %b ",
-//                          mycpu.myreg.REGISTERS[0], mycpu.myreg.REGISTERS[1], mycpu.myreg.REGISTERS[2], 
-//                          mycpu.myreg.REGISTERS[3], mycpu.myreg.REGISTERS[4], mycpu.myreg.REGISTERS[5], 
-//                          mycpu.myreg.REGISTERS[6], mycpu.myreg.REGISTERS[7]);
-//      // generate files needed to plot the waveform using GTKWave
-//      $dumpfile("../../build/cpu_wavedata.vcd");
-//      $dumpvars(0, testbenchCPU);
-//    end
+    initial // instruction array
+    begin
+      //monitor command to check the content od the register file
+      $monitor($time, " REG0: %b  REG1: %b  REG2: %b  REG3: %b  REG4: %b  REG5: %b  REG6: %b  REG7: %b ",
+                          mycpu.myreg.REGISTERS[0], mycpu.myreg.REGISTERS[1], mycpu.myreg.REGISTERS[2], 
+                          mycpu.myreg.REGISTERS[3], mycpu.myreg.REGISTERS[4], mycpu.myreg.REGISTERS[5], 
+                          mycpu.myreg.REGISTERS[6], mycpu.myreg.REGISTERS[7]);
+      // generate files needed to plot the waveform using GTKWave
+      $dumpfile("../../build/cpu_wavedata.vcd");
+      $dumpvars(0, testbenchCPU);
+    end
 
     // assign #2 INS = {INST_MEMORY[PC + 3], INST_MEMORY[PC + 2], INST_MEMORY[PC + 1], INST_MEMORY[PC]}; //fetching instruction
        
@@ -152,22 +153,22 @@ module testbenchCPU;
         */
 
 
-//        CLK = 1'b1;
-//        
-//        // assign values with time to input signals to see output 
-//        RESET = 1'b1;
-//
-//        #25
-//        RESET = 1'b0;
-//
-//        #6000
-//        $finish;
+        CLK = 1'b1;
+        
+        // assign values with time to input signals to see output 
+        RESET = 1'b1;
+
+        #25
+        RESET = 1'b0;
+
+        #6000
+        $finish;
     end
     
     // clock signal generation
-//    always
-//    begin
-//      #10 CLK = ~CLK;
-//    end              
+    always
+    begin
+      #10 CLK = ~CLK;
+    end              
 
 endmodule

@@ -1,1 +1,1 @@
-RV32IM_pipeline/DONE
+RV32IM_pipeline/FIT

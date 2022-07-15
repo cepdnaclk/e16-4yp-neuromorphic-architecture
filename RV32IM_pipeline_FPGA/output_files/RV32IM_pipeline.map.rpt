@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RV32IM_pipeline
-Fri Jul 15 12:24:43 2022
+Fri Jul 15 14:08:18 2022
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -13,25 +13,17 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis DSP Block Usage Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Registers Added for RAM Pass-Through Logic
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for reg_file:myreg|altsyncram:REGISTERS_rtl_0|altsyncram_trd1:auto_generated
- 15. Source assignments for reg_file:myreg|altsyncram:REGISTERS_rtl_1|altsyncram_trd1:auto_generated
- 16. Parameter Settings for Inferred Entity Instance: reg_file:myreg|altsyncram:REGISTERS_rtl_0
- 17. Parameter Settings for Inferred Entity Instance: reg_file:myreg|altsyncram:REGISTERS_rtl_1
- 18. Parameter Settings for Inferred Entity Instance: alu:myAlu|lpm_mult:Mult0
- 19. Parameter Settings for Inferred Entity Instance: alu:myAlu|lpm_mult:Mult1
- 20. altsyncram Parameter Settings by Entity Instance
- 21. lpm_mult Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "mux4to1_32bit:regWriteSelMUX"
- 23. Port Connectivity Checks: "control_unit:myControl|mux2to1_3bit:funct3_mux"
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: alu:myAlu|lpm_mult:Mult0
+ 13. Parameter Settings for Inferred Entity Instance: alu:myAlu|lpm_mult:Mult1
+ 14. lpm_mult Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "mux4to1_32bit:regWriteSelMUX"
+ 16. Port Connectivity Checks: "control_unit:myControl|mux2to1_3bit:funct3_mux"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -57,18 +49,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 15 12:24:43 2022     ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 15 14:08:18 2022     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; RV32IM_pipeline                           ;
 ; Top-level Entity Name              ; cpu                                       ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 1,681                                     ;
-;     Total combinational functions  ; 1,353                                     ;
-;     Dedicated logic registers      ; 604                                       ;
-; Total registers                    ; 604                                       ;
+; Total logic elements               ; 3,940                                     ;
+;     Total combinational functions  ; 2,706                                     ;
+;     Dedicated logic registers      ; 1,542                                     ;
+; Total registers                    ; 1542                                      ;
 ; Total pins                         ; 172                                       ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 2,048                                     ;
+; Total memory bits                  ; 0                                         ;
 ; Embedded Multiplier 9-bit elements ; 12                                        ;
 ; Total PLLs                         ; 0                                         ;
 +------------------------------------+-------------------------------------------+
@@ -179,39 +171,30 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                   ;
-+------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path               ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                 ; Library ;
-+------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
-; cpu/supported_modules/mux4to1_32bit.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/supported_modules/mux4to1_32bit.v          ;         ;
-; cpu/supported_modules/mux2to1_32bit.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/supported_modules/mux2to1_32bit.v          ;         ;
-; cpu/supported_modules/mux2to1_3bit.v           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/supported_modules/mux2to1_3bit.v           ;         ;
-; cpu/register_file_module/reg_file.v            ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/register_file_module/reg_file.v            ;         ;
-; cpu/immediate_select_module/immediate_select.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v ;         ;
-; cpu/forward_unit_modules/stage4_forward_unit.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/forward_unit_modules/stage4_forward_unit.v ;         ;
-; cpu/forward_unit_modules/stage3_forward_unit.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/forward_unit_modules/stage3_forward_unit.v ;         ;
-; cpu/cpu_module/cpu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v                           ;         ;
-; cpu/control_unit_module/control_unit.v         ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/control_unit_module/control_unit.v         ;         ;
-; cpu/branch_select_module/branch_select.v       ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/branch_select_module/branch_select.v       ;         ;
-; cpu/alu_module/alu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/cpu/alu_module/alu.v                           ;         ;
-; altsyncram.tdf                                 ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
-; stratix_ram_block.inc                          ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
-; lpm_mux.inc                                    ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
-; lpm_decode.inc                                 ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
-; aglobal121.inc                                 ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc                       ;         ;
-; a_rdenreg.inc                                  ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
-; altrom.inc                                     ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
-; altram.inc                                     ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altram.inc                           ;         ;
-; altdpram.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
-; db/altsyncram_trd1.tdf                         ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/db/altsyncram_trd1.tdf                         ;         ;
-; lpm_mult.tdf                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_mult.tdf                         ;         ;
-; lpm_add_sub.inc                                ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_add_sub.inc                      ;         ;
-; multcore.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/multcore.inc                         ;         ;
-; bypassff.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/bypassff.inc                         ;         ;
-; altshift.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altshift.inc                         ;         ;
-; db/mult_7dt.tdf                                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/db/mult_7dt.tdf                                ;         ;
-+------------------------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                     ;
++------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                   ; Library ;
++------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; cpu/supported_modules/mux4to1_32bit.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/supported_modules/mux4to1_32bit.v          ;         ;
+; cpu/supported_modules/mux2to1_32bit.v          ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/supported_modules/mux2to1_32bit.v          ;         ;
+; cpu/supported_modules/mux2to1_3bit.v           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/supported_modules/mux2to1_3bit.v           ;         ;
+; cpu/register_file_module/reg_file.v            ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/register_file_module/reg_file.v            ;         ;
+; cpu/immediate_select_module/immediate_select.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v ;         ;
+; cpu/forward_unit_modules/stage4_forward_unit.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/forward_unit_modules/stage4_forward_unit.v ;         ;
+; cpu/forward_unit_modules/stage3_forward_unit.v ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/forward_unit_modules/stage3_forward_unit.v ;         ;
+; cpu/cpu_module/cpu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v                           ;         ;
+; cpu/control_unit_module/control_unit.v         ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/control_unit_module/control_unit.v         ;         ;
+; cpu/branch_select_module/branch_select.v       ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/branch_select_module/branch_select.v       ;         ;
+; cpu/alu_module/alu.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/alu_module/alu.v                           ;         ;
+; lpm_mult.tdf                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                           ;         ;
+; aglobal121.inc                                 ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc                                                         ;         ;
+; lpm_add_sub.inc                                ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                        ;         ;
+; multcore.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/multcore.inc                                                           ;         ;
+; bypassff.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/bypassff.inc                                                           ;         ;
+; altshift.inc                                   ; yes             ; Megafunction                 ; e:/software/altera/12.1/quartus/libraries/megafunctions/altshift.inc                                                           ;         ;
+; db/mult_7dt.tdf                                ; yes             ; Auto-Generated Megafunction  ; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/db/mult_7dt.tdf                                ;         ;
++------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -219,71 +202,56 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1,681 ;
+; Estimated Total logic elements              ; 3,940 ;
 ;                                             ;       ;
-; Total combinational functions               ; 1353  ;
+; Total combinational functions               ; 2706  ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 691   ;
-;     -- 3 input functions                    ; 600   ;
-;     -- <=2 input functions                  ; 62    ;
+;     -- 4 input functions                    ; 2012  ;
+;     -- 3 input functions                    ; 599   ;
+;     -- <=2 input functions                  ; 95    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1147  ;
+;     -- normal mode                          ; 2500  ;
 ;     -- arithmetic mode                      ; 206   ;
 ;                                             ;       ;
-; Total registers                             ; 604   ;
-;     -- Dedicated logic registers            ; 604   ;
+; Total registers                             ; 1542  ;
+;     -- Dedicated logic registers            ; 1542  ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 172   ;
-; Total memory bits                           ; 2048  ;
 ; Embedded Multiplier 9-bit elements          ; 12    ;
-; Maximum fan-out                             ; 668   ;
-; Total fan-out                               ; 7836  ;
+; Maximum fan-out                             ; 1542  ;
+; Total fan-out                               ; 15177 ;
 ; Average fan-out                             ; 3.30  ;
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Library Name ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
-; |cpu                                         ; 1353 (117)        ; 604 (518)    ; 2048        ; 12           ; 0       ; 6         ; 172  ; 0            ; |cpu                                                                          ;              ;
-;    |alu:myAlu|                               ; 707 (651)         ; 0 (0)        ; 0           ; 12           ; 0       ; 6         ; 0    ; 0            ; |cpu|alu:myAlu                                                                ;              ;
-;       |lpm_mult:Mult0|                       ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult0                                                 ;              ;
-;          |mult_7dt:auto_generated|           ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult0|mult_7dt:auto_generated                         ;              ;
-;       |lpm_mult:Mult1|                       ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult1                                                 ;              ;
-;          |mult_7dt:auto_generated|           ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult1|mult_7dt:auto_generated                         ;              ;
-;    |branch_select:myBranchSelect|            ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|branch_select:myBranchSelect                                             ;              ;
-;    |control_unit:myControl|                  ; 38 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|control_unit:myControl                                                   ;              ;
-;       |mux2to1_3bit:funct3_mux|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|control_unit:myControl|mux2to1_3bit:funct3_mux                           ;              ;
-;    |immediate_select:myImmediate|            ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|immediate_select:myImmediate                                             ;              ;
-;    |mux2to1_32bit:oparand1_mux|              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:oparand1_mux                                               ;              ;
-;    |mux2to1_32bit:oparand2_mux|              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:oparand2_mux                                               ;              ;
-;    |mux2to1_32bit:stage4_forward_unit_mux|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:stage4_forward_unit_mux                                    ;              ;
-;    |mux4to1_32bit:oparand1_mux_haz|          ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:oparand1_mux_haz                                           ;              ;
-;    |mux4to1_32bit:oparand2_mux_haz|          ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:oparand2_mux_haz                                           ;              ;
-;    |mux4to1_32bit:regWriteSelMUX|            ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:regWriteSelMUX                                             ;              ;
-;    |reg_file:myreg|                          ; 72 (72)           ; 86 (86)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg                                                           ;              ;
-;       |altsyncram:REGISTERS_rtl_0|           ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg|altsyncram:REGISTERS_rtl_0                                ;              ;
-;          |altsyncram_trd1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg|altsyncram:REGISTERS_rtl_0|altsyncram_trd1:auto_generated ;              ;
-;       |altsyncram:REGISTERS_rtl_1|           ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg|altsyncram:REGISTERS_rtl_1                                ;              ;
-;          |altsyncram_trd1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg|altsyncram:REGISTERS_rtl_1|altsyncram_trd1:auto_generated ;              ;
-;    |stage3_forward_unit:myStage3Fowarding|   ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|stage3_forward_unit:myStage3Fowarding                                    ;              ;
-;    |stage4_forward_unit:stage4_forward_unit| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|stage4_forward_unit:stage4_forward_unit                                  ;              ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                             ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
+; |cpu                                         ; 2706 (117)        ; 1542 (518)   ; 0           ; 12           ; 0       ; 6         ; 172  ; 0            ; |cpu                                                  ;              ;
+;    |alu:myAlu|                               ; 706 (650)         ; 0 (0)        ; 0           ; 12           ; 0       ; 6         ; 0    ; 0            ; |cpu|alu:myAlu                                        ;              ;
+;       |lpm_mult:Mult0|                       ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult0                         ;              ;
+;          |mult_7dt:auto_generated|           ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult0|mult_7dt:auto_generated ;              ;
+;       |lpm_mult:Mult1|                       ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult1                         ;              ;
+;          |mult_7dt:auto_generated|           ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |cpu|alu:myAlu|lpm_mult:Mult1|mult_7dt:auto_generated ;              ;
+;    |branch_select:myBranchSelect|            ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|branch_select:myBranchSelect                     ;              ;
+;    |control_unit:myControl|                  ; 39 (36)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|control_unit:myControl                           ;              ;
+;       |mux2to1_3bit:funct3_mux|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|control_unit:myControl|mux2to1_3bit:funct3_mux   ;              ;
+;    |immediate_select:myImmediate|            ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|immediate_select:myImmediate                     ;              ;
+;    |mux2to1_32bit:oparand1_mux|              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:oparand1_mux                       ;              ;
+;    |mux2to1_32bit:oparand2_mux|              ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:oparand2_mux                       ;              ;
+;    |mux2to1_32bit:stage4_forward_unit_mux|   ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux2to1_32bit:stage4_forward_unit_mux            ;              ;
+;    |mux4to1_32bit:oparand1_mux_haz|          ; 65 (65)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:oparand1_mux_haz                   ;              ;
+;    |mux4to1_32bit:oparand2_mux_haz|          ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:oparand2_mux_haz                   ;              ;
+;    |mux4to1_32bit:regWriteSelMUX|            ; 64 (64)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|mux4to1_32bit:regWriteSelMUX                     ;              ;
+;    |reg_file:myreg|                          ; 1424 (1424)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|reg_file:myreg                                   ;              ;
+;    |stage3_forward_unit:myStage3Fowarding|   ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|stage3_forward_unit:myStage3Fowarding            ;              ;
+;    |stage4_forward_unit:stage4_forward_unit| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|stage4_forward_unit:stage4_forward_unit          ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                        ;
-+-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; Name                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
-+-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; reg_file:myreg|altsyncram:REGISTERS_rtl_0|altsyncram_trd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
-; reg_file:myreg|altsyncram:REGISTERS_rtl_1|altsyncram_trd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
-+-------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +-----------------------------------------------------+
@@ -320,108 +288,14 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 604   ;
+; Total registers                              ; 1542  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 42    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 527   ;
+; Number of registers using Clock Enable       ; 1541  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------+
-; Registers Added for RAM Pass-Through Logic                                 ;
-+-------------------------------------------+--------------------------------+
-; Register Name                             ; RAM Name                       ;
-+-------------------------------------------+--------------------------------+
-; reg_file:myreg|REGISTERS_rtl_0_bypass[0]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[1]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[2]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[3]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[4]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[5]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[6]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[7]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[8]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[9]  ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[10] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[11] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[12] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[13] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[14] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[15] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[16] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[17] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[18] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[19] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[20] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[21] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[22] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[23] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[24] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[25] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[26] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[27] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[28] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[29] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[30] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[31] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[32] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[33] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[34] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[35] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[36] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[37] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[38] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[39] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[40] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[41] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_0_bypass[42] ; reg_file:myreg|REGISTERS_rtl_0 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[0]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[1]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[2]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[3]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[4]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[5]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[6]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[7]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[8]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[9]  ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[10] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[11] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[12] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[13] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[14] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[15] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[16] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[17] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[18] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[19] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[20] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[21] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[22] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[23] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[24] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[25] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[26] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[27] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[28] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[29] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[30] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[31] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[32] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[33] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[34] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[35] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[36] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[37] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[38] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[39] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[40] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[41] ; reg_file:myreg|REGISTERS_rtl_1 ;
-; reg_file:myreg|REGISTERS_rtl_1_bypass[42] ; reg_file:myreg|REGISTERS_rtl_1 ;
-+-------------------------------------------+--------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -430,164 +304,58 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |cpu|PC_PLUS_4[0]                                         ;
-; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |cpu|PC[10]~reg0                                          ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu|stage3_forward_unit:myStage3Fowarding|OP1_MUX_OUT[0] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:oparand1_mux_haz|RESULT[10]            ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:regWriteSelMUX|RESULT[24]              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu|stage3_forward_unit:myStage3Fowarding|OP2_MUX_OUT[0] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:oparand2_mux_haz|RESULT[24]            ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux31                   ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux16                   ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |cpu|PC[2]~reg0                                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[31][5]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[30][15]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[29][9]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[28][1]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[27][11]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[26][23]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[25][1]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[24][23]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[23][16]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[22][22]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[21][11]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[20][27]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[19][21]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[18][2]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[17][30]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[16][26]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[15][31]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[14][21]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[13][22]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[12][27]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[11][9]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[10][24]                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[9][25]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[8][1]                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[7][17]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[6][23]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[5][11]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[4][24]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[3][16]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[2][15]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[1][14]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |cpu|reg_file:myreg|REGISTERS[0][21]                      ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |cpu|PR_DATA_1_S2[25]                                     ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |cpu|PR_DATA_2_S2[16]                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu|stage3_forward_unit:myStage3Fowarding|OP1_MUX_OUT[1] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:oparand1_mux_haz|RESULT[21]            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:regWriteSelMUX|RESULT[8]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu|stage3_forward_unit:myStage3Fowarding|OP2_MUX_OUT[1] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|mux4to1_32bit:oparand2_mux_haz|RESULT[17]            ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux21                   ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux19                   ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |cpu|immediate_select:myImmediate|Mux9                    ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux3                    ;
-; 36:1               ; 8 bits    ; 192 LEs       ; 56 LEs               ; 136 LEs                ; No         ; |cpu|alu:myAlu|Mux15                                      ;
-; 36:1               ; 8 bits    ; 192 LEs       ; 56 LEs               ; 136 LEs                ; No         ; |cpu|alu:myAlu|Mux19                                      ;
-; 37:1               ; 4 bits    ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; No         ; |cpu|alu:myAlu|Mux7                                       ;
-; 37:1               ; 4 bits    ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; No         ; |cpu|alu:myAlu|Mux26                                      ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |cpu|immediate_select:myImmediate|Mux0                    ;
+; 36:1               ; 8 bits    ; 192 LEs       ; 56 LEs               ; 136 LEs                ; No         ; |cpu|alu:myAlu|Mux9                                       ;
+; 36:1               ; 8 bits    ; 192 LEs       ; 56 LEs               ; 136 LEs                ; No         ; |cpu|alu:myAlu|Mux23                                      ;
+; 37:1               ; 4 bits    ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; No         ; |cpu|alu:myAlu|Mux4                                       ;
+; 37:1               ; 4 bits    ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; No         ; |cpu|alu:myAlu|Mux24                                      ;
 ; 38:1               ; 2 bits    ; 50 LEs        ; 18 LEs               ; 32 LEs                 ; No         ; |cpu|alu:myAlu|Mux3                                       ;
-; 38:1               ; 2 bits    ; 50 LEs        ; 18 LEs               ; 32 LEs                 ; No         ; |cpu|alu:myAlu|Mux29                                      ;
-; 39:1               ; 2 bits    ; 52 LEs        ; 18 LEs               ; 34 LEs                 ; No         ; |cpu|alu:myAlu|Mux0                                       ;
+; 38:1               ; 2 bits    ; 50 LEs        ; 18 LEs               ; 32 LEs                 ; No         ; |cpu|alu:myAlu|Mux28                                      ;
+; 39:1               ; 2 bits    ; 52 LEs        ; 18 LEs               ; 34 LEs                 ; No         ; |cpu|alu:myAlu|Mux1                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------+
-; Source assignments for reg_file:myreg|altsyncram:REGISTERS_rtl_0|altsyncram_trd1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------+
-; Assignment                      ; Value              ; From ; To                                ;
-+---------------------------------+--------------------+------+-----------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
-+---------------------------------+--------------------+------+-----------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------+
-; Source assignments for reg_file:myreg|altsyncram:REGISTERS_rtl_1|altsyncram_trd1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------+
-; Assignment                      ; Value              ; From ; To                                ;
-+---------------------------------+--------------------+------+-----------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
-+---------------------------------+--------------------+------+-----------------------------------+
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: reg_file:myreg|altsyncram:REGISTERS_rtl_0 ;
-+------------------------------------+----------------------+--------------------------------+
-; Parameter Name                     ; Value                ; Type                           ;
-+------------------------------------+----------------------+--------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
-; WIDTH_A                            ; 32                   ; Untyped                        ;
-; WIDTHAD_A                          ; 5                    ; Untyped                        ;
-; NUMWORDS_A                         ; 32                   ; Untyped                        ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
-; WIDTH_B                            ; 32                   ; Untyped                        ;
-; WIDTHAD_B                          ; 5                    ; Untyped                        ;
-; NUMWORDS_B                         ; 32                   ; Untyped                        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                        ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
-; BYTE_SIZE                          ; 8                    ; Untyped                        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
-; INIT_FILE                          ; UNUSED               ; Untyped                        ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
-; CBXI_PARAMETER                     ; altsyncram_trd1      ; Untyped                        ;
-+------------------------------------+----------------------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: reg_file:myreg|altsyncram:REGISTERS_rtl_1 ;
-+------------------------------------+----------------------+--------------------------------+
-; Parameter Name                     ; Value                ; Type                           ;
-+------------------------------------+----------------------+--------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                        ;
-; WIDTH_A                            ; 32                   ; Untyped                        ;
-; WIDTHAD_A                          ; 5                    ; Untyped                        ;
-; NUMWORDS_A                         ; 32                   ; Untyped                        ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                        ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
-; WIDTH_B                            ; 32                   ; Untyped                        ;
-; WIDTHAD_B                          ; 5                    ; Untyped                        ;
-; NUMWORDS_B                         ; 32                   ; Untyped                        ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                        ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                        ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
-; BYTE_SIZE                          ; 8                    ; Untyped                        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
-; INIT_FILE                          ; UNUSED               ; Untyped                        ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
-; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                        ;
-; CBXI_PARAMETER                     ; altsyncram_trd1      ; Untyped                        ;
-+------------------------------------+----------------------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------------------+
@@ -660,37 +428,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                      ;
-+-------------------------------------------+-------------------------------------------+
-; Name                                      ; Value                                     ;
-+-------------------------------------------+-------------------------------------------+
-; Number of entity instances                ; 2                                         ;
-; Entity Instance                           ; reg_file:myreg|altsyncram:REGISTERS_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
-;     -- WIDTH_A                            ; 32                                        ;
-;     -- NUMWORDS_A                         ; 32                                        ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
-;     -- WIDTH_B                            ; 32                                        ;
-;     -- NUMWORDS_B                         ; 32                                        ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ;
-; Entity Instance                           ; reg_file:myreg|altsyncram:REGISTERS_rtl_1 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                 ;
-;     -- WIDTH_A                            ; 32                                        ;
-;     -- NUMWORDS_A                         ; 32                                        ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
-;     -- WIDTH_B                            ; 32                                        ;
-;     -- NUMWORDS_B                         ; 32                                        ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ;
-+-------------------------------------------+-------------------------------------------+
-
-
 +------------------------------------------------------------------+
 ; lpm_mult Parameter Settings by Entity Instance                   ;
 +---------------------------------------+--------------------------+
@@ -745,7 +482,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -755,9 +492,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Fri Jul 15 12:24:34 2022
+    Info: Processing started: Fri Jul 15 14:08:06 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file cpu/testbench/testbenchcpu.v
+    Info (12023): Found entity 1: testbenchCPU
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/supported_modules/twoscomp.v
     Info (12023): Found entity 1: twosComp
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/supported_modules/mux16to1_128bit.v
@@ -776,8 +515,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file cpu/reg
     Info (12023): Found entity 1: reg_file
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/instruction_memory_module/ins_memory.v
     Info (12023): Found entity 1: ins_memory
-Info (12021): Found 1 design units, including 1 entities, in source file cpu/instruction_memory_module/ins_cache_memory.v
-    Info (12023): Found entity 1: ins_cache_memory
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/immediate_select_module/immediate_select.v
     Info (12023): Found entity 1: immediate_select
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/forward_unit_modules/stage4_forward_unit.v
@@ -786,8 +523,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file cpu/for
     Info (12023): Found entity 1: stage3_forward_unit
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/data_memory_module/data_memory.v
     Info (12023): Found entity 1: data_memory
-Info (12021): Found 1 design units, including 1 entities, in source file cpu/data_memory_module/data_cache_memory.v
-    Info (12023): Found entity 1: data_cache_memory
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/cpu_module/cpu.v
     Info (12023): Found entity 1: cpu
 Info (12021): Found 1 design units, including 1 entities, in source file cpu/control_unit_module/control_unit.v
@@ -845,8 +580,6 @@ Warning (10059): Verilog HDL Case Statement warning at alu.v(97): case item expr
 Info (12128): Elaborating entity "branch_select" for hierarchy "branch_select:myBranchSelect"
 Info (12128): Elaborating entity "stage3_forward_unit" for hierarchy "stage3_forward_unit:myStage3Fowarding"
 Info (12128): Elaborating entity "stage4_forward_unit" for hierarchy "stage4_forward_unit:stage4_forward_unit"
-Warning (276020): Inferred RAM node "reg_file:myreg|REGISTERS_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Warning (276020): Inferred RAM node "reg_file:myreg|REGISTERS_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[0]" is permanently enabled
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[1]" is permanently enabled
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[2]" is permanently enabled
@@ -879,58 +612,9 @@ Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[28]" is perma
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[29]" is permanently enabled
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[30]" is permanently enabled
 Warning (14026): LATCH primitive "immediate_select:myImmediate|OUT[31]" is permanently enabled
-Info (19000): Inferred 2 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "reg_file:myreg|REGISTERS_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 32
-        Info (286033): Parameter WIDTHAD_A set to 5
-        Info (286033): Parameter NUMWORDS_A set to 32
-        Info (286033): Parameter WIDTH_B set to 32
-        Info (286033): Parameter WIDTHAD_B set to 5
-        Info (286033): Parameter NUMWORDS_B set to 32
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "reg_file:myreg|REGISTERS_rtl_1" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 32
-        Info (286033): Parameter WIDTHAD_A set to 5
-        Info (286033): Parameter NUMWORDS_A set to 32
-        Info (286033): Parameter WIDTH_B set to 32
-        Info (286033): Parameter WIDTHAD_B set to 5
-        Info (286033): Parameter NUMWORDS_B set to 32
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 2 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "alu:myAlu|Mult0"
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "alu:myAlu|Mult1"
-Info (12130): Elaborated megafunction instantiation "reg_file:myreg|altsyncram:REGISTERS_rtl_0"
-Info (12133): Instantiated megafunction "reg_file:myreg|altsyncram:REGISTERS_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "32"
-    Info (12134): Parameter "WIDTHAD_A" = "5"
-    Info (12134): Parameter "NUMWORDS_A" = "32"
-    Info (12134): Parameter "WIDTH_B" = "32"
-    Info (12134): Parameter "WIDTHAD_B" = "5"
-    Info (12134): Parameter "NUMWORDS_B" = "32"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_trd1.tdf
-    Info (12023): Found entity 1: altsyncram_trd1
 Info (12130): Elaborated megafunction instantiation "alu:myAlu|lpm_mult:Mult0"
 Info (12133): Instantiated megafunction "alu:myAlu|lpm_mult:Mult0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHA" = "32"
@@ -964,25 +648,17 @@ Warning (14284): Synthesized away the following node(s):
 Info (13014): Ignored 168 buffer(s)
     Info (13019): Ignored 168 SOFT buffer(s)
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2025 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4242 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 68 input pins
     Info (21059): Implemented 104 output pins
-    Info (21061): Implemented 1777 logic cells
-    Info (21064): Implemented 64 RAM segments
+    Info (21061): Implemented 4058 logic cells
     Info (21062): Implemented 12 DSP elements
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 46 warnings
-    Info: Peak virtual memory: 376 megabytes
-    Info: Processing ended: Fri Jul 15 12:24:43 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:08
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Dinindu/Desktop/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.map.smsg.
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 44 warnings
+    Info: Peak virtual memory: 378 megabytes
+    Info: Processing ended: Fri Jul 15 14:08:18 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

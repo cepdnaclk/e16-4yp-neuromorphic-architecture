@@ -12,17 +12,27 @@ reg [31:0] REGISTERS [31:0]; // 32 bit x 32 register file
 assign OUT1 = REGISTERS[OUT1ADDRESS]; //writing data to outputs
 assign OUT2 = REGISTERS[OUT2ADDRESS]; //writing data to outputs
 
+integer i;
 always @ (posedge CLK) // this code block run when we are in a positive clock edge
 begin
     // write input to the in address
     
     // TODO : set the time delay
     // #0.001
-    
-        if (WRITE == 1'b1)
+    if (RESET == 1'b1)
     begin
-        REGISTERS[INADDRESS] = IN; 
-    end    
+        for (i = 0; i < 32; i=i+1) //looping through register file and setting them to 0s
+        begin
+            REGISTERS[i] = 0;
+        end   
+    end
+    else
+    begin
+        if (WRITE == 1'b1)
+        begin
+            REGISTERS[INADDRESS] = IN; 
+        end    
+    end
 end
 
 
