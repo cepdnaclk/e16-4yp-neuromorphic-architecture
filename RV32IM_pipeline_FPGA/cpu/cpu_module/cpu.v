@@ -15,7 +15,7 @@
 //`include "../stage4_forward_unit.v"
 
 module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,
-            insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT);
+            insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET; // clock and reset for the cpu
@@ -31,6 +31,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     // to debug the register
     output [31:0] REGISTER_DEBUG_DATA;
     output [31:0] ALU_DEBUG_OUT;
+    input [4:0] REGISTER_DEBUG_ADDR;
 
     assign ALU_DEBUG_OUT = ALU_OUT;
 
@@ -89,7 +90,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         PR_REG_WRITE_EN_S4, 
                         CLK, 
                         RESET,
-                        REGISTER_DEBUG_DATA); //alu module
+                        REGISTER_DEBUG_DATA,
+                        REGISTER_DEBUG_ADDR); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         
@@ -203,123 +205,162 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 // register updating section
 always @(posedge CLK) begin
     //#1
-    if (!(DATA_CACHE_BUSY_WAIT || INS_CACHE_BUSY_WAIT))
+    if (RESET == 1'b1)
     begin
-        if (FLUSH)
+        // clearing the pipeline registers
+        PR_INSTRUCTION = 32'b0;
+        PR_PC_S1 = 32'b0;
+
+        PR_PC_S2 = 32'b0;
+        PR_DATA_1_S2 = 32'b0; 
+        PR_DATA_2_S2 = 32'b0; 
+        PR_IMMEDIATE_SELECT_OUT = 32'b0;
+        
+        PR_REGISTER_WRITE_ADDR_S2 = 5'b0;
+        PR_BRANCH_SELECT_S2 = 4'b0; 
+        PR_MEM_READ_S2 = 4'b0;
+        PR_ALU_SELECT = 5'b0;
+        PR_OPERAND1_SEL = 1'b0;
+        PR_OPERAND2_SEL = 1'b0;
+        PR_MEM_WRITE_S2 = 3'b0; 
+        PR_REG_WRITE_SELECT_S2 = 2'b0;
+        PR_REG_WRITE_EN_S2 = 1'b0; 
+
+        PR_PC_S3 = 32'b0; 
+        PR_ALU_OUT_S3 = 32'b0;
+        PR_DATA_2_S3 = 32'b0;
+        PR_REGISTER_WRITE_ADDR_S3 = 5'b0;
+        PR_MEM_READ_S3 = 4'b0;
+        PR_MEM_WRITE_S3 = 3'b0; 
+        PR_REG_WRITE_SELECT_S3 = 2'b0;
+        PR_REG_WRITE_EN_S3 = 1'b0; 
+
+        PR_PC_S4 = 32'b0;
+        PR_ALU_OUT_S4 = 32'b0;
+        PR_DATA_CACHE_OUT = 32'b0;
+        PR_REGISTER_WRITE_ADDR_S4 = 5'b0;
+        PR_REG_WRITE_SELECT_S4 = 2'b0;
+        PR_REG_WRITE_EN_S4 = 1'b0;
+    end
+    else
+    begin
+        if (!(DATA_CACHE_BUSY_WAIT || INS_CACHE_BUSY_WAIT))
         begin
-            //************************** STAGE 5 Tempary stage for the fowarding unit **************************
-            REG_WRITE_DATA_S5 = REG_WRITE_DATA;
-            PR_REGISTER_WRITE_ADDR_S5 = PR_REGISTER_WRITE_ADDR_S4;
+            if (FLUSH)
+            begin
+                //************************** STAGE 5 Tempary stage for the fowarding unit **************************
+                REG_WRITE_DATA_S5 = REG_WRITE_DATA;
+                PR_REGISTER_WRITE_ADDR_S5 = PR_REGISTER_WRITE_ADDR_S4;
 
-            PR_REG_WRITE_EN_S5 = PR_REG_WRITE_EN_S4;
+                PR_REG_WRITE_EN_S5 = PR_REG_WRITE_EN_S4;
 
-            //#0.001
-            //************************** STAGE 4 **************************
-            PR_REGISTER_WRITE_ADDR_S4 = PR_REGISTER_WRITE_ADDR_S3;
-            PR_PC_S4 = PR_PC_S3;
-            PR_ALU_OUT_S4 = PR_ALU_OUT_S3;
-            PR_DATA_CACHE_OUT = DATA_CACHE_READ_DATA;
-            
-            PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
-            PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
-            PR_MEM_READ_S4 = PR_MEM_READ_S3;
-            
-            //************** ************ STAGE 3 **************************
-            //#0.001
-            PR_REGISTER_WRITE_ADDR_S3 = PR_REGISTER_WRITE_ADDR_S2;
-            PR_PC_S3 = PR_PC_S2;
-            PR_ALU_OUT_S3 = ALU_OUT;
-            PR_DATA_2_S3 = OP2_HAZ_MUX_OUT; 
-            REG_READ_ADDR2_S3 = REG_READ_ADDR2_S2;   
-            
-            PR_MEM_READ_S3 = PR_MEM_READ_S2;
-            PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
-            PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
-            PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
+                //#0.001
+                //************************** STAGE 4 **************************
+                PR_REGISTER_WRITE_ADDR_S4 = PR_REGISTER_WRITE_ADDR_S3;
+                PR_PC_S4 = PR_PC_S3;
+                PR_ALU_OUT_S4 = PR_ALU_OUT_S3;
+                PR_DATA_CACHE_OUT = DATA_CACHE_READ_DATA;
+                
+                PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
+                PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
+                PR_MEM_READ_S4 = PR_MEM_READ_S3;
+                
+                //************** ************ STAGE 3 **************************
+                //#0.001
+                PR_REGISTER_WRITE_ADDR_S3 = PR_REGISTER_WRITE_ADDR_S2;
+                PR_PC_S3 = PR_PC_S2;
+                PR_ALU_OUT_S3 = ALU_OUT;
+                PR_DATA_2_S3 = OP2_HAZ_MUX_OUT; 
+                REG_READ_ADDR2_S3 = REG_READ_ADDR2_S2;   
+                
+                PR_MEM_READ_S3 = PR_MEM_READ_S2;
+                PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
+                PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
+                PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
 
-            //************************** STAGE 2 **************************  
-            //#0.001  
-            PR_REGISTER_WRITE_ADDR_S2 = PR_INSTRUCTION[11:7]; // TODO: check the 11:7 value
-            PR_PC_S2 = PR_PC_S1;
-            PR_DATA_1_S2 = DATA1_S2;
-            PR_DATA_2_S2 = DATA2_S2;
-            PR_IMMEDIATE_SELECT_OUT = IMMEDIATE_OUT_S2;
-            REG_READ_ADDR1_S2 = PR_INSTRUCTION[19:15];                
-            REG_READ_ADDR2_S2 = PR_INSTRUCTION[24:20];
+                //************************** STAGE 2 **************************  
+                //#0.001  
+                PR_REGISTER_WRITE_ADDR_S2 = PR_INSTRUCTION[11:7]; // TODO: check the 11:7 value
+                PR_PC_S2 = PR_PC_S1;
+                PR_DATA_1_S2 = DATA1_S2;
+                PR_DATA_2_S2 = DATA2_S2;
+                PR_IMMEDIATE_SELECT_OUT = IMMEDIATE_OUT_S2;
+                REG_READ_ADDR1_S2 = PR_INSTRUCTION[19:15];                
+                REG_READ_ADDR2_S2 = PR_INSTRUCTION[24:20];
 
-            PR_BRANCH_SELECT_S2 =  BRANCH_SELECT;
-            PR_ALU_SELECT =  ALU_SELECT;
-            PR_OPERAND1_SEL =  OPERAND1_SEL;
-            PR_OPERAND2_SEL =  OPERAND2_SEL;
-            PR_MEM_READ_S2 =  4'b0000;
-            PR_MEM_WRITE_S2  =  3'b000;
-            PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
-            PR_REG_WRITE_EN_S2 = 1'b0; 
+                PR_BRANCH_SELECT_S2 =  BRANCH_SELECT;
+                PR_ALU_SELECT =  ALU_SELECT;
+                PR_OPERAND1_SEL =  OPERAND1_SEL;
+                PR_OPERAND2_SEL =  OPERAND2_SEL;
+                PR_MEM_READ_S2 =  4'b0000;
+                PR_MEM_WRITE_S2  =  3'b000;
+                PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
+                PR_REG_WRITE_EN_S2 = 1'b0; 
 
-            //************************** STAGE 1 **************************
-            //#0.001
-            PR_INSTRUCTION = 32'b0;
-            PR_PC_S1 = PC; //PC_PLUS_4;
-            
-        end
-        else 
-        begin
-            //************************** STAGE 5 Tempary stage for the fowarding unit **************************
-            REG_WRITE_DATA_S5 = REG_WRITE_DATA;
-            PR_REGISTER_WRITE_ADDR_S5 = PR_REGISTER_WRITE_ADDR_S4;
+                //************************** STAGE 1 **************************
+                //#0.001
+                PR_INSTRUCTION = 32'b0;
+                PR_PC_S1 = PC; //PC_PLUS_4;
+                
+            end
+            else 
+            begin
+                //************************** STAGE 5 Tempary stage for the fowarding unit **************************
+                REG_WRITE_DATA_S5 = REG_WRITE_DATA;
+                PR_REGISTER_WRITE_ADDR_S5 = PR_REGISTER_WRITE_ADDR_S4;
 
-            PR_REG_WRITE_EN_S5 = PR_REG_WRITE_EN_S4;
+                PR_REG_WRITE_EN_S5 = PR_REG_WRITE_EN_S4;
 
-            //#0.001
-            //************************** STAGE 4 **************************
-            PR_REGISTER_WRITE_ADDR_S4 = PR_REGISTER_WRITE_ADDR_S3;
-            PR_PC_S4 = PR_PC_S3;
-            PR_ALU_OUT_S4 = PR_ALU_OUT_S3;
-            PR_DATA_CACHE_OUT = DATA_CACHE_READ_DATA;
-            
-            PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
-            PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
-            PR_MEM_READ_S4 = PR_MEM_READ_S3;
-            
-            //************** ************ STAGE 3 **************************
-            //#0.001
-            PR_REGISTER_WRITE_ADDR_S3 = PR_REGISTER_WRITE_ADDR_S2;
-            PR_PC_S3 = PR_PC_S2;
-            PR_ALU_OUT_S3 = ALU_OUT;
-            PR_DATA_2_S3 = OP2_HAZ_MUX_OUT; 
-            REG_READ_ADDR2_S3 = REG_READ_ADDR2_S2;   
-            
-            PR_MEM_READ_S3 = PR_MEM_READ_S2;
-            PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
-            PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
-            PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
+                //#0.001
+                //************************** STAGE 4 **************************
+                PR_REGISTER_WRITE_ADDR_S4 = PR_REGISTER_WRITE_ADDR_S3;
+                PR_PC_S4 = PR_PC_S3;
+                PR_ALU_OUT_S4 = PR_ALU_OUT_S3;
+                PR_DATA_CACHE_OUT = DATA_CACHE_READ_DATA;
+                
+                PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
+                PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
+                PR_MEM_READ_S4 = PR_MEM_READ_S3;
+                
+                //************** ************ STAGE 3 **************************
+                //#0.001
+                PR_REGISTER_WRITE_ADDR_S3 = PR_REGISTER_WRITE_ADDR_S2;
+                PR_PC_S3 = PR_PC_S2;
+                PR_ALU_OUT_S3 = ALU_OUT;
+                PR_DATA_2_S3 = OP2_HAZ_MUX_OUT; 
+                REG_READ_ADDR2_S3 = REG_READ_ADDR2_S2;   
+                
+                PR_MEM_READ_S3 = PR_MEM_READ_S2;
+                PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
+                PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
+                PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
 
-            //************************** STAGE 2 **************************  
-            //#0.001  
-            PR_REGISTER_WRITE_ADDR_S2 = PR_INSTRUCTION[11:7]; // TODO: check the 11:7 value
-            PR_PC_S2 = PR_PC_S1;
-            PR_DATA_1_S2 = DATA1_S2;
-            PR_DATA_2_S2 = DATA2_S2;
-            PR_IMMEDIATE_SELECT_OUT = IMMEDIATE_OUT_S2;
-            REG_READ_ADDR1_S2 = PR_INSTRUCTION[19:15];                
-            REG_READ_ADDR2_S2 = PR_INSTRUCTION[24:20];
+                //************************** STAGE 2 **************************  
+                //#0.001  
+                PR_REGISTER_WRITE_ADDR_S2 = PR_INSTRUCTION[11:7]; // TODO: check the 11:7 value
+                PR_PC_S2 = PR_PC_S1;
+                PR_DATA_1_S2 = DATA1_S2;
+                PR_DATA_2_S2 = DATA2_S2;
+                PR_IMMEDIATE_SELECT_OUT = IMMEDIATE_OUT_S2;
+                REG_READ_ADDR1_S2 = PR_INSTRUCTION[19:15];                
+                REG_READ_ADDR2_S2 = PR_INSTRUCTION[24:20];
 
-            PR_BRANCH_SELECT_S2 =  BRANCH_SELECT;
-            PR_ALU_SELECT =  ALU_SELECT;
-            PR_OPERAND1_SEL =  OPERAND1_SEL;
-            PR_OPERAND2_SEL =  OPERAND2_SEL;
-            PR_MEM_READ_S2 =  MEM_READ_S2;
-            PR_MEM_WRITE_S2  =  MEM_WRITE_S2;
-            PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
-            PR_REG_WRITE_EN_S2 = REG_WRITE_EN_S2; 
+                PR_BRANCH_SELECT_S2 =  BRANCH_SELECT;
+                PR_ALU_SELECT =  ALU_SELECT;
+                PR_OPERAND1_SEL =  OPERAND1_SEL;
+                PR_OPERAND2_SEL =  OPERAND2_SEL;
+                PR_MEM_READ_S2 =  MEM_READ_S2;
+                PR_MEM_WRITE_S2  =  MEM_WRITE_S2;
+                PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
+                PR_REG_WRITE_EN_S2 = REG_WRITE_EN_S2; 
 
-            //************************** STAGE 1 **************************
-            //#0.001
-            PR_INSTRUCTION = INSTRUCTION;
-            PR_PC_S1 = PC; //PC_PLUS_4;
+                //************************** STAGE 1 **************************
+                //#0.001
+                PR_INSTRUCTION = INSTRUCTION;
+                PR_PC_S1 = PC; //PC_PLUS_4;
+            end
         end
     end
-
 end
 
 // PC update with the clock edge
@@ -327,41 +368,6 @@ always @ (posedge CLK) begin
     if (RESET == 1'b1) 
         begin
             PC = -4; // reset the pc counter
-            // clearing the pipeline registers
-//            PR_INSTRUCTION = 32'b0;
-//            PR_PC_S1 = 32'b0;
-//
-//            PR_PC_S2 = 32'b0;
-//            PR_DATA_1_S2 = 32'b0; 
-//            PR_DATA_2_S2 = 32'b0; 
-//            PR_IMMEDIATE_SELECT_OUT = 32'b0;
-//            
-//            PR_REGISTER_WRITE_ADDR_S2 = 5'b0;
-//            PR_BRANCH_SELECT_S2 = 4'b0; 
-//            PR_MEM_READ_S2 = 4'b0;
-//            PR_ALU_SELECT = 5'b0;
-//            PR_OPERAND1_SEL = 1'b0;
-//            PR_OPERAND2_SEL = 1'b0;
-//            PR_MEM_WRITE_S2 = 3'b0; 
-//            PR_REG_WRITE_SELECT_S2 = 2'b0;
-//            PR_REG_WRITE_EN_S2 = 1'b0; 
-//
-//            PR_PC_S3 = 32'b0; 
-//            PR_ALU_OUT_S3 = 32'b0;
-//            PR_DATA_2_S3 = 32'b0;
-//            PR_REGISTER_WRITE_ADDR_S3 = 5'b0;
-//            PR_MEM_READ_S3 = 4'b0;
-//            PR_MEM_WRITE_S3 = 3'b0; 
-//            PR_REG_WRITE_SELECT_S3 = 2'b0;
-//            PR_REG_WRITE_EN_S3 = 1'b0; 
-//
-//            PR_PC_S4 = 32'b0;
-//            PR_ALU_OUT_S4 = 32'b0;
-//            PR_DATA_CACHE_OUT = 32'b0;
-//            PR_REGISTER_WRITE_ADDR_S4 = 5'b0;
-//            PR_REG_WRITE_SELECT_S4 = 2'b0;
-//            PR_REG_WRITE_EN_S4 = 1'b0;
-
             insReadEn = 1'b0; // disable the read enable signal of the instruction memory
         end
     else 

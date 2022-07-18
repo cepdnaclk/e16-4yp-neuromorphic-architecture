@@ -1,20 +1,20 @@
-module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA);
+module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR);
 
 input [31:0] IN;  // 32 bit data input
 input [4:0] INADDRESS, OUT1ADDRESS, OUT2ADDRESS; // 5 bit data inputs
 input WRITE, CLK, RESET; // 1 bit data inputs
 output [31:0] OUT1, OUT2; // 32 bit data outputs
-output [31:0] DEBUG_DATA; // debug port for register
+output [31:0] DEBUG_DATA; // debug port for register data
+input [4:0] DEBUG_ADDR; // debug port for register address
 
 reg [31:0] REGISTERS [31:0]; // 32 bit x 32 register file
-
 
 // TODO : set the time delay
 assign OUT1 = REGISTERS[OUT1ADDRESS]; //writing data to outputs
 assign OUT2 = REGISTERS[OUT2ADDRESS]; //writing data to outputs
 
 // debug the register
-assign DEBUG_DATA = REGISTERS[0];
+assign DEBUG_DATA = REGISTERS[DEBUG_ADDR];
 
 integer i;
 always @ (posedge CLK) // this code block run when we are in a positive clock edge

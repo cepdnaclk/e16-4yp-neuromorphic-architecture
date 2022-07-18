@@ -44,7 +44,7 @@ end
 
 integer i;
 //Reading & writing
-always @(posedge clock)
+always @(negedge clock)
 begin
 	// resetting the memory
 	if (reset)
@@ -61,14 +61,19 @@ begin
 		if(readaccess)
 		begin
 			//TODO set the delay to a ralistic value, #4 used for tesing		
-			readdata[31:0]   = memory_array[address];
-
+			readdata[7:0]     = memory_array[{address[31:2],2'b00}];
+			readdata[15:8]    = memory_array[{address[31:2],2'b01}];
+			readdata[23:16]   = memory_array[{address[31:2],2'b10}];
+			readdata[31:24]   = memory_array[{address[31:2],2'b11}];
 			// busywait = 0;
 			// readaccess = 0;
 		end
 		if(writeaccess)
 		begin
-			memory_array[address] = writedata[31:0];
+			memory_array[{address[31:2],2'b00}] = writedata[7:0];
+			memory_array[{address[31:2],2'b01}] = writedata[15:8];
+			memory_array[{address[31:2],2'b10}] = writedata[23:16];
+			memory_array[{address[31:2],2'b11}] = writedata[31:24];
 
 			// busywait = 0;
 			// writeaccess = 0;

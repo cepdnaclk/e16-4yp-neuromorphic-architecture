@@ -66,6 +66,13 @@ applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 1))
 	)
 	(port
+		(pt 0 128)
+		(input)
+		(text "REGISTER_DEBUG_ADDR[4..0]" (rect 0 0 149 12)(font "Arial" ))
+		(text "REGISTER_DEBUG_ADDR[4..0]" (rect 21 123 170 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
 		(pt 424 32)
 		(output)
 		(text "PC[31..0]" (rect 0 0 36 12)(font "Arial" ))

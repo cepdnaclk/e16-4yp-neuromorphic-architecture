@@ -19,7 +19,7 @@ reg [7:0] memory_array [0:1023];
 // //Initialize instruction memory
 initial
 begin
-     $readmemb("test_prog.bin", memory_array); 
+     $readmemb("prog.bin", memory_array); 
 
 //     busywait = 0;
 //     readaccess = 0;

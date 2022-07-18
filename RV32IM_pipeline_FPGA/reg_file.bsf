@@ -73,6 +73,13 @@ applicable agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 1))
 	)
 	(port
+		(pt 0 144)
+		(input)
+		(text "DEBUG_ADDR[4..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "DEBUG_ADDR[4..0]" (rect 21 139 113 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
 		(pt 288 32)
 		(output)
 		(text "OUT1[31..0]" (rect 0 0 47 12)(font "Arial" ))
