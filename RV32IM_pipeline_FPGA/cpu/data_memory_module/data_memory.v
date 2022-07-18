@@ -59,7 +59,7 @@ begin
 	if (reset)
     begin
         for (i=0;i<256; i=i+1)
-            memory_array[i] = 2;
+            memory_array[i] = 0;
         
         // busywait = 0;
 		// readaccess = 0;

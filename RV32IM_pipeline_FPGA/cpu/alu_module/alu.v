@@ -27,27 +27,28 @@ module alu(DATA1, DATA2, RESULT, SELECT);
 
     // TODO : set the time delay
     // assigning the values to the different operations
-    assign #1 INTER_FWD = DATA2; //forward operation  1
-    assign #3 INTER_ADD = DATA1 + DATA2; // add operation 2
-    assign #3 INTER_SUB = DATA1 - DATA2; // sub operation 2
-    assign #3 INTER_AND =  DATA1 & DATA2; // bitwise and operation 1
-    assign #3 INTER_OR =  DATA1 | DATA2; // bitwise or operation 
-    assign #3 INTER_XOR =  DATA1 ^ DATA2; // bitwise XOR operation 1
+    assign INTER_FWD = DATA2; //forward operation  1
+    assign INTER_ADD = DATA1 + DATA2; // add operation 2
+
+    assign INTER_SUB = DATA1 - DATA2; // sub operation 2
+    assign INTER_AND =  DATA1 & DATA2; // bitwise and operation 1
+    assign INTER_OR =  DATA1 | DATA2; // bitwise or operation 
+    assign INTER_XOR =  DATA1 ^ DATA2; // bitwise XOR operation 1
     
     //TODO: check for the side DATA1 and DATA2
-    assign #4 INTER_SLL = DATA1 << DATA2; // bitwise left shift logical
-    assign #4 INTER_SRL = DATA1 >> DATA2; // bitwise right shift logical
-    assign #4 INTER_SRA = DATA1 >>> DATA2; // bitwise right shift arithmatic
+    assign INTER_SLL = DATA1 << DATA2; // bitwise left shift logical
+    assign INTER_SRL = DATA1 >> DATA2; // bitwise right shift logical
+    assign INTER_SRA = DATA1 >>> DATA2; // bitwise right shift arithmatic
     
-    assign #3 INTER_SLT = ($signed(DATA1) < $signed(DATA2)) ? 1'b1 : 1'b0; // set less than 
-    assign #3 INTER_SLTU = ($unsigned(DATA1) < $unsigned(DATA2)) ? 1'b1 : 1'b0; // set less than Unsigned
+    assign INTER_SLT = ($signed(DATA1) < $signed(DATA2)) ? 1'b1 : 1'b0; // set less than 
+    assign INTER_SLTU = ($unsigned(DATA1) < $unsigned(DATA2)) ? 1'b1 : 1'b0; // set less than Unsigned
 
-    assign #8 INTER_MUL = DATA1 * DATA2; // multiplication
-    assign #8 INTER_MULHSU = $signed(DATA1) * $unsigned(DATA1); // Returns upper 32-bits of signed x unsigned
-    assign #8 INTER_MULHU = $unsigned(DATA1) * $unsigned(DATA1); // Returns upper 32-bits of unsigned x unsigned
+    assign INTER_MUL = DATA1 * DATA2; // multiplication
+    assign INTER_MULHSU = $signed(DATA1) * $unsigned(DATA1); // Returns upper 32-bits of signed x unsigned
+    assign INTER_MULHU = $unsigned(DATA1) * $unsigned(DATA1); // Returns upper 32-bits of unsigned x unsigned
     
-    assign #8 INTER_DIV = $signed(DATA1) / $signed(DATA1); // Signed Interger division
-    assign #8 INTER_REM = $signed(DATA1) % $signed(DATA1); // Signed remainder of integer division
+    assign INTER_DIV = $signed(DATA1) / $signed(DATA1); // Signed Interger division
+    assign INTER_REM = $signed(DATA1) % $signed(DATA1); // Signed remainder of integer division
     
     //TODO:  check this
     assign #8 INTER_REMU = $unsigned(DATA1) % $unsigned(DATA1); // Unsigned remainder of interger division

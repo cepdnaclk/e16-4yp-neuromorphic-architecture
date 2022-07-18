@@ -63,6 +63,7 @@ def formatInstruction(ins, index):
             elif item.isalpha():
                 # print("Testing", tmpItem, (labelPosition[tmpItem]-index-1)*4)
                 segmented_list.append((labelPosition[tmpItem]-index-1)*4)
+
             else:
                 segmented_list.append(item)
 
@@ -107,6 +108,7 @@ def handleInstruction(separatedIns):
     elif(inst_data[separatedIns[0]]['type'] == "B-Type"):
         # beq rs1, rs2, label
         immediate = toBin(13, separatedIns[3])
+        # print(immediate)
         Instruction = immediate[0]+ space + immediate[2:8] + space + toBin(5, separatedIns[2])+ space + toBin(5, separatedIns[1]) + space + inst_data[separatedIns[0]]['funct3'] + space + immediate[8:12] + space + immediate[1] + space + inst_data[separatedIns[0]]['opcode'] 
     
     elif(inst_data[separatedIns[0]]['type'] == "U -Type"):

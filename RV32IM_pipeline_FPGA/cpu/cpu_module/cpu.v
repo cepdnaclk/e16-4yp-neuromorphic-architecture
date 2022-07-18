@@ -33,10 +33,11 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [31:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
 
-    output [5:0] DEBUG_CONTROL;
+    output [6:0] DEBUG_CONTROL;
 
-    assign ALU_DEBUG_OUT = ALU_OUT;
-    assign DEBUG_CONTROL = {PR_OPERAND1_SEL, PR_OPERAND2_SEL, OP1_HAZ_MUX_SEL, OP2_HAZ_MUX_SEL};
+    // assign ALU_DEBUG_OUT = ALU_OUT;
+    assign ALU_DEBUG_OUT = PR_ALU_SELECT;
+    assign DEBUG_CONTROL = {BRANCH_SELECT_OUT, PR_OPERAND1_SEL, PR_OPERAND2_SEL, OP1_HAZ_MUX_SEL, OP2_HAZ_MUX_SEL};
 
     wire FLUSH; 
     
@@ -46,14 +47,20 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 
     // structure
         // additional wires
-        wire [31:0] PC_PLUS_4, PC_NEXT;
+        wire [31:0] PC_NEXT;
+
+        // additional registers
+        reg [31:0] PC_PLUS_4;
 
         // units
         // TODO: ALU out should be defined later, Branch select out should be defined later
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
         // connections
-        assign PC_PLUS_4 = PC + 4;
+        always @(posedge CLK)
+        begin
+            PC_PLUS_4 = PC + 4;
+        end
     
 
 //************************** STAGE 2 **************************
@@ -367,7 +374,8 @@ always @(posedge CLK) begin
 end
 
 // PC update with the clock edge
-always @ (posedge CLK) begin     
+// always @ (posedge CLK) begin     
+always @ (*) begin     
     if (RESET == 1'b1) 
         begin
             PC = -4; // reset the pc counter

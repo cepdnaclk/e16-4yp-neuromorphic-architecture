@@ -131,8 +131,8 @@ applicable agreement for further details.
 	(port
 		(pt 424 160)
 		(output)
-		(text "DEBUG_CONTROL[5..0]" (rect 0 0 108 12)(font "Arial" ))
-		(text "DEBUG_CONTROL[5..0]" (rect 295 155 403 167)(font "Arial" ))
+		(text "DEBUG_CONTROL[6..0]" (rect 0 0 108 12)(font "Arial" ))
+		(text "DEBUG_CONTROL[6..0]" (rect 295 155 403 167)(font "Arial" ))
 		(line (pt 424 160)(pt 408 160)(line_width 3))
 	)
 	(drawing
