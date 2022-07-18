@@ -20,7 +20,7 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 232 160)
+	(rect 16 16 280 160)
 	(text "data_memory" (rect 5 0 62 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -66,20 +66,41 @@ applicable agreement for further details.
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
-		(pt 216 32)
+		(pt 264 32)
 		(output)
 		(text "readdata[31..0]" (rect 0 0 57 12)(font "Arial" ))
-		(text "readdata[31..0]" (rect 138 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 3))
+		(text "readdata[31..0]" (rect 186 27 243 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
 	)
 	(port
-		(pt 216 48)
+		(pt 264 48)
 		(output)
 		(text "busywait" (rect 0 0 34 12)(font "Arial" ))
-		(text "busywait" (rect 161 43 195 55)(font "Arial" ))
-		(line (pt 216 48)(pt 200 48)(line_width 1))
+		(text "busywait" (rect 209 43 243 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 1))
+	)
+	(port
+		(pt 264 64)
+		(output)
+		(text "DEBUG_DATA[31..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "DEBUG_DATA[31..0]" (rect 150 59 243 71)(font "Arial" ))
+		(line (pt 264 64)(pt 248 64)(line_width 3))
+	)
+	(port
+		(pt 264 80)
+		(output)
+		(text "DEBUG_READ_ACC" (rect 0 0 99 12)(font "Arial" ))
+		(text "DEBUG_READ_ACC" (rect 144 75 243 87)(font "Arial" ))
+		(line (pt 264 80)(pt 248 80)(line_width 1))
+	)
+	(port
+		(pt 264 96)
+		(output)
+		(text "DEBUG_WRITE_ACC" (rect 0 0 102 12)(font "Arial" ))
+		(text "DEBUG_WRITE_ACC" (rect 141 91 243 103)(font "Arial" ))
+		(line (pt 264 96)(pt 248 96)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 200 128)(line_width 1))
+		(rectangle (rect 16 16 248 128)(line_width 1))
 	)
 )

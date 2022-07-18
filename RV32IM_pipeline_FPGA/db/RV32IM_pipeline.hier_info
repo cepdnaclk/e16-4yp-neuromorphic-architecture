@@ -4,11 +4,11 @@ reset => inst4.IN0
 clock_led <= freq_divider:inst3.clk_out
 pin_name1 => freq_divider:inst3.clk_in
 seg_1_A <= seven_segment:inst5.o_Segment_A
-REGISTER_ADDR[0] => cpu:inst.REGISTER_DEBUG_ADDR[0]
-REGISTER_ADDR[1] => cpu:inst.REGISTER_DEBUG_ADDR[1]
-REGISTER_ADDR[2] => cpu:inst.REGISTER_DEBUG_ADDR[2]
-REGISTER_ADDR[3] => cpu:inst.REGISTER_DEBUG_ADDR[3]
-REGISTER_ADDR[4] => cpu:inst.REGISTER_DEBUG_ADDR[4]
+REGISTER_ADDR[0] => cpu:inst6.REGISTER_DEBUG_ADDR[0]
+REGISTER_ADDR[1] => cpu:inst6.REGISTER_DEBUG_ADDR[1]
+REGISTER_ADDR[2] => cpu:inst6.REGISTER_DEBUG_ADDR[2]
+REGISTER_ADDR[3] => cpu:inst6.REGISTER_DEBUG_ADDR[3]
+REGISTER_ADDR[4] => cpu:inst6.REGISTER_DEBUG_ADDR[4]
 seg_1_B <= seven_segment:inst5.o_Segment_B
 seg_1_C <= seven_segment:inst5.o_Segment_C
 seg_1_D <= seven_segment:inst5.o_Segment_D
@@ -22,38 +22,46 @@ seg_2_D <= seven_segment:inst5.o_Segment_D_2
 seg_2_E <= seven_segment:inst5.o_Segment_E_2
 seg_2_F <= seven_segment:inst5.o_Segment_F_2
 seg_2_G <= seven_segment:inst5.o_Segment_G_2
-pc[0] <= cpu:inst.PC[0]
-pc[1] <= cpu:inst.PC[1]
-pc[2] <= cpu:inst.PC[2]
-pc[3] <= cpu:inst.PC[3]
-pc[4] <= cpu:inst.PC[4]
-pc[5] <= cpu:inst.PC[5]
-pc[6] <= cpu:inst.PC[6]
-pc[7] <= cpu:inst.PC[7]
-pc[8] <= cpu:inst.PC[8]
-pc[9] <= cpu:inst.PC[9]
-pc[10] <= cpu:inst.PC[10]
-pc[11] <= cpu:inst.PC[11]
-pc[12] <= cpu:inst.PC[12]
-pc[13] <= cpu:inst.PC[13]
-pc[14] <= cpu:inst.PC[14]
-pc[15] <= cpu:inst.PC[15]
-pc[16] <= cpu:inst.PC[16]
-pc[17] <= cpu:inst.PC[17]
-pc[18] <= cpu:inst.PC[18]
-pc[19] <= cpu:inst.PC[19]
-pc[20] <= cpu:inst.PC[20]
-pc[21] <= cpu:inst.PC[21]
-pc[22] <= cpu:inst.PC[22]
-pc[23] <= cpu:inst.PC[23]
-pc[24] <= cpu:inst.PC[24]
-pc[25] <= cpu:inst.PC[25]
-pc[26] <= cpu:inst.PC[26]
-pc[27] <= cpu:inst.PC[27]
-pc[28] <= cpu:inst.PC[28]
-pc[29] <= cpu:inst.PC[29]
-pc[30] <= cpu:inst.PC[30]
-pc[31] <= cpu:inst.PC[31]
+read <= data_memory:inst2.DEBUG_READ_ACC
+write <= data_memory:inst2.DEBUG_WRITE_ACC
+DEBUG_CONTROL[0] <= cpu:inst6.DEBUG_CONTROL[0]
+DEBUG_CONTROL[1] <= cpu:inst6.DEBUG_CONTROL[1]
+DEBUG_CONTROL[2] <= cpu:inst6.DEBUG_CONTROL[2]
+DEBUG_CONTROL[3] <= cpu:inst6.DEBUG_CONTROL[3]
+DEBUG_CONTROL[4] <= cpu:inst6.DEBUG_CONTROL[4]
+DEBUG_CONTROL[5] <= cpu:inst6.DEBUG_CONTROL[5]
+pc[0] <= cpu:inst6.PC[0]
+pc[1] <= cpu:inst6.PC[1]
+pc[2] <= cpu:inst6.PC[2]
+pc[3] <= cpu:inst6.PC[3]
+pc[4] <= cpu:inst6.PC[4]
+pc[5] <= cpu:inst6.PC[5]
+pc[6] <= cpu:inst6.PC[6]
+pc[7] <= cpu:inst6.PC[7]
+pc[8] <= cpu:inst6.PC[8]
+pc[9] <= cpu:inst6.PC[9]
+pc[10] <= cpu:inst6.PC[10]
+pc[11] <= cpu:inst6.PC[11]
+pc[12] <= cpu:inst6.PC[12]
+pc[13] <= cpu:inst6.PC[13]
+pc[14] <= cpu:inst6.PC[14]
+pc[15] <= cpu:inst6.PC[15]
+pc[16] <= cpu:inst6.PC[16]
+pc[17] <= cpu:inst6.PC[17]
+pc[18] <= cpu:inst6.PC[18]
+pc[19] <= cpu:inst6.PC[19]
+pc[20] <= cpu:inst6.PC[20]
+pc[21] <= cpu:inst6.PC[21]
+pc[22] <= cpu:inst6.PC[22]
+pc[23] <= cpu:inst6.PC[23]
+pc[24] <= cpu:inst6.PC[24]
+pc[25] <= cpu:inst6.PC[25]
+pc[26] <= cpu:inst6.PC[26]
+pc[27] <= cpu:inst6.PC[27]
+pc[28] <= cpu:inst6.PC[28]
+pc[29] <= cpu:inst6.PC[29]
+pc[30] <= cpu:inst6.PC[30]
+pc[31] <= cpu:inst6.PC[31]
 
 
 |system|freq_divider:inst3
@@ -143,7 +151,7 @@ o_Segment_F_2 <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
 o_Segment_G_2 <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst
+|system|cpu:inst6
 PC[0] <= PC_PLUS_4[0].DB_MAX_OUTPUT_PORT_TYPE
 PC[1] <= PC_PLUS_4[1].DB_MAX_OUTPUT_PORT_TYPE
 PC[2] <= PC[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -385,9 +393,15 @@ ALU_DEBUG_OUT[28] <= ALU_OUT[28].DB_MAX_OUTPUT_PORT_TYPE
 ALU_DEBUG_OUT[29] <= ALU_OUT[29].DB_MAX_OUTPUT_PORT_TYPE
 ALU_DEBUG_OUT[30] <= ALU_OUT[30].DB_MAX_OUTPUT_PORT_TYPE
 ALU_DEBUG_OUT[31] <= ALU_OUT[31].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[0] <= OP2_HAZ_MUX_SEL[0].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[1] <= OP2_HAZ_MUX_SEL[1].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[2] <= OP1_HAZ_MUX_SEL[0].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[3] <= OP1_HAZ_MUX_SEL[1].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[4] <= PR_OPERAND2_SEL.DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_CONTROL[5] <= PR_OPERAND1_SEL.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst|mux2to1_32bit:muxjump
+|system|cpu:inst6|mux2to1_32bit:muxjump
 INPUT1[0] => RESULT.DATAA
 INPUT1[1] => RESULT.DATAA
 INPUT1[2] => RESULT.DATAA
@@ -518,7 +532,7 @@ SELECT => RESULT.OUTPUTSELECT
 SELECT => RESULT.OUTPUTSELECT
 
 
-|system|cpu:inst|reg_file:myreg
+|system|cpu:inst6|reg_file:myreg
 IN[0] => REGISTERS.DATAB
 IN[0] => REGISTERS.DATAB
 IN[0] => REGISTERS.DATAB
@@ -5198,7 +5212,7 @@ DEBUG_ADDR[4] => Mux94.IN0
 DEBUG_ADDR[4] => Mux95.IN0
 
 
-|system|cpu:inst|immediate_select:myImmediate
+|system|cpu:inst6|immediate_select:myImmediate
 INST[0] => ~NO_FANOUT~
 INST[1] => ~NO_FANOUT~
 INST[2] => ~NO_FANOUT~
@@ -5460,7 +5474,7 @@ OUT[30] <= OUT[30]$latch.DB_MAX_OUTPUT_PORT_TYPE
 OUT[31] <= OUT[31]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst|control_unit:myControl
+|system|cpu:inst6|control_unit:myControl
 INSTRUCTION[0] => Equal0.IN3
 INSTRUCTION[0] => Equal1.IN5
 INSTRUCTION[0] => Equal2.IN2
@@ -5738,7 +5752,7 @@ reg_write_select[1] <= oparand_1_select.DB_MAX_OUTPUT_PORT_TYPE
 RESET => ~NO_FANOUT~
 
 
-|system|cpu:inst|control_unit:myControl|mux2to1_3bit:funct3_mux
+|system|cpu:inst6|control_unit:myControl|mux2to1_3bit:funct3_mux
 INPUT1[0] => RESULT.DATAB
 INPUT1[1] => RESULT.DATAB
 INPUT1[2] => RESULT.DATAB
@@ -5753,7 +5767,7 @@ SELECT => RESULT.OUTPUTSELECT
 SELECT => RESULT.OUTPUTSELECT
 
 
-|system|cpu:inst|mux4to1_32bit:oparand1_mux_haz
+|system|cpu:inst6|mux4to1_32bit:oparand1_mux_haz
 INPUT1[0] => RESULT.DATAB
 INPUT1[1] => RESULT.DATAB
 INPUT1[2] => RESULT.DATAB
@@ -5922,7 +5936,7 @@ SELECT[1] => Equal1.IN1
 SELECT[1] => Equal2.IN0
 
 
-|system|cpu:inst|mux4to1_32bit:oparand2_mux_haz
+|system|cpu:inst6|mux4to1_32bit:oparand2_mux_haz
 INPUT1[0] => RESULT.DATAB
 INPUT1[1] => RESULT.DATAB
 INPUT1[2] => RESULT.DATAB
@@ -6091,7 +6105,7 @@ SELECT[1] => Equal1.IN1
 SELECT[1] => Equal2.IN0
 
 
-|system|cpu:inst|mux2to1_32bit:oparand1_mux
+|system|cpu:inst6|mux2to1_32bit:oparand1_mux
 INPUT1[0] => RESULT.DATAA
 INPUT1[1] => RESULT.DATAA
 INPUT1[2] => RESULT.DATAA
@@ -6222,7 +6236,7 @@ SELECT => RESULT.OUTPUTSELECT
 SELECT => RESULT.OUTPUTSELECT
 
 
-|system|cpu:inst|mux2to1_32bit:oparand2_mux
+|system|cpu:inst6|mux2to1_32bit:oparand2_mux
 INPUT1[0] => RESULT.DATAA
 INPUT1[1] => RESULT.DATAA
 INPUT1[2] => RESULT.DATAA
@@ -6353,7 +6367,7 @@ SELECT => RESULT.OUTPUTSELECT
 SELECT => RESULT.OUTPUTSELECT
 
 
-|system|cpu:inst|alu:myAlu
+|system|cpu:inst6|alu:myAlu
 DATA1[0] => Add0.IN32
 DATA1[0] => Add1.IN64
 DATA1[0] => INTER_AND[0].IN0
@@ -7380,7 +7394,7 @@ SELECT[4] => Mux30.IN20
 SELECT[4] => Mux31.IN18
 
 
-|system|cpu:inst|branch_select:myBranchSelect
+|system|cpu:inst6|branch_select:myBranchSelect
 DATA1[0] => Equal0.IN31
 DATA1[0] => LessThan0.IN32
 DATA1[0] => LessThan1.IN32
@@ -7708,7 +7722,7 @@ SELECT[3] => MUX_OUT.OUTPUTSELECT
 MUX_OUT <= MUX_OUT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst|stage3_forward_unit:myStage3Fowarding
+|system|cpu:inst6|stage3_forward_unit:myStage3Fowarding
 MEM_WRITE => ~NO_FANOUT~
 ADDR1[0] => Equal0.IN4
 ADDR1[0] => Equal1.IN4
@@ -7784,7 +7798,7 @@ OP2_MUX_OUT[0] <= OP2_MUX_OUT.DB_MAX_OUTPUT_PORT_TYPE
 OP2_MUX_OUT[1] <= OP2_MUX_OUT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst|stage4_forward_unit:stage4_forward_unit
+|system|cpu:inst6|stage4_forward_unit:stage4_forward_unit
 REG_READ_ADDR2_S3[0] => Equal0.IN4
 REG_READ_ADDR2_S3[1] => Equal0.IN3
 REG_READ_ADDR2_S3[2] => Equal0.IN2
@@ -7800,7 +7814,7 @@ STAGE_4_MEM_READ => always0.IN1
 MUX_OUT <= MUX_OUT.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|system|cpu:inst|mux2to1_32bit:stage4_forward_unit_mux
+|system|cpu:inst6|mux2to1_32bit:stage4_forward_unit_mux
 INPUT1[0] => RESULT.DATAA
 INPUT1[1] => RESULT.DATAA
 INPUT1[2] => RESULT.DATAA
@@ -7931,7 +7945,7 @@ SELECT => RESULT.OUTPUTSELECT
 SELECT => RESULT.OUTPUTSELECT
 
 
-|system|cpu:inst|mux4to1_32bit:regWriteSelMUX
+|system|cpu:inst6|mux4to1_32bit:regWriteSelMUX
 INPUT1[0] => RESULT.DATAB
 INPUT1[1] => RESULT.DATAB
 INPUT1[2] => RESULT.DATAB
@@ -14593,6 +14607,40 @@ readdata[29] <= readdata[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[30] <= readdata[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 busywait <= <GND>
+DEBUG_DATA[0] <= memory_array[0][0].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[1] <= memory_array[0][1].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[2] <= memory_array[0][2].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[3] <= memory_array[0][3].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[4] <= memory_array[0][4].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[5] <= memory_array[0][5].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[6] <= memory_array[0][6].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[7] <= memory_array[0][7].DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_DATA[8] <= <GND>
+DEBUG_DATA[9] <= <GND>
+DEBUG_DATA[10] <= <GND>
+DEBUG_DATA[11] <= <GND>
+DEBUG_DATA[12] <= <GND>
+DEBUG_DATA[13] <= <GND>
+DEBUG_DATA[14] <= <GND>
+DEBUG_DATA[15] <= <GND>
+DEBUG_DATA[16] <= <GND>
+DEBUG_DATA[17] <= <GND>
+DEBUG_DATA[18] <= <GND>
+DEBUG_DATA[19] <= <GND>
+DEBUG_DATA[20] <= <GND>
+DEBUG_DATA[21] <= <GND>
+DEBUG_DATA[22] <= <GND>
+DEBUG_DATA[23] <= <GND>
+DEBUG_DATA[24] <= <GND>
+DEBUG_DATA[25] <= <GND>
+DEBUG_DATA[26] <= <GND>
+DEBUG_DATA[27] <= <GND>
+DEBUG_DATA[28] <= <GND>
+DEBUG_DATA[29] <= <GND>
+DEBUG_DATA[30] <= <GND>
+DEBUG_DATA[31] <= <GND>
+DEBUG_READ_ACC <= readaccess.DB_MAX_OUTPUT_PORT_TYPE
+DEBUG_WRITE_ACC <= writeaccess.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|ins_memory:inst1

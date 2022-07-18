@@ -3,19 +3,19 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'freq_divider:inst3|clk_out'
-Slack : -11.331
-TNS   : -13622.948
+Slack : -9.880
+TNS   : -18010.450
 
 Type  : Slow 1200mV 85C Model Setup 'pin_name1'
-Slack : -5.599
-TNS   : -86.875
+Slack : -4.969
+TNS   : -80.077
 
 Type  : Slow 1200mV 85C Model Hold 'pin_name1'
-Slack : -0.157
-TNS   : -0.157
+Slack : -0.170
+TNS   : -0.170
 
 Type  : Slow 1200mV 85C Model Hold 'freq_divider:inst3|clk_out'
-Slack : 0.293
+Slack : 0.414
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pin_name1'
@@ -24,22 +24,22 @@ TNS   : -46.690
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
 Slack : -2.693
-TNS   : -3599.408
+TNS   : -3595.553
 
 Type  : Slow 1200mV 0C Model Setup 'freq_divider:inst3|clk_out'
-Slack : -10.331
-TNS   : -12566.256
+Slack : -9.049
+TNS   : -16294.717
 
 Type  : Slow 1200mV 0C Model Setup 'pin_name1'
-Slack : -4.954
-TNS   : -74.439
+Slack : -4.431
+TNS   : -68.438
 
 Type  : Slow 1200mV 0C Model Hold 'pin_name1'
-Slack : -0.047
-TNS   : -0.047
+Slack : -0.087
+TNS   : -0.087
 
 Type  : Slow 1200mV 0C Model Hold 'freq_divider:inst3|clk_out'
-Slack : 0.301
+Slack : 0.381
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pin_name1'
@@ -48,30 +48,30 @@ TNS   : -46.690
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
 Slack : -2.649
-TNS   : -3599.364
+TNS   : -3595.509
 
 Type  : Fast 1200mV 0C Model Setup 'freq_divider:inst3|clk_out'
-Slack : -5.232
-TNS   : -5677.869
+Slack : -4.481
+TNS   : -7694.332
 
 Type  : Fast 1200mV 0C Model Setup 'pin_name1'
-Slack : -2.187
-TNS   : -26.407
+Slack : -1.922
+TNS   : -23.165
 
 Type  : Fast 1200mV 0C Model Hold 'pin_name1'
-Slack : -0.286
-TNS   : -0.286
+Slack : -0.261
+TNS   : -0.261
 
 Type  : Fast 1200mV 0C Model Hold 'freq_divider:inst3|clk_out'
-Slack : 0.116
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pin_name1'
 Slack : -3.000
-TNS   : -39.146
+TNS   : -39.197
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'freq_divider:inst3|clk_out'
 Slack : -1.000
-TNS   : -2800.000
+TNS   : -2797.000
 
 ------------------------------------------------------------

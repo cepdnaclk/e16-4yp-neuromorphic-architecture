@@ -15,7 +15,7 @@
 //`include "../stage4_forward_unit.v"
 
 module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,
-            insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT);
+            insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET; // clock and reset for the cpu
@@ -33,7 +33,10 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [31:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
 
+    output [5:0] DEBUG_CONTROL;
+
     assign ALU_DEBUG_OUT = ALU_OUT;
+    assign DEBUG_CONTROL = {PR_OPERAND1_SEL, PR_OPERAND2_SEL, OP1_HAZ_MUX_SEL, OP2_HAZ_MUX_SEL};
 
     wire FLUSH; 
     

@@ -10,4 +10,4 @@ nop
 nop
 nop
 lw x6, x5(0)
-jal x5, Loop
+jal x7, Loop

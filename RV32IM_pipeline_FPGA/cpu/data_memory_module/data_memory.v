@@ -17,16 +17,25 @@ module data_memory(
     address,
     writedata,
     readdata,
-	busywait
+	busywait,
+	DEBUG_DATA,
+	DEBUG_READ_ACC,
+	DEBUG_WRITE_ACC
 );
 input				clock;
 input           	reset;
 input[3:0]      	read;
-input[2:0]        write;
+input[2:0]        	write;
 input[31:0]      	address;
 input[31:0]     	writedata;
 output reg [31:0]	readdata;
 output reg      	busywait;
+output [31:0] 		DEBUG_DATA;
+output DEBUG_READ_ACC, DEBUG_WRITE_ACC;
+
+assign DEBUG_DATA = memory_array[0];
+assign DEBUG_READ_ACC = readaccess;
+assign DEBUG_WRITE_ACC = writeaccess;
 
 //TODO: can increase memory size because we have 32 bit vyte addressing space
 //Declare memory array 256x8-bits 
@@ -44,13 +53,13 @@ end
 
 integer i;
 //Reading & writing
-always @(negedge clock)
+always @(posedge clock)
 begin
 	// resetting the memory
 	if (reset)
     begin
         for (i=0;i<256; i=i+1)
-            memory_array[i] = 0;
+            memory_array[i] = 2;
         
         // busywait = 0;
 		// readaccess = 0;

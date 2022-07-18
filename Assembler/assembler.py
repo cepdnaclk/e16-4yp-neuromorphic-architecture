@@ -57,7 +57,7 @@ def formatInstruction(ins, index):
                 # removing ) from the string
                 item = item.replace(')', '')
                 tmp_split_3 = item.split('(')
-                tmp_split_3.reverse()
+                # tmp_split_3.reverse()
                 segmented_list.extend(tmp_split_3)
             # resolwing the labels into ofsets
             elif item.isalpha():
@@ -99,12 +99,11 @@ def handleInstruction(separatedIns):
     elif(inst_data[separatedIns[0]]['type'] == "I - Type "):
         Instruction = toBin(12, separatedIns[3]) + space + toBin(5, separatedIns[2]) + space + inst_data[separatedIns[0]]['funct3'] + space + toBin(5, separatedIns[1]) + space + inst_data[separatedIns[0]]['opcode']
         
-        
     elif(inst_data[separatedIns[0]]['type'] == "S-Type"):
         # sw rs2:value, rs1:base,  immediate
         immediate = toBin(12, separatedIns[3])
         Instruction = immediate[:7] + space + toBin(5, separatedIns[1]) + space + toBin(5, separatedIns[2])+ space + inst_data[separatedIns[0]]['funct3']+ space + immediate[7:] + space + inst_data[separatedIns[0]]['opcode']
-    
+
     elif(inst_data[separatedIns[0]]['type'] == "B-Type"):
         # beq rs1, rs2, label
         immediate = toBin(13, separatedIns[3])
