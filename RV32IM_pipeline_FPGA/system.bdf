@@ -814,6 +814,13 @@ applicable agreement for further details.
 		(text "DEBUG_CONTROL[6..0]" (rect 299 155 403 167)(font "Arial" ))
 		(line (pt 424 160)(pt 408 160)(line_width 3))
 	)
+	(port
+		(pt 424 176)
+		(output)
+		(text "REGISTER_DEBUG_LCD[47..0]" (rect 0 0 160 12)(font "Arial" ))
+		(text "REGISTER_DEBUG_LCD[47..0]" (rect 268 171 403 183)(font "Arial" ))
+		(line (pt 424 176)(pt 408 176)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 408 192))
 	)
