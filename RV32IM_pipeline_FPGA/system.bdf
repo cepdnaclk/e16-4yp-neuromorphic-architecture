@@ -410,6 +410,74 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 1403 416 1459 432))
 )
+(pin
+	(output)
+	(rect 1480 -176 1658 -160)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_DATA[7..0]" (rect 90 0 172 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1658 -160 1714 -144))
+)
+(pin
+	(output)
+	(rect 1480 -160 1656 -144)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_RW" (rect 90 0 137 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1656 -144 1712 -128))
+)
+(pin
+	(output)
+	(rect 1480 -144 1656 -128)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_EN" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1656 -128 1712 -112))
+)
+(pin
+	(output)
+	(rect 1480 -128 1656 -112)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "LCD_RS" (rect 90 0 133 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 1656 -112 1712 -96))
+)
 (symbol
 	(rect 544 528 760 640)
 	(text "ins_memory" (rect 5 0 66 12)(font "Arial" ))
@@ -755,75 +823,158 @@ applicable agreement for further details.
 		(pt 424 32)
 		(output)
 		(text "PC[31..0]" (rect 0 0 47 12)(font "Arial" ))
-		(text "PC[31..0]" (rect 364 27 403 39)(font "Arial" ))
+		(text "PC[31..0]" (rect 364 27 411 39)(font "Arial" ))
 		(line (pt 424 32)(pt 408 32)(line_width 3))
 	)
 	(port
 		(pt 424 48)
 		(output)
 		(text "memReadEn[3..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "memReadEn[3..0]" (rect 328 43 403 55)(font "Arial" ))
+		(text "memReadEn[3..0]" (rect 328 43 417 55)(font "Arial" ))
 		(line (pt 424 48)(pt 408 48)(line_width 3))
 	)
 	(port
 		(pt 424 64)
 		(output)
 		(text "memWriteEn[2..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "memWriteEn[2..0]" (rect 328 59 403 71)(font "Arial" ))
+		(text "memWriteEn[2..0]" (rect 328 59 417 71)(font "Arial" ))
 		(line (pt 424 64)(pt 408 64)(line_width 3))
 	)
 	(port
 		(pt 424 80)
 		(output)
 		(text "DATA_CACHE_ADDR[31..0]" (rect 0 0 142 12)(font "Arial" ))
-		(text "DATA_CACHE_ADDR[31..0]" (rect 283 75 403 87)(font "Arial" ))
+		(text "DATA_CACHE_ADDR[31..0]" (rect 283 75 425 87)(font "Arial" ))
 		(line (pt 424 80)(pt 408 80)(line_width 3))
 	)
 	(port
 		(pt 424 96)
 		(output)
 		(text "DATA_CACHE_DATA[31..0]" (rect 0 0 139 12)(font "Arial" ))
-		(text "DATA_CACHE_DATA[31..0]" (rect 286 91 403 103)(font "Arial" ))
+		(text "DATA_CACHE_DATA[31..0]" (rect 286 91 425 103)(font "Arial" ))
 		(line (pt 424 96)(pt 408 96)(line_width 3))
 	)
 	(port
 		(pt 424 112)
 		(output)
 		(text "insReadEn" (rect 0 0 53 12)(font "Arial" ))
-		(text "insReadEn" (rect 359 107 403 119)(font "Arial" ))
+		(text "insReadEn" (rect 359 107 412 119)(font "Arial" ))
 		(line (pt 424 112)(pt 408 112))
 	)
 	(port
 		(pt 424 128)
 		(output)
 		(text "REGISTER_DEBUG_DATA[31..0]" (rect 0 0 166 12)(font "Arial" ))
-		(text "REGISTER_DEBUG_DATA[31..0]" (rect 263 123 403 135)(font "Arial" ))
+		(text "REGISTER_DEBUG_DATA[31..0]" (rect 263 123 429 135)(font "Arial" ))
 		(line (pt 424 128)(pt 408 128)(line_width 3))
 	)
 	(port
 		(pt 424 144)
 		(output)
 		(text "ALU_DEBUG_OUT[31..0]" (rect 0 0 126 12)(font "Arial" ))
-		(text "ALU_DEBUG_OUT[31..0]" (rect 297 139 403 151)(font "Arial" ))
+		(text "ALU_DEBUG_OUT[31..0]" (rect 297 139 423 151)(font "Arial" ))
 		(line (pt 424 144)(pt 408 144)(line_width 3))
 	)
 	(port
 		(pt 424 160)
 		(output)
 		(text "DEBUG_CONTROL[6..0]" (rect 0 0 123 12)(font "Arial" ))
-		(text "DEBUG_CONTROL[6..0]" (rect 299 155 403 167)(font "Arial" ))
+		(text "DEBUG_CONTROL[6..0]" (rect 299 155 422 167)(font "Arial" ))
 		(line (pt 424 160)(pt 408 160)(line_width 3))
 	)
 	(port
 		(pt 424 176)
 		(output)
 		(text "REGISTER_DEBUG_LCD[47..0]" (rect 0 0 160 12)(font "Arial" ))
-		(text "REGISTER_DEBUG_LCD[47..0]" (rect 268 171 403 183)(font "Arial" ))
+		(text "REGISTER_DEBUG_LCD[47..0]" (rect 268 171 428 183)(font "Arial" ))
 		(line (pt 424 176)(pt 408 176)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 408 192))
 	)
+)
+(symbol
+	(rect 1208 -200 1456 -88)
+	(text "lcd_display" (rect 5 0 60 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "iCLK" (rect 0 0 23 12)(font "Arial" ))
+		(text "iCLK" (rect 21 27 44 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "iRST_N" (rect 0 0 37 12)(font "Arial" ))
+		(text "iRST_N" (rect 21 43 58 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "debug_data[47..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "debug_data[47..0]" (rect 21 59 109 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "LCD_DATA[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "LCD_DATA[7..0]" (rect 158 27 240 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "LCD_RW" (rect 0 0 47 12)(font "Arial" ))
+		(text "LCD_RW" (rect 188 43 235 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "LCD_EN" (rect 0 0 43 12)(font "Arial" ))
+		(text "LCD_EN" (rect 191 59 234 71)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "LCD_RS" (rect 0 0 43 12)(font "Arial" ))
+		(text "LCD_RS" (rect 191 75 234 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80))
+	)
+	(parameter
+		"LCD_INTIAL"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_LINE1"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_CH_LINE"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LCD_LINE2"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LUT_SIZE"
+		""
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 232 96))
+	)
+	(annotation_block (parameter)(rect 1456 -288 1656 -200))
 )
 (connector
 	(pt 832 160)
@@ -936,10 +1087,6 @@ applicable agreement for further details.
 	(pt 192 8)
 )
 (connector
-	(pt 328 -24)
-	(pt 328 8)
-)
-(connector
 	(pt 120 16)
 	(pt 128 16)
 )
@@ -958,11 +1105,6 @@ applicable agreement for further details.
 (connector
 	(pt 824 416)
 	(pt 512 416)
-)
-(connector
-	(pt 408 512)
-	(pt 376 512)
-	(bus)
 )
 (connector
 	(pt 1440 -16)
@@ -1152,11 +1294,6 @@ applicable agreement for further details.
 	(pt 512 304)
 )
 (connector
-	(pt 408 512)
-	(pt 408 320)
-	(bus)
-)
-(connector
 	(pt 968 424)
 	(pt 968 304)
 )
@@ -1199,10 +1336,6 @@ applicable agreement for further details.
 	(pt 952 304)
 )
 (connector
-	(pt 328 8)
-	(pt 328 256)
-)
-(connector
 	(pt 328 256)
 	(pt 328 400)
 )
@@ -1216,14 +1349,6 @@ applicable agreement for further details.
 	(pt 304 240)
 )
 (connector
-	(pt 304 240)
-	(pt 528 240)
-)
-(connector
-	(pt 328 256)
-	(pt 528 256)
-)
-(connector
 	(pt 432 272)
 	(pt 528 272)
 	(bus)
@@ -1235,11 +1360,6 @@ applicable agreement for further details.
 (connector
 	(pt 512 304)
 	(pt 528 304)
-)
-(connector
-	(pt 408 320)
-	(pt 528 320)
-	(bus)
 )
 (connector
 	(pt 1184 408)
@@ -1271,6 +1391,101 @@ applicable agreement for further details.
 	(pt 1216 -16)
 	(bus)
 )
+(connector
+	(pt 128 240)
+	(pt 120 240)
+)
+(connector
+	(pt 120 160)
+	(pt 120 240)
+)
+(connector
+	(pt -152 160)
+	(pt 120 160)
+)
+(connector
+	(pt -152 160)
+	(pt -152 -168)
+)
+(connector
+	(pt 1208 -168)
+	(pt -152 -168)
+)
+(connector
+	(pt 328 -24)
+	(pt 328 8)
+)
+(connector
+	(pt 328 8)
+	(pt 328 256)
+)
+(connector
+	(pt 1184 368)
+	(pt 952 368)
+	(bus)
+)
+(connector
+	(pt 1184 368)
+	(pt 1184 -136)
+	(bus)
+)
+(connector
+	(pt 1184 -136)
+	(pt 1208 -136)
+	(bus)
+)
+(connector
+	(pt 1456 -168)
+	(pt 1480 -168)
+	(bus)
+)
+(connector
+	(pt 1456 -152)
+	(pt 1480 -152)
+)
+(connector
+	(pt 1456 -136)
+	(pt 1480 -136)
+)
+(connector
+	(pt 1456 -120)
+	(pt 1480 -120)
+)
+(connector
+	(pt 1208 -152)
+	(pt 408 -152)
+)
+(connector
+	(pt 376 512)
+	(pt 408 512)
+	(bus)
+)
+(connector
+	(pt 408 512)
+	(pt 408 320)
+	(bus)
+)
+(connector
+	(pt 528 320)
+	(pt 408 320)
+	(bus)
+)
+(connector
+	(pt 328 256)
+	(pt 528 256)
+)
+(connector
+	(pt 408 -152)
+	(pt 408 240)
+)
+(connector
+	(pt 304 240)
+	(pt 408 240)
+)
+(connector
+	(pt 408 240)
+	(pt 528 240)
+)
 (junction (pt 304 240))
 (junction (pt 304 56))
 (junction (pt 328 256))
@@ -1278,3 +1493,4 @@ applicable agreement for further details.
 (junction (pt 240 8))
 (junction (pt 1096 568))
 (junction (pt 128 16))
+(junction (pt 408 240))

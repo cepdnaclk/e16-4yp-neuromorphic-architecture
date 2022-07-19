@@ -27,12 +27,12 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [2:0] memWriteEn; // control signal to the data memory
     output reg insReadEn; // read enable for the instruction read
     output [31:0] DATA_CACHE_ADDR, DATA_CACHE_DATA; // output signal to the memory (address and the write data input)
-	 output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 	
     // to debug the register
     output [31:0] REGISTER_DEBUG_DATA;
     output [31:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
+	output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 
     output [6:0] DEBUG_CONTROL;
 
@@ -103,7 +103,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         RESET,
                         REGISTER_DEBUG_DATA,
                         REGISTER_DEBUG_ADDR,
-								REGISTER_DEBUG_LCD); //alu module
+                        REGISTER_DEBUG_LCD); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         
