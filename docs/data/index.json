@@ -1,37 +1,43 @@
 {
     "team": [
         {
-            "name": "Team Member Name 1",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "Thilarakathna W M D U",
+            "email": "e16366@eng.pdn.ac.lk",
+            "eNumber": "E/16/366",
+            "github_profile":"https://github.com/dtdinidu7",
+            "linkedin_profile":"https://www.linkedin.com/in/dinindu-thilakarathna/"
         },
         {
-            "name": "Team Member Name 2",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
-        },
-        {
-            "name": "Team Member Name 3",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "Dissanayake D M T H",
+            "email": "e16088@eng.pdn.ac.lk",
+            "eNumber": "E/16/088",
+            "github_profile":"https://github.com/HeshanDissanayake",
+            "linkedin_profile":"https://www.linkedin.com/in/heshan-dissanyake-7aa3a714b/"
         }
     ],
     "supervisors": [
         {
-            "name": "Dr. Supervisor 1",
-            "email": "email@eng.pdn.ac.lk"
+            "name": "Dr. Isuru Navinna",
+            "email": "isurunawinne@eng.pdn.ac.lk",
+            "linkedin_profile":"https://www.linkedin.com/in/isuru-nawinne-73302833/",
+            "researchgate_profile":"https://www.researchgate.net/profile/Isuru-Nawinne"
         },
         {
-            "name": "Dr. Supervisor 2",
-            "email": "email@eng.pdn.ac.lk"
-        }
-    ],
-    "media": [
+            "name": "Dr. Mahanama wickramasinghe",
+            "email": "mahanamaw@eng.pdn.ac.lk",
+            "linkedin_profile":"https://www.linkedin.com/in/mahanama",        
+            "researchgate_profile":"https://www.researchgate.net/profile/Mahanama-Wickramsinghe"    
+        },
         {
-            "type": "youtube",
-            "title": "",
-            "url": "#"
+            "name": "Prof. Roshan G. Ragel",
+            "email": "roshanr@eng.pdn.ac.lk",
+            "linkedin_profile":"https://www.linkedin.com/in/roshanragel/",
+            "researchgate_profile":"https://www.researchgate.net/profile/Roshan-Ragel"
+        },
+        {
+            "name": "Dr. D.M.I.S. Dasanayake",
+            "email": " isurud@ee.pdn.ac.lk"         
         }
     ],
-    "tags": ["Final Year Projects"]
+    "tags": ["Neuromorphic Computer Architecture","Verilog", "Computer Architecture","FPGA","Final Year Projects"]
 }
