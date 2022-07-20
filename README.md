@@ -15,7 +15,7 @@ title: Neuromorphic Architecture
 
 - E/16/088, Dissanayake D M T H, [email](mailto:e16088@eng.pdn.ac.lk), [GitHub](https://github.com/HeshanDissanayake)
 - E/16/276, Perera G K B H, [email](mailto:e16276@eng.pdn.ac.lk), [GitHub](https://github.com/buddhiheshan)
-- E/16/366, Thilarakathna W M D U, [email](mailto:e16366@eng.pdn.ac.lk), [GitHub](https://github.com/dtdinidu7)
+- E/16/366, Thilarakathna W M D U, [email](mailto:e16366@eng.pdn.ac.lk), [GitHub](https://github.com/dininduwm)
 
 #### Supervisors
 
