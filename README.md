@@ -24,6 +24,7 @@ title: Neuromorphic Architecture
 - Prof. Roshan G. Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
 - Dr. D.M.I.S. Dasanayake, [email](mailto:isurud@ee.pdn.ac.lk)
 
+<!--- -
 #### Table of content
 
 1. [Abstract](#abstract)
@@ -36,10 +37,6 @@ title: Neuromorphic Architecture
 8. [Links](#links)
 
 ---
-
-This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
-
-![Sample Image](./images/sample.png)
 
 ## Abstract
 
@@ -60,6 +57,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 3. [Semester 8 report](./)
 4. [Semester 8 slides](./)
 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./).
+
+-->
 
 ## Links
 
