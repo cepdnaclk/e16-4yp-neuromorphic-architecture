@@ -59,7 +59,7 @@ module alu(DATA1, DATA2, RESULT, SELECT);
     assign INTER_REM = $signed(DATA1) % $signed(DATA1); // Signed remainder of integer division
     
     //TODO:  check this
-    assign #8 INTER_REMU = $unsigned(DATA1) % $unsigned(DATA1); // Unsigned remainder of interger division
+    assign INTER_REMU = $unsigned(DATA1) % $unsigned(DATA1); // Unsigned remainder of interger division
 
     always @ (*) // this block run if there is any change in DATA1 or DATA2 or SELECT
     begin
