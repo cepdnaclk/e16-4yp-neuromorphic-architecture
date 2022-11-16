@@ -7,7 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-`include "priority_encoder.v"
+//`include "priority_encoder.v"
 
 module Addition_Subtraction(
 input [31:0] a_operand,b_operand, //Inputs in the format of IEEE-754 Representation.

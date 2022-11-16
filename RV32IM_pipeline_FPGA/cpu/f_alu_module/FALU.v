@@ -7,10 +7,10 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-`include "Addition-Subtraction.v"
-`include "Multiplication.v"
-`include "Division.v"
-`include "Floating_Point_to_Integer.v"
+//`include "Addition-Subtraction.v"
+//`include "Multiplication.v"
+//`include "Division.v"
+//`include "Floating_Point_to_Integer.v"
 
 module FALU(
 	input [31:0] a_operand,
@@ -23,7 +23,6 @@ module FALU(
 
 // wire [31:0] Add_Sub_A,Add_Sub_B,Mul_A,Mul_B,Div_A,Div_B,OR_Output,AND_Output,XOR_Output,L_S_Output,R_S_Output,Floating_Point;
 wire [31:0] Add_Sub_A,Add_Sub_B,Mul_A,Mul_B,Div_A,Div_B;
-
 
 wire Add_Sub_Exception,Mul_Exception,Mul_Overflow,Mul_Underflow,Div_Exception;
 

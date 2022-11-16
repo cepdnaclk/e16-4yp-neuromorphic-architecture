@@ -27,8 +27,8 @@ module alu(DATA1, DATA2, RESULT, SELECT);
                 INTER_FLOAT_ALU_OUT; // intermediate signals to hold the calculations
 
     // Intermedeate select selector for the Floating Point ALU
-    wire F_ALU_SELECT [3:0];
-    wire F_ALU_EXCEP [2:0];
+    wire [3:0] F_ALU_SELECT;
+    wire [2:0] F_ALU_EXCEP;
 
     // creating the FALU module
     FALU falu(DATA1, DATA2, F_ALU_SELECT, INTER_FLOAT_ALU_OUT, F_ALU_EXCEP);
