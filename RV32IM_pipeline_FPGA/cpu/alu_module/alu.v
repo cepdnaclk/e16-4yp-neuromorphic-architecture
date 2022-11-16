@@ -23,7 +23,15 @@ module alu(DATA1, DATA2, RESULT, SELECT);
                 INTER_DIV, 
                 INTER_REM, 
                 INTER_REMU,
-                INTER_FWD; // intermediate signals to hold the calculations
+                INTER_FWD,
+                INTER_FLOAT_ALU_OUT; // intermediate signals to hold the calculations
+
+    // Intermedeate select selector for the Floating Point ALU
+    wire F_ALU_SELECT [3:0];
+    wire F_ALU_EXCEP [2:0];
+
+    // creating the FALU module
+    FALU falu(DATA1, DATA2, F_ALU_SELECT, INTER_FLOAT_ALU_OUT, F_ALU_EXCEP);
 
     // TODO : set the time delay
     // assigning the values to the different operations
