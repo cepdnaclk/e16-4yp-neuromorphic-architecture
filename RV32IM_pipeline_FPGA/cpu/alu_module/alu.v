@@ -1,7 +1,7 @@
 module alu(DATA1, DATA2, RESULT, SELECT);
 
     input [31:0] DATA1, DATA2; //declare the inputs
-    input [4:0] SELECT; //declare the select input
+    input [5:0] SELECT; //declare the select input
     output [31:0] RESULT; //declare the output
 
     reg [31:0] RESULT; // declare the outputs as registers
@@ -33,15 +33,17 @@ module alu(DATA1, DATA2, RESULT, SELECT);
     // creating the FALU module
     FALU falu(DATA1, DATA2, F_ALU_SELECT, INTER_FLOAT_ALU_OUT, F_ALU_EXCEP);
 
+    assign F_ALU_SELECT = { 1'b1, SELECT[2:0] };
+
     // TODO : set the time delay
     // assigning the values to the different operations
     assign INTER_FWD = DATA2; //forward operation  1
     assign INTER_ADD = DATA1 + DATA2; // add operation 2
 
     assign INTER_SUB = DATA1 - DATA2; // sub operation 2
-    assign INTER_AND =  DATA1 & DATA2; // bitwise and operation 1
+    assign INTER_AND = DATA1 & DATA2; // bitwise and operation 1
     assign INTER_OR =  DATA1 | DATA2; // bitwise or operation 
-    assign INTER_XOR =  DATA1 ^ DATA2; // bitwise XOR operation 1
+    assign INTER_XOR = DATA1 ^ DATA2; // bitwise XOR operation 1
     
     //TODO: check for the side DATA1 and DATA2
     assign INTER_SLL = DATA1 << DATA2; // bitwise left shift logical
@@ -64,47 +66,51 @@ module alu(DATA1, DATA2, RESULT, SELECT);
     always @ (*) // this block run if there is any change in DATA1 or DATA2 or SELECT
     begin
         case (SELECT)
-            5'b00000:
+            5'b000000:
                 RESULT = INTER_ADD; 
-            5'b00001:
+            5'b000001:
                 RESULT = INTER_SLL; 
-            5'b00010:
+            5'b000010:
                 RESULT = INTER_SLT; 
-            5'b00011:
+            5'b000011:
                 RESULT = INTER_SLTU; 
 
-            5'b00100:
+            5'b000100:
                 RESULT = INTER_XOR; 
-            5'b00101:
+            5'b000101:
                 RESULT = INTER_SRL; 
-            5'b00110:
+            5'b000110:
                 RESULT = INTER_OR; 
-            5'b00111:
+            5'b000111:
                 RESULT = INTER_AND; 
             // commands for mul unit
-            5'b01000:
+            5'b001000:
                 RESULT = INTER_MUL; 
-            5'b01001:
+            5'b001001:
                 RESULT = INTER_MUL; 
-            5'b01010:
+            5'b001010:
                 RESULT = INTER_MULHSU; 
-            5'b01011:
+            5'b001011:
                 RESULT = INTER_MULHU; 
 
-            5'b01100:
+            5'b001100:
                 RESULT = INTER_DIV; 
-            5'b01101:
+            5'b001101:
                 RESULT = INTER_REM; 
-            5'b01111:
+            5'b001111:
                 RESULT = INTER_REMU; 
             
             // additional commands
-            5'b10001:
+            5'b010001:
                 RESULT = INTER_SRA; 
-            5'b10000:
+            5'b010000:
                 RESULT = INTER_SUB; 
-            5'b11xxx:
+            5'b011xxx:
                 RESULT = INTER_FWD; 
+
+            // for the floating point oparations
+            5'b1xxxxx:
+                RESULT = INTER_FLOAT_ALU_OUT;
                 
             default: RESULT = 0; //result 0 if the other cases
         endcase

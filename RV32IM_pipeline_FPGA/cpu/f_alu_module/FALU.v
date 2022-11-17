@@ -32,15 +32,18 @@ wire AddBar_Sub;
 
 wire [31:0] Complement_output;
 
+// for the compare instruction
+wire [1:0] compare_out;
+reg compare_out_alu;
 
 // addition
 assign {Add_Sub_A,Add_Sub_B,AddBar_Sub} = (Operation == 4'd0) ? {a_operand,b_operand,1'b0} : 64'dz;
 // multiplication
-assign {Mul_A,Mul_B} = (Operation == 4'd1) ? {a_operand,b_operand} : 64'dz;
+assign {Mul_A,Mul_B} = (Operation == 4'd2) ? {a_operand,b_operand} : 64'dz;
 // division
-assign {Div_A,Div_B} = (Operation == 4'd2) ? {a_operand,b_operand}	: 64'dz;
+assign {Div_A,Div_B} = (Operation == 4'd3) ? {a_operand,b_operand}	: 64'dz;
 // substraction
-assign {Add_Sub_A,Add_Sub_B,AddBar_Sub} = (Operation == 4'd3) ? {a_operand,b_operand,1'b1} : 64'dz;
+assign {Add_Sub_A,Add_Sub_B,AddBar_Sub} = (Operation == 4'd1) ? {a_operand,b_operand,1'b1} : 64'dz;
 
 // assign OR_Output = (Operation == 4'd4) ? a_operand | b_operand	: 32'dz;
 
@@ -68,6 +71,8 @@ Multiplication MuI(Mul_A,Mul_B,Mul_Exception,Mul_Overflow,Mul_Underflow,Mul_Outp
 
 Division DuI(Div_A,Div_B,Div_Exception,Div_Output);
 
+Comparison Comp(a_operand, b_operand, compare_out);
+
 // Floating_Point_to_Integer FuI(Floating_Point,Integer_Value);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,6 +88,24 @@ assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd1) ? {Mul_Ex
 assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd2) ? {Div_Exception,1'b0,1'b0,Div_Output}	: 35'dz;
 
 assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd3) ? {Add_Sub_Exception,1'b0,1'b0,Add_Sub_Output}	: 35'dz;
+
+always @(*) begin
+	// equal
+	if (Operation == 4'dx) begin
+		if (compare_out == 2'b00) compare_out_alu = 1'b1;
+		else compare_out_alu = 1'b0;
+	end
+	// less than
+	if (Operation == 4'dx) begin
+		if (compare_out == 2'b10) compare_out_alu = 1'b1;
+		else compare_out_alu = 1'b0;
+	end
+	// less than or equal
+	if (Operation == 4'dx) begin
+		if (compare_out == 2'b01) compare_out_alu = 1'b1;
+		else compare_out_alu = 1'b0;
+	end
+end
 
 // assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd4) ? {1'b0,1'b0,1'b0,OR_Output}	: 35'dz;
 
