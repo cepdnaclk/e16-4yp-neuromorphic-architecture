@@ -1,5 +1,5 @@
 EDA Netlist Writer report for RV32IM_pipeline
-Wed Nov 16 17:37:43 2022
+Thu Nov 17 13:48:19 2022
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Nov 16 17:37:43 2022 ;
+; EDA Netlist Writer Status ; Successful - Thu Nov 17 13:48:18 2022 ;
 ; Revision Name             ; RV32IM_pipeline                       ;
 ; Top-level Entity Name     ; system                                ;
 ; Family                    ; Cyclone IV E                          ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Wed Nov 16 17:37:29 2022
+    Info: Processing started: Thu Nov 17 13:48:07 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Info (204019): Generated file RV32IM_pipeline_7_1200mv_85c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file RV32IM_pipeline_7_1200mv_0c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
@@ -100,8 +100,8 @@ Info (204019): Generated file RV32IM_pipeline_min_1200mv_0c_vhd_fast.sdo in fold
 Info (204019): Generated file RV32IM_pipeline_vhd.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 438 megabytes
-    Info: Processing ended: Wed Nov 16 17:37:44 2022
-    Info: Elapsed time: 00:00:15
+    Info: Processing ended: Thu Nov 17 13:48:19 2022
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:12
 
 

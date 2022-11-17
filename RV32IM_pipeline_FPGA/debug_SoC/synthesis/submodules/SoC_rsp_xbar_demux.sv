@@ -28,8 +28,8 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         SoC_rsp_xbar_demux
-//   ST_DATA_W:           93
-//   ST_CHANNEL_W:        7
+//   ST_DATA_W:           95
+//   ST_CHANNEL_W:        9
 //   NUM_OUTPUTS:         2
 //   VALID_WIDTH:         1
 // ------------------------------------------
@@ -46,8 +46,8 @@ module SoC_rsp_xbar_demux
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [93-1    : 0]   sink_data, // ST_DATA_W=93
-    input  [7-1 : 0]   sink_channel, // ST_CHANNEL_W=7
+    input  [95-1    : 0]   sink_data, // ST_DATA_W=95
+    input  [9-1 : 0]   sink_channel, // ST_CHANNEL_W=9
     input                         sink_startofpacket,
     input                         sink_endofpacket,
     output                        sink_ready,
@@ -56,15 +56,15 @@ module SoC_rsp_xbar_demux
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [93-1    : 0] src0_data, // ST_DATA_W=93
-    output reg [7-1 : 0] src0_channel, // ST_CHANNEL_W=7
+    output reg [95-1    : 0] src0_data, // ST_DATA_W=95
+    output reg [9-1 : 0] src0_channel, // ST_CHANNEL_W=9
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
 
     output reg                      src1_valid,
-    output reg [93-1    : 0] src1_data, // ST_DATA_W=93
-    output reg [7-1 : 0] src1_channel, // ST_CHANNEL_W=7
+    output reg [95-1    : 0] src1_data, // ST_DATA_W=95
+    output reg [9-1 : 0] src1_channel, // ST_CHANNEL_W=9
     output reg                      src1_startofpacket,
     output reg                      src1_endofpacket,
     input                           src1_ready,
@@ -109,7 +109,7 @@ module SoC_rsp_xbar_demux
     assign ready_vector[0] = src0_ready;
     assign ready_vector[1] = src1_ready;
 
-    assign sink_ready = |(sink_channel & {{5{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
+    assign sink_ready = |(sink_channel & {{7{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 

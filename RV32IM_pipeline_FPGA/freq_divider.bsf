@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 168 96)
+	(rect 16 16 208 128)
 	(text "freq_divider" (rect 5 0 53 12)(font "Arial" ))
-	(text "inst" (rect 8 64 20 76)(font "Arial" ))
+	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -31,13 +31,27 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
-		(pt 152 32)
+		(pt 0 48)
+		(input)
+		(text "clk_in_niose" (rect 0 0 48 12)(font "Arial" ))
+		(text "clk_in_niose" (rect 21 43 69 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clk_source_sel" (rect 0 0 60 12)(font "Arial" ))
+		(text "clk_source_sel" (rect 21 59 81 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 192 32)
 		(output)
 		(text "clk_out" (rect 0 0 28 12)(font "Arial" ))
-		(text "clk_out" (rect 103 27 131 39)(font "Arial" ))
-		(line (pt 152 32)(pt 136 32)(line_width 1))
+		(text "clk_out" (rect 143 27 171 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 136 64)(line_width 1))
+		(rectangle (rect 16 16 176 96)(line_width 1))
 	)
 )

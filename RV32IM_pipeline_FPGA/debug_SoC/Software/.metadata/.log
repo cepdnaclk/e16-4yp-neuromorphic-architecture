@@ -77,3 +77,28 @@ org.eclipse.ui.PartInitException: Could not create view: org.eclipse.cdt.debug.u
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
 !SUBENTRY 1 org.eclipse.ui 4 0 2022-11-16 17:41:43.870
 !MESSAGE Could not create view: org.eclipse.cdt.debug.ui.DisassemblyView
+!SESSION 2022-11-17 13:46:21.825 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:53:29.983
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --sidp=0x81060 --id=0x0 --timestamp=1668672546 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:53:35.174
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --sidp=0x81060 --id=0x0 --timestamp=1668672546]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:55:11.119
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --sidp=0x81060 --id=0x0 --timestamp=1668672546 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:55:15.989
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --sidp=0x81060 --id=0x0 --timestamp=1668672546]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:56:13.780
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --sidp=0x81060 --id=0x0 --timestamp=1668672546 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-11-17 13:56:18.566
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --sidp=0x81060 --id=0x0 --timestamp=1668672546]
