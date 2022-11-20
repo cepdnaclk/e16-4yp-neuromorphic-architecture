@@ -124,8 +124,8 @@ applicable agreement for further details.
 	(port
 		(pt 424 144)
 		(output)
-		(text "ALU_DEBUG_OUT[31..0]" (rect 0 0 110 12)(font "Arial" ))
-		(text "ALU_DEBUG_OUT[31..0]" (rect 293 139 403 151)(font "Arial" ))
+		(text "ALU_DEBUG_OUT[5..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "ALU_DEBUG_OUT[5..0]" (rect 296 139 403 151)(font "Arial" ))
 		(line (pt 424 144)(pt 408 144)(line_width 3))
 	)
 	(port
