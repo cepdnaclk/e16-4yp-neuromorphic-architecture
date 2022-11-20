@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
  * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Thu Nov 17 13:52:43 IST 2022
+ * Generated: Sun Nov 20 08:00:32 IST 2022
  */
 
 /*
@@ -53,6 +53,33 @@
 
 /* Include definitions from linker script generator */
 #include "linker.h"
+
+
+/*
+ * ALU_SEL configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_ALU_SEL altera_avalon_pio
+#define ALU_SEL_BASE 0x81020
+#define ALU_SEL_BIT_CLEARING_EDGE_REGISTER 0
+#define ALU_SEL_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ALU_SEL_CAPTURE 0
+#define ALU_SEL_DATA_WIDTH 6
+#define ALU_SEL_DO_TEST_BENCH_WIRING 0
+#define ALU_SEL_DRIVEN_SIM_VALUE 0x0
+#define ALU_SEL_EDGE_TYPE "NONE"
+#define ALU_SEL_FREQ 50000000u
+#define ALU_SEL_HAS_IN 1
+#define ALU_SEL_HAS_OUT 0
+#define ALU_SEL_HAS_TRI 0
+#define ALU_SEL_IRQ -1
+#define ALU_SEL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ALU_SEL_IRQ_TYPE "NONE"
+#define ALU_SEL_NAME "/dev/ALU_SEL"
+#define ALU_SEL_RESET_VALUE 0x0
+#define ALU_SEL_SPAN 16
+#define ALU_SEL_TYPE "altera_avalon_pio"
 
 
 /*
@@ -147,19 +174,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x81068
+#define ALT_STDERR_BASE 0x81078
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x81068
+#define ALT_STDIN_BASE 0x81078
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x81068
+#define ALT_STDOUT_BASE 0x81078
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -172,7 +199,7 @@
  *
  */
 
-#define ADDR_SELECT_BASE 0x81050
+#define ADDR_SELECT_BASE 0x81060
 #define ADDR_SELECT_BIT_CLEARING_EDGE_REGISTER 0
 #define ADDR_SELECT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define ADDR_SELECT_CAPTURE 0
@@ -200,7 +227,7 @@
  */
 
 #define ALT_MODULE_CLASS_clk_out altera_avalon_pio
-#define CLK_OUT_BASE 0x81020
+#define CLK_OUT_BASE 0x81030
 #define CLK_OUT_BIT_CLEARING_EDGE_REGISTER 0
 #define CLK_OUT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define CLK_OUT_CAPTURE 0
@@ -227,7 +254,7 @@
  */
 
 #define ALT_MODULE_CLASS_clk_sel altera_avalon_pio
-#define CLK_SEL_BASE 0x81030
+#define CLK_SEL_BASE 0x81040
 #define CLK_SEL_BIT_CLEARING_EDGE_REGISTER 0
 #define CLK_SEL_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define CLK_SEL_CAPTURE 0
@@ -254,7 +281,7 @@
  */
 
 #define ALT_MODULE_CLASS_data_in altera_avalon_pio
-#define DATA_IN_BASE 0x81040
+#define DATA_IN_BASE 0x81050
 #define DATA_IN_BIT_CLEARING_EDGE_REGISTER 0
 #define DATA_IN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define DATA_IN_CAPTURE 0
@@ -291,7 +318,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x81068
+#define JTAG_UART_0_BASE 0x81078
 #define JTAG_UART_0_IRQ 16
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -338,13 +365,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x81060
+#define SYSID_BASE 0x81070
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1668672546
+#define SYSID_TIMESTAMP 1668911089
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
