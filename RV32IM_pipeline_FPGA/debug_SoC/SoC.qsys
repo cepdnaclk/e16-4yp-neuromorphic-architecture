@@ -12,6 +12,14 @@
    element $${FILENAME}
    {
    }
+   element ALU_SEL
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
    element addr_select
    {
       datum _sortIndex
@@ -24,7 +32,7 @@
    {
       datum baseAddress
       {
-         value = "528488";
+         value = "528504";
          type = "String";
       }
    }
@@ -56,7 +64,7 @@
    {
       datum baseAddress
       {
-         value = "528480";
+         value = "528496";
          type = "String";
       }
    }
@@ -100,6 +108,22 @@
          type = "int";
       }
    }
+   element clk_sel.s1
+   {
+      datum baseAddress
+      {
+         value = "528448";
+         type = "String";
+      }
+   }
+   element ALU_SEL.s1
+   {
+      datum baseAddress
+      {
+         value = "528416";
+         type = "String";
+      }
+   }
    element addr_select.s1
    {
       datum _tags
@@ -109,15 +133,7 @@
       }
       datum baseAddress
       {
-         value = "528464";
-         type = "String";
-      }
-   }
-   element clk_out.s1
-   {
-      datum baseAddress
-      {
-         value = "528416";
+         value = "528480";
          type = "String";
       }
    }
@@ -129,11 +145,19 @@
          type = "String";
       }
    }
+   element clk_out.s1
+   {
+      datum baseAddress
+      {
+         value = "528432";
+         type = "String";
+      }
+   }
    element data_in.s1
    {
       datum baseAddress
       {
-         value = "528448";
+         value = "528464";
          type = "String";
       }
    }
@@ -142,14 +166,6 @@
       datum baseAddress
       {
          value = "528384";
-         type = "String";
-      }
-   }
-   element clk_sel.s1
-   {
-      datum baseAddress
-      {
-         value = "528432";
          type = "String";
       }
    }
@@ -184,7 +200,7 @@
  <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1668671662909" />
+ <parameter name="timeStamp" value="1668904526882" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clock.clk_in" type="clock" dir="end" />
@@ -207,6 +223,11 @@
  <interface
    name="clk_out"
    internal="clk_out.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="alu_select_debug"
+   internal="ALU_SEL.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="12.1" enabled="1" name="clock">
@@ -333,7 +354,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /><slave name='timer.s1' start='0x81000' end='0x81020' /><slave name='clk_out.s1' start='0x81020' end='0x81030' /><slave name='clk_sel.s1' start='0x81030' end='0x81040' /><slave name='data_in.s1' start='0x81040' end='0x81050' /><slave name='addr_select.s1' start='0x81050' end='0x81060' /><slave name='sysid.control_slave' start='0x81060' end='0x81068' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x81068' end='0x81070' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /><slave name='timer.s1' start='0x81000' end='0x81020' /><slave name='ALU_SEL.s1' start='0x81020' end='0x81030' /><slave name='clk_out.s1' start='0x81030' end='0x81040' /><slave name='clk_sel.s1' start='0x81040' end='0x81050' /><slave name='data_in.s1' start='0x81050' end='0x81060' /><slave name='addr_select.s1' start='0x81060' end='0x81070' /><slave name='sysid.control_slave' start='0x81070' end='0x81078' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x81078' end='0x81080' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
@@ -448,6 +469,20 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <module kind="altera_avalon_pio" version="12.1" enabled="1" name="ALU_SEL">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="6" />
+ </module>
  <connection
    kind="avalon"
    version="12.1"
@@ -515,7 +550,7 @@
    start="cpu.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081068" />
+  <parameter name="baseAddress" value="0x00081078" />
  </connection>
  <connection kind="clock" version="12.1" start="clock.clk" end="timer.clk" />
  <connection kind="reset" version="12.1" start="clock.clk_reset" end="timer.reset" />
@@ -546,7 +581,7 @@
    start="cpu.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081060" />
+  <parameter name="baseAddress" value="0x00081070" />
  </connection>
  <connection
    kind="avalon"
@@ -554,7 +589,7 @@
    start="cpu.data_master"
    end="addr_select.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081050" />
+  <parameter name="baseAddress" value="0x00081060" />
  </connection>
  <connection
    kind="reset"
@@ -580,7 +615,7 @@
  <connection kind="clock" version="12.1" start="clock.clk" end="data_in.clk" />
  <connection kind="avalon" version="12.1" start="cpu.data_master" end="data_in.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081040" />
+  <parameter name="baseAddress" value="0x00081050" />
  </connection>
  <connection
    kind="reset"
@@ -595,7 +630,7 @@
    end="clk_sel.reset" />
  <connection kind="avalon" version="12.1" start="cpu.data_master" end="clk_sel.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081030" />
+  <parameter name="baseAddress" value="0x00081040" />
  </connection>
  <connection
    kind="reset"
@@ -610,11 +645,26 @@
    end="clk_out.reset" />
  <connection kind="avalon" version="12.1" start="cpu.data_master" end="clk_out.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081020" />
+  <parameter name="baseAddress" value="0x00081030" />
  </connection>
  <connection
    kind="reset"
    version="12.1"
    start="cpu.jtag_debug_module_reset"
    end="clk_out.reset" />
+ <connection kind="clock" version="12.1" start="clock.clk" end="ALU_SEL.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clock.clk_reset"
+   end="ALU_SEL.reset" />
+ <connection kind="avalon" version="12.1" start="cpu.data_master" end="ALU_SEL.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081020" />
+ </connection>
+ <connection
+   kind="reset"
+   version="12.1"
+   start="cpu.jtag_debug_module_reset"
+   end="ALU_SEL.reset" />
 </system>

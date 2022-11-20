@@ -35,7 +35,7 @@ module SoC_addr_router_default_decode
                DEFAULT_DESTID = 1 
    )
   (output [84 - 81 : 0] default_destination_id,
-   output [9-1 : 0] default_src_channel
+   output [10-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -44,7 +44,7 @@ module SoC_addr_router_default_decode
     if (DEFAULT_CHANNEL == -1)
       assign default_src_channel = '0;
     else
-      assign default_src_channel = 9'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 10'b1 << DEFAULT_CHANNEL;
   end
   endgenerate
 
@@ -73,7 +73,7 @@ module SoC_addr_router
     // -------------------
     output                          src_valid,
     output reg [95-1    : 0] src_data,
-    output reg [9-1 : 0] src_channel,
+    output reg [10-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -87,7 +87,7 @@ module SoC_addr_router
     localparam PKT_DEST_ID_H = 84;
     localparam PKT_DEST_ID_L = 81;
     localparam ST_DATA_W = 95;
-    localparam ST_CHANNEL_W = 9;
+    localparam ST_CHANNEL_W = 10;
     localparam DECODER_TYPE = 0;
 
     localparam PKT_TRANS_WRITE = 58;
@@ -129,7 +129,7 @@ module SoC_addr_router
     assign src_endofpacket   = sink_endofpacket;
 
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [9-1 : 0] default_src_channel;
+    wire [10-1 : 0] default_src_channel;
 
 
 
@@ -151,13 +151,13 @@ module SoC_addr_router
 
         // ( 0x40000 .. 0x80000 )
         if ( {address[RG:PAD0],{PAD0{1'b0}}} == 20'h40000 ) begin
-            src_channel = 9'b10;
+            src_channel = 10'b10;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
         end
 
         // ( 0x80800 .. 0x81000 )
         if ( {address[RG:PAD1],{PAD1{1'b0}}} == 20'h80800 ) begin
-            src_channel = 9'b01;
+            src_channel = 10'b01;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
         end
 

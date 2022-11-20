@@ -14,8 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,
-            insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET; // clock and reset for the cpu
@@ -30,9 +29,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 	
     // to debug the register
     output [31:0] REGISTER_DEBUG_DATA;
-    output [31:0] ALU_DEBUG_OUT;
+    output [5:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
-	output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
+	 output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 
     output [6:0] DEBUG_CONTROL;
 
