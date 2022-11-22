@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 440 224)
+	(rect 16 16 440 256)
 	(text "cpu" (rect 5 0 19 12)(font "Arial" ))
-	(text "inst" (rect 8 192 20 204)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -142,7 +142,14 @@ applicable agreement for further details.
 		(text "REGISTER_DEBUG_LCD[47..0]" (rect 260 171 403 183)(font "Arial" ))
 		(line (pt 424 176)(pt 408 176)(line_width 3))
 	)
+	(port
+		(pt 424 192)
+		(output)
+		(text "DEGUB_INST[31..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "DEGUB_INST[31..0]" (rect 319 187 403 199)(font "Arial" ))
+		(line (pt 424 192)(pt 408 192)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 408 192)(line_width 1))
+		(rectangle (rect 16 16 408 224)(line_width 1))
 	)
 )

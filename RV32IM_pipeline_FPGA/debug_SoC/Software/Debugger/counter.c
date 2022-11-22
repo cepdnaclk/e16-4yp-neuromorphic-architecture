@@ -11,7 +11,7 @@
 #define ALU_SELECT 0x00081020
 #define OFFSET 0x00000000
 
-#define NUMBER_OF_REGS 5
+#define NUMBER_OF_REGS 9
 
 // Assumes little endian
 void printBits(int size, int data)
@@ -46,7 +46,7 @@ void printRegisters() {
 void printALUSelect() {
 	// getting data from the Register file
 	int data = IORD_32DIRECT(ALU_SELECT,OFFSET);
-	printBits(6, data);
+	printBits(32, data);
 }
 
 // genarate clock pulses and print registers

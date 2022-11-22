@@ -6,7 +6,7 @@ Reg No - E/16/366
 // comment this to run the control unit test programme
 // `include "../supported_modules/mux2to1_3bit.v"
 
-module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, main_mem_read, branch_control, immediate_select, oparand_1_select, oparand_2_select, reg_write_select, RESET);
+module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, main_mem_read, branch_control, immediate_select, oparand_1_select, oparand_2_select, reg_write_select, RESET, DEBUG);
 
     input [31:0] INSTRUCTION; //input instruction
     input RESET; // RESET input and alu comparator signal
@@ -19,6 +19,11 @@ module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, mai
     output wire [3:0] branch_control, immediate_select;
     output wire [1:0] reg_write_select; 
 
+    // debug lines
+    output wire [6:0] DEBUG;
+    // assign DEBUG = {funct3, (opcode == 7'b1010011), INSTRUCTION[14:12]};
+    assign DEBUG = alu_signal;
+
     // decoded instruction segments
     wire [6:0] opcode;
     wire [2:0] funct3;
@@ -26,7 +31,7 @@ module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, mai
     wire funct3_mux_select; // to select the alu signal between func3 and predefined values for JAL & AUIPC
     wire funct3_mux_out; //output from the funct3 mux
     
-	 reg [2:0]float_alu_sel; // the tempory signal from the float instruction decoder
+	reg [2:0]float_alu_sel; // the tempory signal from the float instruction decoder
 
     assign opcode = INSTRUCTION[6:0];
     assign funct3 = INSTRUCTION[14:12];
@@ -36,7 +41,7 @@ module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, mai
     
     assign funct3_mux_select = (opcode == 7'b0010111) | (opcode == 7'b1101111) | (opcode == 7'b0100011) | (opcode == 7'b0000011) | (opcode == 7'b1100011);//AUIPC, JAL, STORE, LOAD, BRANCH                     
     mux2to1_3bit funct3_mux (funct3, 3'b000, funct3_mux_out, funct3_mux_select); 
-    mux2to1_3bit float_inst_mux(funct3_mux_out, float_alu_sel, alu_signal[2:0], {opcode} == 7'b1010011);
+    mux2to1_3bit float_inst_mux(funct3_mux_out, float_alu_sel, alu_signal[2:0], (opcode == 7'b1010011));
 
     assign alu_signal[5] = ({opcode} == 7'b1010011);// FLOAT insts
     assign alu_signal[4] = ({opcode, funct3, funct7} == {7'b0010011, 3'b101, 7'b0100000}) | ({opcode, funct3, funct7} == {7'b0110011, 3'b000, 7'b0100000}) | ({opcode, funct3, funct7} == {7'b0110011, 3'b101, 7'b0100000}) | (opcode == 7'b0110111);// if SRAI, SUB, SRA, LUI

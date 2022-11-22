@@ -35,47 +35,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_pubnames 00001913  00000000  00000000  00016838  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   000328ff  00000000  00000000  0001814b  2**0
+  9 .debug_info   00032909  00000000  00000000  0001814b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 0000ac10  00000000  00000000  0004aa4a  2**0
+ 10 .debug_abbrev 0000ac10  00000000  00000000  0004aa54  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   0001afdc  00000000  00000000  0005565a  2**0
+ 11 .debug_line   0001afdc  00000000  00000000  00055664  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  00002104  00000000  00000000  00070638  2**2
+ 12 .debug_frame  00002104  00000000  00000000  00070640  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00002ceb  00000000  00000000  0007273c  2**0
+ 13 .debug_str    00002ceb  00000000  00000000  00072744  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00011f8c  00000000  00000000  00075427  2**0
+ 14 .debug_loc    00011f8c  00000000  00000000  0007542f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000050  00000000  00000000  000873b4  2**2
+ 15 .debug_alt_sim_info 00000050  00000000  00000000  000873bc  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000ba0  00000000  00000000  00087408  2**3
+ 16 .debug_ranges 00000ba0  00000000  00000000  00087410  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  0008b8c5  2**0
+ 17 .thread_model 00000003  00000000  00000000  0008b8cd  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  0008b8c8  2**0
+ 18 .cpu          00000003  00000000  00000000  0008b8d0  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  0008b8cb  2**0
+ 19 .qsys         00000001  00000000  00000000  0008b8d3  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  0008b8cc  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  0008b8d4  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  0008b8cd  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  0008b8d5  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  0008b8d1  2**0
+ 22 .sysid_base   00000004  00000000  00000000  0008b8d9  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  0008b8d5  2**0
+ 23 .sysid_time   00000004  00000000  00000000  0008b8dd  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  0008b8d9  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  0008b8e1  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  0008b8e4  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  0008b8ec  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  0008b8ef  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  0008b8f7  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 00000003  00000000  00000000  0008b8fa  2**0
+ 27 .sopc_system_name 00000003  00000000  00000000  0008b902  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 00000068  00000000  00000000  0008b8fd  2**0
+ 28 .quartus_project_dir 00000068  00000000  00000000  0008b905  2**0
                   CONTENTS, READONLY
- 29 .sopcinfo     000472f9  00000000  00000000  0008b965  2**0
+ 29 .sopcinfo     000472fc  00000000  00000000  0008b96d  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00040000 l    d  .entry	00000000 .entry
@@ -949,7 +949,7 @@ alt_after_alt_main:
 
 000401f0 <printBits>:
 
-#define NUMBER_OF_REGS 5
+#define NUMBER_OF_REGS 9
 
 // Assumes little endian
 void printBits(int size, int data)
@@ -1055,7 +1055,7 @@ void printRegisters() {
    402e4:	10800044 	addi	r2,r2,1
    402e8:	e0bfff15 	stw	r2,-4(fp)
    402ec:	e0bfff17 	ldw	r2,-4(fp)
-   402f0:	10800150 	cmplti	r2,r2,5
+   402f0:	10800250 	cmplti	r2,r2,9
    402f4:	103fea1e 	bne	r2,zero,402a0 <printRegisters+0x18>
         // getting data from the Register file
         int data = IORD_32DIRECT(DATA_IN,OFFSET);
@@ -1087,8 +1087,8 @@ void printALUSelect() {
    40328:	10840804 	addi	r2,r2,4128
    4032c:	10800037 	ldwio	r2,0(r2)
    40330:	e0bfff15 	stw	r2,-4(fp)
-	printBits(6, data);
-   40334:	01000184 	movi	r4,6
+	printBits(32, data);
+   40334:	01000804 	movi	r4,32
    40338:	e17fff17 	ldw	r5,-4(fp)
    4033c:	00401f00 	call	401f0 <printBits>
 }
@@ -1164,10 +1164,10 @@ int main(void)
 
     /* 0x00-0xFF counting loop. */
     IOWR_8DIRECT(CLK_SEL,OFFSET,1);
-   403dc:	00800234 	movhi	r2,8
-   403e0:	10841004 	addi	r2,r2,4160
-   403e4:	00c00044 	movi	r3,1
-   403e8:	10c00025 	stbio	r3,0(r2)
+   403dc:	00c00234 	movhi	r3,8
+   403e0:	18c41004 	addi	r3,r3,4160
+   403e4:	00800044 	movi	r2,1
+   403e8:	18800025 	stbio	r2,0(r3)
     IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
    403ec:	00800234 	movhi	r2,8
    403f0:	10840c04 	addi	r2,r2,4144
@@ -1206,24 +1206,22 @@ int main(void)
    40440:	18c41004 	addi	r3,r3,4160
    40444:	00800044 	movi	r2,1
    40448:	18800025 	stbio	r2,0(r3)
-            
-            printf("How many clock pulses do you need to simulate : ");
+            while(1) {
+				printf("How many clock pulses do you need to simulate : ");
    4044c:	01000174 	movhi	r4,5
    40450:	21098504 	addi	r4,r4,9748
    40454:	004059c0 	call	4059c <printf>
-            int clock_pulse_count;
-            scanf("%d", &clock_pulse_count);
+				int clock_pulse_count;
+				scanf("%d", &clock_pulse_count);
    40458:	e17fff04 	addi	r5,fp,-4
    4045c:	01000174 	movhi	r4,5
    40460:	21099204 	addi	r4,r4,9800
    40464:	00407800 	call	40780 <scanf>
-            genPulseAndPrint(clock_pulse_count);
+				genPulseAndPrint(clock_pulse_count);
    40468:	e13fff17 	ldw	r4,-4(fp)
    4046c:	00403540 	call	40354 <genPulseAndPrint>
-        }
-    	
-    }
-   40470:	003fe106 	br	403f8 <main+0x2c>
+            }
+   40470:	003ff606 	br	4044c <main+0x80>
 
 00040474 <getc>:
    40474:	defffd04 	addi	sp,sp,-12

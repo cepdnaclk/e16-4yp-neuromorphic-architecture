@@ -1,9 +1,10 @@
-module alu(DATA1, DATA2, RESULT, SELECT);
+module alu(DATA1, DATA2, RESULT, SELECT, DEBUG);
 
     input [31:0] DATA1, DATA2; //declare the inputs
     input [5:0] SELECT; //declare the select input
     output [31:0] RESULT; //declare the output
-
+    output [31:0] DEBUG ;
+    reg [31:0] DEBUG;
     reg [31:0] RESULT; // declare the outputs as registers
 
     wire [31:0] INTER_ADD, 
@@ -33,7 +34,7 @@ module alu(DATA1, DATA2, RESULT, SELECT);
     // creating the FALU module
     FALU falu(DATA1, DATA2, F_ALU_SELECT, INTER_FLOAT_ALU_OUT, F_ALU_EXCEP);
 
-    assign F_ALU_SELECT = { 1'b1, SELECT[2:0] };
+    assign F_ALU_SELECT = { 1'b0, SELECT[2:0] };
 
     // TODO : set the time delay
     // assigning the values to the different operations
@@ -65,55 +66,61 @@ module alu(DATA1, DATA2, RESULT, SELECT);
 
     always @ (*) // this block run if there is any change in DATA1 or DATA2 or SELECT
     begin
-        case (SELECT)
-            5'b000000:
-                RESULT = INTER_ADD; 
-            5'b000001:
-                RESULT = INTER_SLL; 
-            5'b000010:
-                RESULT = INTER_SLT; 
-            5'b000011:
-                RESULT = INTER_SLTU; 
+        DEBUG = SELECT;
 
-            5'b000100:
-                RESULT = INTER_XOR; 
-            5'b000101:
-                RESULT = INTER_SRL; 
-            5'b000110:
-                RESULT = INTER_OR; 
-            5'b000111:
-                RESULT = INTER_AND; 
-            // commands for mul unit
-            5'b001000:
-                RESULT = INTER_MUL; 
-            5'b001001:
-                RESULT = INTER_MUL; 
-            5'b001010:
-                RESULT = INTER_MULHSU; 
-            5'b001011:
-                RESULT = INTER_MULHU; 
-
-            5'b001100:
-                RESULT = INTER_DIV; 
-            5'b001101:
-                RESULT = INTER_REM; 
-            5'b001111:
-                RESULT = INTER_REMU; 
-            
-            // additional commands
-            5'b010001:
-                RESULT = INTER_SRA; 
-            5'b010000:
-                RESULT = INTER_SUB; 
-            5'b011xxx:
-                RESULT = INTER_FWD; 
-
-            // for the floating point oparations
-            5'b1xxxxx:
+        if(SELECT[5] == 1)
+            begin
+                DEBUG = SELECT;
                 RESULT = INTER_FLOAT_ALU_OUT;
-                
-            default: RESULT = 0; //result 0 if the other cases
-        endcase
+            end
+        else
+            begin
+                case (SELECT)
+                    6'b000000:
+                        RESULT = INTER_ADD; 
+                    6'b000001:
+                        RESULT = INTER_SLL; 
+                    6'b000010:
+                        RESULT = INTER_SLT; 
+                    6'b000011:
+                        RESULT = INTER_SLTU; 
+
+                    6'b000100:
+                        RESULT = INTER_XOR; 
+                    6'b000101:
+                        RESULT = INTER_SRL; 
+                    6'b000110:
+                        RESULT = INTER_OR; 
+                    6'b000111:
+                        RESULT = INTER_AND; 
+                    // commands for mul unit
+                    6'b001000:
+                        RESULT = INTER_MUL; 
+                    6'b001001:
+                        RESULT = INTER_MUL; 
+                    6'b001010:
+                        RESULT = INTER_MULHSU; 
+                    6'b001011:
+                        RESULT = INTER_MULHU; 
+
+                    6'b001100:
+                        RESULT = INTER_DIV; 
+                    6'b001101:
+                        RESULT = INTER_REM; 
+                    6'b001111:
+                        RESULT = INTER_REMU; 
+                    
+                    // additional commands
+                    6'b010001:
+                        RESULT = INTER_SRA; 
+                    6'b010000:
+                        RESULT = INTER_SUB; 
+                    // most probably not working !!!!
+                    6'b011xxx:
+                        RESULT = INTER_FWD; 
+                    default: RESULT = 0; //result 0 if the other cases
+                endcase
+            end      
     end
     
 endmodule

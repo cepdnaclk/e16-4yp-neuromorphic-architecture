@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET; // clock and reset for the cpu
@@ -31,13 +31,17 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [31:0] REGISTER_DEBUG_DATA;
     output [5:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
-	 output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
+    output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 
     output [6:0] DEBUG_CONTROL;
+    output [31:0] DEGUB_INST;
 
     // assign ALU_DEBUG_OUT = ALU_OUT;
+
+    wire [31:0] alu_debug;
     assign ALU_DEBUG_OUT = PR_ALU_SELECT;
-    assign DEBUG_CONTROL = {BRANCH_SELECT_OUT, PR_OPERAND1_SEL, PR_OPERAND2_SEL, OP1_HAZ_MUX_SEL, OP2_HAZ_MUX_SEL};
+    assign DEGUB_INST = alu_debug;
+    // assign DEBUG_CONTROL = {BRANCH_SELECT_OUT, PR_OPERAND1_SEL, PR_OPERAND2_SEL, OP1_HAZ_MUX_SEL, OP2_HAZ_MUX_SEL};
 
     wire FLUSH; 
     
@@ -72,7 +76,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 
     // control lines
     reg [3:0] PR_BRANCH_SELECT_S2, PR_MEM_READ_S2;
-    reg [4:0] PR_ALU_SELECT;
+    reg [5:0] PR_ALU_SELECT;
     reg PR_OPERAND1_SEL, PR_OPERAND2_SEL;
     reg [2:0] PR_MEM_WRITE_S2; 
     reg [1:0] PR_REG_WRITE_SELECT_S2;
@@ -83,7 +87,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         wire [31:0] DATA1_S2, DATA2_S2, IMMEDIATE_OUT_S2; 
         wire [3:0] IMMEDIATE_SELECT;
         wire [3:0] BRANCH_SELECT, MEM_READ_S2;
-        wire [4:0] ALU_SELECT;
+        wire [5:0] ALU_SELECT;
         wire OPERAND1_SEL, OPERAND2_SEL;
         wire [2:0] MEM_WRITE_S2; 
         wire [1:0] REG_WRITE_SELECT_S2;
@@ -116,7 +120,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                                 OPERAND1_SEL, 
                                 OPERAND2_SEL, 
                                 REG_WRITE_SELECT_S2, 
-                                RESET);
+                                RESET,
+                                DEBUG_CONTROL);
 
 //************************** STAGE 3 **************************
     reg [31:0] PR_PC_S3, PR_ALU_OUT_S3, PR_DATA_2_S3;
@@ -146,7 +151,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         mux2to1_32bit oparand1_mux (OP1_HAZ_MUX_OUT, PR_PC_S2, ALU_IN_1, PR_OPERAND1_SEL);
         mux2to1_32bit oparand2_mux (OP2_HAZ_MUX_OUT, PR_IMMEDIATE_SELECT_OUT, ALU_IN_2, PR_OPERAND2_SEL);
         
-        alu myAlu (ALU_IN_1, ALU_IN_2, ALU_OUT, PR_ALU_SELECT);
+        alu myAlu (ALU_IN_1, ALU_IN_2, ALU_OUT, PR_ALU_SELECT, alu_debug);
         branch_select myBranchSelect(OP1_HAZ_MUX_OUT, OP2_HAZ_MUX_OUT, PR_BRANCH_SELECT_S2, BRANCH_SELECT_OUT);
 
         // fowarding unit in stage 3

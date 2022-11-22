@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
  * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Sun Nov 20 08:00:32 IST 2022
+ * Generated: Sun Nov 20 16:15:48 IST 2022
  */
 
 /*
@@ -65,7 +65,7 @@
 #define ALU_SEL_BIT_CLEARING_EDGE_REGISTER 0
 #define ALU_SEL_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define ALU_SEL_CAPTURE 0
-#define ALU_SEL_DATA_WIDTH 6
+#define ALU_SEL_DATA_WIDTH 32
 #define ALU_SEL_DO_TEST_BENCH_WIRING 0
 #define ALU_SEL_DRIVEN_SIM_VALUE 0x0
 #define ALU_SEL_EDGE_TYPE "NONE"
@@ -371,7 +371,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1668911089
+#define SYSID_TIMESTAMP 1668940664
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

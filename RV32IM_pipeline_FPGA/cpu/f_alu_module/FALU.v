@@ -83,11 +83,11 @@ Comparison Comp(a_operand, b_operand, compare_out);
 
 assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd0) ? {Add_Sub_Exception,1'b0,1'b0,Add_Sub_Output}	: 35'dz;
 
-assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd1) ? {Mul_Exception,Mul_Overflow,Mul_Underflow,Mul_Output}	: 35'dz;
+assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd2) ? {Mul_Exception,Mul_Overflow,Mul_Underflow,Mul_Output}	: 35'dz;
 
-assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd2) ? {Div_Exception,1'b0,1'b0,Div_Output}	: 35'dz;
+assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd3) ? {Div_Exception,1'b0,1'b0,Div_Output}	: 35'dz;
 
-assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd3) ? {Add_Sub_Exception,1'b0,1'b0,Add_Sub_Output}	: 35'dz;
+assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd1) ? {Add_Sub_Exception,1'b0,1'b0,Add_Sub_Output}	: 35'dz;
 
 always @(*) begin
 	// equal

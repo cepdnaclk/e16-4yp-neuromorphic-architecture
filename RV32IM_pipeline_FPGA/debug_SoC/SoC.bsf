@@ -47,8 +47,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 312)
 		(input)
-		(text "alu_select_debug_export[5..0]" (rect 0 0 119 12)(font "Arial" (font_size 8)))
-		(text "alu_select_debug_export[5..0]" (rect 4 301 178 312)(font "Arial" (font_size 8)))
+		(text "alu_select_debug_export[31..0]" (rect 0 0 122 12)(font "Arial" (font_size 8)))
+		(text "alu_select_debug_export[31..0]" (rect 4 301 184 312)(font "Arial" (font_size 8)))
 		(line (pt 0 312)(pt 160 312)(line_width 3))
 	)
 	(port

@@ -2,7 +2,7 @@ set_global_assignment -entity "SoC" -library "SoC" -name IP_TOOL_NAME "qsys"
 set_global_assignment -entity "SoC" -library "SoC" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "SoC" -library "SoC" -name IP_TOOL_ENV "qsys"
 set_global_assignment -library "SoC" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../SoC.sopcinfo"]
-set_instance_assignment -entity "SoC" -library "SoC" -name SLD_INFO "QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1668911089"
+set_instance_assignment -entity "SoC" -library "SoC" -name SLD_INFO "QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1668940664"
 set_global_assignment -library "SoC" -name MISC_FILE [file join $::quartus(qip_path) "../SoC.cmp"]
 set_global_assignment -name SYNTHESIS_ONLY_QIP ON
 set_global_assignment -library "SoC" -name MISC_FILE [file join $::quartus(qip_path) "../SoC.qsys"]
@@ -32,7 +32,6 @@ set_global_assignment -library "SoC" -name SYSTEMVERILOG_FILE [file join $::quar
 set_global_assignment -library "SoC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "SoC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "SoC" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
-set_global_assignment -library "SoC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SoC_ALU_SEL.v"]
 set_global_assignment -library "SoC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SoC_clk_sel.v"]
 set_global_assignment -library "SoC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SoC_data_in.v"]
 set_global_assignment -library "SoC" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/SoC_addr_select.v"]
@@ -114,9 +113,6 @@ set_global_assignment -entity "altera_merlin_slave_translator" -library "SoC" -n
 set_global_assignment -entity "altera_merlin_master_translator" -library "SoC" -name IP_TOOL_NAME "altera_merlin_master_translator"
 set_global_assignment -entity "altera_merlin_master_translator" -library "SoC" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "altera_merlin_master_translator" -library "SoC" -name IP_TOOL_ENV "qsys"
-set_global_assignment -entity "SoC_ALU_SEL" -library "SoC" -name IP_TOOL_NAME "altera_avalon_pio"
-set_global_assignment -entity "SoC_ALU_SEL" -library "SoC" -name IP_TOOL_VERSION "12.1"
-set_global_assignment -entity "SoC_ALU_SEL" -library "SoC" -name IP_TOOL_ENV "qsys"
 set_global_assignment -entity "SoC_clk_sel" -library "SoC" -name IP_TOOL_NAME "altera_avalon_pio"
 set_global_assignment -entity "SoC_clk_sel" -library "SoC" -name IP_TOOL_VERSION "12.1"
 set_global_assignment -entity "SoC_clk_sel" -library "SoC" -name IP_TOOL_ENV "qsys"
