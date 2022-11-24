@@ -1,5 +1,5 @@
 Flow report for RV32IM_pipeline
-Tue Nov 22 11:04:36 2022
+Thu Nov 24 19:16:55 2022
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 22 11:04:36 2022     ;
+; Flow Status                        ; Successful - Thu Nov 24 19:16:55 2022     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; RV32IM_pipeline                           ;
 ; Top-level Entity Name              ; system                                    ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE115F29C7                             ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 8,666 / 114,480 ( 8 % )                   ;
-;     Total combinational functions  ; 8,452 / 114,480 ( 7 % )                   ;
-;     Dedicated logic registers      ; 2,240 / 114,480 ( 2 % )                   ;
-; Total registers                    ; 2240                                      ;
+; Total logic elements               ; 8,672 / 114,480 ( 8 % )                   ;
+;     Total combinational functions  ; 8,463 / 114,480 ( 7 % )                   ;
+;     Dedicated logic registers      ; 2,247 / 114,480 ( 2 % )                   ;
+; Total registers                    ; 2247                                      ;
 ; Total pins                         ; 70 / 529 ( 13 % )                         ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 2,146,560 / 3,981,312 ( 54 % )            ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2022 11:01:45 ;
+; Start date & time ; 11/24/2022 19:13:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RV32IM_pipeline     ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
 ; Assignment Name                     ; Value                                                 ; Default Value   ; Entity Name                     ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27332937327006.166909510406856                        ; --              ; --                              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 27332937327006.166929743212020                        ; --              ; --                              ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --              ; --                              ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>          ; --                              ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC                             ; --             ;
@@ -170,7 +170,7 @@ applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --              ; --                              ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --              ; --                              ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --              ; --                              ; --             ;
-; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1668940664 ; --              ; SoC                             ; --             ;
+; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1669294145 ; --              ; SoC                             ; --             ;
 ; SOPCINFO_FILE                       ; debug_SoC/synthesis/../SoC.sopcinfo                   ; --              ; --                              ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --              ; --                              ; --             ;
 ; TOP_LEVEL_ENTITY                    ; system                                                ; RV32IM_pipeline ; --                              ; --             ;
@@ -182,12 +182,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:02     ; 1.0                     ; 509 MB              ; 00:01:00                           ;
-; Fitter                    ; 00:01:03     ; 1.4                     ; 768 MB              ; 00:01:13                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 415 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:09     ; 1.2                     ; 520 MB              ; 00:00:09                           ;
-; EDA Netlist Writer        ; 00:00:15     ; 1.0                     ; 453 MB              ; 00:00:15                           ;
-; Total                     ; 00:02:39     ; --                      ; --                  ; 00:02:46                           ;
+; Analysis & Synthesis      ; 00:01:10     ; 1.0                     ; 518 MB              ; 00:01:02                           ;
+; Fitter                    ; 00:01:00     ; 1.4                     ; 769 MB              ; 00:01:08                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 407 MB              ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.2                     ; 528 MB              ; 00:00:09                           ;
+; EDA Netlist Writer        ; 00:00:18     ; 1.0                     ; 449 MB              ; 00:00:16                           ;
+; Total                     ; 00:02:50     ; --                      ; --                  ; 00:02:44                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

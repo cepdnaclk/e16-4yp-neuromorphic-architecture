@@ -4,14 +4,28 @@
 #include <io.h>
 #include <unistd.h>
 
-#define DATA_IN 0x00081050 // INSERT BASE ADDRESS OF "led_out" PIO DEVICE FROM QSYS
-#define ADDR 0x00081060
-#define CLK_SEL 0x00081040
-#define NIOS_CLK_OUT 0x00081030
-#define ALU_SELECT 0x00081020
+#define DATA_IN 0x00081060 // INSERT BASE ADDRESS OF "led_out" PIO DEVICE FROM QSYS
+#define ADDR 0x00081070
+#define CLK_SEL 0x00081050
+#define NIOS_CLK_OUT 0x00081040
+#define ALU_SELECT 0x00081030
+#define RESET 0x00081020
 #define OFFSET 0x00000000
 
 #define NUMBER_OF_REGS 9
+
+//reset the CPU
+void reset(){
+	IOWR_8DIRECT(RESET,OFFSET,1);
+
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
+	usleep(100000);
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
+	usleep(100000);
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
+
+	IOWR_8DIRECT(RESET,OFFSET,0);
+}
 
 // Assumes little endian
 void printBits(int size, int data)
@@ -68,6 +82,9 @@ int main(void)
     /* 0x00-0xFF counting loop. */
     IOWR_8DIRECT(CLK_SEL,OFFSET,1);
     IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
+
+    // resetting the cpu
+    reset();
     while( 1 ) 
     {
         char answer;

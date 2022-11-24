@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 20, 2022 4:15:47 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1668941147227</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Nov 24, 2022 7:18:07 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1669297687685</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
@@ -863,44 +863,50 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>ALU_SEL</slaveDescriptor>
+                <slaveDescriptor>reset_out</slaveDescriptor>
                 <addressRange>0x00081020 - 0x0008102F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>clk_out</slaveDescriptor>
+                <slaveDescriptor>ALU_SEL</slaveDescriptor>
                 <addressRange>0x00081030 - 0x0008103F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>clk_sel</slaveDescriptor>
+                <slaveDescriptor>clk_out</slaveDescriptor>
                 <addressRange>0x00081040 - 0x0008104F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>data_in</slaveDescriptor>
+                <slaveDescriptor>clk_sel</slaveDescriptor>
                 <addressRange>0x00081050 - 0x0008105F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>addr_select</slaveDescriptor>
+                <slaveDescriptor>data_in</slaveDescriptor>
                 <addressRange>0x00081060 - 0x0008106F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>addr_select</slaveDescriptor>
+                <addressRange>0x00081070 - 0x0008107F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x00081070 - 0x00081077</addressRange>
+                <addressRange>0x00081080 - 0x00081087</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00081078 - 0x0008107F</addressRange>
+                <addressRange>0x00081088 - 0x0008108F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
