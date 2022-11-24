@@ -32,7 +32,7 @@
    {
       datum baseAddress
       {
-         value = "528520";
+         value = "528568";
          type = "String";
       }
    }
@@ -64,7 +64,7 @@
    {
       datum baseAddress
       {
-         value = "528512";
+         value = "528560";
          type = "String";
       }
    }
@@ -81,6 +81,30 @@
       datum _sortIndex
       {
          value = "7";
+         type = "int";
+      }
+   }
+   element ins_inject_addr
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element ins_inject_clock
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element ins_inject_data
+   {
+      datum _sortIndex
+      {
+         value = "13";
          type = "int";
       }
    }
@@ -116,11 +140,123 @@
          type = "int";
       }
    }
+   element onchip_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "262144";
+         type = "String";
+      }
+   }
+   element reset_out.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528416";
+         type = "String";
+      }
+   }
+   element ins_inject_clock.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528512";
+         type = "String";
+      }
+   }
+   element ins_inject_addr.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528544";
+         type = "String";
+      }
+   }
+   element ALU_SEL.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528432";
+         type = "String";
+      }
+   }
+   element data_in.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528480";
+         type = "String";
+      }
+   }
    element timer.s1
    {
       datum baseAddress
       {
          value = "528384";
+         type = "String";
+      }
+   }
+   element clk_out.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528448";
+         type = "String";
+      }
+   }
+   element clk_sel.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528464";
+         type = "String";
+      }
+   }
+   element ins_inject_data.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "528528";
          type = "String";
       }
    }
@@ -139,79 +275,6 @@
       datum baseAddress
       {
          value = "528496";
-         type = "String";
-      }
-   }
-   element clk_out.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528448";
-         type = "String";
-      }
-   }
-   element data_in.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528480";
-         type = "String";
-      }
-   }
-   element onchip_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "262144";
-         type = "String";
-      }
-   }
-   element clk_sel.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528464";
-         type = "String";
-      }
-   }
-   element reset_out.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528416";
-         type = "String";
-      }
-   }
-   element ALU_SEL.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "528432";
          type = "String";
       }
    }
@@ -246,7 +309,7 @@
  <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1669293258189" />
+ <parameter name="timeStamp" value="1669301342357" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clock.clk_in" type="clock" dir="end" />
@@ -279,6 +342,21 @@
  <interface
    name="reset_out"
    internal="reset_out.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ins_inject_addr_external_connection"
+   internal="ins_inject_addr.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ins_inject_data_external_connection"
+   internal="ins_inject_data.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="ins_inject_clock_external_connection"
+   internal="ins_inject_clock.external_connection"
    type="conduit"
    dir="end" />
  <module kind="clock_source" version="12.1" enabled="1" name="clock">
@@ -405,7 +483,7 @@
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /><slave name='timer.s1' start='0x81000' end='0x81020' /><slave name='reset_out.s1' start='0x81020' end='0x81030' /><slave name='ALU_SEL.s1' start='0x81030' end='0x81040' /><slave name='clk_out.s1' start='0x81040' end='0x81050' /><slave name='clk_sel.s1' start='0x81050' end='0x81060' /><slave name='data_in.s1' start='0x81060' end='0x81070' /><slave name='addr_select.s1' start='0x81070' end='0x81080' /><slave name='sysid.control_slave' start='0x81080' end='0x81088' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x81088' end='0x81090' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_mem.s1' start='0x40000' end='0x80000' /><slave name='cpu.jtag_debug_module' start='0x80800' end='0x81000' /><slave name='timer.s1' start='0x81000' end='0x81020' /><slave name='reset_out.s1' start='0x81020' end='0x81030' /><slave name='ALU_SEL.s1' start='0x81030' end='0x81040' /><slave name='clk_out.s1' start='0x81040' end='0x81050' /><slave name='clk_sel.s1' start='0x81050' end='0x81060' /><slave name='data_in.s1' start='0x81060' end='0x81070' /><slave name='addr_select.s1' start='0x81070' end='0x81080' /><slave name='ins_inject_clock.s1' start='0x81080' end='0x81090' /><slave name='ins_inject_data.s1' start='0x81090' end='0x810A0' /><slave name='ins_inject_addr.s1' start='0x810A0' end='0x810B0' /><slave name='sysid.control_slave' start='0x810B0' end='0x810B8' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x810B8' end='0x810C0' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="deviceFamilyName" value="Cyclone IV E" />
   <parameter name="internalIrqMaskSystemInfo" value="65538" />
@@ -548,6 +626,60 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <module
+   kind="altera_avalon_pio"
+   version="12.1"
+   enabled="1"
+   name="ins_inject_addr">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="10" />
+ </module>
+ <module
+   kind="altera_avalon_pio"
+   version="12.1"
+   enabled="1"
+   name="ins_inject_data">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module
+   kind="altera_avalon_pio"
+   version="12.1"
+   enabled="1"
+   name="ins_inject_clock">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <connection
    kind="avalon"
    version="12.1"
@@ -615,7 +747,7 @@
    start="cpu.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081088" />
+  <parameter name="baseAddress" value="0x000810b8" />
  </connection>
  <connection kind="clock" version="12.1" start="clock.clk" end="timer.clk" />
  <connection kind="reset" version="12.1" start="clock.clk_reset" end="timer.reset" />
@@ -646,7 +778,7 @@
    start="cpu.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00081080" />
+  <parameter name="baseAddress" value="0x000810b0" />
  </connection>
  <connection
    kind="avalon"
@@ -751,4 +883,73 @@
    start="clock.clk_reset"
    end="reset_out.reset" />
  <connection kind="clock" version="12.1" start="clock.clk" end="reset_out.clk" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="cpu.jtag_debug_module_reset"
+   end="ins_inject_addr.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="cpu.jtag_debug_module_reset"
+   end="ins_inject_data.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="cpu.jtag_debug_module_reset"
+   end="ins_inject_clock.reset" />
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="ins_inject_addr.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000810a0" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="ins_inject_data.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081090" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.1"
+   start="cpu.data_master"
+   end="ins_inject_clock.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00081080" />
+ </connection>
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clock.clk_reset"
+   end="ins_inject_addr.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clock.clk_reset"
+   end="ins_inject_data.reset" />
+ <connection
+   kind="reset"
+   version="12.1"
+   start="clock.clk_reset"
+   end="ins_inject_clock.reset" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="clock.clk"
+   end="ins_inject_clock.clk" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="clock.clk"
+   end="ins_inject_data.clk" />
+ <connection
+   kind="clock"
+   version="12.1"
+   start="clock.clk"
+   end="ins_inject_addr.clk" />
 </system>

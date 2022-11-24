@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
  * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Thu Nov 24 18:24:00 IST 2022
+ * Generated: Thu Nov 24 20:31:18 IST 2022
  */
 
 /*
@@ -174,19 +174,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x81088
+#define ALT_STDERR_BASE 0x810b8
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x81088
+#define ALT_STDIN_BASE 0x810b8
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x81088
+#define ALT_STDOUT_BASE 0x810b8
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -219,6 +219,14 @@
 #define ADDR_SELECT_SPAN 16
 #define ADDR_SELECT_TYPE "altera_avalon_pio"
 #define ALT_MODULE_CLASS_addr_select altera_avalon_pio
+
+
+/*
+ * altera_hostfs configuration
+ *
+ */
+
+#define ALTERA_HOSTFS_NAME "/mnt/host"
 
 
 /*
@@ -313,12 +321,93 @@
 
 
 /*
+ * ins_inject_addr configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_ins_inject_addr altera_avalon_pio
+#define INS_INJECT_ADDR_BASE 0x810a0
+#define INS_INJECT_ADDR_BIT_CLEARING_EDGE_REGISTER 0
+#define INS_INJECT_ADDR_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define INS_INJECT_ADDR_CAPTURE 0
+#define INS_INJECT_ADDR_DATA_WIDTH 10
+#define INS_INJECT_ADDR_DO_TEST_BENCH_WIRING 0
+#define INS_INJECT_ADDR_DRIVEN_SIM_VALUE 0x0
+#define INS_INJECT_ADDR_EDGE_TYPE "NONE"
+#define INS_INJECT_ADDR_FREQ 50000000u
+#define INS_INJECT_ADDR_HAS_IN 0
+#define INS_INJECT_ADDR_HAS_OUT 1
+#define INS_INJECT_ADDR_HAS_TRI 0
+#define INS_INJECT_ADDR_IRQ -1
+#define INS_INJECT_ADDR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define INS_INJECT_ADDR_IRQ_TYPE "NONE"
+#define INS_INJECT_ADDR_NAME "/dev/ins_inject_addr"
+#define INS_INJECT_ADDR_RESET_VALUE 0x0
+#define INS_INJECT_ADDR_SPAN 16
+#define INS_INJECT_ADDR_TYPE "altera_avalon_pio"
+
+
+/*
+ * ins_inject_clock configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_ins_inject_clock altera_avalon_pio
+#define INS_INJECT_CLOCK_BASE 0x81080
+#define INS_INJECT_CLOCK_BIT_CLEARING_EDGE_REGISTER 0
+#define INS_INJECT_CLOCK_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define INS_INJECT_CLOCK_CAPTURE 0
+#define INS_INJECT_CLOCK_DATA_WIDTH 1
+#define INS_INJECT_CLOCK_DO_TEST_BENCH_WIRING 0
+#define INS_INJECT_CLOCK_DRIVEN_SIM_VALUE 0x0
+#define INS_INJECT_CLOCK_EDGE_TYPE "NONE"
+#define INS_INJECT_CLOCK_FREQ 50000000u
+#define INS_INJECT_CLOCK_HAS_IN 0
+#define INS_INJECT_CLOCK_HAS_OUT 1
+#define INS_INJECT_CLOCK_HAS_TRI 0
+#define INS_INJECT_CLOCK_IRQ -1
+#define INS_INJECT_CLOCK_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define INS_INJECT_CLOCK_IRQ_TYPE "NONE"
+#define INS_INJECT_CLOCK_NAME "/dev/ins_inject_clock"
+#define INS_INJECT_CLOCK_RESET_VALUE 0x0
+#define INS_INJECT_CLOCK_SPAN 16
+#define INS_INJECT_CLOCK_TYPE "altera_avalon_pio"
+
+
+/*
+ * ins_inject_data configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_ins_inject_data altera_avalon_pio
+#define INS_INJECT_DATA_BASE 0x81090
+#define INS_INJECT_DATA_BIT_CLEARING_EDGE_REGISTER 0
+#define INS_INJECT_DATA_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define INS_INJECT_DATA_CAPTURE 0
+#define INS_INJECT_DATA_DATA_WIDTH 8
+#define INS_INJECT_DATA_DO_TEST_BENCH_WIRING 0
+#define INS_INJECT_DATA_DRIVEN_SIM_VALUE 0x0
+#define INS_INJECT_DATA_EDGE_TYPE "NONE"
+#define INS_INJECT_DATA_FREQ 50000000u
+#define INS_INJECT_DATA_HAS_IN 0
+#define INS_INJECT_DATA_HAS_OUT 1
+#define INS_INJECT_DATA_HAS_TRI 0
+#define INS_INJECT_DATA_IRQ -1
+#define INS_INJECT_DATA_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define INS_INJECT_DATA_IRQ_TYPE "NONE"
+#define INS_INJECT_DATA_NAME "/dev/ins_inject_data"
+#define INS_INJECT_DATA_RESET_VALUE 0x0
+#define INS_INJECT_DATA_SPAN 16
+#define INS_INJECT_DATA_TYPE "altera_avalon_pio"
+
+
+/*
  * jtag_uart_0 configuration
  *
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x81088
+#define JTAG_UART_0_BASE 0x810b8
 #define JTAG_UART_0_IRQ 16
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -392,13 +481,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x81080
+#define SYSID_BASE 0x810b0
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1669294145
+#define SYSID_TIMESTAMP 1669301475
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

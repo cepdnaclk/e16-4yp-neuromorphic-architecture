@@ -1,5 +1,5 @@
 Flow report for RV32IM_pipeline
-Thu Nov 24 19:16:55 2022
+Thu Nov 24 21:14:42 2022
 Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov 24 19:16:55 2022     ;
+; Flow Status                        ; Successful - Thu Nov 24 21:14:42 2022     ;
 ; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; RV32IM_pipeline                           ;
 ; Top-level Entity Name              ; system                                    ;
 ; Family                             ; Cyclone IV E                              ;
 ; Device                             ; EP4CE115F29C7                             ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 8,672 / 114,480 ( 8 % )                   ;
-;     Total combinational functions  ; 8,463 / 114,480 ( 7 % )                   ;
-;     Dedicated logic registers      ; 2,247 / 114,480 ( 2 % )                   ;
-; Total registers                    ; 2247                                      ;
-; Total pins                         ; 70 / 529 ( 13 % )                         ;
+; Total logic elements               ; 23,974 / 114,480 ( 21 % )                 ;
+;     Total combinational functions  ; 18,722 / 114,480 ( 16 % )                 ;
+;     Dedicated logic registers      ; 13,379 / 114,480 ( 12 % )                 ;
+; Total registers                    ; 13379                                     ;
+; Total pins                         ; 71 / 529 ( 13 % )                         ;
 ; Total virtual pins                 ; 0                                         ;
-; Total memory bits                  ; 2,146,560 / 3,981,312 ( 54 % )            ;
-; Embedded Multiplier 9-bit elements ; 63 / 532 ( 12 % )                         ;
+; Total memory bits                  ; 2,143,232 / 3,981,312 ( 54 % )            ;
+; Embedded Multiplier 9-bit elements ; 75 / 532 ( 14 % )                         ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                             ;
 +------------------------------------+-------------------------------------------+
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/24/2022 19:13:52 ;
+; Start date & time ; 11/24/2022 21:09:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RV32IM_pipeline     ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
 ; Assignment Name                     ; Value                                                 ; Default Value   ; Entity Name                     ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 27332937327006.166929743212020                        ; --              ; --                              ; --             ;
+; COMPILER_SIGNATURE_ID               ; 27332937327006.166930434211776                        ; --              ; --                              ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --              ; --                              ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>          ; --                              ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC                             ; --             ;
@@ -88,6 +88,8 @@ applicable agreement for further details.
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_data_in                     ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_id_router                   ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_ins_inject_data             ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_irq_mapper                  ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_jtag_uart_0                 ; --             ;
 ; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_onchip_mem                  ; --             ;
@@ -116,6 +118,8 @@ applicable agreement for further details.
 ; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_data_in                     ; --             ;
 ; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_id_router                   ; --             ;
 ; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_ins_inject_data             ; --             ;
 ; IP_TOOL_NAME                        ; altera_irq_mapper                                     ; --              ; SoC_irq_mapper                  ; --             ;
 ; IP_TOOL_NAME                        ; altera_avalon_jtag_uart                               ; --              ; SoC_jtag_uart_0                 ; --             ;
 ; IP_TOOL_NAME                        ; altera_avalon_onchip_memory2                          ; --              ; SoC_onchip_mem                  ; --             ;
@@ -144,6 +148,8 @@ applicable agreement for further details.
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_data_in                     ; --             ;
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_id_router                   ; --             ;
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_ins_inject_data             ; --             ;
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_irq_mapper                  ; --             ;
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_jtag_uart_0                 ; --             ;
 ; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_onchip_mem                  ; --             ;
@@ -170,7 +176,7 @@ applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --              ; --                              ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --              ; --                              ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --              ; --                              ; --             ;
-; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1669294145 ; --              ; SoC                             ; --             ;
+; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1669301475 ; --              ; SoC                             ; --             ;
 ; SOPCINFO_FILE                       ; debug_SoC/synthesis/../SoC.sopcinfo                   ; --              ; --                              ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --              ; --                              ; --             ;
 ; TOP_LEVEL_ENTITY                    ; system                                                ; RV32IM_pipeline ; --                              ; --             ;
@@ -182,12 +188,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:10     ; 1.0                     ; 518 MB              ; 00:01:02                           ;
-; Fitter                    ; 00:01:00     ; 1.4                     ; 769 MB              ; 00:01:08                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 407 MB              ; 00:00:09                           ;
-; TimeQuest Timing Analyzer ; 00:00:11     ; 1.2                     ; 528 MB              ; 00:00:09                           ;
-; EDA Netlist Writer        ; 00:00:18     ; 1.0                     ; 449 MB              ; 00:00:16                           ;
-; Total                     ; 00:02:50     ; --                      ; --                  ; 00:02:44                           ;
+; Analysis & Synthesis      ; 00:02:15     ; 1.0                     ; 547 MB              ; 00:02:11                           ;
+; Fitter                    ; 00:02:01     ; 1.5                     ; 872 MB              ; 00:02:26                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 451 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:16     ; 1.3                     ; 678 MB              ; 00:00:17                           ;
+; EDA Netlist Writer        ; 00:00:35     ; 1.0                     ; 565 MB              ; 00:00:33                           ;
+; Total                     ; 00:05:19     ; --                      ; --                  ; 00:05:37                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

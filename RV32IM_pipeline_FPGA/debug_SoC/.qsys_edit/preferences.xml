@@ -15,7 +15,7 @@
   </columns>
  </clocktable>
  <library
-   expandedCategories="Library/Peripherals,Library,Project,Library/Peripherals/Microcontroller Peripherals" />
+   expandedCategories="Library/Peripherals,Library/Peripherals/Microcontroller Peripherals,Project,Library" />
  <window width="1938" height="1048" x="-9" y="-9" />
  <generation
    path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" />
