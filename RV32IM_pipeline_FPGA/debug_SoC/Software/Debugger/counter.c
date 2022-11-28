@@ -21,6 +21,12 @@
 
 int8_t g_file_buffer[16];
 
+// converting int to floadt
+union ConvFloat {
+	int i;
+	float f;
+};
+
 //reset the CPU
 void reset(){
 	IOWR_8DIRECT(RESET,OFFSET,1);
@@ -50,6 +56,7 @@ void printBits(int size, int data)
 // print the specific register values
 void printRegisters() {
 	int addr;
+	union ConvFloat convData;
     for (addr = 0; addr < NUMBER_OF_REGS; addr++) {
         // write the address to the IO port
         IOWR_8DIRECT(ADDR,OFFSET,addr);
@@ -57,8 +64,9 @@ void printRegisters() {
 
         // getting data from the Register file
         int data = IORD_32DIRECT(DATA_IN,OFFSET);
+        convData.i = data;
 
-        printf("Addr: %d Data: %d   ",addr, data);
+        printf("Addr: %d Data: %d,%.4f   ",addr, data, convData.f);
     }
     printf("\n");
 }

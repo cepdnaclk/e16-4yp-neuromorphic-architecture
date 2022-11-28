@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
- * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+ * SOPC Builder design path: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Thu Nov 24 19:26:00 IST 2022
+ * Generated: Fri Nov 25 12:37:21 IST 2022
  */
 
 /*

@@ -1,16 +1,26 @@
-Fitter Status : Successful - Thu Nov 24 21:13:23 2022
-Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Fitter Status : Successful - Mon Nov 28 11:07:04 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : RV32IM_pipeline
 Top-level Entity Name : system
-Family : Cyclone IV E
-Device : EP4CE115F29C7
+Family : Stratix V
+Device : 5SGXEA7N2F45C2
 Timing Models : Final
-Total logic elements : 23,974 / 114,480 ( 21 % )
-    Total combinational functions : 18,722 / 114,480 ( 16 % )
-    Dedicated logic registers : 13,379 / 114,480 ( 12 % )
-Total registers : 13379
-Total pins : 71 / 529 ( 13 % )
+Logic utilization (in ALMs) : 8,806 / 234,720 ( 4 % )
+Total registers : 13436
+Total pins : 1 / 1,064 ( < 1 % )
 Total virtual pins : 0
-Total memory bits : 2,143,232 / 3,981,312 ( 54 % )
-Embedded Multiplier 9-bit elements : 75 / 532 ( 14 % )
-Total PLLs : 0 / 4 ( 0 % )
+Total block memory bits : 2,143,232 / 52,428,800 ( 4 % )
+Total RAM Blocks : 137 / 2,560 ( 5 % )
+Total DSP Blocks : 15 / 256 ( 6 % )
+Total HSSI STD RX PCSs : 0 / 48 ( 0 % )
+Total HSSI 10G RX PCSs : 0 / 48 ( 0 % )
+Total HSSI GEN3 RX PCSs : 0 / 48 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 48 ( 0 % )
+Total HSSI STD TX PCSs : 0 / 48 ( 0 % )
+Total HSSI 10G TX PCSs : 0 / 48 ( 0 % )
+Total HSSI GEN3 TX PCSs : 0 / 48 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 48 ( 0 % )
+Total HSSI PIPE GEN1_2s : 0 / 48 ( 0 % )
+Total HSSI GEN3s : 0 / 48 ( 0 % )
+Total PLLs : 0 / 92 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

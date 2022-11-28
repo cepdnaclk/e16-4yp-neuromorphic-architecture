@@ -1,6 +1,6 @@
 EDA Netlist Writer report for RV32IM_pipeline
-Thu Nov 24 21:14:42 2022
-Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+Mon Nov 28 11:08:47 2022
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
 ---------------------
@@ -17,29 +17,29 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
 
 
 
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Nov 24 21:14:42 2022 ;
+; EDA Netlist Writer Status ; Successful - Mon Nov 28 11:08:47 2022 ;
 ; Revision Name             ; RV32IM_pipeline                       ;
 ; Top-level Entity Name     ; system                                ;
-; Family                    ; Cyclone IV E                          ;
+; Family                    ; Stratix V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
@@ -50,7 +50,7 @@ applicable agreement for further details.
 ; Option                                                                                            ; Setting                ;
 +---------------------------------------------------------------------------------------------------+------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
+; Generate functional simulation netlist                                                            ; Off                    ;
 ; Time scale                                                                                        ; 1 ps                   ;
 ; Truncate long hierarchy paths                                                                     ; Off                    ;
 ; Map illegal HDL characters                                                                        ; Off                    ;
@@ -66,42 +66,30 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                                                                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                                                                               ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_7_1200mv_85c_slow.vho      ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_7_1200mv_0c_slow.vho       ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_min_1200mv_0c_fast.vho     ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline.vho                        ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_7_1200mv_85c_vhd_slow.sdo  ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_7_1200mv_0c_vhd_slow.sdo   ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_min_1200mv_0c_vhd_fast.sdo ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline_vhd.sdo                    ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                              ;
++------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/RV32IM_pipeline.vho ;
++------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit EDA Netlist Writer
-    Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Thu Nov 24 21:14:07 2022
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Mon Nov 28 11:08:38 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
-Info (204019): Generated file RV32IM_pipeline_7_1200mv_85c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_7_1200mv_0c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_min_1200mv_0c_fast.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_7_1200mv_85c_vhd_slow.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_7_1200mv_0c_vhd_slow.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file RV32IM_pipeline_vhd.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 578 megabytes
-    Info: Processing ended: Thu Nov 24 21:14:42 2022
-    Info: Elapsed time: 00:00:35
-    Info: Total CPU time (on all processors): 00:00:34
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
+Info (204019): Generated file RV32IM_pipeline.vho in folder "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 5029 megabytes
+    Info: Processing ended: Mon Nov 28 11:08:48 2022
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
 
 

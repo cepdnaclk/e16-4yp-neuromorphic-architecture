@@ -80,7 +80,12 @@ int alt_hostfs_open(alt_fd* fd, const char * name, int flags, int mode)
   void * handle;
 
   /* Input and output parameters for the hostcall */
-  int r2, r3, r4, r5, r6, r7;
+  register int r2 asm ("r2");
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
+  register int r5 asm ("r5");
+  register int r6 asm ("r6");
+  register int r7 asm ("r7");
 
 #ifdef ALT_USE_DIRECT_DRIVERS
   ALT_LINK_ERROR("Error: Host filesystem not supported when direct drivers are used.");
@@ -97,7 +102,7 @@ int alt_hostfs_open(alt_fd* fd, const char * name, int flags, int mode)
   r6 = mode;
   r7 = inline_strlen(name);
 
-  __asm__ volatile("break 1" : "=D02" (r2), "+D03" (r3) : "D04" (r4), "D05" (r5), "D06" (r6), "D07" (r7) : "memory" );
+  __asm__ volatile("break 1" : "=r" (r2), "+r" (r3) : "r" (r4), "r" (r5), "r" (r6), "r" (r7) : "memory" );
 
   handle = (void *)r2;
   error = r3;
@@ -120,12 +125,13 @@ int alt_hostfs_close(alt_fd* fd)
   int error;
 
   /* Input and output parameters for the hostcall */
-  int r3, r4;
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
 
   r3 = (int)&hcinfo;
   r4 = (int)fd->priv;
 
-  __asm__ volatile("break 1" : "+D03" (r3) : "D04" (r4) );
+  __asm__ volatile("break 1" : "+r" (r3) : "r" (r4) );
 
   error = r3;
 
@@ -145,14 +151,19 @@ int alt_hostfs_read(alt_fd* fd, char * ptr, int len)
   int rc;
 
   /* Input and output parameters for the hostcall */
-  int r2, r3, r4, r5, r6;
+  register int r2 asm ("r2");
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
+  register int r5 asm ("r5");
+  register int r6 asm ("r6");
+
 
   r3 = (int)&hcinfo;
   r4 = (int)fd->priv;
   r5 = (int)ptr;
   r6 = len;
 
-  __asm__ volatile("break 1" : "=D02" (r2), "+D03" (r3) : "D04" (r4), "D05" (r5), "D06" (r6) : "memory" );
+  __asm__ volatile("break 1" : "=r" (r2), "+r" (r3) : "r" (r4), "r" (r5), "r" (r6) : "memory" );
 
   rc = r2;
   error = r3;
@@ -173,14 +184,18 @@ int alt_hostfs_write(alt_fd* fd, const char * ptr, int len)
   int rc;
 
   /* Input and output parameters for the hostcall */
-  int r2, r3, r4, r5, r6;
+  register int r2 asm ("r2");
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
+  register int r5 asm ("r5");
+  register int r6 asm ("r6");
 
   r3 = (int)&hcinfo;
   r4 = (int)fd->priv;
   r5 = (int)ptr;
   r6 = len;
 
-  __asm__ volatile("break 1" : "=D02" (r2), "+D03" (r3) : "D04" (r4), "D05" (r5), "D06" (r6) : "memory" );
+  __asm__ volatile("break 1" : "=r" (r2), "+r" (r3) : "r" (r4), "r" (r5), "r" (r6) : "memory" );
 
   rc = r2;
   error = r3;
@@ -203,14 +218,18 @@ int alt_hostfs_seek(alt_fd* fd, int ptr, int dir)
   int rc;
 
   /* Input and output parameters for the hostcall */
-  int r2, r3, r4, r5, r6;
+  register int r2 asm ("r2");
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
+  register int r5 asm ("r5");
+  register int r6 asm ("r6");
 
   r3 = (int)&hcinfo;
   r4 = (int)fd->priv;
   r5 = ptr;
   r6 = dir;
 
-  __asm__ volatile("break 1" : "=D02" (r2), "+D03" (r3) : "D04" (r4), "D05" (r5), "D06" (r6) : "memory" );
+  __asm__ volatile("break 1" : "=r" (r2), "+r" (r3) : "r" (r4), "r" (r5), "r" (r6) : "memory" );
 
   rc = r2;
   error = r3;
@@ -255,13 +274,16 @@ int alt_hostfs_fstat(alt_fd* fd, struct stat* st)
   int rc;
 
   /* Input and output parameters for the hostcall */
-  int r2, r3, r4, r5;
+  register int r2 asm ("r2");
+  register int r3 asm ("r3");
+  register int r4 asm ("r4");
+  register int r5 asm ("r5");
 
   r3 = (int)&hcinfo;
   r4 = (int)fd->priv;
   r5 = (int)&hoststat;
 
-  __asm__ volatile("break 1" : "=D02" (r2), "+D03" (r3) : "D04" (r4), "D05" (r5) : "memory" );
+  __asm__ volatile("break 1" : "=r" (r2), "+r" (r3) : "r" (r4), "r" (r5) : "memory" );
 
   rc = r2;
   error = r3;

@@ -1,11 +1,11 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="b8914a17e264214e07da"/>
+    <hash md5_digest_80b="42c859ac7337399427db"/>
   </project>
   <file_info>
-    <file checksum="0x0159CB8F" device="EP4CE115F29C7" path="RV32IM_pipeline.sof" usercode="0xFFFFFFFF"/>
+    <file device="5SGXEA7N2F45C2" path="RV32IM_pipeline.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <hub_info ir_width="2" node_count="2"/>
+  <hub_info hub_ir_width="5" ir_width="2" node_addr_width="2" node_count="2"/>
   <node_info>
     <node hpath="SoC:inst6|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_jtag_debug_module_wrapper:the_SoC_cpu_jtag_debug_module_wrapper|sld_virtual_jtag_basic:SoC_cpu_jtag_debug_module_phy|sld_virtual_jtag_impl:sld_virtual_jtag_impl_inst" instance_id="0" mfg_id="70" node_id="34" sld_node_info="0x19104600" version="3">
       <parameters>
@@ -90,7 +90,6 @@
         <parameter name="LOG2_RXFIFO_DEPTH" type="dec" value="6"/>
         <parameter name="RESERVED" type="dec" value="0"/>
         <parameter name="DATA_WIDTH" type="dec" value="8"/>
-        <parameter name="NODE_IR_WIDTH" type="dec" value="1"/>
         <parameter name="SCAN_LENGTH" type="dec" value="11"/>
       </parameters>
       <inputs>
@@ -107,11 +106,8 @@
         <port name="r_dat[7]" source="SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|SoC_jtag_uart_0_scfifo_w:the_SoC_jtag_uart_0_scfifo_w|r_dat[7]"/>
         <port name="t_dav" source="SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|t_dav"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_raw_tck" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_raw_tck"/>
-        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tck" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tck"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tdi" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tdi"/>
-        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_rti" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_rti"/>
-        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_shift" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_shift"/>
-        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_update" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_update"/>
+        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_rti" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_rti"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_usr1" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_usr1"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_clr" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_clr"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ena" source="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ena"/>
@@ -136,7 +132,6 @@
         <port name="t_pause"/>
         <port name="t_pause"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tdo"/>
-        <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_irq"/>
         <port name="jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ir_out_0_"/>
       </outputs>
     </node>
@@ -145,6 +140,12 @@
     <sld_info hpath="SoC:inst6" name="inst6">
       <assignment_values>
         <assignment_value text="QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1669301475"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+    <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME alt_sld_fab HAS_SOPCINFO 1"/>
       </assignment_values>
       <parameters/>
     </sld_info>

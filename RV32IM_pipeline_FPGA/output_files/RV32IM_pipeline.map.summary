@@ -1,14 +1,23 @@
-Analysis & Synthesis Status : Successful - Thu Nov 24 21:11:20 2022
-Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
+Analysis & Synthesis Status : Successful - Mon Nov 28 11:03:39 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : RV32IM_pipeline
 Top-level Entity Name : system
-Family : Cyclone IV E
-Total logic elements : 30,313
-    Total combinational functions : 18,718
-    Dedicated logic registers : 13,387
-Total registers : 13387
-Total pins : 71
+Family : Stratix V
+Logic utilization (in ALMs) : N/A
+Total registers : 13329
+Total pins : 1
 Total virtual pins : 0
-Total memory bits : 2,143,232
-Embedded Multiplier 9-bit elements : 75
+Total block memory bits : 2,143,232
+Total DSP Blocks : 15
+Total HSSI STD RX PCSs : 0
+Total HSSI 10G RX PCSs : 0
+Total HSSI GEN3 RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI STD TX PCSs : 0
+Total HSSI 10G TX PCSs : 0
+Total HSSI GEN3 TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total HSSI PIPE GEN1_2s : 0
+Total HSSI GEN3s : 0
 Total PLLs : 0
+Total DLLs : 0

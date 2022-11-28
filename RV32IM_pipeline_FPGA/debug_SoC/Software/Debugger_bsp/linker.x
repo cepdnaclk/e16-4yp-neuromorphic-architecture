@@ -2,9 +2,9 @@
  * linker.x - Linker script
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
- * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+ * SOPC Builder design path: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Wed Nov 16 17:22:53 IST 2022
+ * Generated: Fri Nov 25 12:37:21 IST 2022
  */
 
 /*
@@ -91,6 +91,7 @@ SECTIONS
         KEEP (*(.irq));
         KEEP (*(.exceptions.entry.label));
         KEEP (*(.exceptions.entry.user));
+        KEEP (*(.exceptions.entry.ecc_fatal));
         KEEP (*(.exceptions.entry));
         KEEP (*(.exceptions.irqtest.user));
         KEEP (*(.exceptions.irqtest));
@@ -194,7 +195,7 @@ SECTIONS
         PROVIDE (__fini_array_end = ABSOLUTE(.));
         SORT(CONSTRUCTORS)
         KEEP (*(.eh_frame))
-        *(.gcc_except_table)
+        *(.gcc_except_table .gcc_except_table.*)
         *(.dynamic)
         PROVIDE (__CTOR_LIST__ = ABSOLUTE(.));
         KEEP (*(.ctors))
@@ -206,7 +207,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > onchip_mem = 0x3a880100 /* Nios II NOP instruction */
+    } > onchip_mem = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
     .rodata :
     {
@@ -309,7 +310,7 @@ SECTIONS
     .onchip_mem LOADADDR (.bss) + SIZEOF (.bss) : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_onchip_mem_start = ABSOLUTE(.));
-        *(.onchip_mem. onchip_mem.*)
+        *(.onchip_mem .onchip_mem. onchip_mem.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_onchip_mem_end = ABSOLUTE(.));
         _end = ABSOLUTE(.);

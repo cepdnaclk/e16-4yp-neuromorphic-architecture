@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 24, 2022 9:13:14 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1669304594437</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Nov 25, 2022 12:52:03 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1669360923372</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\FPGA_WINDOWS\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>C:\Users\FPGA_WINDOWS\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -72,19 +72,19 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
-                <Description>Enables the alt_load() facility. The alt_load() facility copies sections from the .text memory into RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</Description>
+                <Description>Enables the alt_load() facility. The alt_load() facility copies data sections (.rodata, .rwdata, or .exceptions) from boot memory to RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</Description>
                 <Restrictions>This setting is typically false if an external bootloader (e.g. flash bootloader) is present.</Restrictions>
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_rodata</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -96,7 +96,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_rwdata</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
@@ -108,7 +108,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_exceptions</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -120,7 +120,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_exception_stack</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -132,7 +132,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.exception_stack_size</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>DecimalNumber</Type>
                 <Value>1024</Value>
                 <DefaultValue>1024</DefaultValue>
@@ -144,7 +144,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>onchip_mem</Value>
                 <DefaultValue>none</DefaultValue>
@@ -156,7 +156,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_interrupt_stack</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -168,7 +168,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.interrupt_stack_size</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>DecimalNumber</Type>
                 <Value>1024</Value>
                 <DefaultValue>1024</DefaultValue>
@@ -180,7 +180,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>onchip_mem</Value>
                 <DefaultValue>none</DefaultValue>
@@ -192,7 +192,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stdin</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart_0</Value>
                 <DefaultValue>none</DefaultValue>
@@ -204,7 +204,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stdout</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart_0</Value>
                 <DefaultValue>none</DefaultValue>
@@ -216,7 +216,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stderr</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart_0</Value>
                 <DefaultValue>none</DefaultValue>
@@ -228,7 +228,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.log_port</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>none</Value>
                 <DefaultValue>none</DefaultValue>
@@ -539,8 +539,20 @@
                 <Group>none</Group>
         </Setting>
         <Setting>
+                <SettingName>hal.make.cflags_mgpopt</SettingName>
+                <Identifier>CFLAGS_MGPOPT</Identifier>
+                <Type>UnquotedString</Type>
+                <Value>-mgpopt=global</Value>
+                <DefaultValue>-mgpopt=global</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>C/C++ compiler to generate (do not generate) GP-relative accesses. 'none' tells the compilter not to generate GP-relative accesses. 'local' will generate GP-relative accesses for small data objects that are not external, weak, or uninitialized common symbols. Also use GP-relative addressing for objects that have been explicitly placed in a small data section via a section attribute. provides the default set of debug symbols typically required to debug a typical application. 'global' is same as 'local' but also generate GP-relative accesses for small data objects that are external, weak, or common.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group>common</Group>
+        </Setting>
+        <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_id</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -552,7 +564,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_timestamp</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -564,7 +576,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_base_address</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -576,7 +588,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_simulation_enabled</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -588,7 +600,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.fpu_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -599,8 +611,32 @@
                 <Group>none</Group>
         </Setting>
         <Setting>
+                <SettingName>hal.make.ignore_system_derived.cdx_present</SettingName>
+                <Identifier>none</Identifier>
+                <Type>Boolean</Type>
+                <Value>0</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>If true, prevents GCC from using CDX instructions. If false, GCC uses CDX instructions if present in the CPU.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group>none</Group>
+        </Setting>
+        <Setting>
+                <SettingName>hal.make.ignore_system_derived.bmx_present</SettingName>
+                <Identifier>none</Identifier>
+                <Type>Boolean</Type>
+                <Value>0</Value>
+                <DefaultValue>0</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>If true, prevents GCC from using BMX instructions. If false, GCC uses BMX instructions if present in the CPU.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group>none</Group>
+        </Setting>
+        <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_multiplier_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -612,7 +648,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_mulx_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -624,7 +660,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_divide_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -636,7 +672,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.debug_core_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -648,19 +684,19 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.big_endian</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -EB' to public.mk if big endian system. If true ignores export of 'ALT_CFLAGS += -EL' if little endian system.</Description>
+                <Description>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -meb' to public.mk if big endian system.</Description>
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_fp_cust_inst_divider_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -672,7 +708,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_fp_cust_inst_no_divider_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -696,7 +732,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.enable_small_c_library</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -713,7 +749,7 @@
                 <Value>1</Value>
                 <DefaultValue>1</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
-                <Description>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS and -Wl,--defsym, exit=_exit to ALT_LDFLAGS in public.mk.</Description>
+                <Description>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk.</Description>
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
@@ -725,7 +761,7 @@
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
-                <Description>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -mstack-check to ALT_CPPFLAGS in public.mk.</Description>
+                <Description>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-limit-register=et to ALT_CPPFLAGS in public.mk.</Description>
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
@@ -804,7 +840,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.enable_sopc_sysid_check</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>1</DefaultValue>
@@ -822,7 +858,7 @@
                 <DefaultValue>none</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Build a custom version of newlib with the specified space-separated compiler flags.</Description>
-                <Restrictions>The custom newlib build will be placed in the &amp;lt;bsp root>/newlib directory, and will be used only for applications that utilize this BSP.</Restrictions>
+                <Restrictions>The custom newlib build will be placed in the &lt;bsp root>/newlib directory, and will be used only for applications that utilize this BSP.</Restrictions>
                 <Enabled>false</Enabled>
                 <Group>none</Group>
         </Setting>
@@ -858,6 +894,18 @@
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Small-footprint (polled mode) driver</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        </Setting>
+        <Setting>
+                <SettingName>altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</SettingName>
+                <Identifier>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</Identifier>
+                <Type>BooleanDefineOnly</Type>
+                <Value>false</Value>
+                <DefaultValue>false</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</Description>
                 <Restrictions>none</Restrictions>
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>

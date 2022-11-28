@@ -104,15 +104,15 @@ alt_timestamp_type alt_timestamp(void)
 
   if (!altera_avalon_timer_ts_freq)
   {
-	if(ALT_TIMESTAMP_COUNTER_SIZE == 64) {
+#if (ALT_TIMESTAMP_COUNTER_SIZE == 64)
         return 0xFFFFFFFFFFFFFFFFULL;
-    } else {
+#else
         return 0xFFFFFFFF;
-    }
+#endif
   }
   else
   {
-    if(ALT_TIMESTAMP_COUNTER_SIZE == 64) {
+#if (ALT_TIMESTAMP_COUNTER_SIZE == 64)
         IOWR_ALTERA_AVALON_TIMER_SNAP_0 (base, 0);
         alt_timestamp_type snap_0 = IORD_ALTERA_AVALON_TIMER_SNAP_0(base) & ALTERA_AVALON_TIMER_SNAP_0_MSK;
         alt_timestamp_type snap_1 = IORD_ALTERA_AVALON_TIMER_SNAP_1(base) & ALTERA_AVALON_TIMER_SNAP_1_MSK;
@@ -120,13 +120,13 @@ alt_timestamp_type alt_timestamp(void)
         alt_timestamp_type snap_3 = IORD_ALTERA_AVALON_TIMER_SNAP_3(base) & ALTERA_AVALON_TIMER_SNAP_3_MSK;
         
         return (0xFFFFFFFFFFFFFFFFULL - ( (snap_3 << 48) | (snap_2 << 32) | (snap_1 << 16) | (snap_0) ));
-    } else {
+#else
         IOWR_ALTERA_AVALON_TIMER_SNAPL (base, 0);
         alt_timestamp_type lower = IORD_ALTERA_AVALON_TIMER_SNAPL(base) & ALTERA_AVALON_TIMER_SNAPL_MSK;
         alt_timestamp_type upper = IORD_ALTERA_AVALON_TIMER_SNAPH(base) & ALTERA_AVALON_TIMER_SNAPH_MSK;
         
         return (0xFFFFFFFF - ((upper << 16) | lower)); 
-    }  
+#endif
   }
 }
 
