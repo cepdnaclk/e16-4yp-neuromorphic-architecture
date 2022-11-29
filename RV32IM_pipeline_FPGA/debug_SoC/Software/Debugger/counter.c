@@ -19,7 +19,7 @@
 
 #define NUMBER_OF_REGS 16
 
-#define DELAY 10
+#define DELAY 1
 
 int8_t g_file_buffer[16];
 
@@ -68,9 +68,9 @@ void printRegisters() {
         int data = IORD_32DIRECT(DATA_IN,OFFSET);
         convData.i = data;
 
-        printf("Addr: %d Data: %d,%.4f   ",addr, data, convData.f);
+        printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 
@@ -90,7 +90,7 @@ void genPulseAndPrint(int pulseCount) {
     	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
         // printing the register values
         printRegisters();
-        printALUSelect();
+        // printALUSelect();
     }
 }
 

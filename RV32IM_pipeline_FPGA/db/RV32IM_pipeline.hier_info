@@ -71810,7 +71810,10 @@ a_operand[29] => Equal0.IN1
 a_operand[29] => LessThan1.IN2
 a_operand[30] => Equal0.IN0
 a_operand[30] => LessThan1.IN1
-a_operand[31] => ~NO_FANOUT~
+a_operand[31] => always0.IN0
+a_operand[31] => always0.IN0
+a_operand[31] => always0.IN0
+a_operand[31] => always0.IN0
 b_operand[0] => Equal1.IN45
 b_operand[0] => LessThan0.IN46
 b_operand[1] => Equal1.IN44
@@ -71873,9 +71876,12 @@ b_operand[29] => Equal0.IN9
 b_operand[29] => LessThan1.IN10
 b_operand[30] => Equal0.IN8
 b_operand[30] => LessThan1.IN9
-b_operand[31] => ~NO_FANOUT~
-result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+b_operand[31] => always0.IN1
+b_operand[31] => always0.IN1
+b_operand[31] => always0.IN1
+b_operand[31] => always0.IN1
+result[0] <= result[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |system|cpu:inst12|branch_select:myBranchSelect

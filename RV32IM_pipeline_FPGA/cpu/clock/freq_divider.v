@@ -13,7 +13,7 @@ module freq_divider(clk_in, clk_in_niose, clk_source_sel, clk_out);
 	always @(posedge clk_in) begin
 		
 		count = count + 1;
-		if (count == 2000000)
+		if (count == 5)
 			begin
 				count = 0;
 				clk_prescaled_out = !clk_prescaled_out;
