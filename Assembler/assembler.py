@@ -6,6 +6,8 @@ import shutil
 # instruction sets grouped by the type
 inst_data = {}
 
+OUTPUT_PATH = "RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger\BIN_file"
+
 # arg types
 argList = {'inp_file': '', 'out_file': ''}
 # arg keywords
@@ -175,9 +177,9 @@ def toBin(numOfDigits, num):
 # saving data to a .bin file
 def saveToFile(line):
     global inst_count
-    file = "../RV32IM_pipeline_FPGA/"+ argList['inp_file'].split('.')[0] + '.bin'
+    file = "../"+ OUTPUT_PATH +"/"+ argList['inp_file'].split('.')[0] + '.bin'
     if not (argList['out_file'] == ''):
-        file = "../RV32IM_pipeline_FPGA/" + argList['out_file']
+        file = "../"+ OUTPUT_PATH +"/" + argList['out_file']
     # saving the new line to the output file
     f = open(file, "a")
     for i in range(3, -1, -1):
@@ -188,9 +190,9 @@ def saveToFile(line):
 # fillig the rest of the file 
 def fillTheFile():
     global FILE_SIZE
-    file = "../RV32IM_pipeline_FPGA/" + argList['inp_file'].split('.')[0] + '.bin'
+    file = "../"+ OUTPUT_PATH +"/" + argList['inp_file'].split('.')[0] + '.bin'
     if not (argList['out_file'] == ''):
-        file = "../RV32IM_pipeline_FPGA/" + argList['out_file']
+        file = "../"+OUTPUT_PATH+"/" + argList['out_file']
 
     f = open(file, "a")
     for i in range(FILE_SIZE - (4*inst_count)):
@@ -202,9 +204,9 @@ def fillTheFile():
 
 if __name__ == "__main__":
     # remove all .bin file in the directory
-    for i in os.listdir("../RV32IM_pipeline_FPGA"):
+    for i in os.listdir("../"+OUTPUT_PATH):
         if i.endswith(".bin"):
-            os.remove("../RV32IM_pipeline_FPGA/" + i)
+            os.remove("../"+ OUTPUT_PATH+"/" + i)
 
     #create the instruction disctionary
     read_csv()

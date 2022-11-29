@@ -3,79 +3,79 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 900mV 85C Model Setup 'altera_reserved_tck'
-Slack : 13.199
+Slack : 14.573
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.147
+Slack : 0.109
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 14.739
+Slack : 14.755
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.577
+Slack : 0.412
 TNS   : 0.000
 
 Type  : Slow 900mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 16.059
+Slack : 16.063
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 13.327
+Slack : 14.637
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.154
+Slack : 0.113
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 14.789
+Slack : 14.795
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.597
+Slack : 0.446
 TNS   : 0.000
 
 Type  : Slow 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 16.150
+Slack : 16.160
 TNS   : 0.000
 
 Type  : Fast 900mV 85C Model Setup 'altera_reserved_tck'
-Slack : 14.714
+Slack : 15.619
 TNS   : 0.000
 
 Type  : Fast 900mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.063
+Slack : 0.062
 TNS   : 0.000
 
 Type  : Fast 900mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 15.725
+Slack : 15.712
 TNS   : 0.000
 
 Type  : Fast 900mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.418
+Slack : 0.345
 TNS   : 0.000
 
 Type  : Fast 900mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.943
+Slack : 15.949
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Setup 'altera_reserved_tck'
-Slack : 14.853
+Slack : 15.698
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.068
+Slack : 0.059
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 15.802
+Slack : 15.783
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.392
+Slack : 0.331
 TNS   : 0.000
 
 Type  : Fast 900mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
