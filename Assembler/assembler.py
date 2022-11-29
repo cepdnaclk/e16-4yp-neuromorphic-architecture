@@ -174,7 +174,7 @@ def toBin(numOfDigits, num):
     s = bin(num & int("1"*numOfDigits, 2))[2:]
     return ("{0:0>%s}" % (numOfDigits)).format(s)
 
-# saving data to a .bin file
+#  saving data to a .bin file
 def saveToFile(line):
     global inst_count
     file = "../"+ OUTPUT_PATH +"/"+ argList['inp_file'].split('.')[0] + '.bin'
