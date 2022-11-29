@@ -17,7 +17,9 @@
 #define INS_INJ_DATA 0x00081090
 #define INS_INJ_ADDR 0x000810a0
 
-#define NUMBER_OF_REGS 9
+#define NUMBER_OF_REGS 16
+
+#define DELAY 10
 
 int8_t g_file_buffer[16];
 
@@ -60,7 +62,7 @@ void printRegisters() {
     for (addr = 0; addr < NUMBER_OF_REGS; addr++) {
         // write the address to the IO port
         IOWR_8DIRECT(ADDR,OFFSET,addr);
-        usleep(100000); // Wait for about 0.1 seconds
+        usleep(DELAY); // Wait for about 0.1 seconds
 
         // getting data from the Register file
         int data = IORD_32DIRECT(DATA_IN,OFFSET);
@@ -84,7 +86,7 @@ void genPulseAndPrint(int pulseCount) {
 	int i;
 	for (i = 0; i < pulseCount; i++) {
         IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
-    	usleep(100000); // Wait for about 0.1 seconds
+    	usleep(DELAY); // Wait for about 0.1 seconds
     	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
         // printing the register values
         printRegisters();

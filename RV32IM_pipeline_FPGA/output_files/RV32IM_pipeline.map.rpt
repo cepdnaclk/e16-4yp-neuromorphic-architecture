@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RV32IM_pipeline
-Mon Nov 28 11:03:39 2022
+Mon Nov 28 23:56:34 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -142,72 +142,71 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 134. altsyncram Parameter Settings by Entity Instance
 135. scfifo Parameter Settings by Entity Instance
 136. Port Connectivity Checks: "cpu:inst12|mux4to1_32bit:regWriteSelMUX"
-137. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp"
-138. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:END"
-139. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M2"
-140. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Addition_Subtraction:A1"
-141. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M1"
-142. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Addition_Subtraction:X0"
-143. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:x0"
-144. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|priority_encoder:pe"
-145. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu"
-146. Port Connectivity Checks: "cpu:inst12|control_unit:myControl|mux2to1_3bit:float_inst_mux"
-147. Port Connectivity Checks: "cpu:inst12|control_unit:myControl|mux2to1_3bit:funct3_mux"
-148. Port Connectivity Checks: "SoC:inst6|SoC_rsp_xbar_mux_001:rsp_xbar_mux_001|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
-149. Port Connectivity Checks: "SoC:inst6|SoC_rsp_xbar_mux:rsp_xbar_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
-150. Port Connectivity Checks: "SoC:inst6|SoC_cmd_xbar_mux:cmd_xbar_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
-151. Port Connectivity Checks: "SoC:inst6|altera_reset_controller:rst_controller"
-152. Port Connectivity Checks: "SoC:inst6|SoC_id_router_002:id_router_002|SoC_id_router_002_default_decode:the_default_decode"
-153. Port Connectivity Checks: "SoC:inst6|SoC_id_router:id_router|SoC_id_router_default_decode:the_default_decode"
-154. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_clock_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-155. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_data_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-156. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_addr_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-157. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:reset_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-158. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:alu_sel_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-159. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:clk_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-160. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:clk_sel_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-161. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:data_in_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-162. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:addr_select_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-163. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:sysid_control_slave_translator_avalon_universal_slave_0_agent_rsp_fifo"
-164. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:timer_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-165. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo"
-166. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:onchip_mem_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
-167. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
-168. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_clock_s1_translator"
-169. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_data_s1_translator"
-170. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_addr_s1_translator"
-171. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:reset_out_s1_translator"
-172. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:alu_sel_s1_translator"
-173. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:clk_out_s1_translator"
-174. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:clk_sel_s1_translator"
-175. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:data_in_s1_translator"
-176. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:addr_select_s1_translator"
-177. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:sysid_control_slave_translator"
-178. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:timer_s1_translator"
-179. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:jtag_uart_0_avalon_jtag_slave_translator"
-180. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:onchip_mem_s1_translator"
-181. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:cpu_jtag_debug_module_translator"
-182. Port Connectivity Checks: "SoC:inst6|altera_merlin_master_translator:cpu_data_master_translator"
-183. Port Connectivity Checks: "SoC:inst6|altera_merlin_master_translator:cpu_instruction_master_translator"
-184. Port Connectivity Checks: "SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:SoC_jtag_uart_0_alt_jtag_atlantic"
-185. Port Connectivity Checks: "SoC:inst6|SoC_jtag_uart_0:jtag_uart_0"
-186. Port Connectivity Checks: "SoC:inst6|SoC_cpu:cpu"
-187. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex12c"
-188. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex11c"
-189. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex10c"
-190. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex9c"
-191. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex8c"
-192. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex7c"
-193. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex6c"
-194. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex5c"
-195. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex4c"
-196. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex3c"
-197. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex2c"
-198. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex1c"
-199. Post-Synthesis Netlist Statistics for Top Partition
-200. Elapsed Time Per Partition
-201. Analysis & Synthesis Messages
-202. Analysis & Synthesis Suppressed Messages
+137. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:END"
+138. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M2"
+139. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Addition_Subtraction:A1"
+140. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M1"
+141. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Addition_Subtraction:X0"
+142. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:x0"
+143. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|priority_encoder:pe"
+144. Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu"
+145. Port Connectivity Checks: "cpu:inst12|control_unit:myControl|mux2to1_3bit:float_inst_mux"
+146. Port Connectivity Checks: "cpu:inst12|control_unit:myControl|mux2to1_3bit:funct3_mux"
+147. Port Connectivity Checks: "SoC:inst6|SoC_rsp_xbar_mux_001:rsp_xbar_mux_001|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
+148. Port Connectivity Checks: "SoC:inst6|SoC_rsp_xbar_mux:rsp_xbar_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
+149. Port Connectivity Checks: "SoC:inst6|SoC_cmd_xbar_mux:cmd_xbar_mux|altera_merlin_arbitrator:arb|altera_merlin_arb_adder:adder"
+150. Port Connectivity Checks: "SoC:inst6|altera_reset_controller:rst_controller"
+151. Port Connectivity Checks: "SoC:inst6|SoC_id_router_002:id_router_002|SoC_id_router_002_default_decode:the_default_decode"
+152. Port Connectivity Checks: "SoC:inst6|SoC_id_router:id_router|SoC_id_router_default_decode:the_default_decode"
+153. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_clock_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+154. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_data_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+155. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:ins_inject_addr_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+156. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:reset_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+157. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:alu_sel_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+158. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:clk_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+159. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:clk_sel_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+160. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:data_in_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+161. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:addr_select_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+162. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:sysid_control_slave_translator_avalon_universal_slave_0_agent_rsp_fifo"
+163. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:timer_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+164. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo"
+165. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:onchip_mem_s1_translator_avalon_universal_slave_0_agent_rsp_fifo"
+166. Port Connectivity Checks: "SoC:inst6|altera_avalon_sc_fifo:cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+167. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_clock_s1_translator"
+168. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_data_s1_translator"
+169. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:ins_inject_addr_s1_translator"
+170. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:reset_out_s1_translator"
+171. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:alu_sel_s1_translator"
+172. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:clk_out_s1_translator"
+173. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:clk_sel_s1_translator"
+174. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:data_in_s1_translator"
+175. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:addr_select_s1_translator"
+176. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:sysid_control_slave_translator"
+177. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:timer_s1_translator"
+178. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:jtag_uart_0_avalon_jtag_slave_translator"
+179. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:onchip_mem_s1_translator"
+180. Port Connectivity Checks: "SoC:inst6|altera_merlin_slave_translator:cpu_jtag_debug_module_translator"
+181. Port Connectivity Checks: "SoC:inst6|altera_merlin_master_translator:cpu_data_master_translator"
+182. Port Connectivity Checks: "SoC:inst6|altera_merlin_master_translator:cpu_instruction_master_translator"
+183. Port Connectivity Checks: "SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|alt_jtag_atlantic:SoC_jtag_uart_0_alt_jtag_atlantic"
+184. Port Connectivity Checks: "SoC:inst6|SoC_jtag_uart_0:jtag_uart_0"
+185. Port Connectivity Checks: "SoC:inst6|SoC_cpu:cpu"
+186. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex12c"
+187. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex11c"
+188. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex10c"
+189. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex9c"
+190. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex8c"
+191. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex7c"
+192. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex6c"
+193. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex5c"
+194. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex4c"
+195. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex3c"
+196. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex2c"
+197. Port Connectivity Checks: "lcd_display:inst|hex2_char:hex1c"
+198. Post-Synthesis Netlist Statistics for Top Partition
+199. Elapsed Time Per Partition
+200. Analysis & Synthesis Messages
+201. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -233,7 +232,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 28 11:03:39 2022           ;
+; Analysis & Synthesis Status     ; Successful - Mon Nov 28 23:56:33 2022           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; RV32IM_pipeline                                 ;
 ; Top-level Entity Name           ; system                                          ;
@@ -354,14 +353,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.44        ;
+; Average used               ; 1.48        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  14.6%      ;
-;     Processor 3            ;  14.6%      ;
-;     Processor 4            ;  14.5%      ;
+;     Processor 2            ;  16.4%      ;
+;     Processor 3            ;  16.4%      ;
+;     Processor 4            ;  14.9%      ;
 +----------------------------+-------------+
 
 
@@ -491,14 +490,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------------------------------------------+
 ; Resource                                    ; Usage                                           ;
 +---------------------------------------------+-------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 10550                                           ;
+; Estimate of Logic utilization (ALMs needed) ; 10557                                           ;
 ;                                             ;                                                 ;
-; Combinational ALUT usage for logic          ; 11168                                           ;
-;     -- 7 input functions                    ; 42                                              ;
-;     -- 6 input functions                    ; 5839                                            ;
-;     -- 5 input functions                    ; 1391                                            ;
-;     -- 4 input functions                    ; 1048                                            ;
-;     -- <=3 input functions                  ; 2848                                            ;
+; Combinational ALUT usage for logic          ; 11194                                           ;
+;     -- 7 input functions                    ; 44                                              ;
+;     -- 6 input functions                    ; 5854                                            ;
+;     -- 5 input functions                    ; 1380                                            ;
+;     -- 4 input functions                    ; 1060                                            ;
+;     -- <=3 input functions                  ; 2856                                            ;
 ;                                             ;                                                 ;
 ; Dedicated logic registers                   ; 13329                                           ;
 ;                                             ;                                                 ;
@@ -510,7 +509,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                 ;
 ; Maximum fan-out node                        ; SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out ;
 ; Maximum fan-out                             ; 8193                                            ;
-; Total fan-out                               ; 103067                                          ;
+; Total fan-out                               ; 103189                                          ;
 ; Average fan-out                             ; 4.15                                            ;
 +---------------------------------------------+-------------------------------------------------+
 
@@ -520,10 +519,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                ; Entity Name                                  ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+--------------+
-; |system                                                                                                                                 ; 11168 (1)           ; 13329 (0)                 ; 2143232           ; 15         ; 1    ; 0            ; |system                                                                                                                                                                                                                                                                                                                                            ; system                                       ; work         ;
-;    |SoC:inst6|                                                                                                                          ; 1642 (0)            ; 1372 (0)                  ; 2143232           ; 0          ; 0    ; 0            ; |system|SoC:inst6                                                                                                                                                                                                                                                                                                                                  ; SoC                                          ; SoC          ;
+; |system                                                                                                                                 ; 11194 (1)           ; 13329 (0)                 ; 2143232           ; 15         ; 1    ; 0            ; |system                                                                                                                                                                                                                                                                                                                                            ; system                                       ; work         ;
+;    |SoC:inst6|                                                                                                                          ; 1640 (0)            ; 1372 (0)                  ; 2143232           ; 0          ; 0    ; 0            ; |system|SoC:inst6                                                                                                                                                                                                                                                                                                                                  ; SoC                                          ; SoC          ;
 ;       |SoC_addr_router:addr_router|                                                                                                     ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_addr_router:addr_router                                                                                                                                                                                                                                                                                                      ; SoC_addr_router                              ; SoC          ;
-;       |SoC_addr_router_001:addr_router_001|                                                                                             ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_addr_router_001:addr_router_001                                                                                                                                                                                                                                                                                              ; SoC_addr_router_001                          ; SoC          ;
+;       |SoC_addr_router_001:addr_router_001|                                                                                             ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_addr_router_001:addr_router_001                                                                                                                                                                                                                                                                                              ; SoC_addr_router_001                          ; SoC          ;
 ;       |SoC_addr_select:addr_select|                                                                                                     ; 2 (2)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_addr_select:addr_select                                                                                                                                                                                                                                                                                                      ; SoC_addr_select                              ; SoC          ;
 ;       |SoC_clk_sel:clk_out|                                                                                                             ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_clk_sel:clk_out                                                                                                                                                                                                                                                                                                              ; SoC_clk_sel                                  ; SoC          ;
 ;       |SoC_clk_sel:clk_sel|                                                                                                             ; 3 (3)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_clk_sel:clk_sel                                                                                                                                                                                                                                                                                                              ; SoC_clk_sel                                  ; SoC          ;
@@ -535,7 +534,7 @@ refer to the applicable agreement for further details.
 ;          |altera_merlin_arbitrator:arb|                                                                                                 ; 4 (4)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cmd_xbar_mux:cmd_xbar_mux_001|altera_merlin_arbitrator:arb                                                                                                                                                                                                                                                                   ; altera_merlin_arbitrator                     ; SoC          ;
 ;       |SoC_cmd_xbar_mux:cmd_xbar_mux|                                                                                                   ; 53 (49)             ; 5 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cmd_xbar_mux:cmd_xbar_mux                                                                                                                                                                                                                                                                                                    ; SoC_cmd_xbar_mux                             ; SoC          ;
 ;          |altera_merlin_arbitrator:arb|                                                                                                 ; 4 (4)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cmd_xbar_mux:cmd_xbar_mux|altera_merlin_arbitrator:arb                                                                                                                                                                                                                                                                       ; altera_merlin_arbitrator                     ; SoC          ;
-;       |SoC_cpu:cpu|                                                                                                                     ; 941 (787)           ; 829 (646)                 ; 45056             ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cpu:cpu                                                                                                                                                                                                                                                                                                                      ; SoC_cpu                                      ; SoC          ;
+;       |SoC_cpu:cpu|                                                                                                                     ; 939 (785)           ; 829 (646)                 ; 45056             ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cpu:cpu                                                                                                                                                                                                                                                                                                                      ; SoC_cpu                                      ; SoC          ;
 ;          |SoC_cpu_ic_data_module:SoC_cpu_ic_data|                                                                                       ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cpu:cpu|SoC_cpu_ic_data_module:SoC_cpu_ic_data                                                                                                                                                                                                                                                                               ; SoC_cpu_ic_data_module                       ; SoC          ;
 ;             |altsyncram:the_altsyncram|                                                                                                 ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cpu:cpu|SoC_cpu_ic_data_module:SoC_cpu_ic_data|altsyncram:the_altsyncram                                                                                                                                                                                                                                                     ; altsyncram                                   ; work         ;
 ;                |altsyncram_k7o1:auto_generated|                                                                                         ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |system|SoC:inst6|SoC_cpu:cpu|SoC_cpu_ic_data_module:SoC_cpu_ic_data|altsyncram:the_altsyncram|altsyncram_k7o1:auto_generated                                                                                                                                                                                                                      ; altsyncram_k7o1                              ; work         ;
@@ -608,7 +607,7 @@ refer to the applicable agreement for further details.
 ;       |altera_avalon_sc_fifo:ins_inject_addr_s1_translator_avalon_universal_slave_0_agent_rsp_fifo|                                     ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:ins_inject_addr_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                      ; altera_avalon_sc_fifo                        ; SoC          ;
 ;       |altera_avalon_sc_fifo:ins_inject_clock_s1_translator_avalon_universal_slave_0_agent_rsp_fifo|                                    ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:ins_inject_clock_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                     ; altera_avalon_sc_fifo                        ; SoC          ;
 ;       |altera_avalon_sc_fifo:ins_inject_data_s1_translator_avalon_universal_slave_0_agent_rsp_fifo|                                     ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:ins_inject_data_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                      ; altera_avalon_sc_fifo                        ; SoC          ;
-;       |altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo|                          ; 3 (3)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                           ; altera_avalon_sc_fifo                        ; SoC          ;
+;       |altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo|                          ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:jtag_uart_0_avalon_jtag_slave_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                           ; altera_avalon_sc_fifo                        ; SoC          ;
 ;       |altera_avalon_sc_fifo:onchip_mem_s1_translator_avalon_universal_slave_0_agent_rsp_fifo|                                          ; 5 (5)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:onchip_mem_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                           ; altera_avalon_sc_fifo                        ; SoC          ;
 ;       |altera_avalon_sc_fifo:reset_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo|                                           ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:reset_out_s1_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                            ; altera_avalon_sc_fifo                        ; SoC          ;
 ;       |altera_avalon_sc_fifo:sysid_control_slave_translator_avalon_universal_slave_0_agent_rsp_fifo|                                    ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_avalon_sc_fifo:sysid_control_slave_translator_avalon_universal_slave_0_agent_rsp_fifo                                                                                                                                                                                                                                     ; altera_avalon_sc_fifo                        ; SoC          ;
@@ -637,11 +636,12 @@ refer to the applicable agreement for further details.
 ;       |altera_merlin_traffic_limiter:limiter|                                                                                           ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_merlin_traffic_limiter:limiter                                                                                                                                                                                                                                                                                            ; altera_merlin_traffic_limiter                ; SoC          ;
 ;       |altera_reset_controller:rst_controller|                                                                                          ; 0 (0)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_reset_controller:rst_controller                                                                                                                                                                                                                                                                                           ; altera_reset_controller                      ; SoC          ;
 ;          |altera_reset_synchronizer:alt_rst_sync_uq1|                                                                                   ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |system|SoC:inst6|altera_reset_controller:rst_controller|altera_reset_synchronizer:alt_rst_sync_uq1                                                                                                                                                                                                                                                ; altera_reset_synchronizer                    ; SoC          ;
-;    |cpu:inst12|                                                                                                                         ; 4764 (777)          ; 1534 (510)                ; 0                 ; 15         ; 0    ; 0            ; |system|cpu:inst12                                                                                                                                                                                                                                                                                                                                 ; cpu                                          ; work         ;
-;       |alu:myAlu|                                                                                                                       ; 3243 (399)          ; 0 (0)                     ; 0                 ; 15         ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu                                                                                                                                                                                                                                                                                                                       ; alu                                          ; work         ;
-;          |FALU:falu|                                                                                                                    ; 2844 (131)          ; 0 (0)                     ; 0                 ; 9          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu                                                                                                                                                                                                                                                                                                             ; FALU                                         ; work         ;
+;    |cpu:inst12|                                                                                                                         ; 4792 (777)          ; 1534 (510)                ; 0                 ; 15         ; 0    ; 0            ; |system|cpu:inst12                                                                                                                                                                                                                                                                                                                                 ; cpu                                          ; work         ;
+;       |alu:myAlu|                                                                                                                       ; 3271 (393)          ; 0 (0)                     ; 0                 ; 15         ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu                                                                                                                                                                                                                                                                                                                       ; alu                                          ; work         ;
+;          |FALU:falu|                                                                                                                    ; 2878 (134)          ; 0 (0)                     ; 0                 ; 9          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu                                                                                                                                                                                                                                                                                                             ; FALU                                         ; work         ;
 ;             |Addition_Subtraction:AuI|                                                                                                  ; 527 (449)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI                                                                                                                                                                                                                                                                                    ; Addition_Subtraction                         ; work         ;
 ;                |priority_encoder:pe|                                                                                                    ; 78 (78)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|priority_encoder:pe                                                                                                                                                                                                                                                                ; priority_encoder                             ; work         ;
+;             |Comparison:Comp|                                                                                                           ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp                                                                                                                                                                                                                                                                                             ; Comparison                                   ; work         ;
 ;             |Division:DuI|                                                                                                              ; 2134 (8)            ; 0 (0)                     ; 0                 ; 8          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI                                                                                                                                                                                                                                                                                                ; Division                                     ; work         ;
 ;                |Addition_Subtraction:X0|                                                                                                ; 321 (85)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Addition_Subtraction:X0                                                                                                                                                                                                                                                                        ; Addition_Subtraction                         ; work         ;
 ;                   |priority_encoder:pe|                                                                                                 ; 236 (236)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Addition_Subtraction:X0|priority_encoder:pe                                                                                                                                                                                                                                                    ; priority_encoder                             ; work         ;
@@ -662,7 +662,7 @@ refer to the applicable agreement for further details.
 ;                   |Multiplication:M2|                                                                                                   ; 83 (83)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X3|Multiplication:M2                                                                                                                                                                                                                                                                 ; Multiplication                               ; work         ;
 ;                |Multiplication:END|                                                                                                     ; 63 (63)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:END                                                                                                                                                                                                                                                                             ; Multiplication                               ; work         ;
 ;                |Multiplication:x0|                                                                                                      ; 42 (42)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:x0                                                                                                                                                                                                                                                                              ; Multiplication                               ; work         ;
-;             |Multiplication:MuI|                                                                                                        ; 52 (52)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI                                                                                                                                                                                                                                                                                          ; Multiplication                               ; work         ;
+;             |Multiplication:MuI|                                                                                                        ; 49 (49)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |system|cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI                                                                                                                                                                                                                                                                                          ; Multiplication                               ; work         ;
 ;       |branch_select:myBranchSelect|                                                                                                    ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|branch_select:myBranchSelect                                                                                                                                                                                                                                                                                                    ; branch_select                                ; work         ;
 ;       |control_unit:myControl|                                                                                                          ; 40 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|control_unit:myControl                                                                                                                                                                                                                                                                                                          ; control_unit                                 ; work         ;
 ;          |mux2to1_3bit:float_inst_mux|                                                                                                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |system|cpu:inst12|control_unit:myControl|mux2to1_3bit:float_inst_mux                                                                                                                                                                                                                                                                              ; mux2to1_3bit                                 ; work         ;
@@ -945,25 +945,12 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+----------------------------------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal                                ; Free of Timing Hazards ;
 +-----------------------------------------------------+----------------------------------------------------+------------------------+
+; cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu      ; cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu     ; yes                    ;
 ; cpu:inst12|control_unit:myControl|float_alu_sel[0]  ; cpu:inst12|control_unit:myControl|float_alu_sel[1] ; yes                    ;
 ; cpu:inst12|control_unit:myControl|float_alu_sel[1]  ; cpu:inst12|control_unit:myControl|float_alu_sel[1] ; yes                    ;
 ; cpu:inst12|control_unit:myControl|float_alu_sel[2]  ; cpu:inst12|control_unit:myControl|float_alu_sel[2] ; yes                    ;
 ; cpu:inst12|PC[0]                                    ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[1]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[9]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[2]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[7]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[6]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[4]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[5]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[8]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[3]                                    ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[10]                                   ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[11]                                   ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[12]                                   ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[13]                                   ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[14]                                   ; VCC                                                ; yes                    ;
-; cpu:inst12|PC[15]                                   ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[16]                                   ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[17]                                   ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[18]                                   ; VCC                                                ; yes                    ;
@@ -980,7 +967,21 @@ Encoding Type:  One-Hot
 ; cpu:inst12|PC[29]                                   ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[30]                                   ; VCC                                                ; yes                    ;
 ; cpu:inst12|PC[31]                                   ; VCC                                                ; yes                    ;
-; Number of user-specified and inferred latches = 35  ;                                                    ;                        ;
+; cpu:inst12|PC[9]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[2]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[7]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[6]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[4]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[5]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[8]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[3]                                    ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[10]                                   ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[11]                                   ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[12]                                   ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[13]                                   ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[14]                                   ; VCC                                                ; yes                    ;
+; cpu:inst12|PC[15]                                   ; VCC                                                ; yes                    ;
+; Number of user-specified and inferred latches = 36  ;                                                    ;                        ;
 +-----------------------------------------------------+----------------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -1688,7 +1689,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; SoC:inst6|altera_merlin_slave_translator:data_in_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                       ; 2       ;
 ; SoC:inst6|altera_merlin_slave_translator:addr_select_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                   ; 2       ;
 ; SoC:inst6|altera_merlin_slave_translator:timer_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                         ; 2       ;
-; SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|av_waitrequest                                                                                                                                                                                                                                                                            ; 3       ;
+; SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|av_waitrequest                                                                                                                                                                                                                                                                            ; 8       ;
 ; SoC:inst6|altera_merlin_slave_translator:onchip_mem_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                    ; 2       ;
 ; SoC:inst6|altera_merlin_slave_translator:alu_sel_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                       ; 3       ;
 ; SoC:inst6|altera_merlin_slave_translator:clk_sel_s1_translator|waitrequest_reset_override                                                                                                                                                                                                                                       ; 2       ;
@@ -1739,18 +1740,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |system|cpu:inst12|PR_BRANCH_SELECT_S2[2]                                                                                                                                                                            ;
-; 3:1                ; 35 bits   ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |system|cpu:inst12|PR_INSTRUCTION[16]                                                                                                                                                                                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |system|cpu:inst12|PR_BRANCH_SELECT_S2[0]                                                                                                                                                                            ;
+; 3:1                ; 35 bits   ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |system|cpu:inst12|PR_INSTRUCTION[27]                                                                                                                                                                                ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |system|cpu:inst12|PR_ALU_SELECT[1]                                                                                                                                                                                  ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; Yes        ; |system|cpu:inst12|PR_DATA_2_S2[12]                                                                                                                                                                                  ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; Yes        ; |system|cpu:inst12|PR_DATA_1_S2[18]                                                                                                                                                                                  ;
-; 256:1              ; 32 bits   ; 5440 LEs      ; 5440 LEs             ; 0 LEs                  ; Yes        ; |system|ins_memory:inst1|readdata[18]                                                                                                                                                                                ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; Yes        ; |system|cpu:inst12|PR_DATA_2_S2[5]                                                                                                                                                                                   ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; Yes        ; |system|cpu:inst12|PR_DATA_1_S2[22]                                                                                                                                                                                  ;
+; 256:1              ; 32 bits   ; 5440 LEs      ; 5440 LEs             ; 0 LEs                  ; Yes        ; |system|ins_memory:inst1|readdata[3]                                                                                                                                                                                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|control_unit:myControl|float_alu_sel[1]                                                                                                                                                           ;
 ; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux31                                                                                                                                                                ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux19                                                                                                                                                                ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |system|cpu:inst12|reg_file:myreg|Mux91                                                                                                                                                                              ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux10                                                                                                                                                                ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux1                                                                                                                                                                 ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux18                                                                                                                                                                ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |system|cpu:inst12|reg_file:myreg|Mux65                                                                                                                                                                              ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux6                                                                                                                                                                 ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |system|cpu:inst12|immediate_select:myImmediate|Mux4                                                                                                                                                                 ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|data_memory:inst2|memory_array[17][5]                                                                                                                                                                        ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|data_memory:inst2|memory_array[15][7]                                                                                                                                                                        ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|data_memory:inst2|memory_array[11][7]                                                                                                                                                                        ;
@@ -1847,22 +1848,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|cpu:inst12|reg_file:myreg|REGISTERS[29][0]                                                                                                                                                                   ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|cpu:inst12|reg_file:myreg|REGISTERS[30][0]                                                                                                                                                                   ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |system|cpu:inst12|reg_file:myreg|REGISTERS[31][0]                                                                                                                                                                   ;
-; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; Yes        ; |system|data_memory:inst2|readdata[7]                                                                                                                                                                                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|stage3_forward_unit:myStage3Fowarding|OP1_MUX_OUT[1]                                                                                                                                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|stage3_forward_unit:myStage3Fowarding|OP2_MUX_OUT[0]                                                                                                                                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftRight0                                                                                                                                                                             ;
+; 64:1               ; 32 bits   ; 1344 LEs      ; 1344 LEs             ; 0 LEs                  ; Yes        ; |system|data_memory:inst2|readdata[19]                                                                                                                                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|stage3_forward_unit:myStage3Fowarding|OP1_MUX_OUT[0]                                                                                                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|stage3_forward_unit:myStage3Fowarding|OP2_MUX_OUT[1]                                                                                                                                              ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftLeft0                                                                                                                                                                              ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftRight0                                                                                                                                                                             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftLeft0                                                                                                                                                                              ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftLeft0                                                                                                                                                                              ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftRight0                                                                                                                                                                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftRight0                                                                                                                                                                             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftLeft0                                                                                                                                                                              ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|ShiftLeft0                                                                                                                                                                              ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:regWriteSelMUX|RESULT[11]                                                                                                                                                           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:oparand1_mux_haz|RESULT[25]                                                                                                                                                         ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:oparand2_mux_haz|RESULT[12]                                                                                                                                                         ;
-; 71:1               ; 12 bits   ; 564 LEs       ; 180 LEs              ; 384 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[23]                                                                                                                                                                              ;
-; 71:1               ; 12 bits   ; 564 LEs       ; 180 LEs              ; 384 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[15]                                                                                                                                                                              ;
-; 74:1               ; 4 bits    ; 196 LEs       ; 68 LEs               ; 128 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[29]                                                                                                                                                                              ;
-; 74:1               ; 3 bits    ; 147 LEs       ; 51 LEs               ; 96 LEs                 ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[3]                                                                                                                                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp|result[0]                                                                                                                                                     ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:regWriteSelMUX|RESULT[20]                                                                                                                                                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:oparand1_mux_haz|RESULT[7]                                                                                                                                                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|mux4to1_32bit:oparand2_mux_haz|RESULT[13]                                                                                                                                                         ;
+; 71:1               ; 12 bits   ; 564 LEs       ; 180 LEs              ; 384 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[27]                                                                                                                                                                              ;
+; 71:1               ; 12 bits   ; 564 LEs       ; 180 LEs              ; 384 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[11]                                                                                                                                                                              ;
+; 74:1               ; 4 bits    ; 196 LEs       ; 68 LEs               ; 128 LEs                ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[31]                                                                                                                                                                              ;
+; 74:1               ; 3 bits    ; 147 LEs       ; 51 LEs               ; 96 LEs                 ; No         ; |system|cpu:inst12|alu:myAlu|RESULT[2]                                                                                                                                                                               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |system|SoC:inst6|altera_merlin_slave_translator:ins_inject_clock_s1_translator|wait_latency_counter[0]                                                                                                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |system|SoC:inst6|altera_merlin_slave_translator:ins_inject_data_s1_translator|wait_latency_counter[1]                                                                                                               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |system|SoC:inst6|altera_merlin_slave_translator:ins_inject_addr_s1_translator|wait_latency_counter[0]                                                                                                               ;
@@ -1954,7 +1956,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|ShiftRight0                                                                                                                                          ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|ShiftRight0                                                                                                                                          ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|ShiftRight0                                                                                                                                          ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|ALU_Output[25]                                                                                                                                                                ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |system|cpu:inst12|alu:myAlu|FALU:falu|ALU_Output[25]                                                                                                                                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -4488,15 +4490,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+-----------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp"                                       ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; result ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:END"                           ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -5508,7 +5501,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 9                           ;
 ;     SCLR              ; 452                         ;
 ;     plain             ; 76                          ;
-; stratixv_lcell_comb   ; 11052                       ;
+; stratixv_lcell_comb   ; 11078                       ;
 ;     arith             ; 1023                        ;
 ;         0 data inputs ; 27                          ;
 ;         1 data inputs ; 371                         ;
@@ -5516,16 +5509,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 204                         ;
 ;         4 data inputs ; 121                         ;
 ;         5 data inputs ; 260                         ;
-;     extend            ; 40                          ;
-;         7 data inputs ; 40                          ;
-;     normal            ; 9936                        ;
+;     extend            ; 42                          ;
+;         7 data inputs ; 42                          ;
+;     normal            ; 9960                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 34                          ;
-;         2 data inputs ; 1464                        ;
-;         3 data inputs ; 629                         ;
-;         4 data inputs ; 885                         ;
-;         5 data inputs ; 1108                        ;
-;         6 data inputs ; 5815                        ;
+;         2 data inputs ; 1463                        ;
+;         3 data inputs ; 638                         ;
+;         4 data inputs ; 897                         ;
+;         5 data inputs ; 1097                        ;
+;         6 data inputs ; 5830                        ;
 ;     shared            ; 53                          ;
 ;         0 data inputs ; 5                           ;
 ;         2 data inputs ; 14                          ;
@@ -5535,7 +5528,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 288                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 96.90                       ;
-; Average LUT depth     ; 22.76                       ;
+; Average LUT depth     ; 22.74                       ;
 +-----------------------+-----------------------------+
 
 
@@ -5554,7 +5547,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Nov 28 11:02:23 2022
+    Info: Processing started: Mon Nov 28 23:55:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -6146,20 +6139,21 @@ Info (12128): Elaborating entity "mux4to1_32bit" for hierarchy "cpu:inst12|mux4t
 Info (12128): Elaborating entity "alu" for hierarchy "cpu:inst12|alu:myAlu" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 154
 Warning (10059): Verilog HDL Case Statement warning at alu.v(119): case item expression never matches the case expression because it contains an 'x' or 'z' value File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/alu_module/alu.v Line: 119
 Info (12128): Elaborating entity "FALU" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/alu_module/alu.v Line: 35
-Warning (10036): Verilog HDL or VHDL warning at FALU.v(37): object "compare_out_alu" assigned a value but never read File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 37
-Info (12128): Elaborating entity "Addition_Subtraction" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 68
+Warning (10240): Verilog HDL Always Construct warning at FALU.v(100): inferring latch(es) for variable "compare_out_alu", which holds its previous value in one or more paths through the always construct File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 100
+Info (10041): Inferred latch for "compare_out_alu" at FALU.v(110) File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 110
+Info (12128): Elaborating entity "Addition_Subtraction" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 70
 Warning (10036): Verilog HDL or VHDL warning at Addition-Subtraction.v(43): object "exp_a" assigned a value but never read File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 43
 Warning (10036): Verilog HDL or VHDL warning at Addition-Subtraction.v(44): object "exp_b" assigned a value but never read File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 44
 Warning (10230): Verilog HDL assignment warning at Addition-Subtraction.v(43): truncated value with size 8 to match size of target (1) File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 43
 Warning (10230): Verilog HDL assignment warning at Addition-Subtraction.v(44): truncated value with size 8 to match size of target (1) File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 44
 Info (12128): Elaborating entity "priority_encoder" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Addition_Subtraction:AuI|priority_encoder:pe" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 87
 Warning (10230): Verilog HDL assignment warning at priority_encoder.v(147): truncated value with size 8 to match size of target (5) File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/priority_encoder.v Line: 147
-Info (12128): Elaborating entity "Multiplication" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 70
-Info (12128): Elaborating entity "Division" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 72
+Info (12128): Elaborating entity "Multiplication" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 72
+Info (12128): Elaborating entity "Division" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 74
 Warning (10036): Verilog HDL or VHDL warning at Division.v(30): object "denominator" assigned a value but never read File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Division.v Line: 30
 Warning (10036): Verilog HDL or VHDL warning at Division.v(31): object "operand_a_change" assigned a value but never read File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Division.v Line: 31
 Info (12128): Elaborating entity "Iteration" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Division.v Line: 55
-Info (12128): Elaborating entity "Comparison" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 74
+Info (12128): Elaborating entity "Comparison" for hierarchy "cpu:inst12|alu:myAlu|FALU:falu|Comparison:Comp" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 76
 Info (12128): Elaborating entity "branch_select" for hierarchy "cpu:inst12|branch_select:myBranchSelect" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 155
 Info (12128): Elaborating entity "stage3_forward_unit" for hierarchy "cpu:inst12|stage3_forward_unit:myStage3Fowarding" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 170
 Info (12128): Elaborating entity "stage4_forward_unit" for hierarchy "cpu:inst12|stage4_forward_unit:stage4_forward_unit" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 198
@@ -6172,7 +6166,7 @@ Info (12128): Elaborating entity "seven_segment" for hierarchy "seven_segment:in
 Warning (12020): Port "address_b" on the entity instantiation of "SoC_cpu_traceram_lpm_dram_bdp_component" is connected to a signal of width 17. The formal width of the signal in the module is 7.  The extra bits will be ignored. File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/synthesis/submodules/SoC_cpu.v Line: 2885
 Warning (12020): Port "jdo" on the entity instantiation of "the_SoC_cpu_nios2_oci_itrace" is connected to a signal of width 38. The formal width of the signal in the module is 16.  The extra bits will be ignored. File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/synthesis/submodules/SoC_cpu.v Line: 3284
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2022.11.28.11:02:57 Progress: Loading slda849006b/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2022.11.28.23:55:53 Progress: Loading slda849006b/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -6235,20 +6229,14 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "SoC:inst6|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_nios2_oci_im:the_SoC_cpu_nios2_oci_im|SoC_cpu_traceram_lpm_dram_bdp_component_module:SoC_cpu_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram|altsyncram_8ua2:auto_generated|q_a[35]" File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/db/altsyncram_8ua2.tdf Line: 1233
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer freq_divider:inst3|clk_out File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/clock/freq_divider.v Line: 8
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[7]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[6]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[5]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[4]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|AddBar_Sub" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 31
+Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[1]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
+Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[0]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
+Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[3]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
+Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[2]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
+Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[4]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "cpu:inst12|alu:myAlu|FALU:falu|Div_B[0]" feeding internal logic into a wire File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
     Warning (13049): Converted tri-state buffer "cpu:inst12|alu:myAlu|FALU:falu|Div_B[1]" feeding internal logic into a wire File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[3]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[2]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[1]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[0]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13049): Converted tri-state buffer "cpu:inst12|alu:myAlu|FALU:falu|Div_B[2]" feeding internal logic into a wire File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
     Warning (13049): Converted tri-state buffer "cpu:inst12|alu:myAlu|FALU:falu|Div_B[3]" feeding internal logic into a wire File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
     Warning (13049): Converted tri-state buffer "cpu:inst12|alu:myAlu|FALU:falu|Div_B[4]" feeding internal logic into a wire File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 25
@@ -6464,11 +6452,15 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[10]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
     Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[9]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
     Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[8]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
-Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[0]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
-Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[1]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
-Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[2]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
-Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[3]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
-Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[4]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[7]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[6]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[5]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[4]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[3]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[2]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[1]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|Add_Sub_B[0]" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 41
+    Warning (13048): Converted tri-state node "cpu:inst12|alu:myAlu|FALU:falu|AddBar_Sub" into a selector File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Addition-Subtraction.v Line: 21
 Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[5]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
 Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[6]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
 Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[7]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
@@ -6497,22 +6489,28 @@ Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[29
 Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[30]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
 Warning (14026): LATCH primitive "cpu:inst12|immediate_select:myImmediate|OUT[31]" is permanently enabled File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/immediate_select_module/immediate_select.v Line: 21
 Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch cpu:inst12|control_unit:myControl|float_alu_sel[0] has unsafe behavior File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/control_unit_module/control_unit.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|PR_INSTRUCTION[27] File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 222
+Warning (13012): Latch cpu:inst12|control_unit:myControl|float_alu_sel[1] has unsafe behavior File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/control_unit_module/control_unit.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|PR_INSTRUCTION[28] File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 222
+Warning (13012): Latch cpu:inst12|control_unit:myControl|float_alu_sel[2] has unsafe behavior File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/control_unit_module/control_unit.v Line: 115
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal cpu:inst12|PR_INSTRUCTION[31] File: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/cpu_module/cpu.v Line: 222
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Info (17049): 268 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 11 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23807 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 23833 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 23497 logic cells
+    Info (21061): Implemented 23523 logic cells
     Info (21064): Implemented 288 RAM segments
     Info (21062): Implemented 15 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 348 warnings
-    Info: Peak virtual memory: 5140 megabytes
-    Info: Processing ended: Mon Nov 28 11:03:39 2022
-    Info: Elapsed time: 00:01:16
-    Info: Total CPU time (on all processors): 00:01:59
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 352 warnings
+    Info: Peak virtual memory: 5138 megabytes
+    Info: Processing ended: Mon Nov 28 23:56:34 2022
+    Info: Elapsed time: 00:01:15
+    Info: Total CPU time (on all processors): 00:02:01
 
 
 +------------------------------------------+

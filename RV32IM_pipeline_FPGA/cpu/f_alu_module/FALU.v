@@ -17,9 +17,9 @@ module FALU(
 	input [31:0] b_operand,
 	input [3:0] Operation,	
 	output [31:0] ALU_Output,
-	output Exception,Overflow,Underflow
+	output Exception,Overflow,Underflow	
 	);
-
+	
 
 // wire [31:0] Add_Sub_A,Add_Sub_B,Mul_A,Mul_B,Div_A,Div_B,OR_Output,AND_Output,XOR_Output,L_S_Output,R_S_Output,Floating_Point;
 wire [31:0] Add_Sub_A,Add_Sub_B,Mul_A,Mul_B,Div_A,Div_B;
@@ -35,6 +35,8 @@ wire [31:0] Complement_output;
 // for the compare instruction
 wire [1:0] compare_out;
 reg compare_out_alu;
+
+
 
 // addition
 assign {Add_Sub_A,Add_Sub_B,AddBar_Sub} = (Operation == 4'd0) ? {a_operand,b_operand,1'b0} : 64'dz;
@@ -89,21 +91,25 @@ assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd3) ? {Div_Ex
 
 assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd1) ? {Add_Sub_Exception,1'b0,1'b0,Add_Sub_Output}	: 35'dz;
 
+assign {Exception,Overflow,Underflow,ALU_Output} = (Operation == 4'd6 | Operation == 4'd5 | Operation == 4'd4) ? {1'b0,1'b0,1'b0, {31'd0, compare_out_alu}}	: 35'dz;
+
+
+
 always @(*) begin
 	// equal
-	if (Operation == 4'dx) begin
+	if (Operation == 4'd6) begin
 		if (compare_out == 2'b00) compare_out_alu = 1'b1;
 		else compare_out_alu = 1'b0;
 	end
 	// less than
-	if (Operation == 4'dx) begin
+	if (Operation == 4'd5) begin
 		if (compare_out == 2'b10) compare_out_alu = 1'b1;
 		else compare_out_alu = 1'b0;
 	end
 	// less than or equal
-	if (Operation == 4'dx) begin
-		if (compare_out == 2'b01) compare_out_alu = 1'b1;
-		else compare_out_alu = 1'b0;
+	if (Operation == 4'd4) begin
+		if (compare_out == 2'b01) compare_out_alu = 1'b0;
+		else compare_out_alu = 1'b1;
 	end
 end
 
