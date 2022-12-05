@@ -35,7 +35,7 @@ begin
     end
     else
     begin
-        REGISTERS[31] = { 19'b0, RAND_INPUT };
+        REGISTERS[31] = { RAND_INPUT[12],8'd130, RAND_INPUT[11:0],11'b0 };
         if (WRITE == 1'b1)
         begin
             REGISTERS[INADDRESS] = IN; 
