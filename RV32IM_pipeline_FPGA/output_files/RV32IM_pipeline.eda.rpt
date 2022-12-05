@@ -1,5 +1,5 @@
 EDA Netlist Writer report for RV32IM_pipeline
-Mon Dec 05 11:37:16 2022
+Mon Dec 05 12:04:56 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Dec 05 11:37:16 2022 ;
+; EDA Netlist Writer Status ; Successful - Mon Dec 05 12:04:56 2022 ;
 ; Revision Name             ; RV32IM_pipeline                       ;
 ; Top-level Entity Name     ; system                                ;
 ; Family                    ; Stratix V                             ;
@@ -81,15 +81,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 11:37:07 2022
+    Info: Processing started: Mon Dec 05 12:04:48 2022
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
 Info (204019): Generated file RV32IM_pipeline.vho in folder "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 5032 megabytes
-    Info: Processing ended: Mon Dec 05 11:37:17 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 5050 megabytes
+    Info: Processing ended: Mon Dec 05 12:04:57 2022
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:09
 
 

@@ -1,5 +1,5 @@
 Timing Analyzer report for RV32IM_pipeline
-Mon Dec 05 11:37:05 2022
+Mon Dec 05 12:04:46 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -102,14 +102,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.50        ;
+; Average used               ; 1.67        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.9%      ;
-;     Processor 3            ;  16.7%      ;
-;     Processor 4            ;  16.6%      ;
+;     Processor 2            ;  22.5%      ;
+;     Processor 3            ;  22.4%      ;
+;     Processor 4            ;  22.4%      ;
 +----------------------------+-------------+
 
 
@@ -118,8 +118,8 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                              ; Status ; Read at                  ;
 +------------------------------------------------------------+--------+--------------------------+
-; debug_SoC/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Mon Dec 05 11:36:53 2022 ;
-; debug_SoC/synthesis/submodules/SoC_cpu.sdc                 ; OK     ; Mon Dec 05 11:36:53 2022 ;
+; debug_SoC/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Mon Dec 05 12:04:30 2022 ;
+; debug_SoC/synthesis/submodules/SoC_cpu.sdc                 ; OK     ; Mon Dec 05 12:04:30 2022 ;
 +------------------------------------------------------------+--------+--------------------------+
 
 
@@ -605,13 +605,15 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 11:36:46 2022
+    Info: Processing started: Mon Dec 05 12:04:19 2022
 Info: Command: quartus_sta RV32IM_pipeline -c RV32IM_pipeline
 Info: qsta_default_script.tcl version: #2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
 Warning (335093): The Timing Analyzer is analyzing 4 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity alt_jtag_atlantic
@@ -650,15 +652,15 @@ Info (332164): Evaluating HDL-embedded SDC commands
 Info (332104): Reading SDC File: 'debug_SoC/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: 'debug_SoC/synthesis/submodules/SoC_cpu.sdc'
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:clk_out|data_out was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register cpu:inst12|PR_IMMEDIATE_SELECT_OUT[17] is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
+    Info (13166): Register cpu:inst12|PR_OPERAND1_SEL is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
 Warning (332060): Node: clock_in was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register SoC:inst6|SoC_clk_sel:clk_out|data_out is being clocked by clock_in
+Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register ins_memory:inst1|memory_array[671][7] is being clocked by SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out
 Warning (332060): Node: cpu:inst12|PR_INSTRUCTION[0] was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch cpu:inst12|control_unit:myControl|float_alu_sel[2] is being clocked by cpu:inst12|PR_INSTRUCTION[0]
-Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
@@ -700,15 +702,15 @@ Info: Analyzing Slow 900mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:clk_out|data_out was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register cpu:inst12|PR_IMMEDIATE_SELECT_OUT[17] is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
+    Info (13166): Register cpu:inst12|PR_OPERAND1_SEL is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
 Warning (332060): Node: clock_in was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register SoC:inst6|SoC_clk_sel:clk_out|data_out is being clocked by clock_in
+Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register ins_memory:inst1|memory_array[671][7] is being clocked by SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out
 Warning (332060): Node: cpu:inst12|PR_INSTRUCTION[0] was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch cpu:inst12|control_unit:myControl|float_alu_sel[2] is being clocked by cpu:inst12|PR_INSTRUCTION[0]
-Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332146): Worst-case setup slack is 14.069
     Info (332119):     Slack       End Point TNS Clock 
@@ -747,15 +749,15 @@ Info: Analyzing Fast 900mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:clk_out|data_out was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register cpu:inst12|PR_IMMEDIATE_SELECT_OUT[17] is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
+    Info (13166): Register cpu:inst12|PR_OPERAND1_SEL is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
 Warning (332060): Node: clock_in was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register SoC:inst6|SoC_clk_sel:clk_out|data_out is being clocked by clock_in
+Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register ins_memory:inst1|memory_array[671][7] is being clocked by SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out
 Warning (332060): Node: cpu:inst12|PR_INSTRUCTION[0] was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch cpu:inst12|control_unit:myControl|float_alu_sel[2] is being clocked by cpu:inst12|PR_INSTRUCTION[0]
-Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332146): Worst-case setup slack is 15.278
     Info (332119):     Slack       End Point TNS Clock 
@@ -791,16 +793,18 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 4590.3
 Info: Analyzing Fast 900mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:clk_out|data_out was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register cpu:inst12|PR_IMMEDIATE_SELECT_OUT[17] is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
+    Info (13166): Register cpu:inst12|PR_OPERAND1_SEL is being clocked by SoC:inst6|SoC_clk_sel:clk_out|data_out
 Warning (332060): Node: clock_in was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register SoC:inst6|SoC_clk_sel:clk_out|data_out is being clocked by clock_in
+Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Warning (332060): Node: SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register ins_memory:inst1|memory_array[671][7] is being clocked by SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out
 Warning (332060): Node: cpu:inst12|PR_INSTRUCTION[0] was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch cpu:inst12|control_unit:myControl|float_alu_sel[2] is being clocked by cpu:inst12|PR_INSTRUCTION[0]
-Warning (332060): Node: cpu:inst12|PR_ALU_SELECT[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch cpu:inst12|alu:myAlu|FALU:falu|compare_out_alu is being clocked by cpu:inst12|PR_ALU_SELECT[0]
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332146): Worst-case setup slack is 15.384
     Info (332119):     Slack       End Point TNS Clock 
@@ -838,9 +842,9 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 5790 megabytes
-    Info: Processing ended: Mon Dec 05 11:37:05 2022
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 5826 megabytes
+    Info: Processing ended: Mon Dec 05 12:04:46 2022
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:44
 
 
