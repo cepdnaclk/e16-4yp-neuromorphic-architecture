@@ -63,11 +63,11 @@ slli x11, x11, 10
 addi x11, x11, 0
 
 ; input = -7.8666
-addi x30, x30, 1543
-slli x30, x30, 11
-addi x30, x30, 1774
-slli x30, x30, 10
-addi x30, x30, 816
+; addi x30, x30, 1543
+; slli x30, x30, 11
+; addi x30, x30, 1774
+; slli x30, x30, 10
+; addi x30, x30, 816
 
 ; for comparisons
 addi x12, x12, 0
@@ -83,7 +83,7 @@ fmul x10, x7, x4
 fadd x9, x9, x10
 fadd x9, x9, x8
 fsub x9, x9, x5
-fadd x9, x9, x30 
+fadd x9, x9, x31 
 fadd x4, x4, x9
 
 fmul x9, x1, x4
@@ -96,8 +96,9 @@ flt x10, x4, x11
 beq x10, x13, notspiked
 addi x4, x2, 0
 fadd x5, x5, x3
+addi x15, x15, 1
 
 notspiked:
-Loops: 
-addi x15, x15, 1
-jal x14, Loops
+; Loops: 
+; addi x15, x15, 1
+jal x14, Loop

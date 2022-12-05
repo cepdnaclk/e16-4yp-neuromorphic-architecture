@@ -1,9 +1,9 @@
-15:05:11 **** Incremental Build of configuration Nios II for project Debugger ****
+16:25:17 **** Incremental Build of configuration Nios II for project Debugger ****
 make all 
 Info: Building ../Debugger_bsp/
 C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
 [BSP build complete]
 [Debugger build complete]
 
-15:05:12 Build Finished (took 1s.516ms)
+16:25:19 Build Finished (took 1s.413ms)
 

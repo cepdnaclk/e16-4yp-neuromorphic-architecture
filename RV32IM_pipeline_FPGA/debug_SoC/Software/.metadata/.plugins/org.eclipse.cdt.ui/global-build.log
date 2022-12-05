@@ -526,3 +526,527 @@ Info: Building ../Debugger_bsp/
 C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
 [BSP build complete]
 [Debugger build complete]
+11:38:30 **** Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:37:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:52:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:134:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:128:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:128:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:162:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+11:40:01 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:37:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:52:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:134:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:128:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:128:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:162:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+12:05:57 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+15:56:21 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:37:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:52:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'printSpike':
+counter.c:108:6: error: redefinition of 'data'
+  int data = IORD_32DIRECT(DATA_IN,OFFSET);
+      ^
+counter.c:97:6: note: previous definition of 'data' was here
+  int data = IORD_32DIRECT(DATA_IN,OFFSET);
+      ^
+counter.c: In function 'loadProgramme':
+counter.c:161:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:155:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:155:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:189:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+make: *** [obj/default/counter.o] Error 1
+15:57:28 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:37:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:52:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:161:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:155:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:155:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:189:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:02:04 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:169:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:163:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:163:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:197:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:05:22 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: At top level:
+counter.c:123:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+counter.c: In function 'loadProgramme':
+counter.c:172:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:166:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:166:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:200:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+make: *** [obj/default/counter.o] Error 1
+16:05:31 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: At top level:
+counter.c:123:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+counter.c: In function 'loadProgramme':
+counter.c:172:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:166:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:166:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:200:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+make: *** [obj/default/counter.o] Error 1
+16:05:48 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:171:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:165:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:165:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:199:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:06:11 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:08:36 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:172:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:166:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:166:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:200:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:09:18 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:10:53 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:172:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:166:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:166:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:200:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:10:58 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:11:14 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:12:13 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:170:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:164:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:164:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:198:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:12:56 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:17:20 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:170:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:164:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:164:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:196:14: warning: implicit declaration of function 'printSpikes' [-Wimplicit-function-declaration]
+              printSpikes();
+              ^
+counter.c:199:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+obj/default/counter.o: In function `main':
+C:\Users\FPGA_WINDOWS\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger/counter.c:196: undefined reference to `printSpikes'
+collect2.exe: error: ld returned 1 exit status
+make: *** [Debugger.elf] Error 1
+16:17:44 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+Info: Compiling counter.c to obj/default/counter.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/counter.o counter.c
+counter.c: In function 'reset':
+counter.c:41:2: warning: implicit declaration of function 'usleep' [-Wimplicit-function-declaration]
+  usleep(100000);
+  ^
+counter.c: In function 'printBits':
+counter.c:56:30: warning: suggest parentheses around '-' inside '>>' [-Wparentheses]
+      int tmp = data >> size-i-1;
+                              ^
+counter.c: In function 'loadProgramme':
+counter.c:170:20: warning: implicit declaration of function 'strtol' [-Wimplicit-function-declaration]
+   injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+                    ^
+counter.c:164:21: warning: unused variable 'bytes_read' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+                     ^
+counter.c:164:6: warning: unused variable 'bmp_file_size' [-Wunused-variable]
+  int bmp_file_size, bytes_read, addr;
+      ^
+counter.c: In function 'main':
+counter.c:199:17: warning: unused variable 'number_of_pulses' [-Wunused-variable]
+             int number_of_pulses;
+                 ^
+Info: Linking Debugger.elf
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810b0 --timestamp 1669301475 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+Info: (Debugger.elf) 113 KBytes program size (code + initialized data).
+Info:                135 KBytes free for stack + heap.
+Info: Creating Debugger.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+[Debugger build complete]
+16:22:21 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]
+16:25:17 **** Incremental Build of configuration Nios II for project Debugger ****
+make all 
+Info: Building ../Debugger_bsp/
+C:/intelFPGA/18.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Debugger_bsp/
+[BSP build complete]
+[Debugger build complete]

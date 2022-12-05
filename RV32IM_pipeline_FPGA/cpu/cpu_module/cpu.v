@@ -14,10 +14,10 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
-    input CLK, RESET; // clock and reset for the cpu
+    input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
     input DATA_CACHE_BUSY_WAIT; // busy wait signal from the memory
     input INS_CACHE_BUSY_WAIT; // busy wait from the instruction memory
     input [31:0] DATA_CACHE_READ_DATA; // input from the memory read
@@ -60,6 +60,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         // TODO: ALU out should be defined later, Branch select out should be defined later
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
+
+
         // connections
         always @(posedge CLK)
         begin
@@ -92,8 +94,13 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         wire [2:0] MEM_WRITE_S2; 
         wire [1:0] REG_WRITE_SELECT_S2;
         wire REG_WRITE_EN_S2; 
+        wire [12:0] RAND_NUM_GEN_OUT;
 
         // units
+
+        // random number genertor module
+        rand_num_gen rand_num_gen_module (CLK_RAND_GEN, RESET, RAND_NUM_GEN_OUT);
+
         //TODO: WRITE_DATA, WRITE_ADDR, WRITE_EN 
         reg_file myreg (REG_WRITE_DATA, 
                         DATA1_S2, 
@@ -106,7 +113,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         RESET,
                         REGISTER_DEBUG_DATA,
                         REGISTER_DEBUG_ADDR,
-                        REGISTER_DEBUG_LCD); //alu module
+                        REGISTER_DEBUG_LCD,
+                        RAND_NUM_GEN_OUT); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         

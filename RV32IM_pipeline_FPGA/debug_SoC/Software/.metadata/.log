@@ -1806,3 +1806,451 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY com.altera.sbtgui.launch 1 0 2022-11-29 15:05:17.365
 !MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+!SESSION 2022-12-05 11:35:08.914 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-05 11:35:43.659
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-12-05 11:35:54.223
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-12-05 11:35:57.149
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FPGA_WINDOWS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 11:38:41.722
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 11:38:44.402
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 11:40:06.080
+!MESSAGE Terminated Launch with connection: 10DE5 Standard on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 11:40:08.141
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 11:40:10.774
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+!SESSION 2022-12-05 12:05:45.539 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-12-05 12:05:49.080
+!MESSAGE Unable to load resource file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.eclipse.emf.ecore.xmi.UnresolvedReferenceException: Unresolved reference '_VA9Fh2_JEe2A-dJeJqANrg'. (file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi, 96, 167)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:351)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:327)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:231)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:397)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:254)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.emf.ecore.xmi.UnresolvedReferenceException: Unresolved reference '_VA9Fh2_JEe2A-dJeJqANrg'. (file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi, 96, 167)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleForwardReferences(XMLHandler.java:1179)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.endDocument(XMLHandler.java:1264)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:261)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 24 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-12-05 12:05:49.082
+!MESSAGE The persisted workbench has no top-level windows, so reinitializing with defaults.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:236)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:397)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:254)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+
+!ENTRY org.eclipse.ui 1 1 2022-12-05 12:05:49.310
+!MESSAGE Workbench migration started
+
+!ENTRY org.eclipse.ui 1 1 2022-12-05 12:05:50.067
+!MESSAGE Workbench migration finished
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-12-05 12:05:55.302
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FPGA_WINDOWS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-12-05 12:05:59.221
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 12:06:02.298
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 12:06:04.601
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2022-12-05 12:06:41.306
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)
+!SESSION 2022-12-05 15:52:00.292 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga/18.0/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-12-05 15:52:07.063
+!MESSAGE Unable to load resource file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+!STACK 0
+org.eclipse.emf.ecore.resource.impl.ResourceSetImpl$1DiagnosticWrappedException: org.eclipse.emf.ecore.xmi.UnresolvedReferenceException: Unresolved reference '_D9mqE3RnEe2ju8XkQF6jpA'. (file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi, 157, 212)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.handleDemandLoadException(ResourceSetImpl.java:319)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:278)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.getResource(ResourceSetImpl.java:406)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.getResource(ResourceHandler.java:351)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadResource(ResourceHandler.java:327)
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:231)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:397)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:254)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+Caused by: org.eclipse.emf.ecore.xmi.UnresolvedReferenceException: Unresolved reference '_D9mqE3RnEe2ju8XkQF6jpA'. (file:/C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi, 157, 212)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.handleForwardReferences(XMLHandler.java:1179)
+	at org.eclipse.emf.ecore.xmi.impl.XMLHandler.endDocument(XMLHandler.java:1264)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(Unknown Source)
+	at org.eclipse.emf.ecore.xmi.impl.XMLLoadImpl.load(XMLLoadImpl.java:175)
+	at org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl.doLoad(XMLResourceImpl.java:261)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1518)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1297)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoad(ResourceSetImpl.java:259)
+	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
+	... 24 more
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2022-12-05 15:52:07.065
+!MESSAGE The persisted workbench has no top-level windows, so reinitializing with defaults.
+!STACK 0
+java.lang.Exception
+	at org.eclipse.e4.ui.internal.workbench.ResourceHandler.loadMostRecentModel(ResourceHandler.java:236)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.loadApplicationModel(E4Application.java:397)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application.createE4Workbench(E4Application.java:254)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:628)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488)
+
+!ENTRY org.eclipse.ui 1 1 2022-12-05 15:52:07.581
+!MESSAGE Workbench migration started
+
+!ENTRY org.eclipse.ui 1 1 2022-12-05 15:52:09.567
+!MESSAGE Workbench migration finished
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-12-05 15:52:17.251
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\FPGA_WINDOWS'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2022-12-05 15:52:23.552
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 15:57:35.428
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 15:57:37.937
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:02:10.482
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:02:12.801
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:05:50.272
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:05:52.651
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:05:53.342
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-12-05 16:05:55.576
+!MESSAGE Failed Executing: [nios2-download, '--cable=DE5 Standard on localhost [USB-1]', --device=1, --instance=0, --accept-bad-sysid, --sidp=0x810b0, /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 4 0 2022-12-05 16:05:55.604
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:06:14.154
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:06:16.571
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:08:40.536
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:08:41.131
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:08:42.908
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:08:43.405
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY org.eclipse.cdt.launch 4 0 2022-12-05 16:08:44.458
+!MESSAGE Error starting gdbserver - see console for details
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:09:21.152
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:09:23.566
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:10:58.773
+!MESSAGE Terminated Launch with connection: 10DE5 Standard on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:00.667
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:01.166
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:03.095
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:03.494
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY org.eclipse.cdt.launch 4 0 2022-12-05 16:11:04.548
+!MESSAGE Error starting gdbserver - see console for details
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:17.624
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:11:20.064
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:12:19.701
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:12:22.202
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:12:59.329
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:13:01.722
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY org.eclipse.cdt.launch 4 104 2022-12-05 16:17:46.486
+!MESSAGE The Nios II ELF executable does not exist. Please verify that the project Debugger built successfully.
+!STACK 0
+java.io.FileNotFoundException: ELF file 'Debugger.elf' not found.
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.getProgramFile(Nios2HardwareLaunchDelegate.java:1232)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramFile(AbstractCLaunchDelegate.java:448)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.initialize(AbstractNios2CLaunchDelegate.java:183)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:90)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.cdt.launch 4 104 2022-12-05 16:17:46.486
+!MESSAGE ELF file 'Debugger.elf' not found.
+!STACK 0
+java.io.FileNotFoundException: ELF file 'Debugger.elf' not found.
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.getProgramFile(Nios2HardwareLaunchDelegate.java:1232)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.verifyProgramFile(AbstractCLaunchDelegate.java:448)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.initialize(AbstractNios2CLaunchDelegate.java:183)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:90)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:17:50.195
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:17:52.783
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:22:25.269
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:22:27.781
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:25:20.980
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810b0 /cygdrive/c/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2022-12-05 16:25:23.418
+!MESSAGE Executing: [C:/intelfpga/18.0/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE5 Standard on localhost [USB-1]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+
+!ENTRY org.eclipse.cdt.debug.mi.core 4 42 2022-12-05 16:27:58.396
+!MESSAGE Internal Error
+!STACK 0
+org.eclipse.cdt.debug.mi.core.cdi.MI2CDIException: Inferior terminated[]
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.getMIShareds(SharedLibraryManager.java:123)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.updateState(SharedLibraryManager.java:189)
+	at org.eclipse.cdt.debug.mi.core.cdi.SharedLibraryManager.update(SharedLibraryManager.java:137)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.processSuspendedEvent(EventManager.java:329)
+	at org.eclipse.cdt.debug.mi.core.cdi.EventManager.update(EventManager.java:101)
+	at java.util.Observable.notifyObservers(Unknown Source)
+	at org.eclipse.cdt.debug.mi.core.MISession.notifyObservers(MISession.java:797)
+	at org.eclipse.cdt.debug.mi.core.EventThread.run(EventThread.java:47)

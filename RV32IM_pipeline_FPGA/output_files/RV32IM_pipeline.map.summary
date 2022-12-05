@@ -1,23 +1,23 @@
-Analysis & Synthesis Status : Successful - Tue Nov 29 14:58:39 2022
+Analysis & Synthesis Status : Successful - Mon Dec 05 12:00:35 2022
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : RV32IM_pipeline
 Top-level Entity Name : system
 Family : Stratix V
-Logic utilization (in ALMs) : N/A
-Total registers : 13329
-Total pins : 1
-Total virtual pins : 0
-Total block memory bits : 2,143,232
-Total DSP Blocks : 15
-Total HSSI STD RX PCSs : 0
-Total HSSI 10G RX PCSs : 0
-Total HSSI GEN3 RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI STD TX PCSs : 0
-Total HSSI 10G TX PCSs : 0
-Total HSSI GEN3 TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
-Total HSSI PIPE GEN1_2s : 0
-Total HSSI GEN3s : 0
-Total PLLs : 0
-Total DLLs : 0
+Logic utilization (in ALMs) : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total block memory bits : N/A until Partition Merge
+Total DSP Blocks : N/A until Partition Merge
+Total HSSI STD RX PCSs : N/A until Partition Merge
+Total HSSI 10G RX PCSs : N/A until Partition Merge
+Total HSSI GEN3 RX PCSs : N/A until Partition Merge
+Total HSSI PMA RX Deserializers : N/A until Partition Merge
+Total HSSI STD TX PCSs : N/A until Partition Merge
+Total HSSI 10G TX PCSs : N/A until Partition Merge
+Total HSSI GEN3 TX PCSs : N/A until Partition Merge
+Total HSSI PMA TX Serializers : N/A until Partition Merge
+Total HSSI PIPE GEN1_2s : N/A until Partition Merge
+Total HSSI GEN3s : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge
+Total DLLs : N/A until Partition Merge
