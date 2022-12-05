@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Nov 29 15:02:26 2022
+Fitter Status : Successful - Mon Dec 05 11:35:30 2022
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : RV32IM_pipeline
 Top-level Entity Name : system
 Family : Stratix V
 Device : 5SGXEA7N2F45C2
 Timing Models : Final
-Logic utilization (in ALMs) : 8,853 / 234,720 ( 4 % )
-Total registers : 13431
+Logic utilization (in ALMs) : 8,815 / 234,720 ( 4 % )
+Total registers : 13497
 Total pins : 1 / 1,064 ( < 1 % )
 Total virtual pins : 0
 Total block memory bits : 2,143,232 / 52,428,800 ( 4 % )

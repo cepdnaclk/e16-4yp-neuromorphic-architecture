@@ -70,6 +70,17 @@ void printRegisters() {
 
         printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
     }
+
+    // check random number generation
+    		// write the address to the IO port
+            IOWR_8DIRECT(ADDR,OFFSET,31);
+            usleep(DELAY); // Wait for about 0.1 seconds
+
+            // getting data from the Register file
+            int data = IORD_32DIRECT(DATA_IN,OFFSET);
+            convData.i = data;
+
+            printf("Addr: %d->%d,%.4f   ",31, data, convData.f);
     printf("\n\n");
 }
 

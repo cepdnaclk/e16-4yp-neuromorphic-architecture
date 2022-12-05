@@ -21,24 +21,23 @@ begin
  begin
   random <= random_next;
   count <= count_next;
- end
-end
-
-always @ (*)
-begin
- random_next = random; //default state stays the same
- count_next = count;
   
   random_next = {random[11:0], feedback}; //shift left the xor'd every posedge clock
-  count_next = count + 1;
+  
 
- if (count == 13)
- begin
-  count = 0;
-  random_done = random; //assign the random number to output after 13 shifts
+	 if (count == 13)
+	 begin
+	  count_next = 0;
+	  random_done = random; //assign the random number to output after 13 shifts
+	 end
+	 else
+	begin
+		count_next = count + 1;
+	end
  end
- 
 end
+
+
 
 
 assign rnd = random_done;
