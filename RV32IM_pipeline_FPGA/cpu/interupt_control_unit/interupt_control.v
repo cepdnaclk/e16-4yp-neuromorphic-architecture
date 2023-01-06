@@ -1,4 +1,4 @@
-`include "../supported_modules/mux2to1_32bit.v"
+// `include "../supported_modules/mux2to1_32bit.v"
 
 module interupt_control (
         input clk,
@@ -8,12 +8,11 @@ module interupt_control (
         input return_from_isr,
         output [31:0] pc_next_final,
         output [31:0] pc_next_regfile,
-        output en_regfile
+        output reg en_regfile
     );
 
     reg mux_sel;
     localparam ISR_PC = 500;
-    reg en_regfile;
     assign pc_next_regfile = pc_next;
 
     // state machine states
