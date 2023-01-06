@@ -9,12 +9,14 @@ import struct
 # genarate the sequence
 def genSequence(fNumber, register):
     floatString = bin(struct.unpack('I', struct.pack('f', fNumber))[0])[2:]
-    if len(floatString) == 31:
-        floatString = '0' + floatString
+    print(len(floatString))
+    if len(floatString) < 32:
+        floatString = '0'*(32-len(floatString)) + floatString
     elif len(floatString) == 32:
         pass
     else:
         print("Conversion error")
+    print(floatString)
     print('addi {}, {}, {}'.format(register, register, int(floatString[0:11], 2)))
     print('slli {}, {}, {}'.format(register, register, 11))
     print('addi {}, {}, {}'.format(register, register, int(floatString[11:22], 2)))
