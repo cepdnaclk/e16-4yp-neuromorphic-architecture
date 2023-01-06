@@ -19,7 +19,11 @@
 
 #define NUMBER_OF_REGS 16
 
-#define DELAY 10
+#define DELAY 1
+
+// global variables
+// variable to hold the current spike value state
+int spikeValue = 0;
 
 int8_t g_file_buffer[16];
 
@@ -68,11 +72,53 @@ void printRegisters() {
         int data = IORD_32DIRECT(DATA_IN,OFFSET);
         convData.i = data;
 
-        printf("Addr: %d Data: %d,%.4f   ",addr, data, convData.f);
+        printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
     }
-    printf("\n");
+
+    // check random number generation
+    		// write the address to the IO port
+            IOWR_8DIRECT(ADDR,OFFSET,31);
+            usleep(DELAY); // Wait for about 0.1 seconds
+
+            // getting data from the Register file
+            int data = IORD_32DIRECT(DATA_IN,OFFSET);
+            convData.i = data;
+
+            printf("Addr: %d->%d,%.4f   ",31, data, convData.f);
+    printf("\n\n");
 }
 
+// formated print for spike identification
+void printSpike() {
+	union ConvFloat convData;
+
+	// ========================================== print value
+	// write the address to the IO port
+	IOWR_8DIRECT(ADDR,OFFSET,4);
+	usleep(DELAY); // Wait for about 0.1 seconds
+
+	// getting data from the Register file
+	int data = IORD_32DIRECT(DATA_IN,OFFSET);
+	convData.i = data;
+
+	if (data != spikeValue) {
+		spikeValue = data;
+
+		printf("value: %d,%.4f   ",data, convData.f);
+
+		// =========================================== print spike count
+		// write the address to the IO port
+		IOWR_8DIRECT(ADDR,OFFSET,15);
+		usleep(DELAY); // Wait for about 0.1 seconds
+
+		// getting data from the Register file
+		data = IORD_32DIRECT(DATA_IN,OFFSET);
+		convData.i = data;
+
+		printf("spike count: %d,%.4f \n",data, convData.f);
+
+	}
+}
 
 //print ALU SELECT Signal
 void printALUSelect() {
@@ -89,8 +135,9 @@ void genPulseAndPrint(int pulseCount) {
     	usleep(DELAY); // Wait for about 0.1 seconds
     	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
         // printing the register values
-        printRegisters();
-        printALUSelect();
+        // printRegisters();
+        printSpike();
+        // printALUSelect();
     }
 }
 
@@ -145,7 +192,8 @@ int main(void)
         if (answer == 'y') {
             IOWR_8DIRECT(CLK_SEL,OFFSET,0);
             while (1) {
-                printRegisters();
+                // printRegisters();
+            	printSpike();
             }
         } else {
             int number_of_pulses;

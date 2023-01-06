@@ -1,0 +1,23 @@
+Partition Merge Status : Successful - Mon Dec 05 16:43:09 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : RV32IM_pipeline
+Top-level Entity Name : system
+Family : Stratix V
+Logic utilization (in ALMs) : 11,816 / 234,720 ( 5 % )
+Total registers : 13484
+Total pins : 1 / 1,064 ( < 1 % )
+Total virtual pins : 0
+Total block memory bits : 2,143,232 / 52,428,800 ( 4 % )
+Total DSP Blocks : 15 / 256 ( 6 % )
+Total HSSI STD RX PCSs : 0 / 48 ( 0 % )
+Total HSSI 10G RX PCSs : 0 / 48 ( 0 % )
+Total HSSI GEN3 RX PCSs : 0 / 48 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 48 ( 0 % )
+Total HSSI STD TX PCSs : 0 / 48 ( 0 % )
+Total HSSI 10G TX PCSs : 0 / 48 ( 0 % )
+Total HSSI GEN3 TX PCSs : 0 / 48 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 48 ( 0 % )
+Total HSSI PIPE GEN1_2s : 0 / 48 ( 0 % )
+Total HSSI GEN3s : 0 / 48 ( 0 % )
+Total PLLs : 0 / 92 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

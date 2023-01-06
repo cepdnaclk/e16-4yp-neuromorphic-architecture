@@ -1,0 +1,293 @@
+Partition Merge report for RV32IM_pipeline
+Mon Dec 05 16:43:09 2022
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Rapid Recompile Summary
+  5. Partition Merge Partition Pin Processing
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge DSP Block Usage Summary
+  9. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------+
+; Partition Merge Summary                                                           ;
++---------------------------------+-------------------------------------------------+
+; Partition Merge Status          ; Successful - Mon Dec 05 16:43:09 2022           ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
+; Revision Name                   ; RV32IM_pipeline                                 ;
+; Top-level Entity Name           ; system                                          ;
+; Family                          ; Stratix V                                       ;
+; Logic utilization (in ALMs)     ; 11,816 / 234,720 ( 5 % )                        ;
+; Total registers                 ; 13484                                           ;
+; Total pins                      ; 1 / 1,064 ( < 1 % )                             ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 2,143,232 / 52,428,800 ( 4 % )                  ;
+; Total DSP Blocks                ; 15 / 256 ( 6 % )                                ;
+; Total HSSI STD RX PCSs          ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI 10G RX PCSs          ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI GEN3 RX PCSs         ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI PMA RX Deserializers ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI STD TX PCSs          ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI 10G TX PCSs          ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI GEN3 TX PCSs         ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI PMA TX Serializers   ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI PIPE GEN1_2s         ; 0 / 48 ( 0 % )                                  ;
+; Total HSSI GEN3s                ; 0 / 48 ( 0 % )                                  ;
+; Total PLLs                      ; 0 / 92 ( 0 % )                                  ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
++---------------------------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                                   ;
++--------------------------------+----------------+--------------------------+------------------------+--------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used        ; Netlist Type Requested ; Partition Contents             ;
++--------------------------------+----------------+--------------------------+------------------------+--------------------------------+
+; Top                            ; User-created   ; Hybrid (Rapid Recompile) ; Source File            ;                                ;
+; sld_hub:auto_hub               ; Auto-generated ; Hybrid (Rapid Recompile) ; Post-Synthesis         ; sld_hub:auto_hub               ;
+; hard_block:auto_generated_inst ; Auto-generated ; Hybrid (Rapid Recompile) ; Source File            ; hard_block:auto_generated_inst ;
++--------------------------------+----------------+--------------------------+------------------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Rapid Recompile Summary                                                                                          ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
+; Partition Name                 ; Rapid Recompile Status ; Netlist Preservation Requested ; Netlist Preservation Achieved ; Notes ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
+; Top                            ; Engaged                ; 100.00% (27666 / 27666)        ; 100.00% (27666 / 27666)       ;       ;
+; sld_hub:auto_hub               ; Engaged                ; 100.00% (351 / 351)            ; 100.00% (351 / 351)           ;       ;
+; hard_block:auto_generated_inst ; Engaged                ; 100.00% (28 / 28)              ; 100.00% (28 / 28)             ;       ;
++--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                                                                                                                                                                                            ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+---------------+------------------+---------------------------------------------+
+; Name                                                                                                                                                   ; Partition ; Type          ; Location         ; Status                                      ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+---------------+------------------+---------------------------------------------+
+; altera_reserved_ntrst                                                                                                                                  ; Top       ; Input Port    ; n/a              ;                                             ;
+;     -- altera_reserved_ntrst                                                                                                                           ; Top       ; Input Pad     ; Unplaced         ; Synthesized                                 ;
+;     -- altera_reserved_ntrst~input                                                                                                                     ; Top       ; Input Buffer  ; Unplaced         ; Synthesized                                 ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; altera_reserved_tck                                                                                                                                    ; Top       ; Input Port    ; n/a              ;                                             ;
+;     -- altera_reserved_tck                                                                                                                             ; Top       ; Input Pad     ; Unplaced         ; Synthesized                                 ;
+;     -- altera_reserved_tck~input                                                                                                                       ; Top       ; Input Buffer  ; Unplaced         ; Synthesized                                 ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; altera_reserved_tdi                                                                                                                                    ; Top       ; Input Port    ; n/a              ;                                             ;
+;     -- altera_reserved_tdi                                                                                                                             ; Top       ; Input Pad     ; Unplaced         ; Synthesized                                 ;
+;     -- altera_reserved_tdi~input                                                                                                                       ; Top       ; Input Buffer  ; Unplaced         ; Synthesized                                 ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; altera_reserved_tdo                                                                                                                                    ; Top       ; Output Port   ; n/a              ;                                             ;
+;     -- altera_reserved_tdo                                                                                                                             ; Top       ; Output Pad    ; Unplaced         ; Synthesized                                 ;
+;     -- altera_reserved_tdo~output                                                                                                                      ; Top       ; Output Buffer ; Unplaced         ; Synthesized                                 ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; altera_reserved_tms                                                                                                                                    ; Top       ; Input Port    ; n/a              ;                                             ;
+;     -- altera_reserved_tms                                                                                                                             ; Top       ; Input Pad     ; Unplaced         ; Synthesized                                 ;
+;     -- altera_reserved_tms~input                                                                                                                       ; Top       ; Input Buffer  ; Unplaced         ; Synthesized                                 ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; clock_in                                                                                                                                               ; Top       ; Input Port    ; n/a              ;                                             ;
+;     -- clock_in                                                                                                                                        ; Top       ; Input Pad     ; IOPAD_X59_Y0_N0  ; Preserved from Post-Fit or Imported Netlist ;
+;     -- clock_in~input                                                                                                                                  ; Top       ; Input Buffer  ; IOIBUF_X59_Y0_N1 ; Preserved from Post-Fit or Imported Netlist ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_clr             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ena             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_0_        ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_in_1_        ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_out_0_       ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_ir_out_1_       ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cdr  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_cir  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1dr ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e1ir ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2dr ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_e2ir ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pdr  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_pir  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_rti  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdr  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sdrs ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sir  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_sirs ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_tlr  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_udr  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_jtag_state_uir  ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tck         ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_raw_tms         ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_tdi             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_tdo             ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_cpu_the_SoC_cpu_nios2_oci_the_SoC_cpu_jtag_debug_module_wrapper_SoC_cpu_jtag_debug_module_phy_sld_virtual_jtag_impl_inst_usr1            ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_clr                                                                                        ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ena                                                                                        ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ir_in_0_                                                                                   ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_ir_out_0_                                                                                  ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_cdr                                                                             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_rti                                                                             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_sdr                                                                             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_jtag_state_udr                                                                             ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_raw_tck                                                                                    ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tdi                                                                                        ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_tdo                                                                                        ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_usr1                                                                                       ; Top       ; Input Port    ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; ~QUARTUS_CREATED_GND~1                                                                                                                                 ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+---------------+------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                                                ;
++---------------------------------------------+---------------------------------------------------------+
+; Resource                                    ; Usage                                                   ;
++---------------------------------------------+---------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 14730                                                   ;
+;                                             ;                                                         ;
+; Combinational ALUT usage for logic          ; 11239                                                   ;
+;     -- 7 input functions                    ; 44                                                      ;
+;     -- 6 input functions                    ; 5842                                                    ;
+;     -- 5 input functions                    ; 1420                                                    ;
+;     -- 4 input functions                    ; 1072                                                    ;
+;     -- <=3 input functions                  ; 2861                                                    ;
+;                                             ;                                                         ;
+; Dedicated logic registers                   ; 13484                                                   ;
+;                                             ;                                                         ;
+; I/O pins                                    ; 1                                                       ;
+; Total MLAB memory bits                      ; 0                                                       ;
+; Total block memory bits                     ; 2143232                                                 ;
+;                                             ;                                                         ;
+; Total DSP Blocks                            ; 15                                                      ;
+;                                             ;                                                         ;
+; SERDES transmitters                         ; 0 / 210 ( 0 % )                                         ;
+; SERDES receivers                            ; 0 / 210 ( 0 % )                                         ;
+; HSSI RX PCSs                                ; 0 / 96 ( 0 % )                                          ;
+; HSSI PMA RX Deserializers                   ; 0 / 48 ( 0 % )                                          ;
+; HSSI TX PCSs                                ; 0 / 96 ( 0 % )                                          ;
+; HSSI PMA TX Serializers                     ; 0 / 48 ( 0 % )                                          ;
+; Maximum fan-out node                        ; SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out~CLKENA0 ;
+; Maximum fan-out                             ; 8192                                                    ;
+; Total fan-out                               ; 104266                                                  ;
+; Average fan-out                             ; 3.75                                                    ;
++---------------------------------------------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+-------------------------------------+
+; Name                                                                                                                                                                                                                                                               ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                 ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+-------------------------------------+
+; SoC:inst6|SoC_cpu:cpu|SoC_cpu_ic_data_module:SoC_cpu_ic_data|altsyncram:the_altsyncram|altsyncram_k7o1:auto_generated|ALTSYNCRAM                                                                                                                                   ; AUTO ; Simple Dual Port ; 1024         ; 32           ; 1024         ; 32           ; 32768   ; None                                ;
+; SoC:inst6|SoC_cpu:cpu|SoC_cpu_ic_tag_module:SoC_cpu_ic_tag|altsyncram:the_altsyncram|altsyncram_47r1:auto_generated|ALTSYNCRAM                                                                                                                                     ; AUTO ; Simple Dual Port ; 128          ; 16           ; 128          ; 16           ; 2048    ; SoC_cpu_ic_tag_ram.mif              ;
+; SoC:inst6|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_nios2_ocimem:the_SoC_cpu_nios2_ocimem|SoC_cpu_ociram_lpm_dram_bdp_component_module:SoC_cpu_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram|altsyncram_r6i2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port   ; 256          ; 32           ; 256          ; 32           ; 8192    ; SoC_cpu_ociram_default_contents.mif ;
+; SoC:inst6|SoC_cpu:cpu|SoC_cpu_register_bank_a_module:SoC_cpu_register_bank_a|altsyncram:the_altsyncram|altsyncram_1tq1:auto_generated|ALTSYNCRAM                                                                                                                   ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024    ; SoC_cpu_rf_ram_a.mif                ;
+; SoC:inst6|SoC_cpu:cpu|SoC_cpu_register_bank_b_module:SoC_cpu_register_bank_b|altsyncram:the_altsyncram|altsyncram_2tq1:auto_generated|ALTSYNCRAM                                                                                                                   ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024    ; SoC_cpu_rf_ram_b.mif                ;
+; SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|SoC_jtag_uart_0_scfifo_r:the_SoC_jtag_uart_0_scfifo_r|scfifo:rfifo|scfifo_rfd1:auto_generated|a_dpfifo_tkb1:dpfifo|altsyncram_v632:FIFOram|ALTSYNCRAM                                                                        ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512     ; None                                ;
+; SoC:inst6|SoC_jtag_uart_0:jtag_uart_0|SoC_jtag_uart_0_scfifo_w:the_SoC_jtag_uart_0_scfifo_w|scfifo:wfifo|scfifo_rfd1:auto_generated|a_dpfifo_tkb1:dpfifo|altsyncram_v632:FIFOram|ALTSYNCRAM                                                                        ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512     ; None                                ;
+; SoC:inst6|SoC_onchip_mem:onchip_mem|altsyncram:the_altsyncram|altsyncram_ssm1:auto_generated|ALTSYNCRAM                                                                                                                                                            ; AUTO ; Single Port      ; 65536        ; 32           ; --           ; --           ; 2097152 ; SoC_onchip_mem.hex                  ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+-------------------------------------+
+
+
++-----------------------------------------------+
+; Partition Merge DSP Block Usage Summary       ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 27x27               ; 9           ;
+; Integer 36x36 / Complex 18x18   ; 6           ;
+; Total number of DSP blocks      ; 15          ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 12          ;
++---------------------------------+-------------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+    Info: Processing started: Mon Dec 05 16:42:54 2022
+Info: Command: quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "Top"
+Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "sld_hub:auto_hub"
+Info (35002): Resolved and merged 2 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 11 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 23967 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 23804 logic cells
+    Info (21064): Implemented 137 RAM segments
+    Info (21062): Implemented 15 DSP elements
+Info: Quartus Prime Partition Merge was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 5530 megabytes
+    Info: Processing ended: Mon Dec 05 16:43:11 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
+
+

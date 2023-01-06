@@ -1,8 +1,9 @@
-module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD);
+module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD, RAND_INPUT);
 
 input [31:0] IN;  // 32 bit data input
 input [4:0] INADDRESS, OUT1ADDRESS, OUT2ADDRESS; // 5 bit data inputs
 input WRITE, CLK, RESET; // 1 bit data inputs
+input [12:0] RAND_INPUT; // data from random number genrator
 output [31:0] OUT1, OUT2; // 32 bit data outputs
 output [31:0] DEBUG_DATA; // debug port for register data
 output [47:0] DEBUG_DATA_LCD; // output least signifcand 8 bits of registers from 0 to 6
@@ -34,6 +35,7 @@ begin
     end
     else
     begin
+        REGISTERS[31] = { RAND_INPUT[12],8'd130, RAND_INPUT[11:0],11'b0 };
         if (WRITE == 1'b1)
         begin
             REGISTERS[INADDRESS] = IN; 

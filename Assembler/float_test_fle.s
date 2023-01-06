@@ -1,25 +1,49 @@
 nop
 nop
-addi x0, x0, 1035 
-addi x1, x1, 1038  
-addi x2, x2, 1028  
-addi x3, x3, 20
-sll x0, x0, x3
-sll x1, x1, x3
-sll x2, x2, x3
-fdiv x4, x0, x2 
-fdiv x5, x1, x2 
-fadd x6, x2, x1
-fsub x7, x2, x1 
-fmul x8, x2, x1 
-addi x3, x3, 11  
-flt  x9, x0, x1 
-flt  x10, x1, x0 
-fle  x11, x4, x5 
-fle  x12, x5, x4 
-fle  x13, x4, x4 
-feq  x14, x5, x5 
-feq  x15, x5, x0 
+; x0 -4.23
+addi x0, x0, 1540
+slli x0, x0, 11
+addi x0, x0, 471
+slli x0, x0, 10
+addi x0, x0, 41
+
+; x1 234
+addi x1, x1, 539
+slli x1, x1, 11
+addi x1, x1, 640
+slli x1, x1, 10
+addi x1, x1, 0
+
+; x2 -42.1
+addi x2, x2, 1553
+slli x2, x2, 11
+addi x2, x2, 537
+slli x2, x2, 10
+addi x2, x2, 614
+
+;x3  73.22
+addi x3, x3, 532
+slli x3, x3, 11
+addi x3, x3, 1180
+slli x3, x3, 10
+addi x3, x3, 164
+
+fle  x5, x0, x1 
+fle  x6, x1, x0 
+fle  x7, x2, x0 
+fle  x8, x0, x2 
+fle  x9, x3, x1
+fle  x10, x1, x3
+fle x11, x0, x0 
+fle x12, x0, x1
+fle x13, x1, x1
+fle x14, x3, x1
+
+
+
+
+
+
 
 
 

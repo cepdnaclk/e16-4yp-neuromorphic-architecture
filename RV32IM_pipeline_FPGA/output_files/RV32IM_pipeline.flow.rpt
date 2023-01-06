@@ -1,5 +1,5 @@
 Flow report for RV32IM_pipeline
-Tue Nov 29 00:01:19 2022
+Mon Dec 05 16:46:52 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue Nov 29 00:01:19 2022           ;
+; Flow Status                     ; Successful - Mon Dec 05 16:46:52 2022           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; RV32IM_pipeline                                 ;
 ; Top-level Entity Name           ; system                                          ;
 ; Family                          ; Stratix V                                       ;
 ; Device                          ; 5SGXEA7N2F45C2                                  ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 8,845 / 234,720 ( 4 % )                         ;
-; Total registers                 ; 13448                                           ;
+; Logic utilization (in ALMs)     ; 11,745 / 234,720 ( 5 % )                        ;
+; Total registers                 ; 13484                                           ;
 ; Total pins                      ; 1 / 1,064 ( < 1 % )                             ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 2,143,232 / 52,428,800 ( 4 % )                  ;
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/28/2022 23:55:21 ;
+; Start date & time ; 12/05/2022 11:59:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RV32IM_pipeline     ;
 +-------------------+---------------------+
@@ -84,7 +84,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------+-----------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                 ; Default Value   ; Entity Name ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------+-----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 79232741010464.166965992008496                        ; --              ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 79232741010464.167022178903304                        ; --              ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --              ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>          ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --              ; --          ; --             ;
@@ -113,12 +113,18 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:09     ; 1.5                     ; 5138 MB             ; 00:01:55                           ;
-; Fitter               ; 00:03:09     ; 1.1                     ; 8829 MB             ; 00:07:32                           ;
-; Assembler            ; 00:00:56     ; 1.0                     ; 5430 MB             ; 00:00:53                           ;
-; Timing Analyzer      ; 00:00:19     ; 1.5                     ; 5788 MB             ; 00:00:26                           ;
-; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 5029 MB             ; 00:00:09                           ;
-; Total                ; 00:05:42     ; --                      ; --                  ; 00:10:55                           ;
+; Analysis & Synthesis ; 00:00:47     ; 1.0                     ; 5122 MB             ; 00:01:12                           ;
+; Partition Merge      ; 00:00:17     ; 1.0                     ; 5491 MB             ; 00:00:16                           ;
+; Fitter               ; 00:02:08     ; 1.0                     ; 8802 MB             ; 00:03:16                           ;
+; Assembler            ; 00:01:06     ; 1.0                     ; 5439 MB             ; 00:01:06                           ;
+; Timing Analyzer      ; 00:00:27     ; 1.7                     ; 5826 MB             ; 00:00:43                           ;
+; EDA Netlist Writer   ; 00:00:08     ; 1.0                     ; 5050 MB             ; 00:00:08                           ;
+; Partition Merge      ; 00:00:15     ; 1.0                     ; 5530 MB             ; 00:00:15                           ;
+; Fitter               ; 00:01:41     ; 1.0                     ; 8331 MB             ; 00:02:42                           ;
+; Assembler            ; 00:01:09     ; 1.0                     ; 5435 MB             ; 00:01:06                           ;
+; Timing Analyzer      ; 00:00:29     ; 1.6                     ; 5826 MB             ; 00:00:43                           ;
+; EDA Netlist Writer   ; 00:00:11     ; 1.0                     ; 5050 MB             ; 00:00:11                           ;
+; Total                ; 00:08:38     ; --                      ; --                  ; 00:11:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,6 +134,12 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; Partition Merge      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
+; Partition Merge      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Fitter               ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
@@ -138,8 +150,14 @@ refer to the applicable agreement for further details.
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
-quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
+quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
+quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
+quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
+quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
+quartus_sta RV32IM_pipeline -c RV32IM_pipeline
+quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
+quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
+quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
 quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 quartus_sta RV32IM_pipeline -c RV32IM_pipeline
 quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
