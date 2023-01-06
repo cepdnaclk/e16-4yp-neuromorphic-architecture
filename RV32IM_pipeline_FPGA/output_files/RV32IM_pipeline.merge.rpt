@@ -1,5 +1,5 @@
 Partition Merge report for RV32IM_pipeline
-Mon Dec 05 12:00:55 2022
+Mon Dec 05 16:43:09 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -10,12 +10,11 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   2. Partition Merge Summary
   3. Partition Merge Netlist Types Used
   4. Partition Merge Rapid Recompile Summary
-  5. Partition Merge Rapid Recompile Table of Changed Logic Entities
-  6. Partition Merge Partition Pin Processing
-  7. Partition Merge Resource Usage Summary
-  8. Partition Merge RAM Summary
-  9. Partition Merge DSP Block Usage Summary
- 10. Partition Merge Messages
+  5. Partition Merge Partition Pin Processing
+  6. Partition Merge Resource Usage Summary
+  7. Partition Merge RAM Summary
+  8. Partition Merge DSP Block Usage Summary
+  9. Partition Merge Messages
 
 
 
@@ -41,13 +40,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Partition Merge Summary                                                           ;
 +---------------------------------+-------------------------------------------------+
-; Partition Merge Status          ; Successful - Mon Dec 05 12:00:55 2022           ;
+; Partition Merge Status          ; Successful - Mon Dec 05 16:43:09 2022           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; RV32IM_pipeline                                 ;
 ; Top-level Entity Name           ; system                                          ;
 ; Family                          ; Stratix V                                       ;
-; Logic utilization (in ALMs)     ; 11,791 / 234,720 ( 5 % )                        ;
-; Total registers                 ; 13488                                           ;
+; Logic utilization (in ALMs)     ; 11,816 / 234,720 ( 5 % )                        ;
+; Total registers                 ; 13484                                           ;
 ; Total pins                      ; 1 / 1,064 ( < 1 % )                             ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 2,143,232 / 52,428,800 ( 4 % )                  ;
@@ -83,20 +82,10 @@ refer to the applicable agreement for further details.
 +--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
 ; Partition Name                 ; Rapid Recompile Status ; Netlist Preservation Requested ; Netlist Preservation Achieved ; Notes ;
 +--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
-; Top                            ; Engaged                ; 99.79% (27479 / 27537)         ; 99.69% (27451 / 27537)        ;       ;
+; Top                            ; Engaged                ; 100.00% (27666 / 27666)        ; 100.00% (27666 / 27666)       ;       ;
 ; sld_hub:auto_hub               ; Engaged                ; 100.00% (351 / 351)            ; 100.00% (351 / 351)           ;       ;
 ; hard_block:auto_generated_inst ; Engaged                ; 100.00% (28 / 28)              ; 100.00% (28 / 28)             ;       ;
 +--------------------------------+------------------------+--------------------------------+-------------------------------+-------+
-
-
-+-----------------------------------------------------------------+
-; Partition Merge Rapid Recompile Table of Changed Logic Entities ;
-+-----------------------------------+-----------------------------+
-; Changed Logic Entities            ; Number of Changed Nodes     ;
-+-----------------------------------+-----------------------------+
-; |system|cpu:inst12|reg_file:myreg ; 84                          ;
-; |system|freq_divider:inst3        ; 1                           ;
-+-----------------------------------+-----------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,6 +195,8 @@ refer to the applicable agreement for further details.
 ;                                                                                                                                                        ;           ;               ;                  ;                                             ;
 ; jtag.bp.inst6_jtag_uart_0_SoC_jtag_uart_0_alt_jtag_atlantic_usr1                                                                                       ; Top       ; Input Port    ; n/a              ;                                             ;
 ;                                                                                                                                                        ;           ;               ;                  ;                                             ;
+; ~QUARTUS_CREATED_GND~1                                                                                                                                 ; Top       ; Output Port   ; n/a              ;                                             ;
+;                                                                                                                                                        ;           ;               ;                  ;                                             ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+---------------+------------------+---------------------------------------------+
 
 
@@ -214,16 +205,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------------------------------------------------+
 ; Resource                                    ; Usage                                                   ;
 +---------------------------------------------+---------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 14658                                                   ;
+; Estimate of Logic utilization (ALMs needed) ; 14730                                                   ;
 ;                                             ;                                                         ;
-; Combinational ALUT usage for logic          ; 11238                                                   ;
+; Combinational ALUT usage for logic          ; 11239                                                   ;
 ;     -- 7 input functions                    ; 44                                                      ;
 ;     -- 6 input functions                    ; 5842                                                    ;
 ;     -- 5 input functions                    ; 1420                                                    ;
 ;     -- 4 input functions                    ; 1072                                                    ;
-;     -- <=3 input functions                  ; 2860                                                    ;
+;     -- <=3 input functions                  ; 2861                                                    ;
 ;                                             ;                                                         ;
-; Dedicated logic registers                   ; 13488                                                   ;
+; Dedicated logic registers                   ; 13484                                                   ;
 ;                                             ;                                                         ;
 ; I/O pins                                    ; 1                                                       ;
 ; Total MLAB memory bits                      ; 0                                                       ;
@@ -239,8 +230,8 @@ refer to the applicable agreement for further details.
 ; HSSI PMA TX Serializers                     ; 0 / 48 ( 0 % )                                          ;
 ; Maximum fan-out node                        ; SoC:inst6|SoC_clk_sel:ins_inject_clock|data_out~CLKENA0 ;
 ; Maximum fan-out                             ; 8192                                                    ;
-; Total fan-out                               ; 104154                                                  ;
-; Average fan-out                             ; 3.76                                                    ;
+; Total fan-out                               ; 104266                                                  ;
+; Average fan-out                             ; 3.75                                                    ;
 +---------------------------------------------+---------------------------------------------------------+
 
 
@@ -279,7 +270,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Partition Merge
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 12:00:38 2022
+    Info: Processing started: Mon Dec 05 16:42:54 2022
 Info: Command: quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "Top"
@@ -287,16 +278,16 @@ Info (12849): Using Hybrid (Rapid Recompile) netlist for partition "sld_hub:auto
 Info (35002): Resolved and merged 2 partition(s)
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 11 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23949 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 23967 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 23786 logic cells
+    Info (21061): Implemented 23804 logic cells
     Info (21064): Implemented 137 RAM segments
     Info (21062): Implemented 15 DSP elements
 Info: Quartus Prime Partition Merge was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5491 megabytes
-    Info: Processing ended: Mon Dec 05 12:00:56 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 5530 megabytes
+    Info: Processing ended: Mon Dec 05 16:43:11 2022
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 

@@ -1,5 +1,5 @@
 Assembler report for RV32IM_pipeline
-Mon Dec 05 12:04:16 2022
+Mon Dec 05 16:46:08 2022
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 05 12:04:16 2022 ;
+; Assembler Status      ; Successful - Mon Dec 05 16:46:08 2022 ;
 ; Revision Name         ; RV32IM_pipeline                       ;
 ; Top-level Entity Name ; system                                ;
 ; Family                ; Stratix V                             ;
@@ -89,14 +89,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 12:03:10 2022
+    Info: Processing started: Mon Dec 05 16:44:59 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5439 megabytes
-    Info: Processing ended: Mon Dec 05 12:04:16 2022
-    Info: Elapsed time: 00:01:06
-    Info: Total CPU time (on all processors): 00:01:06
+    Info: Peak virtual memory: 5435 megabytes
+    Info: Processing ended: Mon Dec 05 16:46:09 2022
+    Info: Elapsed time: 00:01:10
+    Info: Total CPU time (on all processors): 00:01:07
 
 

@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Thu Dec 01 10:06:30 2022
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Revision Name : RV32IM_pipeline
+Top-level Entity Name : system
+Family : Stratix V
+Device : 5SGXEA7N2F45C2
+Power Models : Final
+Total Thermal Power Dissipation : 1043.90 mW
+Core Dynamic Thermal Power Dissipation : 0.76 mW
+Core Static Thermal Power Dissipation : 1021.90 mW
+I/O Thermal Power Dissipation : 21.23 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
