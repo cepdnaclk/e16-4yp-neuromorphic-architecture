@@ -52,13 +52,6 @@ extern "C"
 #define ALTERA_AVALON_JTAG_UART_SMALL
 #endif
 
-/* 
- * If the user wants to ignore FIFO full error after timeout
-  */
-#if defined ALT_JTAG_UART_IGNORE_FIFO_FULL_ERROR && !defined ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR
-#define ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR
-#endif
-
 /*
  * Constants that can be overriden.
  */

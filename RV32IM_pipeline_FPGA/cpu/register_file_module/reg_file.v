@@ -9,6 +9,9 @@ output [31:0] DEBUG_DATA; // debug port for register data
 output [47:0] DEBUG_DATA_LCD; // output least signifcand 8 bits of registers from 0 to 6
 input [4:0] DEBUG_ADDR; // debug port for register address
 
+input [31:0] PC_NEXT_REGFILE;
+input INTERUPT_PC_REG_EN;
+
 reg [31:0] REGISTERS [31:0]; // 32 bit x 32 register file
 
 // TODO : set the time delay

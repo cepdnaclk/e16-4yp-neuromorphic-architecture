@@ -7,7 +7,7 @@
 <td width="20%" bgcolor="#77BBFF">BSP Type:</td><td>hal</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>C:\Users\FPGA_WINDOWS\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</td>
+<td width="20%" bgcolor="#77BBFF">SOPC Design File:</td><td>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</td>
 </tr>
 <tr mode="wrap">
 <td width="20%" bgcolor="#77BBFF">Quartus JDI File:</td><td>default</td>
@@ -22,13 +22,13 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Nov 25, 2022 12:52:03 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Jan 6, 2023 4:22:51 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1669360923372</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1673002371142</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\FPGA_WINDOWS\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</td>
 </tr>
 </table>
 <br>
@@ -127,33 +127,6 @@
 <h3>Settings</h3>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">
-<td align="left" width="15%">Setting Name:</td><td align="left">altera_avalon_jtag_uart_driver.enable_jtag_uart_ignore_fifo_full_error</td>
-</tr>
-<tr>
-<td width="20%">Identifier:</td><td>ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR</td>
-</tr>
-<tr>
-<td width="20%">Default Value:</td><td>false</td>
-</tr>
-<tr>
-<td width="20%">Value:</td><td>false</td>
-</tr>
-<tr>
-<td width="20%">Type:</td><td>BooleanDefineOnly</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Destination:</td><td>public_mk_define</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Description:</td><td>Enable JTAG UART driver to recover when host is inactive causing buffer to full without returning error. Printf will not fail with this recovery.</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Restrictions:</td><td>none</td>
-</tr>
-</table>
-<br>
-<table border="1" bgcolor="#FFFFCC" width="60%">
-<tr bgcolor="#77BBFF">
 <td align="left" width="15%">Setting Name:</td><td align="left">altera_avalon_jtag_uart_driver.enable_small_driver</td>
 </tr>
 <tr>
@@ -229,7 +202,7 @@
 <td width="20%">Description:</td><td>Build a custom version of newlib with the specified space-separated compiler flags.</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Restrictions:</td><td>The custom newlib build will be placed in the &lt;bsp root&gt;/newlib directory, and will be used only for applications that utilize this BSP.</td>
+<td width="20%">Restrictions:</td><td>The custom newlib build will be placed in the &amp;lt;bsp root&gt;/newlib directory, and will be used only for applications that utilize this BSP.</td>
 </tr>
 </table>
 <br>
@@ -280,7 +253,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk.</td>
+<td width="20%">Description:</td><td>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS and -Wl,--defsym, exit=_exit to ALT_LDFLAGS in public.mk.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -469,7 +442,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -fstack-limit-register=et to ALT_CPPFLAGS in public.mk.</td>
+<td width="20%">Description:</td><td>Turns on HAL runtime stack checking feature. Enabling this setting causes additional code to be placed into each subroutine call to generate an exception if a stack collision occurs with the heap or statically allocated data. If true, adds -DALT_STACK_CHECK and -mstack-check to ALT_CPPFLAGS in public.mk.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -508,7 +481,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.enable_small_c_library</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -535,7 +508,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.enable_sopc_sysid_check</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>1</td>
@@ -589,7 +562,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_alt_load</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -604,7 +577,7 @@
 <td width="20%">Destination:</td><td>none</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Enables the alt_load() facility. The alt_load() facility copies data sections (.rodata, .rwdata, or .exceptions) from boot memory to RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</td>
+<td width="20%">Description:</td><td>Enables the alt_load() facility. The alt_load() facility copies sections from the .text memory into RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>This setting is typically false if an external bootloader (e.g. flash bootloader) is present.</td>
@@ -616,7 +589,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_alt_load_copy_exceptions</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -643,7 +616,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_alt_load_copy_rodata</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -670,7 +643,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_alt_load_copy_rwdata</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -697,7 +670,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_exception_stack</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -724,7 +697,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.enable_interrupt_stack</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -751,7 +724,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.exception_stack_memory_region_name</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>
@@ -778,7 +751,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.exception_stack_size</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>1024</td>
@@ -805,7 +778,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.interrupt_stack_memory_region_name</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>
@@ -832,7 +805,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.linker.interrupt_stack_size</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>1024</td>
@@ -886,7 +859,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.log_port</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>
@@ -1477,33 +1450,6 @@
 <br>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">
-<td align="left" width="15%">Setting Name:</td><td align="left">hal.make.cflags_mgpopt</td>
-</tr>
-<tr>
-<td width="20%">Identifier:</td><td>CFLAGS_MGPOPT</td>
-</tr>
-<tr>
-<td width="20%">Default Value:</td><td>-mgpopt=global</td>
-</tr>
-<tr>
-<td width="20%">Value:</td><td>-mgpopt=global</td>
-</tr>
-<tr>
-<td width="20%">Type:</td><td>UnquotedString</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Destination:</td><td>public_mk_define</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Description:</td><td>C/C++ compiler to generate (do not generate) GP-relative accesses. 'none' tells the compilter not to generate GP-relative accesses. 'local' will generate GP-relative accesses for small data objects that are not external, weak, or uninitialized common symbols. Also use GP-relative addressing for objects that have been explicitly placed in a small data section via a section attribute. provides the default set of debug symbols typically required to debug a typical application. 'global' is same as 'local' but also generate GP-relative accesses for small data objects that are external, weak, or common.</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Restrictions:</td><td>none</td>
-</tr>
-</table>
-<br>
-<table border="1" bgcolor="#FFFFCC" width="60%">
-<tr bgcolor="#77BBFF">
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.cxx</td>
 </tr>
 <tr>
@@ -1588,7 +1534,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.big_endian</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1603,61 +1549,7 @@
 <td width="20%">Destination:</td><td>public_mk_define</td>
 </tr>
 <tr mode="wrap">
-<td width="20%">Description:</td><td>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -meb' to public.mk if big endian system.</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Restrictions:</td><td>none</td>
-</tr>
-</table>
-<br>
-<table border="1" bgcolor="#FFFFCC" width="60%">
-<tr bgcolor="#77BBFF">
-<td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.bmx_present</td>
-</tr>
-<tr>
-<td width="20%">Identifier:</td><td>none</td>
-</tr>
-<tr>
-<td width="20%">Default Value:</td><td>0</td>
-</tr>
-<tr>
-<td width="20%">Value:</td><td>0</td>
-</tr>
-<tr>
-<td width="20%">Type:</td><td>Boolean</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Destination:</td><td>public_mk_define</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Description:</td><td>If true, prevents GCC from using BMX instructions. If false, GCC uses BMX instructions if present in the CPU.</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Restrictions:</td><td>none</td>
-</tr>
-</table>
-<br>
-<table border="1" bgcolor="#FFFFCC" width="60%">
-<tr bgcolor="#77BBFF">
-<td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.cdx_present</td>
-</tr>
-<tr>
-<td width="20%">Identifier:</td><td>none</td>
-</tr>
-<tr>
-<td width="20%">Default Value:</td><td>0</td>
-</tr>
-<tr>
-<td width="20%">Value:</td><td>0</td>
-</tr>
-<tr>
-<td width="20%">Type:</td><td>Boolean</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Destination:</td><td>public_mk_define</td>
-</tr>
-<tr mode="wrap">
-<td width="20%">Description:</td><td>If true, prevents GCC from using CDX instructions. If false, GCC uses CDX instructions if present in the CPU.</td>
+<td width="20%">Description:</td><td>Enable BSP generation to query if SOPC system is big endian. If true ignores export of 'ALT_CFLAGS += -EB' to public.mk if big endian system. If true ignores export of 'ALT_CFLAGS += -EL' if little endian system.</td>
 </tr>
 <tr mode="wrap">
 <td width="20%">Restrictions:</td><td>none</td>
@@ -1669,7 +1561,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.debug_core_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1696,7 +1588,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.fpu_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1723,7 +1615,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.hardware_divide_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1750,7 +1642,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.hardware_fp_cust_inst_divider_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1777,7 +1669,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.hardware_fp_cust_inst_no_divider_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1804,7 +1696,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.hardware_multiplier_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1831,7 +1723,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.hardware_mulx_present</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1858,7 +1750,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.sopc_simulation_enabled</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1885,7 +1777,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.sopc_system_base_address</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1912,7 +1804,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.sopc_system_id</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -1939,7 +1831,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.make.ignore_system_derived.sopc_system_timestamp</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>0</td>
@@ -2020,7 +1912,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.stderr</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>
@@ -2047,7 +1939,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.stdin</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>
@@ -2074,7 +1966,7 @@
 <td align="left" width="15%">Setting Name:</td><td align="left">hal.stdout</td>
 </tr>
 <tr>
-<td width="20%">Identifier:</td><td>none</td>
+<td width="20%">Identifier:</td><td>NONE</td>
 </tr>
 <tr>
 <td width="20%">Default Value:</td><td>none</td>

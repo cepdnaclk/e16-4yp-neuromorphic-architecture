@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
- * SOPC Builder design path: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+ * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Fri Nov 25 12:37:21 IST 2022
+ * Generated: Fri Jan 06 16:22:53 IST 2023
  */
 
 /*
@@ -89,7 +89,7 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_qsys"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x00080820
+#define ALT_CPU_BREAK_ADDR 0x80820
 #define ALT_CPU_CPU_FREQ 50000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
@@ -98,7 +98,7 @@
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x00040020
+#define ALT_CPU_EXCEPTION_ADDR 0x40020
 #define ALT_CPU_FLUSHDA_SUPPORTED
 #define ALT_CPU_FREQ 50000000
 #define ALT_CPU_HARDWARE_DIVIDE_PRESENT 0
@@ -112,7 +112,7 @@
 #define ALT_CPU_ICACHE_SIZE 4096
 #define ALT_CPU_INST_ADDR_WIDTH 0x14
 #define ALT_CPU_NAME "cpu"
-#define ALT_CPU_RESET_ADDR 0x00040000
+#define ALT_CPU_RESET_ADDR 0x40000
 
 
 /*
@@ -121,7 +121,7 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x00080820
+#define NIOS2_BREAK_ADDR 0x80820
 #define NIOS2_CPU_FREQ 50000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
@@ -130,7 +130,7 @@
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x00040020
+#define NIOS2_EXCEPTION_ADDR 0x40020
 #define NIOS2_FLUSHDA_SUPPORTED
 #define NIOS2_HARDWARE_DIVIDE_PRESENT 0
 #define NIOS2_HARDWARE_MULTIPLY_PRESENT 0
@@ -142,7 +142,7 @@
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 5
 #define NIOS2_ICACHE_SIZE 4096
 #define NIOS2_INST_ADDR_WIDTH 0x14
-#define NIOS2_RESET_ADDR 0x00040000
+#define NIOS2_RESET_ADDR 0x40000
 
 
 /*
@@ -505,7 +505,7 @@
 #define TIMER_IRQ 1
 #define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define TIMER_LOAD_VALUE 49999ull
-#define TIMER_MULT 0.001
+#define TIMER_MULT 0.0010
 #define TIMER_NAME "/dev/timer"
 #define TIMER_PERIOD 1
 #define TIMER_PERIOD_UNITS "ms"

@@ -49,19 +49,19 @@
 /*
  * Routine called on exit.
  */
-static ALT_INLINE ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
+static ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
 {
-  register int r2 asm ("r2") = exit_code;
+  int r2 = exit_code;
 
 #if defined(NIOS2_HAS_DEBUG_STUB) && (defined(ALT_BREAK_ON_EXIT) || defined(ALT_PROVIDE_GMON))
 
-  register int r3 asm ("r3") = (1 << 2);
+  int r3 = (1 << 2);
 
 #ifdef ALT_PROVIDE_GMON
   extern unsigned int alt_gmon_data[];
-  register int r4 asm ("r4") = (int)alt_gmon_data;
+  int r4 = (int)alt_gmon_data;
   r3 |= (1 << 4);
-#define ALT_GMON_DATA ,"r"(r4)
+#define ALT_GMON_DATA ,"D04"(r4)
 #else
 #define ALT_GMON_DATA
 #endif /* ALT_PROVIDE_GMON */
@@ -74,7 +74,7 @@ static ALT_INLINE ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
 
   __asm__ volatile ("\n0:\n\taddi %0,%0, -1\n\tbgt %0,zero,0b" : : "r" (ALT_CPU_FREQ/100) ); /* Delay for >30ms */
 
-  __asm__ volatile ("break 2" : : "r"(r2), "r"(r3) ALT_GMON_DATA );
+  __asm__ volatile ("break 2" : : "D02"(r2), "D03"(r3) ALT_GMON_DATA );
 
 #else /* !DEBUG_STUB */
   if (r2) {

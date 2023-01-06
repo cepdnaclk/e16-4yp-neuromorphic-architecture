@@ -157,9 +157,6 @@ altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp,
          * cycles waiting in this thread, when we could be doing something
          * more profitable elsewhere.
          */
-#ifdef ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR
-        if(!sp->host_inactive)
-#endif
         ALT_FLAG_PEND (sp->events,
                        ALT_JTAG_UART_WRITE_RDY | ALT_JTAG_UART_TIMEOUT,
                        OS_FLAG_WAIT_SET_ANY + OS_FLAG_CONSUME,
@@ -184,8 +181,8 @@ altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp,
         ;
 #endif /* __ucosii__ */
 
-      if  (sp->host_inactive)
-         break;
+      if (out == sp->tx_out)
+        break;
     }
   }
   while (count > 0);
@@ -200,16 +197,6 @@ altera_avalon_jtag_uart_write(altera_avalon_jtag_uart_state* sp,
     return ptr - start;
   else if (flags & O_NONBLOCK)
     return -EWOULDBLOCK;
-#ifdef ALTERA_AVALON_JTAG_UART_IGNORE_FIFO_FULL_ERROR
-  else if (sp->host_inactive >= sp->timeout) {
-    /* 
-     * Reset the software FIFO, hardware FIFO could not be reset.
-     * Just throw away characters without reporting error. 
-     */
-    sp->tx_out = sp->tx_in = 0;
-    return ptr - start + count;
-  }
-#endif
   else
     return -EIO; /* Host not connected */
 }
