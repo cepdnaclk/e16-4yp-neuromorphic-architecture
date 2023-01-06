@@ -3,10 +3,11 @@
 module testbenchINTERUPT;
 
     reg [31:0] pc_next;
-    wire [31:0] pc_next_final;
+    wire [31:0] pc_next_final, pc_next_regfile;
+    wire en_regfile;
     reg clk, reset, interupt_signanl, return_from_isr;
 
-    interupt_control ic (clk, reset, pc_next, interupt_signanl, return_from_isr, pc_next_final);
+    interupt_control ic (clk, reset, pc_next, interupt_signanl, return_from_isr, pc_next_final, pc_next_regfile, en_regfile);
 
     initial begin
         $dumpfile("icu_wavedata.vcd");

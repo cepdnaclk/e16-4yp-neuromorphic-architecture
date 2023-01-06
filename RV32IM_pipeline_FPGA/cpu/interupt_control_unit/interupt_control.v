@@ -6,11 +6,15 @@ module interupt_control (
         input [31:0] pc_next,
         input interupt_signanl,
         input return_from_isr,
-        output [31:0] pc_next_final
+        output [31:0] pc_next_final,
+        output [31:0] pc_next_regfile,
+        output en_regfile
     );
 
     reg mux_sel;
     localparam ISR_PC = 500;
+    reg en_regfile;
+    assign pc_next_regfile = pc_next;
 
     // state machine states
     localparam NORMAL_STATE = 0,
@@ -57,16 +61,26 @@ module interupt_control (
       endcase
     end
 
-    // TODO:NEED to save the PC to the register file
-
     // state change in to the negative edge of the clock signal
     always @(negedge clk) begin
         if (reset == 1'b1) 
             current_state = NORMAL_STATE;
-        else 
+        else begin
             current_state = next_state;
+            if (current_state == ISR_INIT_STATE) 
+                en_regfile = 1'b1;
+            else
+                en_regfile = 1'b0;
+        end
     end
 
+    // Save the PC to the register file
+    // always @(negedge clk ) begin
+    //     if (current_state == ISR_INIT_STATE) 
+    //         en_regfile = 1'b1;
+    //     else
+    //         en_regfile = 1'b0;
+    // end
 
 
 endmodule
