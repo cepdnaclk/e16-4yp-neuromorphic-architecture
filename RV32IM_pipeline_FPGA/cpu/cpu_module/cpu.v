@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, INTERUPT_SIGNAL, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -51,7 +51,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 
     // structure
         // additional wires
-        wire [31:0] PC_NEXT;
+        wire [31:0] PC_NEXT, PC_NEXT_FINAL, PC_NEXT_REGFILE;
+        wire INTERUPT_PC_REG_EN, RETURN_FROM_ISR;
 
         // additional registers
         reg [31:0] PC_PLUS_4;
@@ -60,6 +61,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         // TODO: ALU out should be defined later, Branch select out should be defined later
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
+        // interupt control unit
+        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, RETURN_FROM_ISR, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
 
 
         // connections
@@ -114,7 +117,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         REGISTER_DEBUG_DATA,
                         REGISTER_DEBUG_ADDR,
                         REGISTER_DEBUG_LCD,
-                        RAND_NUM_GEN_OUT); //alu module
+                        RAND_NUM_GEN_OUT,
+                        PC_NEXT_REGFILE,
+                        INTERUPT_PC_REG_EN); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         

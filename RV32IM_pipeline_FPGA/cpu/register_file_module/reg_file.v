@@ -1,4 +1,4 @@
-module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD, RAND_INPUT);
+module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD, RAND_INPUT, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
 
 input [31:0] IN;  // 32 bit data input
 input [4:0] INADDRESS, OUT1ADDRESS, OUT2ADDRESS; // 5 bit data inputs
@@ -40,6 +40,9 @@ begin
         begin
             REGISTERS[INADDRESS] = IN; 
         end    
+        // writing the pc to REG30 if the ISR active
+        if (INTERUPT_PC_REG_EN == 1'b1)
+            REGISTERS[5'd30] = PC_NEXT_REGFILE;
     end
 end
 
