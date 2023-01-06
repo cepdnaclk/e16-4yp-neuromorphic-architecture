@@ -1,6 +1,6 @@
 Assembler report for RV32IM_pipeline
-Mon Dec 05 16:46:08 2022
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Fri Jan 06 16:26:50 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
 ---------------------
@@ -11,17 +11,18 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
-  7. Assembler Messages
+  6. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
+  7. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof
+  8. Assembler Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -31,18 +32,19 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 05 16:46:08 2022 ;
+; Assembler Status      ; Successful - Fri Jan 06 16:26:50 2023 ;
 ; Revision Name         ; RV32IM_pipeline                       ;
 ; Top-level Entity Name ; system                                ;
-; Family                ; Stratix V                             ;
-; Device                ; 5SGXEA7N2F45C2                        ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
 
 
@@ -64,23 +66,35 @@ refer to the applicable agreement for further details.
 +--------+-------------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-+-----------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
+; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++---------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                        ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0479335A                                                                                                                     ;
-; Checksum       ; 0x0479335A                                                                                                                     ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                  ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x015BFBED                                                                                                                               ;
+; Checksum       ; 0x015BFBED                                                                                                                               ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                              ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode      ; 0x00000000                                                                                                                           ;
+; Checksum           ; 0x6F347A87                                                                                                                           ;
+; Compression Ratio  ; 2                                                                                                                                    ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -88,15 +102,16 @@ refer to the applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 16:44:59 2022
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Fri Jan 06 16:26:34 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5435 megabytes
-    Info: Processing ended: Mon Dec 05 16:46:09 2022
-    Info: Elapsed time: 00:01:10
-    Info: Total CPU time (on all processors): 00:01:07
+Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4793 megabytes
+    Info: Processing ended: Fri Jan 06 16:26:50 2023
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:11
 
 

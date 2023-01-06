@@ -4,9 +4,9 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -16,7 +16,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -706,8 +707,32 @@ refer to the applicable agreement for further details.
 		(text "DEGUB_INST[31..0]" (rect 318 187 403 199)(font "Arial" ))
 		(line (pt 424 192)(pt 408 192)(line_width 3))
 	)
+	(port
+		(pt 424 208)
+		(output)
+		(text "INTERUPT_SIGNAL" (rect 0 0 100 12)(font "Arial" ))
+		(text "INTERUPT_SIGNAL" (rect 319 203 403 215)(font "Arial" ))
+		(line (pt 424 208)(pt 408 208))
+	)
 	(drawing
 		(rectangle (rect 16 16 408 224))
+	)
+)
+(symbol
+	(rect 1176 512 1208 544)
+	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
+	(text "inst4" (rect 3 21 25 38)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
@@ -1263,6 +1288,18 @@ refer to the applicable agreement for further details.
 	(pt 24 336)
 	(pt 24 792)
 )
+(connector
+	(pt 952 400)
+	(pt 1192 400)
+)
+(connector
+	(pt 1192 400)
+	(pt 1192 512)
+)
+(connector
+	(pt 1192 512)
+	(pt 1192 520)
+)
 (junction (pt 304 240))
 (junction (pt 328 256))
 (junction (pt 304 232))
@@ -1271,3 +1308,4 @@ refer to the applicable agreement for further details.
 (junction (pt 24 240))
 (junction (pt 1104 224))
 (junction (pt 24 336))
+(junction (pt 1192 512))

@@ -3,7 +3,7 @@
     <hash md5_digest_80b="42c859ac7337399427db"/>
   </project>
   <file_info>
-    <file device="5SGXEA7N2F45C2" path="RV32IM_pipeline.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CE115F29C7" path="RV32IM_pipeline.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info hub_ir_width="5" ir_width="2" node_addr_width="2" node_count="2"/>
   <node_info>
