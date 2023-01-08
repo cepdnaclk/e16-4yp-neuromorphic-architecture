@@ -8,9 +8,12 @@
 #define ADDR 0x00081070
 #define CLK_SEL 0x00081050
 #define NIOS_CLK_OUT 0x00081040
-#define ALU_SELECT 0x00081030
 #define RESET 0x00081020
 #define OFFSET 0x00000000
+// debuggin
+#define ALU_SELECT 0x00081030
+#define PC 0x00081080 // PC out for debugging
+#define INTERUPT_SIGNAL 0x00081080 
 
 //ports for instruction injection
 #define INS_INJ_CLOCK 0x00081080
@@ -24,6 +27,9 @@
 // global variables
 // variable to hold the current spike value state
 int spikeValue = 0;
+
+// interupt status
+int interuptStatus = 0;
 
 int8_t g_file_buffer[16];
 
@@ -127,19 +133,37 @@ void printALUSelect() {
 	printBits(32, data);
 }
 
+// print pc
+void printPC() {
+	int data = IORD_32DIRECT(PC,OFFSET);
+	printf("PC = %d \n", data);
+}
+
 // genarate clock pulses and print registers
 void genPulseAndPrint(int pulseCount) {
 	int i;
 	for (i = 0; i < pulseCount; i++) {
         IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
+		printPC();   // printing the corresponding to the instruction enters to the pipeline
     	usleep(DELAY); // Wait for about 0.1 seconds
     	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
         // printing the register values
-        // printRegisters();
-        printSpike();
+        printRegisters();
+        // printSpike();
         // printALUSelect();
     }
 }
+
+// enable or disable the interupt
+void toggleInterupt() {
+	if (interuptStatus == 0) {
+		interuptStatus = 1;
+	} else {
+		interuptStatus = 0;
+	}
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,interuptStatus);
+}
+
 
 // inject byte to instruction memory
 void injectByte(int data, int addr){
@@ -199,7 +223,7 @@ int main(void)
             int number_of_pulses;
             IOWR_8DIRECT(CLK_SEL,OFFSET,1);
             while(1) {
-				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset): ");
+				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interupt): ");
 				int clock_pulse_count;
 				scanf("%d", &clock_pulse_count);
 				if (clock_pulse_count == 9999) {
@@ -207,7 +231,10 @@ int main(void)
 					loadProgramme();
 					// resetting the cpu
 					reset();
-				} else
+				} else if (clock_pulse_count == 9998) {
+					toggleInterupt();
+				}
+				else
 					genPulseAndPrint(clock_pulse_count);
             }
         }
