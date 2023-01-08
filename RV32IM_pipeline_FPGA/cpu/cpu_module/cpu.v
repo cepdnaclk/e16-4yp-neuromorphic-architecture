@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, RETURN_FROM_ISR_DEBUG);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -34,7 +34,6 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [31:0] REGISTER_DEBUG_DATA;
     output [5:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
-	 input RETURN_FROM_ISR_DEBUG;
     output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 
     output [6:0] DEBUG_CONTROL;
@@ -66,7 +65,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
         // interupt control unit
-        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, RETURN_FROM_ISR_DEBUG, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
+        wire JALR_SELECT_INTERRUPT;
+        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN, JALR_SELECT_INTERRUPT, PR_INSTRUCTION[19:15]);
 
 
         // connections
@@ -138,7 +138,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                                 OPERAND2_SEL, 
                                 REG_WRITE_SELECT_S2, 
                                 RESET,
-                                DEBUG_CONTROL);
+                                DEBUG_CONTROL,
+                                JALR_SELECT_INTERRUPT);
 
 //************************** STAGE 3 **************************
     reg [31:0] PR_PC_S3, PR_ALU_OUT_S3, PR_DATA_2_S3;

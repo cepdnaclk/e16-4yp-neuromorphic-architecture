@@ -6,10 +6,14 @@ Reg No - E/16/366
 // comment this to run the control unit test programme
 // `include "../supported_modules/mux2to1_3bit.v"
 
-module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, main_mem_read, branch_control, immediate_select, oparand_1_select, oparand_2_select, reg_write_select, RESET, DEBUG);
+module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, main_mem_read, branch_control, immediate_select, oparand_1_select, oparand_2_select, reg_write_select, RESET, DEBUG, jalr_select_interuptunit);
 
     input [31:0] INSTRUCTION; //input instruction
     input RESET; // RESET input and alu comparator signal
+
+    // for interupt contol unit
+    output jalr_select_interuptunit;
+    assign jalr_select_interuptunit = (opcode == 7'b1100111);
 
     // defining output control signals
     output wire reg_file_write, oparand_1_select, oparand_2_select;

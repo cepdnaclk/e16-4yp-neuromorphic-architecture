@@ -5,10 +5,11 @@ module interupt_control (
         input reset,
         input [31:0] pc_next,
         input interupt_signanl,
-        input return_from_isr,
         output [31:0] pc_next_final,
         output [31:0] pc_next_regfile,
-        output reg en_regfile
+        output reg en_regfile,
+        input jalr_select_signal,
+        input [4:0] regfile_adrr_1
     );
 
     reg mux_sel;
@@ -24,6 +25,16 @@ module interupt_control (
 
     // mux to select the next pc
     mux2to1_32bit pcMux (pc_next, ISR_PC, pc_next_final, mux_sel);
+
+    // set the reset signal
+    reg return_from_isr;
+    always @* begin
+      if (jalr_select_signal == 1'b1) begin
+        if (regfile_adrr_1 == 5'd30) return_from_isr = 1'b1;
+        else return_from_isr = 1'b0;
+      end
+      else return_from_isr = 1'b0;
+    end
 
     // combinational logic to caclculate next stage
     always @* begin
