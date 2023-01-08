@@ -1,0 +1,120 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/ --output-directory=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/ --report-file=bsf:C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.bsf --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.qsys
+Progress: Loading debug_SoC/SoC.qsys
+Progress: Reading input file
+Progress: Adding clock [clock_source 12.1]
+Progress: Parameterizing module clock
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 12.1]
+Progress: Parameterizing module onchip_mem
+Progress: Adding cpu [altera_nios2_qsys 12.1]
+Progress: Parameterizing module cpu
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 12.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding timer [altera_avalon_timer 12.1]
+Progress: Parameterizing module timer
+Progress: Adding sysid [altera_avalon_sysid_qsys 12.1]
+Progress: Parameterizing module sysid
+Progress: Adding addr_select [altera_avalon_pio 12.1]
+Progress: Parameterizing module addr_select
+Progress: Adding data_in [altera_avalon_pio 12.1]
+Progress: Parameterizing module data_in
+Progress: Adding clk_sel [altera_avalon_pio 12.1]
+Progress: Parameterizing module clk_sel
+Progress: Adding clk_out [altera_avalon_pio 12.1]
+Progress: Parameterizing module clk_out
+Progress: Adding ALU_SEL [altera_avalon_pio 12.1]
+Progress: Parameterizing module ALU_SEL
+Progress: Adding reset_out [altera_avalon_pio 12.1]
+Progress: Parameterizing module reset_out
+Progress: Adding ins_inject_addr [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_addr
+Progress: Adding ins_inject_data [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_data
+Progress: Adding ins_inject_clock [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_clock
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SoC.onchip_mem: Memory will be initialized from onchip_mem.hex
+Info: SoC.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: SoC.sysid: Time stamp will be automatically updated when this component is generated.
+Info: SoC.data_in: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: SoC.ALU_SEL: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/ --output-directory=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/synthesis/ --file-set=QUARTUS_SYNTH --report-file=sopcinfo:C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo --report-file=html:C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.html --report-file=qip:C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/synthesis/SoC.qip --report-file=cmp:C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.cmp --system-info=DEVICE_FAMILY="Cyclone IV E" --system-info=DEVICE=EP4CE115F29C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.qsys
+Progress: Loading debug_SoC/SoC.qsys
+Progress: Reading input file
+Progress: Adding clock [clock_source 12.1]
+Progress: Parameterizing module clock
+Progress: Adding onchip_mem [altera_avalon_onchip_memory2 12.1]
+Progress: Parameterizing module onchip_mem
+Progress: Adding cpu [altera_nios2_qsys 12.1]
+Progress: Parameterizing module cpu
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 12.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Adding timer [altera_avalon_timer 12.1]
+Progress: Parameterizing module timer
+Progress: Adding sysid [altera_avalon_sysid_qsys 12.1]
+Progress: Parameterizing module sysid
+Progress: Adding addr_select [altera_avalon_pio 12.1]
+Progress: Parameterizing module addr_select
+Progress: Adding data_in [altera_avalon_pio 12.1]
+Progress: Parameterizing module data_in
+Progress: Adding clk_sel [altera_avalon_pio 12.1]
+Progress: Parameterizing module clk_sel
+Progress: Adding clk_out [altera_avalon_pio 12.1]
+Progress: Parameterizing module clk_out
+Progress: Adding ALU_SEL [altera_avalon_pio 12.1]
+Progress: Parameterizing module ALU_SEL
+Progress: Adding reset_out [altera_avalon_pio 12.1]
+Progress: Parameterizing module reset_out
+Progress: Adding ins_inject_addr [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_addr
+Progress: Adding ins_inject_data [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_data
+Progress: Adding ins_inject_clock [altera_avalon_pio 12.1]
+Progress: Parameterizing module ins_inject_clock
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SoC.onchip_mem: Memory will be initialized from onchip_mem.hex
+Info: SoC.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: SoC.sysid: Time stamp will be automatically updated when this component is generated.
+Info: SoC.data_in: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: SoC.ALU_SEL: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: SoC: Generating SoC "SoC" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 15 modules, 60 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_translator_transform: After transform: 31 modules, 124 connections
+Info: merlin_domain_transform: After transform: 62 modules, 336 connections
+Info: merlin_router_transform: After transform: 78 modules, 400 connections
+Info: merlin_traffic_limiter_transform: After transform: 79 modules, 405 connections
+Info: reset_adaptation_transform: After transform: 80 modules, 315 connections
+Info: merlin_network_to_switch_transform: After transform: 111 modules, 379 connections
+Info: limiter_update_transform: After transform: 111 modules, 380 connections
+Info: merlin_interrupt_mapper_transform: After transform: 112 modules, 383 connections
+Info: Starting classic module elaboration.
+      1 [main] sh 8880 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Qt: Untested Windows version 6.2 detected!
+"c:/altera/12.1/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.1/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.1/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.1/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.1/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.1/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/HeshDS/AppData/Local/Temp/alt9365_5821536436776480758.dir/0001_sopclgen  --no_splash --refresh C:/Users/HeshDS/AppData/Local/Temp/alt9365_5821536436776480758.dir/0001_sopclgen/yysystem.v --quartus_dir="c:/altera/12.1/quartus" --sopc_perl="c:/altera/12.1/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.1/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.1/quartus/../ip/altera/nios2_ip"
+Info: Finished elaborating classic module.
+Executing: C:/altera/12.1/quartus//sopc_builder/bin/sopc_builder --classic --generate C:/Users/HeshDS/AppData/Local/Temp/alt9365_5821536436776480758.dir/0001_sopclgen/yysystem.ptf
+Info: Running sopc_builder...
+      1 [main] sh 2636 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Qt: Untested Windows version 6.2 detected!
+"c:/altera/12.1/quartus/bin/jre/bin/java.exe" -Xmx512M -classpath "c:/altera/12.1/quartus/sopc_builder/bin/sopc_builder.jar;c:/altera/12.1/quartus/sopc_builder/bin/PinAssigner.jar;c:/altera/12.1/quartus/sopc_builder/bin/sopc_wizard.jar;c:/altera/12.1/quartus/sopc_builder/bin/jptf.jar" sopc_builder.sopc_builder  -d"c:/altera/12.1/quartus/sopc_builder" -notalkback=1 -projectnameyysystem.qpf -projectpathC:/Users/HeshDS/AppData/Local/Temp/alt9365_5821536436776480758.dir/0001_sopclgen  --generate C:/Users/HeshDS/AppData/Local/Temp/alt9365_5821536436776480758.dir/0001_sopclgen/yysystem.v --quartus_dir="c:/altera/12.1/quartus" --sopc_perl="c:/altera/12.1/quartus/bin/perl" --sopc_lib_path="++c:/altera/12.1/quartus/../ip/altera/sopc_builder_ip+c:/altera/12.1/quartus/../ip/altera/nios2_ip"
+No .sopc_builder configuration file(!)
+.
+# 2023.01.08 11:39:39 (*) Success: sopc_builder finished.
+Info: onchip_mem: "SoC" instantiated altera_avalon_onchip_memory2 "onchip_mem"
+Error: Generation stopped, 98 or more modules remaining
+Info: SoC: Done SoC" with 30 modules, 3 files, 1898265 bytes
+Error: ip-generate failed with exit code 1: 1 Error, 0 Warnings
+Info: Stopping: Create HDL design files for synthesis

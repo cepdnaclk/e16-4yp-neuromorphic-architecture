@@ -12,8 +12,9 @@
 #define OFFSET 0x00000000
 // debuggin
 #define ALU_SELECT 0x00081030
-#define PC 0x00081080 // PC out for debugging
-#define INTERUPT_SIGNAL 0x00081080 
+#define PC 0x000810c0 // PC out for debugging
+#define INTERUPT_SIGNAL 0x000810b0 
+#define RETURN_FROM_ISR 0x000810d0 
 
 //ports for instruction injection
 #define INS_INJ_CLOCK 0x00081080
@@ -30,6 +31,8 @@ int spikeValue = 0;
 
 // interupt status
 int interuptStatus = 0;
+// return from ISR status
+int returnFromISRStatus = 0;
 
 int8_t g_file_buffer[16];
 
@@ -41,6 +44,8 @@ union ConvFloat {
 
 //reset the CPU
 void reset(){
+	IOWR_8DIRECT(INTERUPT_SIGNAL,OFFSET,0); // to reset the interupt
+
 	IOWR_8DIRECT(RESET,OFFSET,1);
 
 	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
@@ -82,15 +87,15 @@ void printRegisters() {
     }
 
     // check random number generation
-    		// write the address to the IO port
-            IOWR_8DIRECT(ADDR,OFFSET,31);
-            usleep(DELAY); // Wait for about 0.1 seconds
+	// write the address to the IO port
+	IOWR_8DIRECT(ADDR,OFFSET,30);
+	usleep(DELAY); // Wait for about 0.1 seconds
 
-            // getting data from the Register file
-            int data = IORD_32DIRECT(DATA_IN,OFFSET);
-            convData.i = data;
+	// getting data from the Register file
+	int data = IORD_32DIRECT(DATA_IN,OFFSET);
+	convData.i = data;
 
-            printf("Addr: %d->%d,%.4f   ",31, data, convData.f);
+	printf("Addr: %d->%d,%.4f   ",30, data, convData.f);
     printf("\n\n");
 }
 
@@ -143,8 +148,8 @@ void printPC() {
 void genPulseAndPrint(int pulseCount) {
 	int i;
 	for (i = 0; i < pulseCount; i++) {
-        IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
 		printPC();   // printing the corresponding to the instruction enters to the pipeline
+        IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
     	usleep(DELAY); // Wait for about 0.1 seconds
     	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
         // printing the register values
@@ -161,9 +166,18 @@ void toggleInterupt() {
 	} else {
 		interuptStatus = 0;
 	}
-	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,interuptStatus);
+	IOWR_8DIRECT(INTERUPT_SIGNAL,OFFSET,interuptStatus);
 }
 
+// enable and disable return form ISR
+void toggleRISR() {
+	if (returnFromISRStatus == 0) {
+		returnFromISRStatus = 1;
+	} else {
+		returnFromISRStatus = 0;
+	}
+	IOWR_8DIRECT(RETURN_FROM_ISR,OFFSET,returnFromISRStatus);
+}
 
 // inject byte to instruction memory
 void injectByte(int data, int addr){
@@ -223,7 +237,7 @@ int main(void)
             int number_of_pulses;
             IOWR_8DIRECT(CLK_SEL,OFFSET,1);
             while(1) {
-				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interupt): ");
+				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interrupt, 9997 toggle RISR): ");
 				int clock_pulse_count;
 				scanf("%d", &clock_pulse_count);
 				if (clock_pulse_count == 9999) {
@@ -233,6 +247,8 @@ int main(void)
 					reset();
 				} else if (clock_pulse_count == 9998) {
 					toggleInterupt();
+				} else if (clock_pulse_count == 9997) {
+					toggleRISR();
 				}
 				else
 					genPulseAndPrint(clock_pulse_count);

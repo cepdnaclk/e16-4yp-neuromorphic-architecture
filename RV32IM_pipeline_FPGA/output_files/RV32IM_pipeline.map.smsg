@@ -1,13 +1,13 @@
-Warning (10268): Verilog HDL information at rand_num_gen.v(12): always construct contains both blocking and non-blocking assignments File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/random_number_generator_module/rand_num_gen.v Line: 12
-Info (10281): Verilog HDL Declaration information at priority_encoder.v(11): object "significand" differs only in case from object "Significand" in the same scope File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/priority_encoder.v Line: 11
-Warning (10273): Verilog HDL warning at FALU.v(42): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 42
-Warning (10273): Verilog HDL warning at FALU.v(44): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 44
-Warning (10273): Verilog HDL warning at FALU.v(46): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 46
-Warning (10273): Verilog HDL warning at FALU.v(48): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 48
-Warning (10273): Verilog HDL warning at FALU.v(86): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 86
-Warning (10273): Verilog HDL warning at FALU.v(88): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 88
-Warning (10273): Verilog HDL warning at FALU.v(90): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 90
-Warning (10273): Verilog HDL warning at FALU.v(92): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 92
-Warning (10273): Verilog HDL warning at FALU.v(94): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/FALU.v Line: 94
-Info (10281): Verilog HDL Declaration information at Division.v(50): object "x0" differs only in case from object "X0" in the same scope File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/f_alu_module/Division.v Line: 50
-Warning (10273): Verilog HDL warning at lcd_display.v(176): extended using "x" or "z" File: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/cpu/debug_modules/LCD_Module/lcd_display.v Line: 176
+Warning (10268): Verilog HDL information at rand_num_gen.v(12): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at priority_encoder.v(11): object "significand" differs only in case from object "Significand" in the same scope
+Warning (10273): Verilog HDL warning at FALU.v(42): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(44): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(46): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(48): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(86): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(88): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(90): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(92): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at FALU.v(94): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at Division.v(50): object "x0" differs only in case from object "X0" in the same scope
+Warning (10273): Verilog HDL warning at lcd_display.v(176): extended using "x" or "z"

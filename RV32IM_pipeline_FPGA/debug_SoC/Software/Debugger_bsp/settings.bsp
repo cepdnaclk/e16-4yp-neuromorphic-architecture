@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jan 6, 2023 4:22:51 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1673002371142</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jan 8, 2023 1:06:23 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1673163383774</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
@@ -929,14 +929,32 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>debug_interupt_out</slaveDescriptor>
+                <addressRange>0x000810B0 - 0x000810BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>debug_pc_in</slaveDescriptor>
+                <addressRange>0x000810C0 - 0x000810CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>debug_returnformISR_out</slaveDescriptor>
+                <addressRange>0x000810D0 - 0x000810DF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x000810B0 - 0x000810B7</addressRange>
+                <addressRange>0x000810E0 - 0x000810E7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x000810B8 - 0x000810BF</addressRange>
+                <addressRange>0x000810E8 - 0x000810EF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

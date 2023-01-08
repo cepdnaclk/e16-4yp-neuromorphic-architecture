@@ -2,24 +2,59 @@
 **** Build of configuration Nios II for project Debugger ****
 
 make all 
-      1 [main] sh 12520 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+      1 [main] sh 12592 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
-      1 [main] sh 5408 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+      1 [main] sh 12768 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
-      1 [main] echo 1244 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
-the public mailing list cygwin@cygwin.com
+      1 [main] echo 9664 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 Info: Building ../Debugger_bsp/
+the public mailing list cygwin@cygwin.com
 make --no-print-directory -C ../Debugger_bsp/
-      1 [main] pwd 9564 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+      1 [main] pwd 14180 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
-      1 [main] sh 7680 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+      1 [main] sh 12364 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
-      1 [main] sh 1364 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
-the public mailing list cygwin@cygwin.com
+      1 [main] sh 13140 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 [BSP build complete]
-      1 [main] true 8328 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
-      2 [main] sh 9988 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+      1 [main] echo 4520 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Compiling counter.c to obj/default/counter.o
+the public mailing list cygwin@cygwin.com
+      1 [main] mkdir 10484 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+nios2-elf-gcc -xc -MP -MMD -c -I../Debugger_bsp//HAL/inc -I../Debugger_bsp/ -I../Debugger_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o obj/default/counter.o counter.c
+the public mailing list cygwin@cygwin.com
+counter.c: In function 'reset':
+counter.c:52: warning: implicit declaration of function 'usleep'
+counter.c: In function 'printBits':
+counter.c:67: warning: suggest parentheses around + or - inside shift
+counter.c: In function 'loadProgramme':
+counter.c:208: warning: implicit declaration of function 'strtol'
+counter.c:202: warning: unused variable 'bytes_read'
+counter.c:202: warning: unused variable 'bmp_file_size'
+counter.c: In function 'main':
+counter.c:237: warning: unused variable 'number_of_pulses'
+      1 [main] true 5472 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      2 [main] echo 900 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Linking Debugger.elf
+the public mailing list cygwin@cygwin.com
+nios2-elf-g++  -T'../Debugger_bsp//linker.x' -msys-crt0='../Debugger_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Debugger_bsp/   -Wl,-Map=Debugger.map   -O0 -g -Wall   -EL -mno-hw-div -mno-hw-mul -mno-hw-mulx  -o Debugger.elf obj/default/counter.o -lm 
+nios2-elf-insert Debugger.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 0 --sidp 0x810e0 --timestamp 1673162897 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name SoC --quartus_project_dir "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" --sopcinfo C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+      2 [main] sh 2528 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] uname 12460 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 7956 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+Info: (Debugger.elf) 86 KBytes program size (code + initialized data).
+Info:                162 KBytes free for stack + heap.
+      1 [main] echo 13296 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+Info: Creating Debugger.objdump
+the public mailing list cygwin@cygwin.com
+nios2-elf-objdump --disassemble --syms --all-header --source Debugger.elf >Debugger.objdump
+      1 [main] sh 3664 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
+the public mailing list cygwin@cygwin.com
+      1 [main] sh 4748 find_fast_cwd: WARNING: Couldn't compute FAST_CWD pointer.  Please report this problem to
 the public mailing list cygwin@cygwin.com
 [Debugger build complete]
 

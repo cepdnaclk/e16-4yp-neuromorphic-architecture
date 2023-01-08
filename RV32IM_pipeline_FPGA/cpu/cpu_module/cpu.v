@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, RETURN_FROM_ISR_DEBUG);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -28,12 +28,13 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [31:0] DATA_CACHE_ADDR, DATA_CACHE_DATA; // output signal to the memory (address and the write data input)
 
     // for the interupt
-    output INTERUPT_SIGNAL;
+    input INTERUPT_SIGNAL;
 	
     // to debug the register
     output [31:0] REGISTER_DEBUG_DATA;
     output [5:0] ALU_DEBUG_OUT;
     input [4:0] REGISTER_DEBUG_ADDR;
+	 input RETURN_FROM_ISR_DEBUG;
     output [47:0] REGISTER_DEBUG_LCD; // register data for lcd
 
     output [6:0] DEBUG_CONTROL;
@@ -55,7 +56,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     // structure
         // additional wires
         wire [31:0] PC_NEXT, PC_NEXT_FINAL, PC_NEXT_REGFILE;
-        wire INTERUPT_PC_REG_EN, RETURN_FROM_ISR;
+        wire INTERUPT_PC_REG_EN;
 
         // additional registers
         reg [31:0] PC_PLUS_4;
@@ -65,7 +66,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
         // interupt control unit
-        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, RETURN_FROM_ISR, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
+        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, RETURN_FROM_ISR_DEBUG, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
 
 
         // connections
@@ -409,7 +410,7 @@ always @ (*) begin
         //#1
         if (!(DATA_CACHE_BUSY_WAIT || INS_CACHE_BUSY_WAIT)) 
         begin 
-            PC = PC_NEXT;       // increment the pc
+            PC = PC_NEXT_FINAL;       // increment the pc
             insReadEn = 1'b1; // enable read from the instruction memory
         end
     end

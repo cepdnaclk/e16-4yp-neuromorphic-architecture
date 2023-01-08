@@ -1,6 +1,4 @@
 v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|lpm_mult:Mult1|mult_7dt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M1|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:x0|lpm_mult:Mult0|mult_vgt:auto_generated|mac_out2,
@@ -10,6 +8,8 @@ DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X3|Multiplication:M1|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X3|Multiplication:M2|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Multiplication:END|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|lpm_mult:Mult1|mult_7dt:auto_generated|mac_out2,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out8,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out4,
 DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X1|Multiplication:M1|lpm_mult:Mult0|mult_bdt:auto_generated|mac_out8,

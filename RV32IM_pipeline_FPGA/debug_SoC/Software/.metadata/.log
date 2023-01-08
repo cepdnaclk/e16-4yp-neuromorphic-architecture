@@ -3267,3 +3267,111 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY com.altera.sbtgui.launch 1 0 2023-01-06 16:29:47.055
 !MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810b0]
+!SESSION 2023-01-08 12:04:52.462 -----------------------------------------------
+eclipse.buildId=M20120208-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:05:43.182
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:05:47.076
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:06:45.002
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:06:48.945
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:07:49.496
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:07:53.368
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:07:54.271
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY org.eclipse.cdt.launch 4 0 2023-01-08 12:07:56.435
+!MESSAGE Error starting gdbserver - see console for details
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:07:57.517
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:08:59.422
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:09:03.250
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:11:01.352
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:11:05.521
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:25:44.292
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:25:48.239
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:39:48.847
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:39:52.691
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:47:42.659
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:47:46.531
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:52:22.549
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:52:26.777
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:55:03.133
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:55:06.944
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:55:50.882
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 12:55:54.637
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY org.eclipse.debug.core 4 125 2023-01-08 12:57:07.551
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Pipe broken
+	at java.io.PipedInputStream.read(Unknown Source)
+	at java.io.PipedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:144)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:134)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:207)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 13:12:35.811
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 13:12:39.824
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 13:14:46.295
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --accept-bad-sysid --sidp=0x810d0 /cygdrive/c/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/Debugger.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-01-08 13:14:50.068
+!MESSAGE Executing: [C:/altera/12.1/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --tcpport=auto --accept-bad-sysid --sidp=0x810d0]
