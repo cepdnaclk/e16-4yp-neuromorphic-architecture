@@ -14,7 +14,7 @@
 #define ALU_SELECT 0x00081030
 #define PC 0x000810c0 // PC out for debugging
 #define INTERUPT_SIGNAL 0x000810b0 
-#define RETURN_FROM_ISR 0x000810d0 
+
 
 //ports for instruction injection
 #define INS_INJ_CLOCK 0x00081080
@@ -31,8 +31,6 @@ int spikeValue = 0;
 
 // interupt status
 int interuptStatus = 0;
-// return from ISR status
-int returnFromISRStatus = 0;
 
 int8_t g_file_buffer[16];
 
@@ -169,15 +167,6 @@ void toggleInterupt() {
 	IOWR_8DIRECT(INTERUPT_SIGNAL,OFFSET,interuptStatus);
 }
 
-// enable and disable return form ISR
-void toggleRISR() {
-	if (returnFromISRStatus == 0) {
-		returnFromISRStatus = 1;
-	} else {
-		returnFromISRStatus = 0;
-	}
-	IOWR_8DIRECT(RETURN_FROM_ISR,OFFSET,returnFromISRStatus);
-}
 
 // inject byte to instruction memory
 void injectByte(int data, int addr){
@@ -237,7 +226,7 @@ int main(void)
             int number_of_pulses;
             IOWR_8DIRECT(CLK_SEL,OFFSET,1);
             while(1) {
-				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interrupt, 9997 toggle RISR): ");
+				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interrupt): ");
 				int clock_pulse_count;
 				scanf("%d", &clock_pulse_count);
 				if (clock_pulse_count == 9999) {
@@ -247,8 +236,6 @@ int main(void)
 					reset();
 				} else if (clock_pulse_count == 9998) {
 					toggleInterupt();
-				} else if (clock_pulse_count == 9997) {
-					toggleRISR();
 				}
 				else
 					genPulseAndPrint(clock_pulse_count);

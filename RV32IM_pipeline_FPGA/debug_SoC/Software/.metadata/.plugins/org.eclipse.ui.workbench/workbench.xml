@@ -42,7 +42,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="counter.c" partName="counter.c" path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/counter.c" title="counter.c" tooltip="Debugger/counter.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Debugger/counter.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5453" selectionTopPixel="4320"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5133" selectionTopPixel="4080"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="io.h" partName="io.h" title="io.h" tooltip="C:\altera\12.1\quartus\bin\cygwin\usr\include\io.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\altera\12.1\quartus\bin\cygwin\usr\include\io.h" project="Debugger"/>
@@ -94,8 +94,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (14 items)"/>
-<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (20 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -437,12 +436,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Debugger_bsp/settings.bsp"/>
 </editors>
 <item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="551" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="547" y="0"/>
 </item>
 <item historyLabel="crt0.S" index="1">
@@ -583,8 +576,14 @@
 <item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="6571" y="0"/>
 </item>
-<item active="true" historyLabel="counter.c" index="0">
+<item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="5453" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="437" y="0"/>
+</item>
+<item active="true" historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

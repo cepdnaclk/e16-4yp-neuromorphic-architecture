@@ -670,13 +670,6 @@ applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160))
 	)
 	(port
-		(pt 0 176)
-		(input)
-		(text "RETURN_FROM_ISR_DEBUG" (rect 0 0 153 12)(font "Arial" ))
-		(text "RETURN_FROM_ISR_DEBUG" (rect 21 171 174 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176))
-	)
-	(port
 		(pt 424 32)
 		(output)
 		(text "PC[31..0]" (rect 0 0 47 12)(font "Arial" ))
@@ -1349,18 +1342,6 @@ applicable agreement for further details.
 (connector
 	(pt 1192 944)
 	(pt 1192 504)
-)
-(connector
-	(pt 528 368)
-	(pt 432 368)
-)
-(connector
-	(pt 1672 984)
-	(pt 432 984)
-)
-(connector
-	(pt 432 368)
-	(pt 432 984)
 )
 (junction (pt 304 240))
 (junction (pt 328 256))

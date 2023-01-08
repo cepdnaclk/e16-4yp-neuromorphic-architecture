@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Jan 08 13:08:33 2023
+Analysis & Synthesis Status : Successful - Sun Jan 08 21:59:15 2023
 Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Full Version
 Revision Name : RV32IM_pipeline
 Top-level Entity Name : system
 Family : Cyclone IV E
-Total logic elements : 30,347
-    Total combinational functions : 18,766
+Total logic elements : 30,351
+    Total combinational functions : 18,770
     Dedicated logic registers : 13,462
 Total registers : 13462
 Total pins : 1

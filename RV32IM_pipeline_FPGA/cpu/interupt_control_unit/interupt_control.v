@@ -13,7 +13,7 @@ module interupt_control (
     );
 
     reg mux_sel;
-    localparam ISR_PC = 500;
+    localparam ISR_PC = 20;
     assign pc_next_regfile = pc_next;
 
     // state machine states
