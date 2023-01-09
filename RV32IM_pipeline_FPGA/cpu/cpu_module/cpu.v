@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, netInterfaceReadEn, netInterfaceWriteEn);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -26,6 +26,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [2:0] memWriteEn; // control signal to the data memory
     output reg insReadEn; // read enable for the instruction read
     output [31:0] DATA_CACHE_ADDR, DATA_CACHE_DATA; // output signal to the memory (address and the write data input)
+
+    // for the network interface
+    output netInterfaceReadEn, netInterfaceWriteEn;
 
     // for the interupt
     input INTERUPT_SIGNAL;
@@ -90,6 +93,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     reg [2:0] PR_MEM_WRITE_S2; 
     reg [1:0] PR_REG_WRITE_SELECT_S2;
     reg PR_REG_WRITE_EN_S2; 
+    reg PR_NET_INTER_WRITE_S2, PR_NET_INTER_READ_S2;
 
     // structure
         // additionl wires
@@ -102,6 +106,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         wire [1:0] REG_WRITE_SELECT_S2;
         wire REG_WRITE_EN_S2; 
         wire [12:0] RAND_NUM_GEN_OUT;
+
+        // for the network interface
+        wire NET_INTER_READ_S2, NET_INTER_WRITE_S2;
 
         // units
 
@@ -139,7 +146,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                                 REG_WRITE_SELECT_S2, 
                                 RESET,
                                 DEBUG_CONTROL,
-                                JALR_SELECT_INTERRUPT);
+                                JALR_SELECT_INTERRUPT,
+                                NET_INTER_WRITE_S2,
+                                NET_INTER_READ_S2);
 
 //************************** STAGE 3 **************************
     reg [31:0] PR_PC_S3, PR_ALU_OUT_S3, PR_DATA_2_S3;
@@ -152,6 +161,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     reg [2:0] PR_MEM_WRITE_S3; 
     reg [1:0] PR_REG_WRITE_SELECT_S3;
     reg PR_REG_WRITE_EN_S3; 
+    reg PR_NET_INTER_WRITE_S3, PR_NET_INTER_READ_S3;
 
     // structure
         // additional wires
@@ -173,6 +183,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         branch_select myBranchSelect(OP1_HAZ_MUX_OUT, OP2_HAZ_MUX_OUT, PR_BRANCH_SELECT_S2, BRANCH_SELECT_OUT);
 
         // fowarding unit in stage 3
+        //TODO: Netwrk interface stuff have to enter into the hazzaed unit
         stage3_forward_unit myStage3Fowarding (PR_MEM_WRITE_S2[2], 
                                                REG_READ_ADDR1_S2, 
                                                REG_READ_ADDR2_S2, 
@@ -196,6 +207,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     reg [1:0] PR_REG_WRITE_SELECT_S4;
     reg PR_REG_WRITE_EN_S4; 
     reg [3:0] PR_MEM_READ_S4;
+    reg PR_NET_INTER_READ_S4;
 
     // structure
         // additional wires
@@ -208,7 +220,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         assign DATA_CACHE_ADDR = PR_ALU_OUT_S3;
         assign memWriteEn = PR_MEM_WRITE_S3;
         assign memReadEn = PR_MEM_READ_S3;
-
+        assign netInterfaceWriteEn = PR_NET_INTER_WRITE_S3;
+        assign netInterfaceReadEn = PR_NET_INTER_READ_S3;
+        //TODO: Netwrk interface stuff have to enter into the hazzaed unit
         stage4_forward_unit stage4_forward_unit(REG_READ_ADDR2_S3, 
                                                 PR_REGISTER_WRITE_ADDR_S4, 
                                                 PR_MEM_WRITE_S3[2], 
@@ -259,6 +273,8 @@ always @(posedge CLK) begin
         PR_MEM_WRITE_S2 = 3'b0; 
         PR_REG_WRITE_SELECT_S2 = 2'b0;
         PR_REG_WRITE_EN_S2 = 1'b0; 
+        PR_NET_INTER_WRITE_S2 = 1'b0;
+        PR_NET_INTER_READ_S2 = 1'b0;
 
         PR_PC_S3 = 32'b0; 
         PR_ALU_OUT_S3 = 32'b0;
@@ -268,6 +284,8 @@ always @(posedge CLK) begin
         PR_MEM_WRITE_S3 = 3'b0; 
         PR_REG_WRITE_SELECT_S3 = 2'b0;
         PR_REG_WRITE_EN_S3 = 1'b0; 
+        PR_NET_INTER_READ_S3 = 1'b0;
+        PR_NET_INTER_WRITE_S3 = 1'b0;
 
         PR_PC_S4 = 32'b0;
         PR_ALU_OUT_S4 = 32'b0;
@@ -275,6 +293,8 @@ always @(posedge CLK) begin
         PR_REGISTER_WRITE_ADDR_S4 = 5'b0;
         PR_REG_WRITE_SELECT_S4 = 2'b0;
         PR_REG_WRITE_EN_S4 = 1'b0;
+        PR_MEM_READ_S4 = 4'b0;
+        PR_NET_INTER_READ_S4 = 1'b0;
     end
     else
     begin
@@ -298,6 +318,7 @@ always @(posedge CLK) begin
                 PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
                 PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
                 PR_MEM_READ_S4 = PR_MEM_READ_S3;
+                PR_NET_INTER_READ_S4 = PR_NET_INTER_READ_S3;
                 
                 //************** ************ STAGE 3 **************************
                 //#0.001
@@ -309,6 +330,8 @@ always @(posedge CLK) begin
                 
                 PR_MEM_READ_S3 = PR_MEM_READ_S2;
                 PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
+                PR_NET_INTER_READ_S3 = PR_NET_INTER_READ_S2;
+                PR_NET_INTER_WRITE_S3 = PR_NET_INTER_WRITE_S2;
                 PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
                 PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
 
@@ -328,6 +351,8 @@ always @(posedge CLK) begin
                 PR_OPERAND2_SEL =  OPERAND2_SEL;
                 PR_MEM_READ_S2 =  4'b0000;
                 PR_MEM_WRITE_S2  =  3'b000;
+                PR_NET_INTER_READ_S2 = 1'b0;
+                PR_NET_INTER_WRITE_S2 = 1'b0;
                 PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
                 PR_REG_WRITE_EN_S2 = 1'b0; 
 
@@ -355,6 +380,7 @@ always @(posedge CLK) begin
                 PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
                 PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;
                 PR_MEM_READ_S4 = PR_MEM_READ_S3;
+                PR_NET_INTER_READ_S4 = PR_NET_INTER_READ_S3;
                 
                 //************** ************ STAGE 3 **************************
                 //#0.001
@@ -366,6 +392,8 @@ always @(posedge CLK) begin
                 
                 PR_MEM_READ_S3 = PR_MEM_READ_S2;
                 PR_MEM_WRITE_S3 = PR_MEM_WRITE_S2;
+                PR_NET_INTER_READ_S3 = PR_NET_INTER_READ_S2;
+                PR_NET_INTER_WRITE_S3 = PR_NET_INTER_WRITE_S2;
                 PR_REG_WRITE_SELECT_S3  = PR_REG_WRITE_SELECT_S2;
                 PR_REG_WRITE_EN_S3 = PR_REG_WRITE_EN_S2;
 
@@ -385,6 +413,8 @@ always @(posedge CLK) begin
                 PR_OPERAND2_SEL =  OPERAND2_SEL;
                 PR_MEM_READ_S2 =  MEM_READ_S2;
                 PR_MEM_WRITE_S2  =  MEM_WRITE_S2;
+                PR_NET_INTER_READ_S2 = NET_INTER_READ_S2;
+                PR_NET_INTER_WRITE_S2 = NET_INTER_WRITE_S2;
                 PR_REG_WRITE_SELECT_S2 = REG_WRITE_SELECT_S2;
                 PR_REG_WRITE_EN_S2 = REG_WRITE_EN_S2; 
 
