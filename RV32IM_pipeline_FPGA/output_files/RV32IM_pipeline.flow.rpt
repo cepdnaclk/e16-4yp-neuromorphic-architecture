@@ -1,6 +1,6 @@
 Flow report for RV32IM_pipeline
-Mon Dec 05 16:46:52 2022
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Sun Jan 08 22:02:20 2023
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
 ---------------------
@@ -13,59 +13,48 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   5. Flow Elapsed Time
   6. Flow OS Summary
   7. Flow Log
-  8. Flow Messages
-  9. Flow Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Flow Summary                                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Mon Dec 05 16:46:52 2022           ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
-; Revision Name                   ; RV32IM_pipeline                                 ;
-; Top-level Entity Name           ; system                                          ;
-; Family                          ; Stratix V                                       ;
-; Device                          ; 5SGXEA7N2F45C2                                  ;
-; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 11,745 / 234,720 ( 5 % )                        ;
-; Total registers                 ; 13484                                           ;
-; Total pins                      ; 1 / 1,064 ( < 1 % )                             ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 2,143,232 / 52,428,800 ( 4 % )                  ;
-; Total DSP Blocks                ; 15 / 256 ( 6 % )                                ;
-; Total HSSI STD RX PCSs          ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI 10G RX PCSs          ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI GEN3 RX PCSs         ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI PMA RX Deserializers ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI STD TX PCSs          ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI 10G TX PCSs          ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI GEN3 TX PCSs         ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI PMA TX Serializers   ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI PIPE GEN1_2s         ; 0 / 48 ( 0 % )                                  ;
-; Total HSSI GEN3s                ; 0 / 48 ( 0 % )                                  ;
-; Total PLLs                      ; 0 / 92 ( 0 % )                                  ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                   ;
-+---------------------------------+-------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Flow Summary                                                                   ;
++------------------------------------+-------------------------------------------+
+; Flow Status                        ; Successful - Sun Jan 08 22:02:20 2023     ;
+; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
+; Revision Name                      ; RV32IM_pipeline                           ;
+; Top-level Entity Name              ; system                                    ;
+; Family                             ; Cyclone IV E                              ;
+; Device                             ; EP4CE115F29C7                             ;
+; Timing Models                      ; Final                                     ;
+; Total logic elements               ; 24,062 / 114,480 ( 21 % )                 ;
+;     Total combinational functions  ; 18,774 / 114,480 ( 16 % )                 ;
+;     Dedicated logic registers      ; 13,454 / 114,480 ( 12 % )                 ;
+; Total registers                    ; 13454                                     ;
+; Total pins                         ; 1 / 529 ( < 1 % )                         ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 2,143,232 / 3,981,312 ( 54 % )            ;
+; Embedded Multiplier 9-bit elements ; 75 / 532 ( 14 % )                         ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                             ;
++------------------------------------+-------------------------------------------+
 
 
 +-----------------------------------------+
@@ -73,91 +62,163 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2022 11:59:50 ;
+; Start date & time ; 01/08/2023 21:57:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; RV32IM_pipeline     ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                             ;
-+-------------------------------------+-------------------------------------------------------+-----------------+-------------+----------------+
-; Assignment Name                     ; Value                                                 ; Default Value   ; Entity Name ; Section Id     ;
-+-------------------------------------+-------------------------------------------------------+-----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 79232741010464.167022178903304                        ; --              ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --              ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>          ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --              ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --              ; --          ; --             ;
-; MISC_FILE                           ; debug_SoC/synthesis/../SoC.cmp                        ; --              ; --          ; --             ;
-; MISC_FILE                           ; debug_SoC/synthesis/../SoC.qsys                       ; --              ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --              ; --          ; --             ;
-; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --              ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --              ; --          ; --             ;
-; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --              ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family)                ; --              ; system      ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                ; --              ; system      ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                ; --              ; system      ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --              ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --              ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --              ; --          ; --             ;
-; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1669301475 ; --              ; SoC         ; --             ;
-; SOPCINFO_FILE                       ; debug_SoC/synthesis/../SoC.sopcinfo                   ; --              ; --          ; --             ;
-; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --              ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; system                                                ; RV32IM_pipeline ; --          ; --             ;
-+-------------------------------------+-------------------------------------------------------+-----------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                 ;
++-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
+; Assignment Name                     ; Value                                                 ; Default Value   ; Entity Name                     ; Section Id     ;
++-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 27332937327006.167319523112416                        ; --              ; --                              ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                  ; --              ; --                              ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                ; <None>          ; --                              ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC                             ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_addr_router                 ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_addr_router_001             ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_addr_select                 ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_clk_sel                     ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_cmd_xbar_demux              ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_cmd_xbar_demux_001          ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_cmd_xbar_mux                ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_cpu                         ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_data_in                     ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_id_router                   ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_ins_inject_data             ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_irq_mapper                  ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_jtag_uart_0                 ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_onchip_mem                  ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_rsp_xbar_demux              ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_rsp_xbar_demux_002          ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_rsp_xbar_mux                ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_rsp_xbar_mux_001            ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_sysid                       ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; SoC_timer                       ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_avalon_sc_fifo           ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_merlin_master_agent      ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_merlin_master_translator ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_merlin_slave_agent       ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_merlin_slave_translator  ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_merlin_traffic_limiter   ; --             ;
+; IP_TOOL_ENV                         ; qsys                                                  ; --              ; altera_reset_controller         ; --             ;
+; IP_TOOL_NAME                        ; qsys                                                  ; --              ; SoC                             ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_addr_router                 ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_addr_router_001             ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_addr_select                 ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_clk_sel                     ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                           ; --              ; SoC_cmd_xbar_demux              ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                           ; --              ; SoC_cmd_xbar_demux_001          ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                             ; --              ; SoC_cmd_xbar_mux                ; --             ;
+; IP_TOOL_NAME                        ; altera_nios2_qsys                                     ; --              ; SoC_cpu                         ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_data_in                     ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_id_router                   ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_pio                                     ; --              ; SoC_ins_inject_data             ; --             ;
+; IP_TOOL_NAME                        ; altera_irq_mapper                                     ; --              ; SoC_irq_mapper                  ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_jtag_uart                               ; --              ; SoC_jtag_uart_0                 ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_onchip_memory2                          ; --              ; SoC_onchip_mem                  ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                           ; --              ; SoC_rsp_xbar_demux              ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                           ; --              ; SoC_rsp_xbar_demux_002          ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                             ; --              ; SoC_rsp_xbar_mux                ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                             ; --              ; SoC_rsp_xbar_mux_001            ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_sysid_qsys                              ; --              ; SoC_sysid                       ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_timer                                   ; --              ; SoC_timer                       ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_sc_fifo                                 ; --              ; altera_avalon_sc_fifo           ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_master_agent                            ; --              ; altera_merlin_master_agent      ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_master_translator                       ; --              ; altera_merlin_master_translator ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_agent                             ; --              ; altera_merlin_slave_agent       ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_translator                        ; --              ; altera_merlin_slave_translator  ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_traffic_limiter                         ; --              ; altera_merlin_traffic_limiter   ; --             ;
+; IP_TOOL_NAME                        ; altera_reset_controller                               ; --              ; altera_reset_controller         ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC                             ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_addr_router                 ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_addr_router_001             ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_addr_select                 ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_clk_sel                     ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_cmd_xbar_demux              ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_cmd_xbar_demux_001          ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_cmd_xbar_mux                ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_cpu                         ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_data_in                     ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_id_router                   ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_id_router_002               ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_ins_inject_addr             ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_ins_inject_data             ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_irq_mapper                  ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_jtag_uart_0                 ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_onchip_mem                  ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_rsp_xbar_demux              ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_rsp_xbar_demux_002          ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_rsp_xbar_mux                ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_rsp_xbar_mux_001            ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_sysid                       ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; SoC_timer                       ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_avalon_sc_fifo           ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_merlin_master_agent      ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_merlin_master_translator ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_merlin_slave_agent       ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_merlin_slave_translator  ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_merlin_traffic_limiter   ; --             ;
+; IP_TOOL_VERSION                     ; 12.1                                                  ; --              ; altera_reset_controller         ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                    ; --              ; --                              ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                     ; --              ; --                              ; --             ;
+; MISC_FILE                           ; debug_SoC/synthesis/../SoC.cmp                        ; --              ; --                              ; --             ;
+; MISC_FILE                           ; debug_SoC/synthesis/../SoC.qsys                       ; --              ; --                              ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --              ; --                              ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                     ; --              ; --                              ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --              ; --                              ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                            ; --              ; --                              ; --             ;
+; PARTITION_COLOR                     ; 16764057                                              ; --              ; system                          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                 ; --              ; system                          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                ; --              ; system                          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                   ; --              ; --                              ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                 ; --              ; --                              ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                          ; --              ; --                              ; --             ;
+; SLD_INFO                            ; QSYS_NAME SoC HAS_SOPCINFO 1 GENERATION_ID 1673162897 ; --              ; SoC                             ; --             ;
+; SOPCINFO_FILE                       ; debug_SoC/synthesis/../SoC.sopcinfo                   ; --              ; --                              ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                    ; --              ; --                              ; --             ;
+; TOP_LEVEL_ENTITY                    ; system                                                ; RV32IM_pipeline ; --                              ; --             ;
++-------------------------------------+-------------------------------------------------------+-----------------+---------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:47     ; 1.0                     ; 5122 MB             ; 00:01:12                           ;
-; Partition Merge      ; 00:00:17     ; 1.0                     ; 5491 MB             ; 00:00:16                           ;
-; Fitter               ; 00:02:08     ; 1.0                     ; 8802 MB             ; 00:03:16                           ;
-; Assembler            ; 00:01:06     ; 1.0                     ; 5439 MB             ; 00:01:06                           ;
-; Timing Analyzer      ; 00:00:27     ; 1.7                     ; 5826 MB             ; 00:00:43                           ;
-; EDA Netlist Writer   ; 00:00:08     ; 1.0                     ; 5050 MB             ; 00:00:08                           ;
-; Partition Merge      ; 00:00:15     ; 1.0                     ; 5530 MB             ; 00:00:15                           ;
-; Fitter               ; 00:01:41     ; 1.0                     ; 8331 MB             ; 00:02:42                           ;
-; Assembler            ; 00:01:09     ; 1.0                     ; 5435 MB             ; 00:01:06                           ;
-; Timing Analyzer      ; 00:00:29     ; 1.6                     ; 5826 MB             ; 00:00:43                           ;
-; EDA Netlist Writer   ; 00:00:11     ; 1.0                     ; 5050 MB             ; 00:00:11                           ;
-; Total                ; 00:08:38     ; --                      ; --                  ; 00:11:38                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:02:00     ; 1.0                     ; 551 MB              ; 00:01:57                           ;
+; Fitter                    ; 00:01:51     ; 1.5                     ; 857 MB              ; 00:02:18                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 453 MB              ; 00:00:10                           ;
+; TimeQuest Timing Analyzer ; 00:00:15     ; 1.3                     ; 630 MB              ; 00:00:15                           ;
+; EDA Netlist Writer        ; 00:00:34     ; 1.0                     ; 557 MB              ; 00:00:33                           ;
+; Total                     ; 00:04:52     ; --                      ; --                  ; 00:05:13                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Partition Merge      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Partition Merge      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-TFBPJ4B  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-7SSREH7  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
-quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
-quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
-quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
-quartus_sta RV32IM_pipeline -c RV32IM_pipeline
-quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
-quartus_cdb --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --merge=on --recompile=on
-quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline --recompile=on
+quartus_map --read_settings_files=on --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
+quartus_fit --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 quartus_sta RV32IM_pipeline -c RV32IM_pipeline
 quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline

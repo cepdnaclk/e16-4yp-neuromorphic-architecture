@@ -2,7 +2,7 @@
 *                                                                             *
 * License Agreement                                                           *
 *                                                                             *
-* Copyright (c) 2015 Altera Corporation, San Jose, California, USA.           *
+* Copyright (c) 2006 Altera Corporation, San Jose, California, USA.           *
 * All rights reserved.                                                        *
 *                                                                             *
 * Permission is hereby granted, free of charge, to any person obtaining a     *
@@ -41,9 +41,7 @@
 
 #include <stdarg.h>
 #include "sys/alt_stdio.h"
-#ifdef ALT_SEMIHOSTING
-#define alt_putchar(x) alt_putcharbuf(x)
-#endif
+
 /* 
  * ALT printf function 
  */
@@ -126,7 +124,4 @@ alt_printf(const char* fmt, ... )
             }
         }
     }
-#ifdef ALT_SEMIHOSTING
-    alt_putbufflush();
-#endif
 }

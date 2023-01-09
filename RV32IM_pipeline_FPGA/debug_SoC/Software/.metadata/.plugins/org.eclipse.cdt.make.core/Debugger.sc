@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
+<?scdStore version="2"?>
+
+<scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.1950717723;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.1028289880">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/HAL/inc"/>

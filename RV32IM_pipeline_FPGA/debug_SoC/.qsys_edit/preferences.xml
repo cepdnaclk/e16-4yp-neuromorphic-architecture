@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable filter="Default">
   <columns>
-   <connections preferredWidth="127" />
+   <connections preferredWidth="143" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,9 +14,8 @@
    <frequency preferredWidth="530" />
   </columns>
  </clocktable>
- <library
-   expandedCategories="Library/Peripherals,Library/Peripherals/Microcontroller Peripherals,Project,Library" />
- <window width="1938" height="1048" x="-9" y="-9" />
+ <library expandedCategories="Project,Library" />
+ <window width="1920" height="1030" x="0" y="0" />
  <generation
    path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" />
  <hdlexample language="VERILOG" />

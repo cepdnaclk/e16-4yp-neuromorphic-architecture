@@ -1,0 +1,142 @@
+$date
+	Fri Jan  6 14:53:01 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbenchINTERUPT $end
+$var wire 32 ! pc_next_regfile [31:0] $end
+$var wire 32 " pc_next_final [31:0] $end
+$var wire 1 # en_regfile $end
+$var reg 1 $ clk $end
+$var reg 1 % interupt_signanl $end
+$var reg 32 & pc_next [31:0] $end
+$var reg 1 ' reset $end
+$var reg 1 ( return_from_isr $end
+$scope module ic $end
+$var wire 1 $ clk $end
+$var wire 1 % interupt_signanl $end
+$var wire 32 ) pc_next [31:0] $end
+$var wire 32 * pc_next_regfile [31:0] $end
+$var wire 1 ' reset $end
+$var wire 1 ( return_from_isr $end
+$var wire 32 + pc_next_final [31:0] $end
+$var reg 2 , current_state [1:0] $end
+$var reg 1 # en_regfile $end
+$var reg 1 - mux_sel $end
+$var reg 2 . next_state [1:0] $end
+$scope module pcMux $end
+$var wire 32 / INPUT1 [31:0] $end
+$var wire 32 0 INPUT2 [31:0] $end
+$var wire 1 - SELECT $end
+$var reg 32 1 RESULT [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101100 1
+b111110100 0
+b101100 /
+b0 .
+0-
+b0 ,
+b101100 +
+b101100 *
+b101100 )
+0(
+1'
+b101100 &
+0%
+0$
+x#
+b101100 "
+b101100 !
+$end
+#10
+1$
+0'
+#20
+0#
+0$
+#30
+1$
+#40
+b111110100 "
+b111110100 +
+b111110100 1
+1-
+1#
+b1 ,
+b10 .
+0$
+1%
+#50
+1$
+0%
+#60
+b101100 "
+b101100 +
+b101100 1
+0-
+0#
+b10 ,
+0$
+#70
+1$
+#80
+0$
+#90
+1$
+#100
+b0 ,
+b0 .
+0$
+1(
+#110
+1$
+0(
+#120
+0$
+#130
+1$
+#140
+0$
+#150
+1$
+#160
+0$
+#170
+1$
+#180
+0$
+#190
+1$
+#200
+0$
+#210
+1$
+#220
+0$
+#230
+1$
+#240
+0$
+#250
+1$
+#260
+0$
+#270
+1$
+#280
+0$
+#290
+1$
+#300
+0$
+#310
+1$

@@ -1,6 +1,6 @@
 Assembler report for RV32IM_pipeline
-Mon Dec 05 16:46:08 2022
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Sun Jan 08 22:01:28 2023
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
 ---------------------
@@ -11,46 +11,72 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
-  7. Assembler Messages
+  6. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
+  7. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof
+  8. Assembler Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
 
 
 
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 05 16:46:08 2022 ;
+; Assembler Status      ; Successful - Sun Jan 08 22:01:28 2023 ;
 ; Revision Name         ; RV32IM_pipeline                       ;
 ; Top-level Entity Name ; system                                ;
-; Family                ; Stratix V                             ;
-; Device                ; 5SGXEA7N2F45C2                        ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
 
 
-+----------------------------------+
-; Assembler Settings               ;
-+--------+---------+---------------+
-; Option ; Setting ; Default Value ;
-+--------+---------+---------------+
++--------------------------------------------------------------------------------------------------------+
+; Assembler Settings                                                                                     ;
++-----------------------------------------------------------------------------+----------+---------------+
+; Option                                                                      ; Setting  ; Default Value ;
++-----------------------------------------------------------------------------+----------+---------------+
+; Auto user code                                                              ; On       ; Off           ;
+; Use configuration device                                                    ; On       ; Off           ;
+; Use smart compilation                                                       ; Off      ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation  ; On       ; On            ;
+; Enable compact report table                                                 ; Off      ; Off           ;
+; Generate compressed bitstreams                                              ; On       ; On            ;
+; Compression mode                                                            ; Off      ; Off           ;
+; Clock source for configuration device                                       ; Internal ; Internal      ;
+; Clock frequency of the configuration device                                 ; 10 MHZ   ; 10 MHz        ;
+; Divide clock frequency by                                                   ; 1        ; 1             ;
+; Configuration device                                                        ; Auto     ; Auto          ;
+; Configuration device auto user code                                         ; Off      ; Off           ;
+; Generate Tabular Text File (.ttf) For Target Device                         ; Off      ; Off           ;
+; Generate Raw Binary File (.rbf) For Target Device                           ; Off      ; Off           ;
+; Generate Hexadecimal (Intel-Format) Output File (.hexout) for Target Device ; Off      ; Off           ;
+; Hexadecimal Output File start address                                       ; 0        ; 0             ;
+; Hexadecimal Output File count direction                                     ; Up       ; Up            ;
+; Release clears before tri-states                                            ; Off      ; Off           ;
+; Auto-restart configuration after error                                      ; On       ; On            ;
+; Enable OCT_DONE                                                             ; Off      ; Off           ;
+; Generate Serial Vector Format File (.svf) for Target Device                 ; Off      ; Off           ;
+; Generate a JEDEC STAPL Format File (.jam) for Target Device                 ; Off      ; Off           ;
+; Generate a compressed Jam STAPL Byte Code 2.0 File (.jbc) for Target Device ; Off      ; Off           ;
+; Generate a compressed Jam STAPL Byte Code 2.0 File (.jbc) for Target Device ; On       ; On            ;
++-----------------------------------------------------------------------------+----------+---------------+
 
 
 +-------------------------------------------------------+
@@ -64,39 +90,53 @@ refer to the applicable agreement for further details.
 +--------+-------------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------+
-; C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-+-----------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
+; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++---------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                        ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0479335A                                                                                                                     ;
-; Checksum       ; 0x0479335A                                                                                                                     ;
-+----------------+--------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                  ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                                                                                            ;
+; JTAG usercode  ; 0x015C5C77                                                                                                                               ;
+; Checksum       ; 0x015C5C77                                                                                                                               ;
++----------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                                              ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS64                                                                                                                               ;
+; JTAG usercode      ; 0x00000000                                                                                                                           ;
+; Checksum           ; 0x6F4D2322                                                                                                                           ;
+; Compression Ratio  ; 2                                                                                                                                    ;
++--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Assembler
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Dec 05 16:44:59 2022
+Info: Running Quartus II 32-bit Assembler
+    Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
+    Info: Processing started: Sun Jan 08 22:01:16 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5435 megabytes
-    Info: Processing ended: Mon Dec 05 16:46:09 2022
-    Info: Elapsed time: 00:01:10
-    Info: Total CPU time (on all processors): 00:01:07
+Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 453 megabytes
+    Info: Processing ended: Sun Jan 08 22:01:28 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

@@ -1,5 +1,11 @@
 
-State Machine - |system|SoC:inst6|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_jtag_debug_module_wrapper:the_SoC_cpu_jtag_debug_module_wrapper|SoC_cpu_jtag_debug_module_tck:the_SoC_cpu_jtag_debug_module_tck|DRsize
+State Machine - |system|cpu:inst12|interupt_control:ic|current_state
+Name current_state.NORMAL_STATE current_state.ISR_STATE current_state.ISR_INIT_STATE 
+current_state.NORMAL_STATE 0 0 0 
+current_state.ISR_INIT_STATE 1 0 1 
+current_state.ISR_STATE 1 1 0 
+
+State Machine - |system|SoC:inst9|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_jtag_debug_module_wrapper:the_SoC_cpu_jtag_debug_module_wrapper|SoC_cpu_jtag_debug_module_tck:the_SoC_cpu_jtag_debug_module_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
 DRsize.000 0 0 0 0 0 0 
 DRsize.001 0 0 0 0 1 1 

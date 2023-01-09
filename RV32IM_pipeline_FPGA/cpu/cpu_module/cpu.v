@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -26,6 +26,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
     output [2:0] memWriteEn; // control signal to the data memory
     output reg insReadEn; // read enable for the instruction read
     output [31:0] DATA_CACHE_ADDR, DATA_CACHE_DATA; // output signal to the memory (address and the write data input)
+
+    // for the interupt
+    input INTERUPT_SIGNAL;
 	
     // to debug the register
     output [31:0] REGISTER_DEBUG_DATA;
@@ -51,7 +54,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 
     // structure
         // additional wires
-        wire [31:0] PC_NEXT;
+        wire [31:0] PC_NEXT, PC_NEXT_FINAL, PC_NEXT_REGFILE;
+        wire INTERUPT_PC_REG_EN;
 
         // additional registers
         reg [31:0] PC_PLUS_4;
@@ -60,6 +64,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         // TODO: ALU out should be defined later, Branch select out should be defined later
         mux2to1_32bit muxjump (PC_PLUS_4, ALU_OUT, PC_NEXT, BRANCH_SELECT_OUT);
 
+        // interupt control unit
+        wire JALR_SELECT_INTERRUPT;
+        interupt_control ic (CLK, RESET, PC_NEXT, INTERUPT_SIGNAL, PC_NEXT_FINAL, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN, JALR_SELECT_INTERRUPT, PR_INSTRUCTION[19:15]);
 
 
         // connections
@@ -114,7 +121,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         REGISTER_DEBUG_DATA,
                         REGISTER_DEBUG_ADDR,
                         REGISTER_DEBUG_LCD,
-                        RAND_NUM_GEN_OUT); //alu module
+                        RAND_NUM_GEN_OUT,
+                        PC_NEXT_REGFILE,
+                        INTERUPT_PC_REG_EN); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         
@@ -129,7 +138,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                                 OPERAND2_SEL, 
                                 REG_WRITE_SELECT_S2, 
                                 RESET,
-                                DEBUG_CONTROL);
+                                DEBUG_CONTROL,
+                                JALR_SELECT_INTERRUPT);
 
 //************************** STAGE 3 **************************
     reg [31:0] PR_PC_S3, PR_ALU_OUT_S3, PR_DATA_2_S3;
@@ -401,7 +411,7 @@ always @ (*) begin
         //#1
         if (!(DATA_CACHE_BUSY_WAIT || INS_CACHE_BUSY_WAIT)) 
         begin 
-            PC = PC_NEXT;       // increment the pc
+            PC = PC_NEXT_FINAL;       // increment the pc
             insReadEn = 1'b1; // enable read from the instruction memory
         end
     end
