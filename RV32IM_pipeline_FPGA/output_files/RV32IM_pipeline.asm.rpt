@@ -1,6 +1,6 @@
 Assembler report for RV32IM_pipeline
-Tue Jan 10 18:25:27 2023
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+Tue Jan 10 21:53:14 2023
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
 ---------------------
@@ -11,8 +11,8 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
-  7. Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof
+  6. Assembler Device Options: C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof
+  7. Assembler Device Options: C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof
   8. Assembler Messages
 
 
@@ -39,7 +39,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jan 10 18:25:27 2023 ;
+; Assembler Status      ; Successful - Tue Jan 10 21:53:14 2023 ;
 ; Revision Name         ; RV32IM_pipeline                       ;
 ; Top-level Entity Name ; system                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -90,53 +90,53 @@ applicable agreement for further details.
 +--------+-------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                                       ;
-+---------------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-; C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
-+---------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                        ;
++------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                        ;
++------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
+; C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                                                  ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
-; Device         ; EP4CE115F29C7                                                                                                                            ;
-; JTAG usercode  ; 0x015FDFD4                                                                                                                               ;
-; Checksum       ; 0x015FDFD4                                                                                                                               ;
-+----------------+------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.sof ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                   ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE115F29C7                                                                                                             ;
+; JTAG usercode  ; 0x015E1773                                                                                                                ;
+; Checksum       ; 0x015E1773                                                                                                                ;
++----------------+---------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                                                              ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; Device             ; EPCS64                                                                                                                               ;
-; JTAG usercode      ; 0x00000000                                                                                                                           ;
-; Checksum           ; 0x6F566518                                                                                                                           ;
-; Compression Ratio  ; 2                                                                                                                                    ;
-+--------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/output_files/RV32IM_pipeline.pof ;
++--------------------+-----------------------------------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                                               ;
++--------------------+-----------------------------------------------------------------------------------------------------------------------+
+; Device             ; EPCS64                                                                                                                ;
+; JTAG usercode      ; 0x00000000                                                                                                            ;
+; Checksum           ; 0x6F588D76                                                                                                            ;
+; Compression Ratio  ; 2                                                                                                                     ;
++--------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Assembler
+Info: Running Quartus II 32-bit Assembler
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Tue Jan 10 18:25:18 2023
+    Info: Processing started: Tue Jan 10 21:53:03 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4672 megabytes
-    Info: Processing ended: Tue Jan 10 18:25:28 2023
-    Info: Elapsed time: 00:00:10
+Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 448 megabytes
+    Info: Processing ended: Tue Jan 10 21:53:15 2023
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:09
 
 

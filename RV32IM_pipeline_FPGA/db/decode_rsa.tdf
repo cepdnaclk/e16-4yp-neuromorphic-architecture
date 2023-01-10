@@ -1,5 +1,5 @@
 --lpm_decode CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" LPM_DECODES=8 LPM_WIDTH=3 data enable eq
---VERSION_BEGIN 12.1 cbx_cycloneii 2012:11:07:18:03:59:SJ cbx_lpm_add_sub 2012:11:07:18:03:59:SJ cbx_lpm_compare 2012:11:07:18:03:59:SJ cbx_lpm_decode 2012:11:07:18:03:59:SJ cbx_mgl 2012:11:07:18:06:30:SJ cbx_stratix 2012:11:07:18:03:59:SJ cbx_stratixii 2012:11:07:18:03:59:SJ  VERSION_END
+--VERSION_BEGIN 12.1 cbx_cycloneii 2012:11:07:18:03:51:SJ cbx_lpm_add_sub 2012:11:07:18:03:51:SJ cbx_lpm_compare 2012:11:07:18:03:51:SJ cbx_lpm_decode 2012:11:07:18:03:51:SJ cbx_mgl 2012:11:07:18:06:30:SJ cbx_stratix 2012:11:07:18:03:51:SJ cbx_stratixii 2012:11:07:18:03:51:SJ  VERSION_END
 
 
 -- Copyright (C) 1991-2012 Altera Corporation
