@@ -43,9 +43,9 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
   assign rst_n = ~rst;
   always @(posedge clk or negedge rst_n)  
   begin  
-   if(~rst_n) rptr <= 5'b000000;  
+   if(~rst_n) rptr <= 5'b00000;  
    else if(fifo_rd)  
-    rptr <= rptr + 5'b000001;  
+    rptr <= rptr + 5'b00001;  
    else  
     rptr <= rptr;  
   end  
@@ -104,9 +104,9 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
   assign fifo_we = (~fifo_full)&wr;  
   always @(posedge clk or negedge rst_n)  
   begin  
-   if(~rst_n) wptr <= 5'b000000;  
+   if(~rst_n) wptr <= 5'b00000;  
    else if(fifo_we)  
-    wptr <= wptr + 5'b000001;  
+    wptr <= wptr + 5'b00001;  
    else  
     wptr <= wptr;  
   end  

@@ -10,8 +10,9 @@ module network_interface(
     input [63:0] data_out_rauter,
     output [63:0] data_in_rauter,
     input read_en_cpu,
-    input write_en_cpu, read_en_cpu,
-    input write_en_rauter, read_en_rauter
+    input write_en_cpu,
+    input write_en_rauter, 
+    input read_en_rauter
 
 );
     wire fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_underflow;
