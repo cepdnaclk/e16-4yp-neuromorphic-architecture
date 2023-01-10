@@ -87,7 +87,7 @@ ACDS_VERSION := 12.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+SOPCINFO_FILE := C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false

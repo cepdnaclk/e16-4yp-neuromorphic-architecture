@@ -35,47 +35,47 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   8 .debug_pubnames 00001acc  00000000  00000000  00017938  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   00035474  00000000  00000000  00019404  2**0
+  9 .debug_info   000356bd  00000000  00000000  00019404  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 0000b4b7  00000000  00000000  0004e878  2**0
+ 10 .debug_abbrev 0000b4b7  00000000  00000000  0004eac1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   0001c5d4  00000000  00000000  00059d2f  2**0
+ 11 .debug_line   0001c370  00000000  00000000  00059f78  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  0000233c  00000000  00000000  00076304  2**2
+ 12 .debug_frame  0000233c  00000000  00000000  000762e8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00002de9  00000000  00000000  00078640  2**0
+ 13 .debug_str    00002de9  00000000  00000000  00078624  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    000125dd  00000000  00000000  0007b429  2**0
+ 14 .debug_loc    000125dd  00000000  00000000  0007b40d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000050  00000000  00000000  0008da08  2**2
+ 15 .debug_alt_sim_info 00000050  00000000  00000000  0008d9ec  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000ba0  00000000  00000000  0008da58  2**3
+ 16 .debug_ranges 00000ba0  00000000  00000000  0008da40  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  000922a6  2**0
+ 17 .thread_model 00000003  00000000  00000000  0009228e  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  000922a9  2**0
+ 18 .cpu          00000003  00000000  00000000  00092291  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  000922ac  2**0
+ 19 .qsys         00000001  00000000  00000000  00092294  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  000922ad  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  00092295  2**0
                   CONTENTS, READONLY
- 21 .sysid_hash   00000004  00000000  00000000  000922ae  2**0
+ 21 .sysid_hash   00000004  00000000  00000000  00092296  2**0
                   CONTENTS, READONLY
- 22 .sysid_base   00000004  00000000  00000000  000922b2  2**0
+ 22 .sysid_base   00000004  00000000  00000000  0009229a  2**0
                   CONTENTS, READONLY
- 23 .sysid_time   00000004  00000000  00000000  000922b6  2**0
+ 23 .sysid_time   00000004  00000000  00000000  0009229e  2**0
                   CONTENTS, READONLY
- 24 .stderr_dev   0000000b  00000000  00000000  000922ba  2**0
+ 24 .stderr_dev   0000000b  00000000  00000000  000922a2  2**0
                   CONTENTS, READONLY
- 25 .stdin_dev    0000000b  00000000  00000000  000922c5  2**0
+ 25 .stdin_dev    0000000b  00000000  00000000  000922ad  2**0
                   CONTENTS, READONLY
- 26 .stdout_dev   0000000b  00000000  00000000  000922d0  2**0
+ 26 .stdout_dev   0000000b  00000000  00000000  000922b8  2**0
                   CONTENTS, READONLY
- 27 .sopc_system_name 00000003  00000000  00000000  000922db  2**0
+ 27 .sopc_system_name 00000003  00000000  00000000  000922c3  2**0
                   CONTENTS, READONLY
- 28 .quartus_project_dir 00000059  00000000  00000000  000922de  2**0
+ 28 .quartus_project_dir 00000068  00000000  00000000  000922c6  2**0
                   CONTENTS, READONLY
- 29 .sopcinfo     000714a3  00000000  00000000  00092337  2**0
+ 29 .sopcinfo     0006d666  00000000  00000000  0009232e  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00040000 l    d  .entry	00000000 .entry
@@ -981,39 +981,58 @@ alt_after_alt_main:
    401ec:	003fff06 	br	401ec <alt_after_alt_main>
 
 000401f0 <reset>:
+	int i;
+	float f;
+};
+
+//reset the CPU
+void reset(){
    401f0:	defffe04 	addi	sp,sp,-8
    401f4:	dfc00115 	stw	ra,4(sp)
    401f8:	df000015 	stw	fp,0(sp)
    401fc:	d839883a 	mov	fp,sp
+	IOWR_8DIRECT(INTERUPT_SIGNAL,OFFSET,0); // to reset the interupt
    40200:	00800234 	movhi	r2,8
    40204:	10842c04 	addi	r2,r2,4272
    40208:	10000025 	stbio	zero,0(r2)
+
+	IOWR_8DIRECT(RESET,OFFSET,1);
    4020c:	00c00234 	movhi	r3,8
    40210:	18c40804 	addi	r3,r3,4128
    40214:	00800044 	movi	r2,1
    40218:	18800025 	stbio	r2,0(r3)
+
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
    4021c:	00800234 	movhi	r2,8
    40220:	10841004 	addi	r2,r2,4160
    40224:	10000025 	stbio	zero,0(r2)
+	usleep(100000);
    40228:	010000b4 	movhi	r4,2
    4022c:	2121a804 	addi	r4,r4,-31072
    40230:	0050e3c0 	call	50e3c <usleep>
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
    40234:	00c00234 	movhi	r3,8
    40238:	18c41004 	addi	r3,r3,4160
    4023c:	00800044 	movi	r2,1
    40240:	18800025 	stbio	r2,0(r3)
+	usleep(100000);
    40244:	010000b4 	movhi	r4,2
    40248:	2121a804 	addi	r4,r4,-31072
    4024c:	0050e3c0 	call	50e3c <usleep>
+	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
    40250:	00800234 	movhi	r2,8
    40254:	10841004 	addi	r2,r2,4160
    40258:	10000025 	stbio	zero,0(r2)
+
+	IOWR_8DIRECT(RESET,OFFSET,0);
    4025c:	00800234 	movhi	r2,8
    40260:	10840804 	addi	r2,r2,4128
    40264:	10000025 	stbio	zero,0(r2)
+	printf("core reset\n");
    40268:	01000174 	movhi	r4,5
    4026c:	210d1e04 	addi	r4,r4,13432
    40270:	0041f0c0 	call	41f0c <puts>
+}
    40274:	e037883a 	mov	sp,fp
    40278:	dfc00117 	ldw	ra,4(sp)
    4027c:	df000017 	ldw	fp,0(sp)
@@ -1021,18 +1040,26 @@ alt_after_alt_main:
    40284:	f800283a 	ret
 
 00040288 <printBits>:
+
+// Assumes little endian
+void printBits(int size, int data)
+{
    40288:	defffa04 	addi	sp,sp,-24
    4028c:	dfc00515 	stw	ra,20(sp)
    40290:	df000415 	stw	fp,16(sp)
    40294:	df000404 	addi	fp,sp,16
    40298:	e13ffe15 	stw	r4,-8(fp)
    4029c:	e17fff15 	stw	r5,-4(fp)
+    printf("ALU Select : %d -> ", data);
    402a0:	01000174 	movhi	r4,5
    402a4:	210d2104 	addi	r4,r4,13444
    402a8:	e17fff17 	ldw	r5,-4(fp)
    402ac:	0041df40 	call	41df4 <printf>
+	int i;
+    for (i = 0; i < size; i++) {
    402b0:	e03ffd15 	stw	zero,-12(fp)
    402b4:	00000f06 	br	402f4 <printBits+0x6c>
+    	int tmp = data >> size-i-1;
    402b8:	e0fffe17 	ldw	r3,-8(fp)
    402bc:	e0bffd17 	ldw	r2,-12(fp)
    402c0:	1885c83a 	sub	r2,r3,r2
@@ -1040,20 +1067,32 @@ alt_after_alt_main:
    402c8:	e0bfff17 	ldw	r2,-4(fp)
    402cc:	10c5d83a 	sra	r2,r2,r3
    402d0:	e0bffc15 	stw	r2,-16(fp)
+    	printf("%u", tmp&1);
    402d4:	e0bffc17 	ldw	r2,-16(fp)
    402d8:	1140004c 	andi	r5,r2,1
    402dc:	01000174 	movhi	r4,5
    402e0:	210d2604 	addi	r4,r4,13464
    402e4:	0041df40 	call	41df4 <printf>
+// Assumes little endian
+void printBits(int size, int data)
+{
+    printf("ALU Select : %d -> ", data);
+	int i;
+    for (i = 0; i < size; i++) {
    402e8:	e0bffd17 	ldw	r2,-12(fp)
    402ec:	10800044 	addi	r2,r2,1
    402f0:	e0bffd15 	stw	r2,-12(fp)
    402f4:	e0fffd17 	ldw	r3,-12(fp)
    402f8:	e0bffe17 	ldw	r2,-8(fp)
    402fc:	18bfee16 	blt	r3,r2,402b8 <printBits+0x30>
+    	int tmp = data >> size-i-1;
+    	printf("%u", tmp&1);
+    }
+    puts("");
    40300:	01000174 	movhi	r4,5
    40304:	210d2704 	addi	r4,r4,13468
    40308:	0041f0c0 	call	41f0c <puts>
+}
    4030c:	e037883a 	mov	sp,fp
    40310:	dfc00117 	ldw	ra,4(sp)
    40314:	df000017 	ldw	fp,0(sp)
@@ -1061,24 +1100,39 @@ alt_after_alt_main:
    4031c:	f800283a 	ret
 
 00040320 <printRegisters>:
+
+// print the specific register values
+void printRegisters() {
    40320:	defff904 	addi	sp,sp,-28
    40324:	dfc00615 	stw	ra,24(sp)
    40328:	df000515 	stw	fp,20(sp)
    4032c:	df000504 	addi	fp,sp,20
+	int addr;
+	union ConvFloat convData;
+    for (addr = 0; addr < NUMBER_OF_REGS; addr++) {
    40330:	e03ffe15 	stw	zero,-8(fp)
    40334:	00001b06 	br	403a4 <printRegisters+0x84>
+        // write the address to the IO port
+        IOWR_8DIRECT(ADDR,OFFSET,addr);
    40338:	00c00234 	movhi	r3,8
    4033c:	18c41c04 	addi	r3,r3,4208
    40340:	e0bffe17 	ldw	r2,-8(fp)
    40344:	18800025 	stbio	r2,0(r3)
+        usleep(DELAY); // Wait for about 0.1 seconds
    40348:	01000044 	movi	r4,1
    4034c:	0050e3c0 	call	50e3c <usleep>
+
+        // getting data from the Register file
+        int data = IORD_32DIRECT(DATA_IN,OFFSET);
    40350:	00800234 	movhi	r2,8
    40354:	10841804 	addi	r2,r2,4192
    40358:	10800037 	ldwio	r2,0(r2)
    4035c:	e0bffc15 	stw	r2,-16(fp)
+        convData.i = data;
    40360:	e0bffc17 	ldw	r2,-16(fp)
    40364:	e0bfff15 	stw	r2,-4(fp)
+
+        printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
    40368:	e0bfff17 	ldw	r2,-4(fp)
    4036c:	1009883a 	mov	r4,r2
    40370:	00408c80 	call	408c8 <__extendsfdf2>
@@ -1091,24 +1145,43 @@ alt_after_alt_main:
    4038c:	e17ffe17 	ldw	r5,-8(fp)
    40390:	e1bffc17 	ldw	r6,-16(fp)
    40394:	0041df40 	call	41df4 <printf>
+
+// print the specific register values
+void printRegisters() {
+	int addr;
+	union ConvFloat convData;
+    for (addr = 0; addr < NUMBER_OF_REGS; addr++) {
    40398:	e0bffe17 	ldw	r2,-8(fp)
    4039c:	10800044 	addi	r2,r2,1
    403a0:	e0bffe15 	stw	r2,-8(fp)
    403a4:	e0bffe17 	ldw	r2,-8(fp)
    403a8:	10800410 	cmplti	r2,r2,16
    403ac:	103fe21e 	bne	r2,zero,40338 <printRegisters+0x18>
+        printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
+    }
+
+    // check random number generation
+	// write the address to the IO port
+	IOWR_8DIRECT(ADDR,OFFSET,30);
    403b0:	00c00234 	movhi	r3,8
    403b4:	18c41c04 	addi	r3,r3,4208
    403b8:	00800784 	movi	r2,30
    403bc:	18800025 	stbio	r2,0(r3)
+	usleep(DELAY); // Wait for about 0.1 seconds
    403c0:	01000044 	movi	r4,1
    403c4:	0050e3c0 	call	50e3c <usleep>
+
+	// getting data from the Register file
+	int data = IORD_32DIRECT(DATA_IN,OFFSET);
    403c8:	00800234 	movhi	r2,8
    403cc:	10841804 	addi	r2,r2,4192
    403d0:	10800037 	ldwio	r2,0(r2)
    403d4:	e0bffd15 	stw	r2,-12(fp)
+	convData.i = data;
    403d8:	e0bffd17 	ldw	r2,-12(fp)
    403dc:	e0bfff15 	stw	r2,-4(fp)
+
+	printf("Addr: %d->%d,%.4f   ",30, data, convData.f);
    403e0:	e0bfff17 	ldw	r2,-4(fp)
    403e4:	1009883a 	mov	r4,r2
    403e8:	00408c80 	call	408c8 <__extendsfdf2>
@@ -1121,9 +1194,11 @@ alt_after_alt_main:
    40404:	01400784 	movi	r5,30
    40408:	e1bffd17 	ldw	r6,-12(fp)
    4040c:	0041df40 	call	41df4 <printf>
+    printf("\n\n");
    40410:	01000174 	movhi	r4,5
    40414:	210d2e04 	addi	r4,r4,13496
    40418:	0041f0c0 	call	41f0c <puts>
+}
    4041c:	e037883a 	mov	sp,fp
    40420:	dfc00117 	ldw	ra,4(sp)
    40424:	df000017 	ldw	fp,0(sp)
@@ -1131,27 +1206,45 @@ alt_after_alt_main:
    4042c:	f800283a 	ret
 
 00040430 <printSpike>:
+
+// formated print for spike identification
+void printSpike() {
    40430:	defffc04 	addi	sp,sp,-16
    40434:	dfc00315 	stw	ra,12(sp)
    40438:	df000215 	stw	fp,8(sp)
    4043c:	df000204 	addi	fp,sp,8
+	union ConvFloat convData;
+
+	// ========================================== print value
+	// write the address to the IO port
+	IOWR_8DIRECT(ADDR,OFFSET,4);
    40440:	00c00234 	movhi	r3,8
    40444:	18c41c04 	addi	r3,r3,4208
    40448:	00800104 	movi	r2,4
    4044c:	18800025 	stbio	r2,0(r3)
+	usleep(DELAY); // Wait for about 0.1 seconds
    40450:	01000044 	movi	r4,1
    40454:	0050e3c0 	call	50e3c <usleep>
+
+	// getting data from the Register file
+	int data = IORD_32DIRECT(DATA_IN,OFFSET);
    40458:	00800234 	movhi	r2,8
    4045c:	10841804 	addi	r2,r2,4192
    40460:	10800037 	ldwio	r2,0(r2)
    40464:	e0bffe15 	stw	r2,-8(fp)
+	convData.i = data;
    40468:	e0bffe17 	ldw	r2,-8(fp)
    4046c:	e0bfff15 	stw	r2,-4(fp)
+
+	if (data != spikeValue) {
    40470:	d0e6e117 	ldw	r3,-25724(gp)
    40474:	e0bffe17 	ldw	r2,-8(fp)
    40478:	10c02426 	beq	r2,r3,4050c <printSpike+0xdc>
+		spikeValue = data;
    4047c:	e0bffe17 	ldw	r2,-8(fp)
    40480:	d0a6e115 	stw	r2,-25724(gp)
+
+		printf("value: %d,%.4f   ",data, convData.f);
    40484:	e0bfff17 	ldw	r2,-4(fp)
    40488:	1009883a 	mov	r4,r2
    4048c:	00408c80 	call	408c8 <__extendsfdf2>
@@ -1163,18 +1256,29 @@ alt_after_alt_main:
    404a4:	380d883a 	mov	r6,r7
    404a8:	400f883a 	mov	r7,r8
    404ac:	0041df40 	call	41df4 <printf>
+
+		// =========================================== print spike count
+		// write the address to the IO port
+		IOWR_8DIRECT(ADDR,OFFSET,15);
    404b0:	00c00234 	movhi	r3,8
    404b4:	18c41c04 	addi	r3,r3,4208
    404b8:	008003c4 	movi	r2,15
    404bc:	18800025 	stbio	r2,0(r3)
+		usleep(DELAY); // Wait for about 0.1 seconds
    404c0:	01000044 	movi	r4,1
    404c4:	0050e3c0 	call	50e3c <usleep>
+
+		// getting data from the Register file
+		data = IORD_32DIRECT(DATA_IN,OFFSET);
    404c8:	00800234 	movhi	r2,8
    404cc:	10841804 	addi	r2,r2,4192
    404d0:	10800037 	ldwio	r2,0(r2)
    404d4:	e0bffe15 	stw	r2,-8(fp)
+		convData.i = data;
    404d8:	e0bffe17 	ldw	r2,-8(fp)
    404dc:	e0bfff15 	stw	r2,-4(fp)
+
+		printf("spike count: %d,%.4f \n",data, convData.f);
    404e0:	e0bfff17 	ldw	r2,-4(fp)
    404e4:	1009883a 	mov	r4,r2
    404e8:	00408c80 	call	408c8 <__extendsfdf2>
@@ -1186,6 +1290,9 @@ alt_after_alt_main:
    40500:	380d883a 	mov	r6,r7
    40504:	400f883a 	mov	r7,r8
    40508:	0041df40 	call	41df4 <printf>
+
+	}
+}
    4050c:	e037883a 	mov	sp,fp
    40510:	dfc00117 	ldw	ra,4(sp)
    40514:	df000017 	ldw	fp,0(sp)
@@ -1193,17 +1300,24 @@ alt_after_alt_main:
    4051c:	f800283a 	ret
 
 00040520 <printALUSelect>:
+
+//print ALU SELECT Signal
+void printALUSelect() {
    40520:	defffd04 	addi	sp,sp,-12
    40524:	dfc00215 	stw	ra,8(sp)
    40528:	df000115 	stw	fp,4(sp)
    4052c:	df000104 	addi	fp,sp,4
+	// getting data from the Register file
+	int data = IORD_32DIRECT(ALU_SELECT,OFFSET);
    40530:	00800234 	movhi	r2,8
    40534:	10840c04 	addi	r2,r2,4144
    40538:	10800037 	ldwio	r2,0(r2)
    4053c:	e0bfff15 	stw	r2,-4(fp)
+	printBits(32, data);
    40540:	01000804 	movi	r4,32
    40544:	e17fff17 	ldw	r5,-4(fp)
    40548:	00402880 	call	40288 <printBits>
+}
    4054c:	e037883a 	mov	sp,fp
    40550:	dfc00117 	ldw	ra,4(sp)
    40554:	df000017 	ldw	fp,0(sp)
@@ -1211,18 +1325,24 @@ alt_after_alt_main:
    4055c:	f800283a 	ret
 
 00040560 <printPC>:
+
+// print pc
+void printPC() {
    40560:	defffd04 	addi	sp,sp,-12
    40564:	dfc00215 	stw	ra,8(sp)
    40568:	df000115 	stw	fp,4(sp)
    4056c:	df000104 	addi	fp,sp,4
+	int data = IORD_32DIRECT(PC,OFFSET);
    40570:	00800234 	movhi	r2,8
    40574:	10843004 	addi	r2,r2,4288
    40578:	10800037 	ldwio	r2,0(r2)
    4057c:	e0bfff15 	stw	r2,-4(fp)
+	printf("PC = %d \n", data);
    40580:	01000174 	movhi	r4,5
    40584:	210d3a04 	addi	r4,r4,13544
    40588:	e17fff17 	ldw	r5,-4(fp)
    4058c:	0041df40 	call	41df4 <printf>
+}
    40590:	e037883a 	mov	sp,fp
    40594:	dfc00117 	ldw	ra,4(sp)
    40598:	df000017 	ldw	fp,0(sp)
@@ -1230,30 +1350,53 @@ alt_after_alt_main:
    405a0:	f800283a 	ret
 
 000405a4 <genPulseAndPrint>:
+
+// genarate clock pulses and print registers
+void genPulseAndPrint(int pulseCount) {
    405a4:	defffc04 	addi	sp,sp,-16
    405a8:	dfc00315 	stw	ra,12(sp)
    405ac:	df000215 	stw	fp,8(sp)
    405b0:	df000204 	addi	fp,sp,8
    405b4:	e13fff15 	stw	r4,-4(fp)
+	int i;
+	for (i = 0; i < pulseCount; i++) {
    405b8:	e03ffe15 	stw	zero,-8(fp)
    405bc:	00000e06 	br	405f8 <genPulseAndPrint+0x54>
+		printPC();   // printing the corresponding to the instruction enters to the pipeline
    405c0:	00405600 	call	40560 <printPC>
+        IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,1);
    405c4:	00c00234 	movhi	r3,8
    405c8:	18c41004 	addi	r3,r3,4160
    405cc:	00800044 	movi	r2,1
    405d0:	18800025 	stbio	r2,0(r3)
+    	usleep(DELAY); // Wait for about 0.1 seconds
    405d4:	01000044 	movi	r4,1
    405d8:	0050e3c0 	call	50e3c <usleep>
+    	IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
    405dc:	00800234 	movhi	r2,8
    405e0:	10841004 	addi	r2,r2,4160
    405e4:	10000025 	stbio	zero,0(r2)
+        // printing the register values
+        printRegisters();
    405e8:	00403200 	call	40320 <printRegisters>
+}
+
+// genarate clock pulses and print registers
+void genPulseAndPrint(int pulseCount) {
+	int i;
+	for (i = 0; i < pulseCount; i++) {
    405ec:	e0bffe17 	ldw	r2,-8(fp)
    405f0:	10800044 	addi	r2,r2,1
    405f4:	e0bffe15 	stw	r2,-8(fp)
    405f8:	e0fffe17 	ldw	r3,-8(fp)
    405fc:	e0bfff17 	ldw	r2,-4(fp)
    40600:	18bfef16 	blt	r3,r2,405c0 <genPulseAndPrint+0x1c>
+        // printing the register values
+        printRegisters();
+        // printSpike();
+        // printALUSelect();
+    }
+}
    40604:	e037883a 	mov	sp,fp
    40608:	dfc00117 	ldw	ra,4(sp)
    4060c:	df000017 	ldw	fp,0(sp)
@@ -1261,62 +1404,92 @@ alt_after_alt_main:
    40614:	f800283a 	ret
 
 00040618 <toggleInterupt>:
+
+// enable or disable the interupt
+void toggleInterupt() {
    40618:	deffff04 	addi	sp,sp,-4
    4061c:	df000015 	stw	fp,0(sp)
    40620:	d839883a 	mov	fp,sp
+	if (interuptStatus == 0) {
    40624:	d0a6e217 	ldw	r2,-25720(gp)
    40628:	1004c03a 	cmpne	r2,r2,zero
    4062c:	1000031e 	bne	r2,zero,4063c <toggleInterupt+0x24>
+		interuptStatus = 1;
    40630:	00800044 	movi	r2,1
    40634:	d0a6e215 	stw	r2,-25720(gp)
    40638:	00000106 	br	40640 <toggleInterupt+0x28>
+	} else {
+		interuptStatus = 0;
    4063c:	d026e215 	stw	zero,-25720(gp)
+	}
+	IOWR_8DIRECT(INTERUPT_SIGNAL,OFFSET,interuptStatus);
    40640:	d0e6e217 	ldw	r3,-25720(gp)
    40644:	00800234 	movhi	r2,8
    40648:	10842c04 	addi	r2,r2,4272
    4064c:	10c00025 	stbio	r3,0(r2)
+}
    40650:	e037883a 	mov	sp,fp
    40654:	df000017 	ldw	fp,0(sp)
    40658:	dec00104 	addi	sp,sp,4
    4065c:	f800283a 	ret
 
 00040660 <injectByte>:
+
+
+// inject byte to instruction memory
+void injectByte(int data, int addr){
    40660:	defffd04 	addi	sp,sp,-12
    40664:	df000215 	stw	fp,8(sp)
    40668:	df000204 	addi	fp,sp,8
    4066c:	e13ffe15 	stw	r4,-8(fp)
    40670:	e17fff15 	stw	r5,-4(fp)
+	// clock pulses
+	IOWR_8DIRECT(INS_INJ_DATA,OFFSET,data);
    40674:	00c00234 	movhi	r3,8
    40678:	18c42404 	addi	r3,r3,4240
    4067c:	e0bffe17 	ldw	r2,-8(fp)
    40680:	18800025 	stbio	r2,0(r3)
+	IOWR_32DIRECT(INS_INJ_ADDR,OFFSET,addr);
    40684:	00c00234 	movhi	r3,8
    40688:	18c42804 	addi	r3,r3,4256
    4068c:	e0bfff17 	ldw	r2,-4(fp)
    40690:	18800035 	stwio	r2,0(r3)
+//	usleep(1000);
+	IOWR_8DIRECT(INS_INJ_CLOCK,OFFSET,1);
    40694:	00c00234 	movhi	r3,8
    40698:	18c42004 	addi	r3,r3,4224
    4069c:	00800044 	movi	r2,1
    406a0:	18800025 	stbio	r2,0(r3)
+//	usleep(1000);
+	IOWR_8DIRECT(INS_INJ_CLOCK,OFFSET,0);
    406a4:	00800234 	movhi	r2,8
    406a8:	10842004 	addi	r2,r2,4224
    406ac:	10000025 	stbio	zero,0(r2)
+}
    406b0:	e037883a 	mov	sp,fp
    406b4:	df000017 	ldw	fp,0(sp)
    406b8:	dec00104 	addi	sp,sp,4
    406bc:	f800283a 	ret
 
 000406c0 <loadProgramme>:
+
+// programming the instruction to the ins memory
+void loadProgramme(){
    406c0:	deffe604 	addi	sp,sp,-104
    406c4:	dfc01915 	stw	ra,100(sp)
    406c8:	df001815 	stw	fp,96(sp)
    406cc:	df001804 	addi	fp,sp,96
+	printf("Instruction loading started\n");
    406d0:	01000174 	movhi	r4,5
    406d4:	210d3d04 	addi	r4,r4,13556
    406d8:	0041f0c0 	call	41f0c <puts>
+	// pulling down the clock line of ins memory
+	IOWR_8DIRECT(INS_INJ_CLOCK,OFFSET,0);
    406dc:	00800234 	movhi	r2,8
    406e0:	10842004 	addi	r2,r2,4224
    406e4:	10000025 	stbio	zero,0(r2)
+
+	char file_name[80] = "/mnt/host/BIN_file/prog.bin";
    406e8:	00c00174 	movhi	r3,5
    406ec:	18cd4f04 	addi	r3,r3,13628
    406f0:	18800017 	ldw	r2,0(r3)
@@ -1346,14 +1519,23 @@ alt_after_alt_main:
    40750:	e03ffd15 	stw	zero,-12(fp)
    40754:	e03ffe15 	stw	zero,-8(fp)
    40758:	e03fff15 	stw	zero,-4(fp)
+
+	FILE *bmp_file = NULL;
    4075c:	e03feb15 	stw	zero,-84(fp)
+	int bmp_file_size, bytes_read, addr;
+
+	bmp_file = fopen(file_name, "rb");
    40760:	e13fec04 	addi	r4,fp,-80
    40764:	01400174 	movhi	r5,5
    40768:	294d4404 	addi	r5,r5,13584
    4076c:	0040e240 	call	40e24 <fopen>
    40770:	e0bfeb15 	stw	r2,-84(fp)
+	addr=0;
    40774:	e03fe815 	stw	zero,-96(fp)
+	while(fscanf(bmp_file, "%[^\n] ", g_file_buffer) != EOF) {
    40778:	00000b06 	br	407a8 <loadProgramme+0xe8>
+//		printf("%s-%d\n", g_file_buffer, (int) strtol(g_file_buffer, NULL, 2));
+		injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
    4077c:	01000174 	movhi	r4,5
    40780:	211cad04 	addi	r4,r4,29364
    40784:	000b883a 	mov	r5,zero
@@ -1362,9 +1544,16 @@ alt_after_alt_main:
    40790:	1009883a 	mov	r4,r2
    40794:	e17fe817 	ldw	r5,-96(fp)
    40798:	00406600 	call	40660 <injectByte>
+		addr++;
    4079c:	e0bfe817 	ldw	r2,-96(fp)
    407a0:	10800044 	addi	r2,r2,1
    407a4:	e0bfe815 	stw	r2,-96(fp)
+	FILE *bmp_file = NULL;
+	int bmp_file_size, bytes_read, addr;
+
+	bmp_file = fopen(file_name, "rb");
+	addr=0;
+	while(fscanf(bmp_file, "%[^\n] ", g_file_buffer) != EOF) {
    407a8:	e13feb17 	ldw	r4,-84(fp)
    407ac:	01400174 	movhi	r5,5
    407b0:	294d4504 	addi	r5,r5,13588
@@ -1373,9 +1562,15 @@ alt_after_alt_main:
    407bc:	0040e680 	call	40e68 <fscanf>
    407c0:	10bfffd8 	cmpnei	r2,r2,-1
    407c4:	103fed1e 	bne	r2,zero,4077c <loadProgramme+0xbc>
+//		printf("%s-%d\n", g_file_buffer, (int) strtol(g_file_buffer, NULL, 2));
+		injectByte((int) strtol(g_file_buffer, NULL, 2), addr);
+		addr++;
+	}
+	printf("Instruction loading completed\n");
    407c8:	01000174 	movhi	r4,5
    407cc:	210d4704 	addi	r4,r4,13596
    407d0:	0041f0c0 	call	41f0c <puts>
+}
    407d4:	e037883a 	mov	sp,fp
    407d8:	dfc00117 	ldw	ra,4(sp)
    407dc:	df000017 	ldw	fp,0(sp)
@@ -1383,61 +1578,102 @@ alt_after_alt_main:
    407e4:	f800283a 	ret
 
 000407e8 <main>:
+
+int main(void)
+{ 
    407e8:	defffb04 	addi	sp,sp,-20
    407ec:	dfc00415 	stw	ra,16(sp)
    407f0:	df000315 	stw	fp,12(sp)
    407f4:	df000304 	addi	fp,sp,12
+
+    /* 0x00-0xFF counting loop. */
+    IOWR_8DIRECT(CLK_SEL,OFFSET,1);
    407f8:	00c00234 	movhi	r3,8
    407fc:	18c41404 	addi	r3,r3,4176
    40800:	00800044 	movi	r2,1
    40804:	18800025 	stbio	r2,0(r3)
+    IOWR_8DIRECT(NIOS_CLK_OUT,OFFSET,0);
    40808:	00800234 	movhi	r2,8
    4080c:	10841004 	addi	r2,r2,4160
    40810:	10000025 	stbio	zero,0(r2)
+
+    // loading the prog file to the instruction memory
+    loadProgramme();
    40814:	00406c00 	call	406c0 <loadProgramme>
+    // resetting the cpu
+    reset();
    40818:	00401f00 	call	401f0 <reset>
+    while( 1 )
+    {
+        char answer;
+        printf("Do you want the Auto clock?");
    4081c:	01000174 	movhi	r4,5
    40820:	210d6304 	addi	r4,r4,13708
    40824:	0041df40 	call	41df4 <printf>
+        answer = getc(stdin);
    40828:	00800174 	movhi	r2,5
    4082c:	1095b304 	addi	r2,r2,22220
    40830:	10800017 	ldw	r2,0(r2)
    40834:	11000117 	ldw	r4,4(r2)
    40838:	00413800 	call	41380 <getc>
    4083c:	e0bffe05 	stb	r2,-8(fp)
+        if (answer == 'y') {
    40840:	e0bffe07 	ldb	r2,-8(fp)
    40844:	10801e58 	cmpnei	r2,r2,121
    40848:	1000051e 	bne	r2,zero,40860 <main+0x78>
+            IOWR_8DIRECT(CLK_SEL,OFFSET,0);
    4084c:	00800234 	movhi	r2,8
    40850:	10841404 	addi	r2,r2,4176
    40854:	10000025 	stbio	zero,0(r2)
+            while (1) {
+                // printRegisters();
+            	printSpike();
    40858:	00404300 	call	40430 <printSpike>
+            }
    4085c:	003ffe06 	br	40858 <main+0x70>
+        } else {
+            int number_of_pulses;
+            IOWR_8DIRECT(CLK_SEL,OFFSET,1);
    40860:	00c00234 	movhi	r3,8
    40864:	18c41404 	addi	r3,r3,4176
    40868:	00800044 	movi	r2,1
    4086c:	18800025 	stbio	r2,0(r3)
    40870:	00000006 	br	40874 <main+0x8c>
+            while(1) {
+				printf("How many clock pulses do you need to simulate (Enter 9999 to load & reset, 9998 toggle interrupt): ");
    40874:	01000174 	movhi	r4,5
    40878:	210d6a04 	addi	r4,r4,13736
    4087c:	0041df40 	call	41df4 <printf>
+				int clock_pulse_count;
+				scanf("%d", &clock_pulse_count);
    40880:	e17fff04 	addi	r5,fp,-4
    40884:	01000174 	movhi	r4,5
    40888:	210d8304 	addi	r4,r4,13836
    4088c:	00422040 	call	42204 <scanf>
+				if (clock_pulse_count == 9999) {
    40890:	e0bfff17 	ldw	r2,-4(fp)
    40894:	1089c3d8 	cmpnei	r2,r2,9999
    40898:	1000031e 	bne	r2,zero,408a8 <main+0xc0>
+					// loading the prog file to the instruction memory
+					loadProgramme();
    4089c:	00406c00 	call	406c0 <loadProgramme>
+					// resetting the cpu
+					reset();
    408a0:	00401f00 	call	401f0 <reset>
    408a4:	003ff306 	br	40874 <main+0x8c>
+				} else if (clock_pulse_count == 9998) {
    408a8:	e0bfff17 	ldw	r2,-4(fp)
    408ac:	1089c398 	cmpnei	r2,r2,9998
    408b0:	1000021e 	bne	r2,zero,408bc <main+0xd4>
+					toggleInterupt();
    408b4:	00406180 	call	40618 <toggleInterupt>
    408b8:	003fee06 	br	40874 <main+0x8c>
+				}
+				else
+					genPulseAndPrint(clock_pulse_count);
    408bc:	e13fff17 	ldw	r4,-4(fp)
    408c0:	00405a40 	call	405a4 <genPulseAndPrint>
+            }
    408c4:	003feb06 	br	40874 <main+0x8c>
 
 000408c8 <__extendsfdf2>:
@@ -18117,10 +18353,21 @@ static ALT_INLINE int* alt_get_errno(void)
    505b0:	f800283a 	ret
 
 000505b4 <alt_load>:
+ * there is no bootloader, so this application is responsible for loading to
+ * RAM any sections that are required.
+ */  
+
+void alt_load (void)
+{
    505b4:	defffe04 	addi	sp,sp,-8
    505b8:	dfc00115 	stw	ra,4(sp)
    505bc:	df000015 	stw	fp,0(sp)
    505c0:	d839883a 	mov	fp,sp
+  /* 
+   * Copy the .rwdata section. 
+   */
+
+  alt_load_section (&__flash_rwdata_start, 
    505c4:	01000174 	movhi	r4,5
    505c8:	2115d604 	addi	r4,r4,22360
    505cc:	01400174 	movhi	r5,5
@@ -18128,6 +18375,12 @@ static ALT_INLINE int* alt_get_errno(void)
    505d4:	01800174 	movhi	r6,5
    505d8:	3195d604 	addi	r6,r6,22360
    505dc:	00506340 	call	50634 <alt_load_section>
+
+  /*
+   * Copy the exception handler.
+   */
+
+  alt_load_section (&__flash_exceptions_start, 
    505e0:	01000134 	movhi	r4,4
    505e4:	21000804 	addi	r4,r4,32
    505e8:	01400134 	movhi	r5,4
@@ -18135,6 +18388,12 @@ static ALT_INLINE int* alt_get_errno(void)
    505f0:	01800134 	movhi	r6,4
    505f4:	31806d04 	addi	r6,r6,436
    505f8:	00506340 	call	50634 <alt_load_section>
+
+  /*
+   * Copy the .rodata section.
+   */
+
+  alt_load_section (&__flash_rodata_start, 
    505fc:	01000174 	movhi	r4,5
    50600:	210d1e04 	addi	r4,r4,13432
    50604:	01400174 	movhi	r5,5
@@ -18142,8 +18401,16 @@ static ALT_INLINE int* alt_get_errno(void)
    5060c:	01800174 	movhi	r6,5
    50610:	318f1804 	addi	r6,r6,15456
    50614:	00506340 	call	50634 <alt_load_section>
+  
+  /*
+   * Now ensure that the caches are in synch.
+   */
+  
+  alt_dcache_flush_all();
    50618:	00524c00 	call	524c0 <alt_dcache_flush_all>
+  alt_icache_flush_all();
    5061c:	00529cc0 	call	529cc <alt_icache_flush_all>
+}
    50620:	e037883a 	mov	sp,fp
    50624:	dfc00117 	ldw	ra,4(sp)
    50628:	df000017 	ldw	fp,0(sp)
@@ -18151,16 +18418,27 @@ static ALT_INLINE int* alt_get_errno(void)
    50630:	f800283a 	ret
 
 00050634 <alt_load_section>:
+ */
+
+static void ALT_INLINE alt_load_section (alt_u32* from, 
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
    50634:	defffc04 	addi	sp,sp,-16
    50638:	df000315 	stw	fp,12(sp)
    5063c:	df000304 	addi	fp,sp,12
    50640:	e13ffd15 	stw	r4,-12(fp)
    50644:	e17ffe15 	stw	r5,-8(fp)
    50648:	e1bfff15 	stw	r6,-4(fp)
+  if (to != from)
    5064c:	e0fffe17 	ldw	r3,-8(fp)
    50650:	e0bffd17 	ldw	r2,-12(fp)
    50654:	18800e26 	beq	r3,r2,50690 <alt_load_section+0x5c>
+  {
+    while( to != end )
    50658:	00000a06 	br	50684 <alt_load_section+0x50>
+    {
+      *to++ = *from++;
    5065c:	e0bffd17 	ldw	r2,-12(fp)
    50660:	10c00017 	ldw	r3,0(r2)
    50664:	e0bffe17 	ldw	r2,-8(fp)
@@ -18171,9 +18449,20 @@ static ALT_INLINE int* alt_get_errno(void)
    50678:	e0bffd17 	ldw	r2,-12(fp)
    5067c:	10800104 	addi	r2,r2,4
    50680:	e0bffd15 	stw	r2,-12(fp)
+                                         alt_u32* to, 
+                                         alt_u32* end)
+{
+  if (to != from)
+  {
+    while( to != end )
    50684:	e0fffe17 	ldw	r3,-8(fp)
    50688:	e0bfff17 	ldw	r2,-4(fp)
    5068c:	18bff31e 	bne	r3,r2,5065c <alt_load_section+0x28>
+    {
+      *to++ = *from++;
+    }
+  }
+}
    50690:	e037883a 	mov	sp,fp
    50694:	df000017 	ldw	fp,0(sp)
    50698:	dec00104 	addi	sp,sp,4
@@ -18395,20 +18684,34 @@ void alt_main (void)
    5085c:	00530800 	call	53080 <exit>
 
 00050860 <__malloc_lock>:
+ * configuration is single threaded, so there is nothing to do here. Note that 
+ * this requires that malloc is never called by an interrupt service routine.
+ */
+
+void __malloc_lock ( struct _reent *_r )
+{
    50860:	defffe04 	addi	sp,sp,-8
    50864:	df000115 	stw	fp,4(sp)
    50868:	df000104 	addi	fp,sp,4
    5086c:	e13fff15 	stw	r4,-4(fp)
+}
    50870:	e037883a 	mov	sp,fp
    50874:	df000017 	ldw	fp,0(sp)
    50878:	dec00104 	addi	sp,sp,4
    5087c:	f800283a 	ret
 
 00050880 <__malloc_unlock>:
+/*
+ *
+ */
+
+void __malloc_unlock ( struct _reent *_r )
+{
    50880:	defffe04 	addi	sp,sp,-8
    50884:	df000115 	stw	fp,4(sp)
    50888:	df000104 	addi	fp,sp,4
    5088c:	e13fff15 	stw	r4,-4(fp)
+}
    50890:	e037883a 	mov	sp,fp
    50894:	df000017 	ldw	fp,0(sp)
    50898:	dec00104 	addi	sp,sp,4
@@ -19010,13 +19313,21 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
    50e38:	f800283a 	ret
 
 00050e3c <usleep>:
+#if defined (__GNUC__) && __GNUC__ >= 4
+int ALT_USLEEP (useconds_t us)
+#else
+unsigned int ALT_USLEEP (unsigned int us)
+#endif
+{
    50e3c:	defffd04 	addi	sp,sp,-12
    50e40:	dfc00215 	stw	ra,8(sp)
    50e44:	df000115 	stw	fp,4(sp)
    50e48:	df000104 	addi	fp,sp,4
    50e4c:	e13fff15 	stw	r4,-4(fp)
+  return alt_busy_sleep(us);
    50e50:	e13fff17 	ldw	r4,-4(fp)
    50e54:	00523640 	call	52364 <alt_busy_sleep>
+}
    50e58:	e037883a 	mov	sp,fp
    50e5c:	dfc00117 	ldw	ra,4(sp)
    50e60:	df000017 	ldw	fp,0(sp)
@@ -21529,12 +21840,23 @@ void alt_dcache_flush_all (void)
    524d8:	f800283a 	ret
 
 000524dc <alt_dev_llist_insert>:
+/*
+ *
+ */
+
+int alt_dev_llist_insert (alt_dev_llist* dev, alt_llist* list)
+{
    524dc:	defff904 	addi	sp,sp,-28
    524e0:	dfc00615 	stw	ra,24(sp)
    524e4:	df000515 	stw	fp,20(sp)
    524e8:	df000504 	addi	fp,sp,20
    524ec:	e13ffd15 	stw	r4,-12(fp)
    524f0:	e17ffe15 	stw	r5,-8(fp)
+  /*
+   * check that the device exists, and that it has a valid name.
+   */
+
+  if (!dev || !dev->name)
    524f4:	e0bffd17 	ldw	r2,-12(fp)
    524f8:	1005003a 	cmpeq	r2,r2,zero
    524fc:	1000041e 	bne	r2,zero,52510 <alt_dev_llist_insert+0x34>
@@ -21542,33 +21864,55 @@ void alt_dcache_flush_all (void)
    52504:	10800217 	ldw	r2,8(r2)
    52508:	1004c03a 	cmpne	r2,r2,zero
    5250c:	1000071e 	bne	r2,zero,5252c <alt_dev_llist_insert+0x50>
+  {
+    ALT_ERRNO = EINVAL;
    52510:	00525900 	call	52590 <alt_get_errno>
    52514:	1007883a 	mov	r3,r2
    52518:	00800584 	movi	r2,22
    5251c:	18800015 	stw	r2,0(r3)
+    return -EINVAL;
    52520:	00bffa84 	movi	r2,-22
    52524:	e0bfff15 	stw	r2,-4(fp)
    52528:	00001306 	br	52578 <alt_dev_llist_insert+0x9c>
+  
+  /*
+   * register the device.
+   */
+  
+  alt_llist_insert(list, &dev->llist);
    5252c:	e0fffd17 	ldw	r3,-12(fp)
    52530:	e0bffe17 	ldw	r2,-8(fp)
    52534:	e0bffb15 	stw	r2,-20(fp)
    52538:	e0fffc15 	stw	r3,-16(fp)
+ */
+
+static ALT_INLINE void ALT_ALWAYS_INLINE alt_llist_insert(alt_llist* list, 
+                alt_llist* entry)
+{
+  entry->previous = list;
    5253c:	e0fffc17 	ldw	r3,-16(fp)
    52540:	e0bffb17 	ldw	r2,-20(fp)
    52544:	18800115 	stw	r2,4(r3)
+  entry->next     = list->next;
    52548:	e0bffb17 	ldw	r2,-20(fp)
    5254c:	10c00017 	ldw	r3,0(r2)
    52550:	e0bffc17 	ldw	r2,-16(fp)
    52554:	10c00015 	stw	r3,0(r2)
+
+  list->next->previous = entry;
    52558:	e0bffb17 	ldw	r2,-20(fp)
    5255c:	10c00017 	ldw	r3,0(r2)
    52560:	e0bffc17 	ldw	r2,-16(fp)
    52564:	18800115 	stw	r2,4(r3)
+  list->next           = entry;
    52568:	e0fffb17 	ldw	r3,-20(fp)
    5256c:	e0bffc17 	ldw	r2,-16(fp)
    52570:	18800015 	stw	r2,0(r3)
+
+  return 0;  
    52574:	e03fff15 	stw	zero,-4(fp)
    52578:	e0bfff17 	ldw	r2,-4(fp)
+}
    5257c:	e037883a 	mov	sp,fp
    52580:	dfc00117 	ldw	ra,4(sp)
    52584:	df000017 	ldw	fp,0(sp)
@@ -21576,10 +21920,17 @@ void alt_dcache_flush_all (void)
    5258c:	f800283a 	ret
 
 00052590 <alt_get_errno>:
+#undef errno
+
+extern int errno;
+
+static ALT_INLINE int* alt_get_errno(void)
+{
    52590:	defffd04 	addi	sp,sp,-12
    52594:	dfc00215 	stw	ra,8(sp)
    52598:	df000115 	stw	fp,4(sp)
    5259c:	df000104 	addi	fp,sp,4
+  return ((alt_errno) ? alt_errno() : &errno);
    525a0:	00800174 	movhi	r2,5
    525a4:	1095bf04 	addi	r2,r2,22268
    525a8:	10800017 	ldw	r2,0(r2)
@@ -21595,6 +21946,7 @@ void alt_dcache_flush_all (void)
    525d0:	109c9604 	addi	r2,r2,29272
    525d4:	e0bfff15 	stw	r2,-4(fp)
    525d8:	e0bfff17 	ldw	r2,-4(fp)
+}
    525dc:	e037883a 	mov	sp,fp
    525e0:	dfc00117 	ldw	ra,4(sp)
    525e4:	df000017 	ldw	fp,0(sp)
@@ -21602,19 +21954,35 @@ void alt_dcache_flush_all (void)
    525ec:	f800283a 	ret
 
 000525f0 <_do_ctors>:
+/*
+ * Run the C++ static constructors.
+ */
+
+void _do_ctors(void)
+{
    525f0:	defffd04 	addi	sp,sp,-12
    525f4:	dfc00215 	stw	ra,8(sp)
    525f8:	df000115 	stw	fp,4(sp)
    525fc:	df000104 	addi	fp,sp,4
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
    52600:	00bfff04 	movi	r2,-4
    52604:	00c00174 	movhi	r3,5
    52608:	18cd1e04 	addi	r3,r3,13432
    5260c:	1885883a 	add	r2,r3,r2
    52610:	e0bfff15 	stw	r2,-4(fp)
    52614:	00000606 	br	52630 <_do_ctors+0x40>
+        (*ctor) (); 
    52618:	e0bfff17 	ldw	r2,-4(fp)
    5261c:	10800017 	ldw	r2,0(r2)
    52620:	103ee83a 	callr	r2
+
+void _do_ctors(void)
+{
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
    52624:	e0bfff17 	ldw	r2,-4(fp)
    52628:	10bfff04 	addi	r2,r2,-4
    5262c:	e0bfff15 	stw	r2,-4(fp)
@@ -21622,6 +21990,8 @@ void alt_dcache_flush_all (void)
    52634:	00800174 	movhi	r2,5
    52638:	108d1d04 	addi	r2,r2,13428
    5263c:	18bff62e 	bgeu	r3,r2,52618 <_do_ctors+0x28>
+        (*ctor) (); 
+}
    52640:	e037883a 	mov	sp,fp
    52644:	dfc00117 	ldw	ra,4(sp)
    52648:	df000017 	ldw	fp,0(sp)
@@ -21629,19 +21999,35 @@ void alt_dcache_flush_all (void)
    52650:	f800283a 	ret
 
 00052654 <_do_dtors>:
+/*
+ * Run the C++ static destructors.
+ */
+
+void _do_dtors(void)
+{
    52654:	defffd04 	addi	sp,sp,-12
    52658:	dfc00215 	stw	ra,8(sp)
    5265c:	df000115 	stw	fp,4(sp)
    52660:	df000104 	addi	fp,sp,4
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
    52664:	00bfff04 	movi	r2,-4
    52668:	00c00174 	movhi	r3,5
    5266c:	18cd1e04 	addi	r3,r3,13432
    52670:	1885883a 	add	r2,r3,r2
    52674:	e0bfff15 	stw	r2,-4(fp)
    52678:	00000606 	br	52694 <_do_dtors+0x40>
+        (*dtor) (); 
    5267c:	e0bfff17 	ldw	r2,-4(fp)
    52680:	10800017 	ldw	r2,0(r2)
    52684:	103ee83a 	callr	r2
+
+void _do_dtors(void)
+{
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
    52688:	e0bfff17 	ldw	r2,-4(fp)
    5268c:	10bfff04 	addi	r2,r2,-4
    52690:	e0bfff15 	stw	r2,-4(fp)
@@ -21649,6 +22035,8 @@ void alt_dcache_flush_all (void)
    52698:	00800174 	movhi	r2,5
    5269c:	108d1e04 	addi	r2,r2,13432
    526a0:	18bff62e 	bgeu	r3,r2,5267c <_do_dtors+0x28>
+        (*dtor) (); 
+}
    526a4:	e037883a 	mov	sp,fp
    526a8:	dfc00117 	ldw	ra,4(sp)
    526ac:	df000017 	ldw	fp,0(sp)

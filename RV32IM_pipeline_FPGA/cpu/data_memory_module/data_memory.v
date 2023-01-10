@@ -53,7 +53,7 @@ end
 
 integer i;
 //Reading & writing
-always @(posedge clock)
+always @(negedge clock)
 begin
 	// resetting the memory
 	if (reset)

@@ -101,7 +101,7 @@ ACDS_VERSION := 12.1
 # BUILD_NUMBER: 177
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+SOPC_FILE := C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

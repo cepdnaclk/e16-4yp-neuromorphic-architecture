@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
- * SOPC Builder design path: C:/Users/Dinindu/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
+ * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Tue Jan 10 07:55:19 IST 2023
+ * Generated: Tue Jan 10 15:58:04 IST 2023
  */
 
 /*
