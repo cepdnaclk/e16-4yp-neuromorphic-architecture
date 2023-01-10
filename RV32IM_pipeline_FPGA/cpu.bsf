@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 440 256)
+	(rect 16 16 440 288)
 	(text "cpu" (rect 5 0 19 12)(font "Arial" ))
-	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -163,7 +163,21 @@ applicable agreement for further details.
 		(text "DEGUB_INST[31..0]" (rect 319 187 403 199)(font "Arial" ))
 		(line (pt 424 192)(pt 408 192)(line_width 3))
 	)
+	(port
+		(pt 424 208)
+		(output)
+		(text "netInterfaceReadEn" (rect 0 0 81 12)(font "Arial" ))
+		(text "netInterfaceReadEn" (rect 322 203 403 215)(font "Arial" ))
+		(line (pt 424 208)(pt 408 208)(line_width 1))
+	)
+	(port
+		(pt 424 224)
+		(output)
+		(text "netInterfaceWriteEn" (rect 0 0 81 12)(font "Arial" ))
+		(text "netInterfaceWriteEn" (rect 322 219 403 231)(font "Arial" ))
+		(line (pt 424 224)(pt 408 224)(line_width 1))
+	)
 	(drawing
-		(rectangle (rect 16 16 408 224)(line_width 1))
+		(rectangle (rect 16 16 408 256)(line_width 1))
 	)
 )

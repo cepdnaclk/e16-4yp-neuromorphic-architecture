@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jan 8, 2023 1:06:23 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1673163383774</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Jan 10, 2023 7:55:17 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1673317517243</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Dinindu\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\Software\Debugger_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>C:\Users\HeshDS\Desktop\FYP\project\git\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>C:\Users\Dinindu\Desktop\e16-4yp-neuromorphic-architecture\RV32IM_pipeline_FPGA\debug_SoC\SoC.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
         <SchemaVersion>1.9</SchemaVersion>

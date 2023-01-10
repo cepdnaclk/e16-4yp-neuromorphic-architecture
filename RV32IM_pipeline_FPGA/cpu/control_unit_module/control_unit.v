@@ -110,10 +110,10 @@ module control_unit(INSTRUCTION, alu_signal, reg_file_write, main_mem_write, mai
     assign reg_write_select[1] = (opcode == 7'b0010111) | (opcode == 7'b1101111) | (opcode == 7'b1100111);
 
     // write to the network interface signal
-    assign network_interface_write = (opcode == 7'0101111) ? 1'b1 : 1'b0;
+    assign network_interface_write = (opcode == 7'b0101111) ? 1'b1 : 1'b0;
 
     // read from the netwok interface
-    assign network_interface_read = (opcode == 7'0111111) ? 1'b1 : 1'b0;
+    assign network_interface_read = (opcode == 7'b0111111) ? 1'b1 : 1'b0;
 
     always @ (*)
     begin
