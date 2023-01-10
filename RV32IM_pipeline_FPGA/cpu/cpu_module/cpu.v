@@ -14,13 +14,14 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, netInterfaceReadEn, netInterfaceWriteEn);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, netInterfaceReadEn, netInterfaceWriteEn, NET_INTER_READ_DATA);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
     input DATA_CACHE_BUSY_WAIT; // busy wait signal from the memory
     input INS_CACHE_BUSY_WAIT; // busy wait from the instruction memory
     input [31:0] DATA_CACHE_READ_DATA; // input from the memory read
+    input [31:0] NET_INTER_READ_DATA; // input form the network interface
     output reg [31:0] PC; //programme counter
     output [3:0] memReadEn; // control signal to the data memory
     output [2:0] memWriteEn; // control signal to the data memory
@@ -214,6 +215,7 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         wire [31:0] PC_PLUS_4_2;
         wire HAZ_MUX_SEL;
         wire [31:0] HAZ_MUX_OUT;
+        wire [31:0] DATA_READ_MUX_OUT;
 
         // units
         assign DATA_CACHE_DATA = HAZ_MUX_OUT;
@@ -230,6 +232,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                                                 HAZ_MUX_SEL);
 
         mux2to1_32bit stage4_forward_unit_mux(PR_DATA_2_S3, PR_DATA_CACHE_OUT, HAZ_MUX_OUT, HAZ_MUX_SEL);
+
+        mux2to1_32bit data_read_mux(DATA_CACHE_READ_DATA, NET_INTER_READ_DATA, DATA_READ_MUX_OUT, netInterfaceReadEn);
 //************************** STAGE 5 **************************
     // EXTRA pipeline registers to handle the fowarding 
     // data lines
@@ -375,7 +379,7 @@ always @(posedge CLK) begin
                 PR_REGISTER_WRITE_ADDR_S4 = PR_REGISTER_WRITE_ADDR_S3;
                 PR_PC_S4 = PR_PC_S3;
                 PR_ALU_OUT_S4 = PR_ALU_OUT_S3;
-                PR_DATA_CACHE_OUT = DATA_CACHE_READ_DATA;
+                PR_DATA_CACHE_OUT = DATA_READ_MUX_OUT;
                 
                 PR_REG_WRITE_SELECT_S4  = PR_REG_WRITE_SELECT_S3;
                 PR_REG_WRITE_EN_S4 = PR_REG_WRITE_EN_S3;

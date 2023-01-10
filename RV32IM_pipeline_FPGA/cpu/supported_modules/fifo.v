@@ -23,7 +23,7 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
   output[63:0] data_out;  
   reg[63:0] data_out2[15:0];  
   wire[63:0] data_out;  
-  always @(posedge clk)  
+  always @(negedge clk)  
   begin  
    if(fifo_we)   
       data_out2[wptr[3:0]] <=data_in ;  
@@ -41,7 +41,7 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
   wire rst_n;
   assign fifo_rd = (~fifo_empty)& rd;  
   assign rst_n = ~rst;
-  always @(posedge clk or negedge rst_n)  
+  always @(negedge clk or negedge rst_n)  
   begin  
    if(~rst_n) rptr <= 5'b00000;  
    else if(fifo_rd)  
@@ -72,7 +72,7 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
    fifo_empty = (~fbit_comp) & pointer_equal;  
    fifo_threshold = (pointer_result[4]||pointer_result[3]) ? 1:0;  
   end  
-  always @(posedge clk or negedge rst_n)  
+  always @(negedge clk or negedge rst_n)  
   begin  
   if(~rst_n) fifo_overflow <=0;  
   else if((overflow_set==1)&&(fifo_rd==0))  
@@ -82,7 +82,7 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
     else  
      fifo_overflow <= fifo_overflow;  
   end  
-  always @(posedge clk or negedge rst_n)  
+  always @(negedge clk or negedge rst_n)  
   begin  
   if(~rst_n) fifo_underflow <=0;  
   else if((underflow_set==1)&&(fifo_we==0))  
@@ -102,7 +102,7 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
   output fifo_we;  
   reg[4:0] wptr;  
   assign fifo_we = (~fifo_full)&wr;  
-  always @(posedge clk or negedge rst_n)  
+  always @(negedge clk or negedge rst_n)  
   begin  
    if(~rst_n) wptr <= 5'b00000;  
    else if(fifo_we)  

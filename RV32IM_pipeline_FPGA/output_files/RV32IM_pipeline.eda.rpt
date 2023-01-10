@@ -1,6 +1,6 @@
 EDA Netlist Writer report for RV32IM_pipeline
-Tue Jan 10 17:17:35 2023
-Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Full Version
+Tue Jan 10 18:26:11 2023
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
 ---------------------
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jan 10 17:17:35 2023 ;
+; EDA Netlist Writer Status ; Successful - Tue Jan 10 18:26:11 2023 ;
 ; Revision Name             ; RV32IM_pipeline                       ;
 ; Top-level Entity Name     ; system                                ;
 ; Family                    ; Cyclone IV E                          ;
@@ -86,9 +86,9 @@ applicable agreement for further details.
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit EDA Netlist Writer
+Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Tue Jan 10 17:17:01 2023
+    Info: Processing started: Tue Jan 10 18:25:43 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off RV32IM_pipeline -c RV32IM_pipeline
 Info (204019): Generated file RV32IM_pipeline_7_1200mv_85c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file RV32IM_pipeline_7_1200mv_0c_slow.vho in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
@@ -98,10 +98,10 @@ Info (204019): Generated file RV32IM_pipeline_7_1200mv_85c_vhd_slow.sdo in folde
 Info (204019): Generated file RV32IM_pipeline_7_1200mv_0c_vhd_slow.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file RV32IM_pipeline_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file RV32IM_pipeline_vhd.sdo in folder "C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 575 megabytes
-    Info: Processing ended: Tue Jan 10 17:17:36 2023
-    Info: Elapsed time: 00:00:35
-    Info: Total CPU time (on all processors): 00:00:32
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4833 megabytes
+    Info: Processing ended: Tue Jan 10 18:26:12 2023
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
 
 
