@@ -21,8 +21,8 @@ module network_interface(
     assign debug_fifo_full = cpu_out_fifo_full;
     // fifo for the output buffer from cpu
     // (data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, fifo_underflow,clk, rst_n, wr, rd, data_in)
-    fifo_mem cpu_out_fifo(data_in_rauter, cpu_out_fifo_full, cpu_out_fifo_empty, cpu_out_fifo_threshold, cpu_out_fifo_overflow, cpu_out_fifo_underflow, clk, ~reset, write_en_cpu, read_en_rauter, {addr_cpu, data_out_cpu});  
-
+    // fifo_mem cpu_out_fifo(data_in_rauter, cpu_out_fifo_full, cpu_out_fifo_empty, cpu_out_fifo_threshold, cpu_out_fifo_overflow, cpu_out_fifo_underflow, clk, ~reset, write_en_cpu, read_en_rauter, {addr_cpu, data_out_cpu});  
+    fifo_mem cpu_out_fifo({core_index, core_data}, cpu_out_fifo_full, cpu_out_fifo_empty, cpu_out_fifo_threshold, cpu_out_fifo_overflow, cpu_out_fifo_underflow, clk, ~reset, write_en_cpu, read_en_inp_fifo, {addr_cpu, data_out_cpu});  
 
     //fifo for the input buffer from cpu
     wire cpu_in_fifo_full, cpu_in_fifo_empty, cpu_in_fifo_threshold, cpu_in_fifo_overflow, cpu_in_fifo_underflow;
