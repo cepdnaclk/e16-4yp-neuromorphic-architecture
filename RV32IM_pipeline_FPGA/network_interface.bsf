@@ -103,9 +103,9 @@ applicable agreement for further details.
 	(port
 		(pt 272 64)
 		(output)
-		(text "debug_fifo_full" (rect 0 0 59 12)(font "Arial" ))
-		(text "debug_fifo_full" (rect 192 59 251 71)(font "Arial" ))
-		(line (pt 272 64)(pt 256 64)(line_width 1))
+		(text "status[31..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "status[31..0]" (rect 204 59 251 71)(font "Arial" ))
+		(line (pt 272 64)(pt 256 64)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 256 192)(line_width 1))

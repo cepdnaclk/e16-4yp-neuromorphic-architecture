@@ -33,14 +33,12 @@ module fifo_mem(data_out,fifo_full, fifo_empty, fifo_threshold, fifo_overflow, f
 // fpga4student.com: FPga projects, Verilog projects, VHDL projects
 // Verilog project: Verilog code for FIFO memory
 // Verilog code for Read Pointer sub-module 
- module read_pointer(rptr,fifo_rd,rd,fifo_empty,clk,rst);  
-  input rd,fifo_empty,clk,rst;  
+ module read_pointer(rptr,fifo_rd,rd,fifo_empty,clk,rst_n);  
+  input rd,fifo_empty,clk,rst_n;  
   output[4:0] rptr;  
   output fifo_rd;  
   reg[4:0] rptr;  
-  wire rst_n;
   assign fifo_rd = (~fifo_empty)& rd;  
-  assign rst_n = ~rst;
   always @(negedge clk or negedge rst_n)  
   begin  
    if(~rst_n) rptr <= 5'b00000;  

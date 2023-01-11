@@ -5,6 +5,7 @@
   <columns>
    <connections preferredWidth="143" />
    <irq preferredWidth="34" />
+   <name preferredWidth="264" />
   </columns>
  </systemtable>
  <clocktable>
@@ -14,7 +15,8 @@
    <frequency preferredWidth="530" />
   </columns>
  </clocktable>
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Library/Peripherals,Project,Library,Library/Peripherals/Microcontroller Peripherals" />
  <window width="1920" height="1030" x="0" y="0" />
  <generation
    path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC" />

@@ -94,6 +94,13 @@ applicable agreement for further details.
 		(line (pt 0 176)(pt 16 176)(line_width 3))
 	)
 	(port
+		(pt 0 192)
+		(input)
+		(text "NETWORK_STATUS[31..0]" (rect 0 0 121 12)(font "Arial" ))
+		(text "NETWORK_STATUS[31..0]" (rect 21 187 142 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
 		(pt 424 32)
 		(output)
 		(text "PC[31..0]" (rect 0 0 36 12)(font "Arial" ))

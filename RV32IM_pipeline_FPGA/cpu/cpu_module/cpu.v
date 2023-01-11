@@ -14,7 +14,7 @@
 //`include "../stage3_forward_unit.v"
 //`include "../stage4_forward_unit.v"
 
-module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, netInterfaceReadEn, netInterfaceWriteEn, NET_INTER_READ_DATA);
+module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, DATA_CACHE_DATA, DATA_CACHE_READ_DATA, DATA_CACHE_BUSY_WAIT,insReadEn, INS_CACHE_BUSY_WAIT, REGISTER_DEBUG_ADDR, REGISTER_DEBUG_DATA, ALU_DEBUG_OUT, DEBUG_CONTROL, REGISTER_DEBUG_LCD, DEGUB_INST, CLK_RAND_GEN, INTERUPT_SIGNAL, netInterfaceReadEn, netInterfaceWriteEn, NET_INTER_READ_DATA, NETWORK_STATUS);
 
     input [31:0] INSTRUCTION; //fetched INSTRUCTIONtructions
     input CLK, RESET, CLK_RAND_GEN; // clock and reset for the cpu
@@ -42,6 +42,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
 
     output [6:0] DEBUG_CONTROL;
     output [31:0] DEGUB_INST;
+
+    // input wire for the network interface status
+    input [31:0] NETWORK_STATUS;
 
     // assign ALU_DEBUG_OUT = ALU_OUT;
 
@@ -131,7 +134,8 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
                         REGISTER_DEBUG_LCD,
                         RAND_NUM_GEN_OUT,
                         PC_NEXT_REGFILE,
-                        INTERUPT_PC_REG_EN); //alu module
+                        INTERUPT_PC_REG_EN,
+                        NETWORK_STATUS); //alu module
 
         immediate_select myImmediate (PR_INSTRUCTION, IMMEDIATE_SELECT, IMMEDIATE_OUT_S2);
         

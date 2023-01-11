@@ -13,9 +13,12 @@ module network_interface(
     input write_en_cpu,
     input write_en_rauter, 
     input read_en_rauter,
-    output debug_fifo_full
+    output [31:0] status
 
 );
+    // assigning the status of the register
+    assign status = {22'b0 , cpu_out_fifo_full, cpu_out_fifo_empty, cpu_out_fifo_threshold, cpu_out_fifo_overflow, cpu_out_fifo_underflow, cpu_in_fifo_full, cpu_in_fifo_empty, cpu_in_fifo_threshold, cpu_in_fifo_overflow, cpu_in_fifo_underflow};
+
     wire cpu_out_fifo_full, cpu_out_fifo_empty, cpu_out_fifo_threshold, cpu_out_fifo_overflow, cpu_out_fifo_underflow;
 
     assign debug_fifo_full = cpu_out_fifo_full;
@@ -27,6 +30,7 @@ module network_interface(
     //fifo for the input buffer from cpu
     wire cpu_in_fifo_full, cpu_in_fifo_empty, cpu_in_fifo_threshold, cpu_in_fifo_overflow, cpu_in_fifo_underflow;
     wire [31:0] core_index, core_data;
+    reg [31:0] tmp_core_data_reg, core_index_reg;
     reg [31:0] core_data_reg;
     reg read_en_inp_fifo;
 
@@ -43,14 +47,23 @@ module network_interface(
     end
 
     // mux to select whether the read data is core_index or core_data
-    mux2to1_32bit data_select(core_index, core_data_reg, data_in_cpu, (addr_cpu == 32'd0));
+    wire mux_select;
+    assign mux_select = (addr_cpu == 32'd0) ? 1'b0 : 1'b1;
+    mux2to1_32bit data_select(core_index_reg, core_data_reg, data_in_cpu, mux_select);
 
     always @(posedge clk) begin
-        if ((read_en_cpu == 1'b1) && (addr_cpu == 32'd0))
-            core_data_reg = core_data;
+        tmp_core_data_reg = core_data;
+        core_index_reg = core_index;
+    
     end
 
-    fifo_mem cpu_in_fifo({core_index, core_data}, cpu_in_fifo_full, cpu_in_fifo_empty, cpu_in_fifo_threshold, cpu_in_fifo_overflow, cpu_in_fifo_underflow, clk, ~reset, write_en_rauter, read_en_inp_fifo, data_out_rauter);  
+    always @(negedge clk) begin
+        if ((read_en_cpu == 1'b1) & (addr_cpu == 32'd0))
+        core_data_reg = tmp_core_data_reg;
+    end
+
+
+    //fifo_mem cpu_in_fifo({core_index, core_data}, cpu_in_fifo_full, cpu_in_fifo_empty, cpu_in_fifo_threshold, cpu_in_fifo_overflow, cpu_in_fifo_underflow, clk, ~reset, write_en_rauter, read_en_inp_fifo, data_out_rauter);  
 
 
 endmodule

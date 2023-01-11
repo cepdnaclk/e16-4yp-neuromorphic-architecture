@@ -75,7 +75,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  28 .quartus_project_dir 00000068  00000000  00000000  000922c6  2**0
                   CONTENTS, READONLY
- 29 .sopcinfo     0006d666  00000000  00000000  0009232e  2**0
+ 29 .sopcinfo     0007dcda  00000000  00000000  0009232e  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00040000 l    d  .entry	00000000 .entry
@@ -1160,12 +1160,12 @@ void printRegisters() {
         printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
     }
 
-    // check random number generation
+    // check status register
 	// write the address to the IO port
-	IOWR_8DIRECT(ADDR,OFFSET,30);
+	IOWR_8DIRECT(ADDR,OFFSET,29);
    403b0:	00c00234 	movhi	r3,8
    403b4:	18c41c04 	addi	r3,r3,4208
-   403b8:	00800784 	movi	r2,30
+   403b8:	00800744 	movi	r2,29
    403bc:	18800025 	stbio	r2,0(r3)
 	usleep(DELAY); // Wait for about 0.1 seconds
    403c0:	01000044 	movi	r4,1
@@ -1181,7 +1181,7 @@ void printRegisters() {
    403d8:	e0bffd17 	ldw	r2,-12(fp)
    403dc:	e0bfff15 	stw	r2,-4(fp)
 
-	printf("Addr: %d->%d,%.4f   ",30, data, convData.f);
+	printf("Addr: %d->%d,%.4f   ",29, data, convData.f);
    403e0:	e0bfff17 	ldw	r2,-4(fp)
    403e4:	1009883a 	mov	r4,r2
    403e8:	00408c80 	call	408c8 <__extendsfdf2>
@@ -1191,7 +1191,7 @@ void printRegisters() {
    403f8:	200f883a 	mov	r7,r4
    403fc:	01000174 	movhi	r4,5
    40400:	210d2804 	addi	r4,r4,13472
-   40404:	01400784 	movi	r5,30
+   40404:	01400744 	movi	r5,29
    40408:	e1bffd17 	ldw	r6,-12(fp)
    4040c:	0041df40 	call	41df4 <printf>
     printf("\n\n");

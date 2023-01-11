@@ -17,6 +17,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|cpu:inst12|alu:myAlu|FALU:falu|Division:DuI|Iteration:X3|Multiplication:M1|lpm_mult:Mult0" CBX_FILE_NAME="mult_bdt.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|cpu:inst12|alu:myAlu|FALU:falu|Multiplication:MuI|lpm_mult:Mult0" CBX_FILE_NAME="mult_bdt.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|cpu:inst12|alu:myAlu|lpm_mult:Mult1" CBX_FILE_NAME="mult_7dt.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|system|network_interface:inst4|fifo_mem:cpu_out_fifo|memory_array:top3|altsyncram:data_out2_rtl_0" CBX_FILE_NAME="altsyncram_9sd1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|SoC:inst9|SoC_cpu:cpu|SoC_cpu_nios2_oci:the_SoC_cpu_nios2_oci|SoC_cpu_nios2_ocimem:the_SoC_cpu_nios2_ocimem|SoC_cpu_ociram_lpm_dram_bdp_component_module:SoC_cpu_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ji72.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|SoC:inst9|SoC_jtag_uart_0:jtag_uart_0|SoC_jtag_uart_0_scfifo_w:the_SoC_jtag_uart_0_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|system|SoC:inst9|SoC_jtag_uart_0:jtag_uart_0|SoC_jtag_uart_0_scfifo_r:the_SoC_jtag_uart_0_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
