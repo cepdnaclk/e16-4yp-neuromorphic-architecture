@@ -232,7 +232,9 @@ module cpu(PC, INSTRUCTION, CLK, RESET, memReadEn, memWriteEn, DATA_CACHE_ADDR, 
         stage4_forward_unit stage4_forward_unit(REG_READ_ADDR2_S3, 
                                                 PR_REGISTER_WRITE_ADDR_S4, 
                                                 PR_MEM_WRITE_S3[2], 
-                                                PR_MEM_READ_S4[3], 
+                                                PR_MEM_READ_S4[3],
+                                                PR_NET_INTER_WRITE_S3,
+                                                PR_NET_INTER_READ_S4, 
                                                 HAZ_MUX_SEL);
 
         mux2to1_32bit stage4_forward_unit_mux(PR_DATA_2_S3, PR_DATA_CACHE_OUT, HAZ_MUX_OUT, HAZ_MUX_SEL);
