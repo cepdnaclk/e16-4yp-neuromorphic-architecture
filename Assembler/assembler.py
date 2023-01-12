@@ -61,7 +61,7 @@ def formatInstruction(ins, index):
                 tmp_split_3 = item.split('(')
                 # tmp_split_3.reverse()
                 segmented_list.extend(tmp_split_3)
-            # resolwing the labels into ofsets
+            # resolving the labels into ofsets
             elif item.isalpha():
                 # print("Testing", tmpItem, (labelPosition[tmpItem]-index-1)*4)
                 segmented_list.append((labelPosition[tmpItem]-index-1)*4)
@@ -93,19 +93,27 @@ def read_csv():
 def handleInstruction(separatedIns):
     Instruction = None
     space = '' # used to visualize the space in instruction in debug mode
-
+    
     # handle R-Type instructions
     if(inst_data[separatedIns[0]]['type'] == "R-Type"):
         Instruction = inst_data[separatedIns[0]]['funct7'] + toBin(5, separatedIns[3]) + toBin(
             5, separatedIns[2]) + inst_data[separatedIns[0]]['funct3'] + toBin(5, separatedIns[1]) + inst_data[separatedIns[0]]['opcode']
         
-    elif(inst_data[separatedIns[0]]['type'] == "I - Type "):
-        Instruction = toBin(12, separatedIns[3]) + space + toBin(5, separatedIns[2]) + space + inst_data[separatedIns[0]]['funct3'] + space + toBin(5, separatedIns[1]) + space + inst_data[separatedIns[0]]['opcode']
+    elif(inst_data[separatedIns[0]]['type'] == "I - Type"):
         
+        load = {"LB", "LH", "LW", "LWNET", "LBU", "LHU"}
+
+        if separatedIns[0] in load:
+            Instruction = toBin(12, separatedIns[2]) + space + toBin(5, separatedIns[3]) + space + inst_data[separatedIns[0]]['funct3'] + space + toBin(5, separatedIns[1]) + space + inst_data[separatedIns[0]]['opcode']
+        else:
+            Instruction = toBin(12, separatedIns[3]) + space + toBin(5, separatedIns[2]) + space + inst_data[separatedIns[0]]['funct3'] + space + toBin(5, separatedIns[1]) + space + inst_data[separatedIns[0]]['opcode']
+
     elif(inst_data[separatedIns[0]]['type'] == "S-Type"):
         # sw rs2:value, rs1:base,  immediate
-        immediate = toBin(12, separatedIns[3])
-        Instruction = immediate[:7] + space + toBin(5, separatedIns[1]) + space + toBin(5, separatedIns[2])+ space + inst_data[separatedIns[0]]['funct3']+ space + immediate[7:] + space + inst_data[separatedIns[0]]['opcode']
+        # store = {"SB","SH","SW","SWNET"}
+
+        immediate = toBin(12, separatedIns[2])
+        Instruction = immediate[:7] + space + toBin(5, separatedIns[1]) + space + toBin(5, separatedIns[3])+ space + inst_data[separatedIns[0]]['funct3']+ space + immediate[7:] + space + inst_data[separatedIns[0]]['opcode']
 
     elif(inst_data[separatedIns[0]]['type'] == "B-Type"):
         # beq rs1, rs2, label
@@ -126,7 +134,7 @@ def handleInstruction(separatedIns):
 
     elif(inst_data[separatedIns[0]]['type'] == "NOP-type"):
         Instruction = "0"*32
-
+    
     print(separatedIns[0],separatedIns, Instruction, hex(int(Instruction, 2)))
     saveToFile(Instruction)
 

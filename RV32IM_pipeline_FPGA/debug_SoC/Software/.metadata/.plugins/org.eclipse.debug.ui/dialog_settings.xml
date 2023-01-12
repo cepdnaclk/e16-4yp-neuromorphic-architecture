@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATIONS_DIALOG_SECTION">
-		<item value="958" key="DIALOG_WIDTH"/>
+		<item value="1082" key="DIALOG_WIDTH"/>
 		<item value=", com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchConfiguration, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
 		<item value="753" key="DIALOG_HEIGHT"/>
 		<item value="237" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1"/>

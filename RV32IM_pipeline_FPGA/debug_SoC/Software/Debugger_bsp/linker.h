@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
  * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Fri Jan 06 16:22:53 IST 2023
+ * Generated: Tue Jan 10 15:58:04 IST 2023
  */
 
 /*

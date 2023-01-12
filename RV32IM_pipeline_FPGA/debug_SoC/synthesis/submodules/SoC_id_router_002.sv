@@ -35,7 +35,7 @@ module SoC_id_router_002_default_decode
                DEFAULT_DESTID = 1 
    )
   (output [86 - 82 : 0] default_destination_id,
-   output [17-1 : 0] default_src_channel
+   output [20-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -44,7 +44,7 @@ module SoC_id_router_002_default_decode
     if (DEFAULT_CHANNEL == -1)
       assign default_src_channel = '0;
     else
-      assign default_src_channel = 17'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 20'b1 << DEFAULT_CHANNEL;
   end
   endgenerate
 
@@ -73,7 +73,7 @@ module SoC_id_router_002
     // -------------------
     output                          src_valid,
     output reg [97-1    : 0] src_data,
-    output reg [17-1 : 0] src_channel,
+    output reg [20-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -87,7 +87,7 @@ module SoC_id_router_002
     localparam PKT_DEST_ID_H = 86;
     localparam PKT_DEST_ID_L = 82;
     localparam ST_DATA_W = 97;
-    localparam ST_CHANNEL_W = 17;
+    localparam ST_CHANNEL_W = 20;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 58;
@@ -127,7 +127,7 @@ module SoC_id_router_002
     assign src_endofpacket   = sink_endofpacket;
 
     wire [PKT_DEST_ID_W-1:0] default_destid;
-    wire [17-1 : 0] default_src_channel;
+    wire [20-1 : 0] default_src_channel;
 
 
 
@@ -149,7 +149,7 @@ module SoC_id_router_002
 
 
         if (destid == 1 ) begin
-            src_channel = 17'b1;
+            src_channel = 20'b1;
         end
 
 

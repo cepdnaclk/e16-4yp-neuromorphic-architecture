@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.mylyn.context.ui.navigator.context.quick">
+		<item value="400" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_WIDTH"/>
+		<item value="300" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_HEIGHT"/>
+		<item value="491" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_X_ORIGIN"/>
+		<item value="172" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_Y_ORIGIN"/>
+		<item value="true" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="true" key="org.eclipse.mylyn.internal.context.ui.views.QuickContextPopupDialogDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+</section>

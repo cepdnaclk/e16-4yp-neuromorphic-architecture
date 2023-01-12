@@ -84,16 +84,16 @@ void printRegisters() {
         printf("Addr: %d->%d,%.4f   ",addr, data, convData.f);
     }
 
-    // check random number generation
+    // check status register
 	// write the address to the IO port
-	IOWR_8DIRECT(ADDR,OFFSET,30);
+	IOWR_8DIRECT(ADDR,OFFSET,29);
 	usleep(DELAY); // Wait for about 0.1 seconds
 
 	// getting data from the Register file
 	int data = IORD_32DIRECT(DATA_IN,OFFSET);
 	convData.i = data;
 
-	printf("Addr: %d->%d,%.4f   ",30, data, convData.f);
+	printf("Addr: %d->%d,%.4f   ",29, data, convData.f);
     printf("\n\n");
 }
 

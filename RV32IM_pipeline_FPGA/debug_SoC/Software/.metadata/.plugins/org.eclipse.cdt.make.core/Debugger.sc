@@ -4,6 +4,13 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.base.1950717723;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.1028289880">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\i686-pc-cygwin"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include\c++\backward"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\usr\include"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\usr\include\w32api"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/HAL/inc"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/drivers/inc"/>
@@ -343,6 +350,10 @@
 </instance>
 <instance id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934;preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1537881934.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.base.2042976446;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1044328816">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\lib\gcc\i686-pc-cygwin\4.5.3\include-fixed"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\usr\include"/>
+<includePath path="E:\software\altera\12.1\quartus\bin\cygwin\usr\include\w32api"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/HAL/inc"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/"/>
 <includePath path="C:/Users/FPGA_WINDOWS/Desktop/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/drivers/inc"/>

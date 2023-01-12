@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="38" version="2.0">
+<workbench progressCount="33" version="2.0">
 <workbenchAdvisor/>
-<window height="1048" maximized="true" width="978" x="243" y="-18">
-<fastViewData fastViewLocation="1024"/>
-<intro standby="true"/>
+<window height="744" maximized="true" width="699" x="203" y="0">
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.eclipse.ui.console.ConsoleView"/>
+<orientation position="512" view="org.eclipse.debug.ui.BreakpointView"/>
+</fastViewData>
 <perspectiveBar>
 <itemSize x="349"/>
 </perspectiveBar>
@@ -14,13 +16,13 @@
 <coolItem id="org.eclipse.cdt.ui.CElementCreationActionSet" itemType="typeToolBarContribution" x="183" y="22"/>
 <coolItem id="org.eclipse.cdt.ui.buildConfigActionSet" itemType="typeToolBarContribution" x="97" y="22"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="141" y="22"/>
-<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="103" y="22"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="80" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="206" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.cdt.ui.editor.asm.AsmEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.asm.AsmEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -29,20 +31,19 @@
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
-<folder appearance="1" expanded="2">
+<folder appearance="1" expanded="0">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="counter.c" partName="counter.c" path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/counter.c" title="counter.c" tooltip="Debugger/counter.c" workbook="DefaultEditorWorkbook">
+<editor focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="counter.c" partName="counter.c" path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger/counter.c" title="counter.c" tooltip="Debugger/counter.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Debugger/counter.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5133" selectionTopPixel="4080"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5124" selectionTopPixel="4120"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="io.h" partName="io.h" title="io.h" tooltip="C:\altera\12.1\quartus\bin\cygwin\usr\include\io.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" path="C:\altera\12.1\quartus\bin\cygwin\usr\include\io.h" project="Debugger"/>
@@ -52,17 +53,15 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Debugger_bsp/drivers/src/altera_avalon_timer_ts.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="29" selectionOffset="4900" selectionTopPixel="1960"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="crt0.S" partName="crt0.S" path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/HAL/src/crt0.S" title="crt0.S" tooltip="Debugger_bsp/HAL/src/crt0.S" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Debugger_bsp/HAL/src/crt0.S"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
-</editor>
 <editor id="org.eclipse.ui.DefaultTextEditor" name="settings.bsp" partName="settings.bsp" path="C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/Software/Debugger_bsp/settings.bsp" title="settings.bsp" tooltip="Debugger_bsp/settings.bsp" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Debugger_bsp/settings.bsp"/>
-<editorState selectionHorizontalPixel="296" selectionLength="0" selectionOffset="701" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="468" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
-<view id="org.eclipse.debug.ui.MemoryView" partName="Memory"/>
+<view id="org.eclipse.debug.ui.MemoryView" partName="Memory">
+<viewState/>
+</view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
@@ -81,7 +80,6 @@
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
-<view id="org.eclipse.debug.ui.BreakpointView" partName="Breakpoints"/>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
 <viewState/>
 </view>
@@ -90,11 +88,13 @@
 </view>
 <view id="org.eclipse.ui.views.PropertySheet" partName="Properties"/>
 <view id="org.eclipse.cdt.make.ui.views.MakeView" partName="Make Target"/>
-<view id="org.eclipse.debug.ui.RegisterView" partName="Registers"/>
+<view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
+<viewState/>
+</view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (20 items)"/>
+<category IMemento.internal.id="Warnings (21 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -107,15 +107,9 @@
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
-<view id="org.eclipse.ui.internal.introview" partName="Welcome">
-<viewState>
-<presentation currentPage="root" restore="true"/>
-<standbyPart/>
-</viewState>
-</view>
 <view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
 </views>
-<perspectives activePart="org.eclipse.debug.ui.DebugView" activePerspective="com.altera.sbtgui.ui.debugPerspective">
+<perspectives activePart="org.eclipse.ui.console.ConsoleView" activePerspective="com.altera.sbtgui.ui.debugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.cdt.internal.ui.CPerspectiveFactory" id="org.eclipse.cdt.ui.CPerspective" label="C/C++"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -264,7 +258,6 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.ui.views.PropertySheet"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.ui.internal.introview"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -280,8 +273,9 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@10105c1" ratio="0.749499" ratioLeft="748" ratioRight="250" relationship="2" relative="topLeft">
-<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -290,7 +284,7 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.249499" ratioLeft="249" ratioRight="749" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottom" ratio="0.6986755" ratioLeft="633" ratioRight="273" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.38741723" ratioLeft="351" ratioRight="555" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -308,18 +302,10 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="topRight" ratio="0.68162394" ratioLeft="957" ratioRight="447" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
-</folder>
-</info>
 </mainWindow>
 </layout>
 </perspective>
-<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<perspective editorAreaTrimState="0" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.altera.sbtgui.ui.Nios2DebugPerspectiveFactory" id="com.altera.sbtgui.ui.debugPerspective" label="Nios II Debug"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
@@ -356,42 +342,40 @@
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
-<view id="org.eclipse.debug.ui.BreakpointView"/>
 <view id="org.eclipse.debug.ui.RegisterView"/>
 <view id="org.eclipse.debug.ui.MemoryView"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.ui.internal.introview"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.debug.internal.ui.OutlineFolderView" orientation="256" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViews>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1ce05fc" ratio="0.13554217" ratioLeft="180" ratioRight="1148" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
-<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@18d8713" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.ui.internal.introview" appearance="2" expanded="2">
-<page content="org.eclipse.ui.internal.introview" label="Welcome"/>
-<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
-</folder>
-</info>
-<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.38410595" ratioLeft="348" ratioRight="558" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@18d8713" ratio="0.26931566" ratioLeft="244" ratioRight="662" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1ce05fc">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:USB-Blaster on localhost [USB-0].1.0" label="Nios II Console"/>
-<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
-<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
-<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:*" label="LabelNotFound"/>
-<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
@@ -399,19 +383,25 @@
 </presentation>
 </folder>
 </info>
+<info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.4911147" ratioLeft="304" ratioRight="315" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView:*" label="LabelNotFound"/>
+<page content="com.altera.sbtgui.launch.hardware.ByteStreamConsoleView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
 <info part="org.eclipse.ui.editorss" ratio="0.41449276" ratioLeft="143" ratioRight="202" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView"/>
 <info folder="true" part="org.eclipse.debug.internal.ui.OutlineFolderView" ratio="0.75" ratioLeft="1434" ratioRight="478" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.debug.internal.ui.ToolsFolderView" ratio="0.5" ratioLeft="956" ratioRight="956" relationship="2" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
 <folder activePageID="org.eclipse.debug.ui.VariableView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
-<page content="org.eclipse.debug.ui.BreakpointView" label="Breakpoints"/>
 <page content="org.eclipse.debug.ui.RegisterView" label="Registers"/>
 <page content="org.eclipse.debug.ui.MemoryView" label="Memory"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="LabelNotFound"/>
@@ -419,7 +409,6 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -432,63 +421,12 @@
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Debugger/counter.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/Debugger_bsp/HAL/src/crt0.S"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Debugger_bsp/settings.bsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Debugger_bsp/settings.bsp"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/Debugger_bsp/HAL/src/crt0.S"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Debugger_bsp/settings.bsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/Debugger_bsp/HAL/src/crt0.S"/>
 </editors>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="547" y="0"/>
-</item>
-<item historyLabel="crt0.S" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="523" y="0"/>
-</item>
-<item historyLabel="crt0.S" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="438" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="2307" y="0"/>
-</item>
-<item historyLabel="crt0.S" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1191" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1179" y="9"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
-<item historyLabel="crt0.S" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1519" y="0"/>
-</item>
-<item historyLabel="crt0.S" index="1">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="counter.c" index="0">
-<position info="not_deleted" x="1645" y="0"/>
-</item>
 <item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="1768" y="0"/>
 </item>
@@ -507,7 +445,7 @@
 <item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="2273" y="0"/>
 </item>
-<item historyLabel="crt0.S" index="2">
+<item historyLabel="crt0.S" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="counter.c" index="0">
@@ -525,10 +463,10 @@
 <item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="2130" y="43"/>
 </item>
-<item historyLabel="settings.bsp" index="3">
+<item historyLabel="settings.bsp" index="2">
 <position info="not_deleted" x="62410" y="0"/>
 </item>
-<item historyLabel="settings.bsp" index="3">
+<item historyLabel="settings.bsp" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="counter.c" index="0">
@@ -582,8 +520,62 @@
 <item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="437" y="0"/>
 </item>
-<item active="true" historyLabel="counter.c" index="0">
+<item historyLabel="counter.c" index="0">
 <position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="settings.bsp" index="3">
+<position info="not_deleted" x="59929" y="0"/>
+</item>
+<item historyLabel="settings.bsp" index="3">
+<position info="not_deleted" x="648" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5079" y="4"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="crt0.S" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="settings.bsp" index="5">
+<position info="not_deleted" x="59960" y="0"/>
+</item>
+<item historyLabel="settings.bsp" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="crt0.S" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5133" y="0"/>
+</item>
+<item historyLabel="counter.c" index="0">
+<position info="not_deleted" x="2253" y="0"/>
+</item>
+<item active="true" historyLabel="counter.c" index="0">
+<position info="not_deleted" x="5124" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -591,6 +583,13 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
+<trimArea IMemento.internal.id="16384">
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.ToolsFolderView"/>
+</trimArea>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
+<trimItem IMemento.internal.id="org.eclipse.debug.internal.ui.OutlineFolderView"/>
+</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -603,11 +602,11 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="settings.bsp" tooltip="Debugger_bsp/settings.bsp">
-<persistable path="/Debugger_bsp/settings.bsp"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="crt0.S" tooltip="Debugger_bsp/HAL/src/crt0.S">
 <persistable path="/Debugger_bsp/HAL/src/crt0.S"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="settings.bsp" tooltip="Debugger_bsp/settings.bsp">
+<persistable path="/Debugger_bsp/settings.bsp"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="altera_avalon_timer_ts.c" tooltip="Debugger_bsp/drivers/src/altera_avalon_timer_ts.c">
 <persistable path="/Debugger_bsp/drivers/src/altera_avalon_timer_ts.c"/>

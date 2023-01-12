@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'SoC'
  * SOPC Builder design path: C:/Users/HeshDS/Desktop/FYP/project/git/e16-4yp-neuromorphic-architecture/RV32IM_pipeline_FPGA/debug_SoC/SoC.sopcinfo
  *
- * Generated: Sun Jan 08 13:06:24 IST 2023
+ * Generated: Wed Jan 11 17:32:20 IST 2023
  */
 
 /*
@@ -174,19 +174,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x810e8
+#define ALT_STDERR_BASE 0x81118
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x810e8
+#define ALT_STDIN_BASE 0x81118
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x810e8
+#define ALT_STDOUT_BASE 0x81118
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -308,6 +308,87 @@
 #define DATA_IN_RESET_VALUE 0x0
 #define DATA_IN_SPAN 16
 #define DATA_IN_TYPE "altera_avalon_pio"
+
+
+/*
+ * debug_cpu_addr_network configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_debug_cpu_addr_network altera_avalon_pio
+#define DEBUG_CPU_ADDR_NETWORK_BASE 0x810e0
+#define DEBUG_CPU_ADDR_NETWORK_BIT_CLEARING_EDGE_REGISTER 0
+#define DEBUG_CPU_ADDR_NETWORK_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DEBUG_CPU_ADDR_NETWORK_CAPTURE 0
+#define DEBUG_CPU_ADDR_NETWORK_DATA_WIDTH 32
+#define DEBUG_CPU_ADDR_NETWORK_DO_TEST_BENCH_WIRING 0
+#define DEBUG_CPU_ADDR_NETWORK_DRIVEN_SIM_VALUE 0x0
+#define DEBUG_CPU_ADDR_NETWORK_EDGE_TYPE "NONE"
+#define DEBUG_CPU_ADDR_NETWORK_FREQ 50000000u
+#define DEBUG_CPU_ADDR_NETWORK_HAS_IN 0
+#define DEBUG_CPU_ADDR_NETWORK_HAS_OUT 1
+#define DEBUG_CPU_ADDR_NETWORK_HAS_TRI 0
+#define DEBUG_CPU_ADDR_NETWORK_IRQ -1
+#define DEBUG_CPU_ADDR_NETWORK_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DEBUG_CPU_ADDR_NETWORK_IRQ_TYPE "NONE"
+#define DEBUG_CPU_ADDR_NETWORK_NAME "/dev/debug_cpu_addr_network"
+#define DEBUG_CPU_ADDR_NETWORK_RESET_VALUE 0x0
+#define DEBUG_CPU_ADDR_NETWORK_SPAN 16
+#define DEBUG_CPU_ADDR_NETWORK_TYPE "altera_avalon_pio"
+
+
+/*
+ * debug_cpu_in_network configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_debug_cpu_in_network altera_avalon_pio
+#define DEBUG_CPU_IN_NETWORK_BASE 0x810f0
+#define DEBUG_CPU_IN_NETWORK_BIT_CLEARING_EDGE_REGISTER 0
+#define DEBUG_CPU_IN_NETWORK_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DEBUG_CPU_IN_NETWORK_CAPTURE 0
+#define DEBUG_CPU_IN_NETWORK_DATA_WIDTH 32
+#define DEBUG_CPU_IN_NETWORK_DO_TEST_BENCH_WIRING 0
+#define DEBUG_CPU_IN_NETWORK_DRIVEN_SIM_VALUE 0x0
+#define DEBUG_CPU_IN_NETWORK_EDGE_TYPE "NONE"
+#define DEBUG_CPU_IN_NETWORK_FREQ 50000000u
+#define DEBUG_CPU_IN_NETWORK_HAS_IN 0
+#define DEBUG_CPU_IN_NETWORK_HAS_OUT 1
+#define DEBUG_CPU_IN_NETWORK_HAS_TRI 0
+#define DEBUG_CPU_IN_NETWORK_IRQ -1
+#define DEBUG_CPU_IN_NETWORK_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DEBUG_CPU_IN_NETWORK_IRQ_TYPE "NONE"
+#define DEBUG_CPU_IN_NETWORK_NAME "/dev/debug_cpu_in_network"
+#define DEBUG_CPU_IN_NETWORK_RESET_VALUE 0x0
+#define DEBUG_CPU_IN_NETWORK_SPAN 16
+#define DEBUG_CPU_IN_NETWORK_TYPE "altera_avalon_pio"
+
+
+/*
+ * debug_cpu_out_network configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_debug_cpu_out_network altera_avalon_pio
+#define DEBUG_CPU_OUT_NETWORK_BASE 0x81100
+#define DEBUG_CPU_OUT_NETWORK_BIT_CLEARING_EDGE_REGISTER 0
+#define DEBUG_CPU_OUT_NETWORK_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define DEBUG_CPU_OUT_NETWORK_CAPTURE 0
+#define DEBUG_CPU_OUT_NETWORK_DATA_WIDTH 32
+#define DEBUG_CPU_OUT_NETWORK_DO_TEST_BENCH_WIRING 0
+#define DEBUG_CPU_OUT_NETWORK_DRIVEN_SIM_VALUE 0x0
+#define DEBUG_CPU_OUT_NETWORK_EDGE_TYPE "NONE"
+#define DEBUG_CPU_OUT_NETWORK_FREQ 50000000u
+#define DEBUG_CPU_OUT_NETWORK_HAS_IN 1
+#define DEBUG_CPU_OUT_NETWORK_HAS_OUT 0
+#define DEBUG_CPU_OUT_NETWORK_HAS_TRI 0
+#define DEBUG_CPU_OUT_NETWORK_IRQ -1
+#define DEBUG_CPU_OUT_NETWORK_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define DEBUG_CPU_OUT_NETWORK_IRQ_TYPE "NONE"
+#define DEBUG_CPU_OUT_NETWORK_NAME "/dev/debug_cpu_out_network"
+#define DEBUG_CPU_OUT_NETWORK_RESET_VALUE 0x0
+#define DEBUG_CPU_OUT_NETWORK_SPAN 16
+#define DEBUG_CPU_OUT_NETWORK_TYPE "altera_avalon_pio"
 
 
 /*
@@ -488,7 +569,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x810e8
+#define JTAG_UART_0_BASE 0x81118
 #define JTAG_UART_0_IRQ 16
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -562,13 +643,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x810e0
+#define SYSID_BASE 0x81110
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1673162897
+#define SYSID_TIMESTAMP 1673437268
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 

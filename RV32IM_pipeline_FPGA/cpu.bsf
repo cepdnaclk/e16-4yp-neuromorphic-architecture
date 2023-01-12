@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 440 256)
+	(rect 16 16 440 288)
 	(text "cpu" (rect 5 0 19 12)(font "Arial" ))
-	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -85,6 +85,20 @@ applicable agreement for further details.
 		(text "INTERUPT_SIGNAL" (rect 0 0 92 12)(font "Arial" ))
 		(text "INTERUPT_SIGNAL" (rect 21 155 113 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "NET_INTER_READ_DATA[31..0]" (rect 0 0 152 12)(font "Arial" ))
+		(text "NET_INTER_READ_DATA[31..0]" (rect 21 171 173 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "NETWORK_STATUS[31..0]" (rect 0 0 121 12)(font "Arial" ))
+		(text "NETWORK_STATUS[31..0]" (rect 21 187 142 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port
 		(pt 424 32)
@@ -163,7 +177,21 @@ applicable agreement for further details.
 		(text "DEGUB_INST[31..0]" (rect 319 187 403 199)(font "Arial" ))
 		(line (pt 424 192)(pt 408 192)(line_width 3))
 	)
+	(port
+		(pt 424 208)
+		(output)
+		(text "netInterfaceReadEn" (rect 0 0 81 12)(font "Arial" ))
+		(text "netInterfaceReadEn" (rect 322 203 403 215)(font "Arial" ))
+		(line (pt 424 208)(pt 408 208)(line_width 1))
+	)
+	(port
+		(pt 424 224)
+		(output)
+		(text "netInterfaceWriteEn" (rect 0 0 81 12)(font "Arial" ))
+		(text "netInterfaceWriteEn" (rect 322 219 403 231)(font "Arial" ))
+		(line (pt 424 224)(pt 408 224)(line_width 1))
+	)
 	(drawing
-		(rectangle (rect 16 16 408 224)(line_width 1))
+		(rectangle (rect 16 16 408 256)(line_width 1))
 	)
 )

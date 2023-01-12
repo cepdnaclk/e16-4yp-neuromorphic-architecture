@@ -1,4 +1,4 @@
-module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD, RAND_INPUT, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN);
+module reg_file(IN, OUT1, OUT2, INADDRESS, OUT1ADDRESS, OUT2ADDRESS, WRITE, CLK, RESET, DEBUG_DATA, DEBUG_ADDR, DEBUG_DATA_LCD, RAND_INPUT, PC_NEXT_REGFILE, INTERUPT_PC_REG_EN, NETWORK_STATUS);
 
 input [31:0] IN;  // 32 bit data input
 input [4:0] INADDRESS, OUT1ADDRESS, OUT2ADDRESS; // 5 bit data inputs
@@ -8,6 +8,9 @@ output [31:0] OUT1, OUT2; // 32 bit data outputs
 output [31:0] DEBUG_DATA; // debug port for register data
 output [47:0] DEBUG_DATA_LCD; // output least signifcand 8 bits of registers from 0 to 6
 input [4:0] DEBUG_ADDR; // debug port for register address
+
+//network status input
+input [31:0] NETWORK_STATUS;
 
 input [31:0] PC_NEXT_REGFILE;
 input INTERUPT_PC_REG_EN;
@@ -46,6 +49,8 @@ begin
         // writing the pc to REG30 if the ISR active
         if (INTERUPT_PC_REG_EN == 1'b1)
             REGISTERS[5'd30] = PC_NEXT_REGFILE;
+        // writing the status of the network interface to register 29
+        REGISTERS[5'd29] = NETWORK_STATUS;
     end
 end
 
