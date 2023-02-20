@@ -11,6 +11,14 @@ title: Neuromorphic Architecture
 
 # Neuromorphic Architecture
 
+#### Project Summary
+
+Today's computers are based on a traditional architecture where the input data is transformed into output data with a processor and memory. With the advancement of technology areas these traditional architectures became less efficient in power consumption. Due to these people started looking for computer architectures that are inspired by the biological brain where the power consumption was very efficient. The brain is made out of simple biological components known as neurons and these neurons communicate each other synapses.
+
+In this project, we are designing and developing a brain inspired computer architecture and we are optimizing it to perform brain like computations such as character recognition effectively with less power consumption. This architecture that we are developing has many processors similar to the neurons in the brain and these processors are connected to each other by using a network similar to the synapses and this network is designed such that it can be scaled up. As the processing elements we are using previously developed processors ([processor 1](https://github.com/cepdnaclk/e16-co502-RV32IM-pipeline-implementation-group3) and [processor 2](https://cepdnaclk.github.io/e16-co502-RV32IM-pipeline-implementation-group1/)) which was built by us and we implementing and tuning the network to achieve the expected low power consumption using an event driven communication method. Using this architecture, we are solving machine learning problems such as character recognition and we are benchmarking this hardware with the existing hardware.
+
+![alt text](/images/noc.png)
+
 #### Team
 
 - E/16/088, Dissanayake D M T H, [email](mailto:e16088@eng.pdn.ac.lk), [GitHub](https://github.com/HeshanDissanayake)
